@@ -995,6 +995,11 @@
    Der Code soll die Seite nicht aufblähen: er liegt in einem Popover, das bei
    Hover oder Tastaturfokus erscheint. Auf dem Telefon reicht ein Tippen, weil
    das den Fokus setzt. */
+.qr-line {
+  display: block;
+  margin-top: 0.25rem;
+}
+
 .qr-hint {
   position: relative;
   appearance: none;
