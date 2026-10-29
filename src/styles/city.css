@@ -363,16 +363,16 @@
   font-family: var(--font-ui);
   font-size: 0.85rem;
 }
-.s-tickets li { margin: 0; padding: 0.34rem 0; border-bottom: 1px solid var(--line); }
-.s-tickets li:has(.t-note) { padding-bottom: 0.62rem; }
-.s-tickets li:last-child { border-bottom: 0; }
+/* Keine Trennlinien zwischen den Tarifen – die Punktführung trägt die Zeile. */
+.s-tickets li { margin: 0; padding: 0.28rem 0; }
+.s-tickets li:has(.t-note) { padding-bottom: 0.85rem; }
 .t-row { display: flex; align-items: baseline; gap: 0.45rem; }
 .t-label { flex: 0 1 auto; color: var(--fg); }
 /* Punktführung: füllt die Lücke, damit Preis und Bezeichnung auf einer Linie sitzen. */
 .t-fill {
   flex: 1 1 1rem;
   min-width: 1rem;
-  border-bottom: 1px dotted color-mix(in srgb, var(--muted) 75%, transparent);
+  border-bottom: 1.5px dotted color-mix(in srgb, var(--muted) 90%, transparent);
   transform: translateY(-0.2em);
 }
 .t-price {
@@ -571,9 +571,17 @@
   color: var(--muted);
   margin: 0.5rem 0 0;
 }
+.legend-de {
+  display: block;
+  font-style: normal;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 0.05rem;
+}
+
 .area-dot {
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   border: 2px dashed var(--accent);
   background: var(--accent-soft);

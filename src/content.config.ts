@@ -32,7 +32,10 @@ const area = z.object({
 
 const sight = z.object({
   no: z.number().int().min(1).max(20),
+  /** Chinesischer Name – steht in der Kartenlegende zuerst. */
   name: z.string(),
+  /** Umschrift, nur im Text der Sehenswürdigkeit. */
+  pinyin: z.string().optional(),
   german: z.string().optional(),
   price: z.string().optional(),
   duration: z.string().optional(),

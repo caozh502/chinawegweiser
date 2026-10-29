@@ -190,7 +190,9 @@ const faqLd = {
                 <span class="num">{s.no}</span>
                 <div>
                   <div class="s-name">{s.name}</div>
-                  {s.german && <div class="s-de">{s.german}</div>}
+                  {(s.pinyin || s.german) && (
+                    <div class="s-de">{[s.pinyin, s.german].filter(Boolean).join(' · ')}</div>
+                  )}
                 </div>
                 {typeof s.lat === 'number' && (
                   <button type="button" class="zoom-link" data-zoom-sight={s.no}>

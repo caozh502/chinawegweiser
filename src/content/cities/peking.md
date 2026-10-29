@@ -96,7 +96,8 @@ areas:
         note: 'Preis-Leistung im Viertel sehr gut'
 sights:
   - no: 1
-    name: '故宫 Gùgōng'
+    name: '故宫'
+    pinyin: 'Gùgōng'
     german: 'Verbotene Stadt'
     price: '40–60 ¥'
     duration: '3–4 Std'
@@ -142,7 +143,8 @@ sights:
         licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Beijing_China_Forbidden-City-03.jpg'
   - no: 2
-    name: '天坛 Tiāntán'
+    name: '天坛'
+    pinyin: 'Tiāntán'
     german: 'Himmelstempel'
     price: '15–34 ¥'
     duration: '2 Std'
@@ -175,7 +177,8 @@ sights:
       licenseUrl: 'http://creativecommons.org/publicdomain/zero/1.0/deed.en'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:20200110_Temple_of_Heaven-1.jpg'
   - no: 3
-    name: '慕田峪长城 Mùtiányù'
+    name: '慕田峪长城'
+    pinyin: 'Mùtiányù'
     german: 'Große Mauer, Mutianyu'
     price: '45 ¥ + Seilbahn'
     duration: 'halber Tag'
@@ -212,7 +215,8 @@ sights:
       licenseUrl: 'https://creativecommons.org/licenses/by/2.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:66954-The-Great-Wall,_Mutianyu.jpg'
   - no: 4
-    name: '箭扣 Jiànkǒu'
+    name: '箭扣'
+    pinyin: 'Jiànkǒu'
     german: 'Große Mauer, Jiankou (Wildabschnitt)'
     price: '–'
     duration: '4–6 Std'
@@ -242,7 +246,8 @@ sights:
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bare_rock_on_the_Great_Wall_of_China_at_Jiankou.jpg'
   - no: 5
-    name: '天安门广场 Tiānʾānmén'
+    name: '天安门广场'
+    pinyin: 'Tiānʾānmén'
     german: 'Platz des Himmlischen Friedens'
     price: 'kostenlos'
     duration: '45 Min'
@@ -272,7 +277,8 @@ sights:
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gate_of_Heavenly_Peace,_Tiananmen_-_panoramio.jpg'
   - no: 6
-    name: '南锣鼓巷 & Hutong'
+    name: '南锣鼓巷'
+    pinyin: 'Nánluógǔxiàng'
     german: 'Hutong-Viertel'
     price: 'kostenlos'
     duration: '2–3 Std'
@@ -309,7 +315,8 @@ sights:
         licenseUrl: 'https://creativecommons.org/licenses/by-sa/2.0'
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hutong,_BJ_(2917153763).jpg'
   - no: 7
-    name: '798 艺术区 Yìshùqū'
+    name: '798 艺术区'
+    pinyin: 'Yìshùqū'
     german: 'Kunstviertel 798'
     price: 'kostenlos (Galerien teils Eintritt)'
     duration: '2–3 Std'
@@ -341,7 +348,8 @@ sights:
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Space-gallery_798-art-district.jpg'
   - no: 8
-    name: '北京烤鸭 Běijīng kǎoyā'
+    name: '北京烤鸭'
+    pinyin: 'Běijīng kǎoyā'
     german: 'Peking-Ente'
     price: '150–250 ¥ p. P.'
     duration: '1,5 Std'
