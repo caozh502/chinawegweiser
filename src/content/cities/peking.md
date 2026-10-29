@@ -96,7 +96,7 @@ areas:
         note: 'Preis-Leistung im Viertel sehr gut'
 sights:
   - no: 1
-    name: '故宫 / Verbotene Stadt'
+    name: '故宫 Gùgōng'
     german: 'Verbotene Stadt'
     price: '40–60 ¥'
     duration: '3–4 Std'
@@ -125,7 +125,7 @@ sights:
     photo:
       file: 'peking/gugong-supreme.jpg'
       alt: 'Halle der höchsten Harmonie in der Verbotenen Stadt, Frontansicht'
-      caption: 'Halle der höchsten Harmonie: der größte Bau der Anlage und der Punkt, an dem die meisten Touren kehrtmachen.'
+      caption: 'Halle der höchsten Harmonie: das größte Bauwerk der Anlage und der Punkt, an dem die meisten Touren umkehren.'
       author: 'Perry Li'
       license: 'CC BY-SA 2.0'
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/2.0'
@@ -139,7 +139,7 @@ sights:
         licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Beijing_China_Forbidden-City-03.jpg'
   - no: 2
-    name: '天坛 / Himmelstempel'
+    name: '天坛 Tiāntán'
     german: 'Himmelstempel'
     price: '15–34 ¥'
     duration: '2 Std'
@@ -170,7 +170,7 @@ sights:
       licenseUrl: 'http://creativecommons.org/publicdomain/zero/1.0/deed.en'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:20200110_Temple_of_Heaven-1.jpg'
   - no: 3
-    name: '慕田峪长城 / Mutianyu'
+    name: '慕田峪长城 Mùtiányù'
     german: 'Große Mauer, Mutianyu'
     price: '45 ¥ + Seilbahn'
     duration: 'halber Tag'
@@ -205,7 +205,7 @@ sights:
       licenseUrl: 'https://creativecommons.org/licenses/by/2.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:66954-The-Great-Wall,_Mutianyu.jpg'
   - no: 4
-    name: '箭扣 / Jiankou'
+    name: '箭扣 Jiànkǒu'
     german: 'Große Mauer, Jiankou (Wildabschnitt)'
     price: '–'
     duration: '4–6 Std'
@@ -234,7 +234,7 @@ sights:
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bare_rock_on_the_Great_Wall_of_China_at_Jiankou.jpg'
   - no: 5
-    name: '天安门广场 / Tiananmen'
+    name: '天安门广场 Tiānʾānmén'
     german: 'Platz des Himmlischen Friedens'
     price: 'kostenlos'
     duration: '45 Min'
@@ -299,8 +299,8 @@ sights:
         licenseUrl: 'https://creativecommons.org/licenses/by-sa/2.0'
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hutong,_BJ_(2917153763).jpg'
   - no: 7
-    name: '798 Kunstviertel'
-    german: '798 Art District'
+    name: '798 艺术区 Yìshùqū'
+    german: 'Kunstviertel 798'
     price: 'kostenlos (Galerien teils Eintritt)'
     duration: '2–3 Std'
     booking: none
@@ -329,7 +329,7 @@ sights:
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Space-gallery_798-art-district.jpg'
   - no: 8
-    name: '北京烤鸭 / Peking-Ente'
+    name: '北京烤鸭 Běijīng kǎoyā'
     german: 'Peking-Ente'
     price: '150–250 ¥ p. P.'
     duration: '1,5 Std'
@@ -385,21 +385,33 @@ plans:
         afternoon: 'Hutongs, danach mit der Linie 14 nach 798'
         evening: '798 schließt früh: letzte Galerie gegen 18:00'
   - title: '5 Tage – mit Luft'
-    forWhom: 'Wer Museen und Essen ernst nimmt, Familien'
+    forWhom: 'Wer Museen und Essen ernst nimmt – auch mit Kindern'
     days:
       - day: 1
         sights: [1, 5]
+        morning: 'Verbotene Stadt ab 08:30, ohne Eile durch die drei Haupthöfe'
+        afternoon: 'Jingshan-Park, danach Tiananmen mit gebuchtem Zeitfenster'
+        evening: 'Ankommen: Wangfujing, früh essen'
       - day: 2
         sights: [3]
-        note: 'Ganzer Tag Mauer, kein zweiter Programmpunkt.'
+        morning: 'Früh los zur Mauer, Seilbahn hoch, zu Fuß bis zum 20. Turm'
+        afternoon: 'Rodelbahn hinunter, Rückfahrt gegen 16:00'
+        evening: 'frei – der Tag war lang'
       - day: 3
         sights: [2, 6]
+        morning: 'Himmelstempel ab 07:00, danach Frühstück im Viertel'
+        afternoon: 'Hutongs: Hauptgasse meiden, eine Quergasse weiter laufen'
+        evening: 'Teehaus oder Konzert'
       - day: 4
         sights: [7, 8]
-        note: 'Kunstviertel und ein Kochkurs oder Teehaus als Pause.'
+        morning: '798 ab 10:00, Galerien vor der Mittagspause'
+        afternoon: 'Kochkurs oder Teehaus als Pause'
+        evening: 'Ente – diesmal mit Reservierung'
       - day: 5
-        sights: [2]
-        note: 'Puffer für Regen oder Nachtrag; abends Ausreise oder Weiterreise nach Xi''an.'
+        sights: []
+        morning: 'Puffertag: Regen, Nachtrag oder Ausschlafen'
+        afternoon: 'letzte Einkäufe, Gepäck'
+        evening: 'Ausreise oder Weiterreise nach Xi''an'
 ---
 
 > **Die Kurzfassung:** Peking ist ein Ring-System. Alles touristisch Relevante liegt innerhalb des dritten Rings – nur die Mauer (rund 60 km nördlich) und 798 (Nordosten) sind echte Ausflüge. Wer das einplant, spart pro Tag ein bis zwei Stunden Taxifahren.

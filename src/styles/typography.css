@@ -378,7 +378,9 @@ nav.top a:hover {
     overflow-y: auto;
     overscroll-behavior: contain;
     margin: 0;
-    padding: 0;
+    /* Abstand zwischen Führungslinie und Text – ohne dieses Padding klebt
+       der Text direkt an der 2px-Linie. */
+    padding: 0 0 0 1.1rem;
   }
   /* Die Bildspalte darf schmaler sein als der Text: kein Überlauf. */
   .guide-body .photo,
@@ -401,8 +403,15 @@ nav.top a:hover {
 }
 
 .guide-toc {
-  padding-left: 1rem;
+  padding-left: 1.1rem;
   border-left: 2px solid var(--line);
+}
+/* Gestapelt über dem Text stört die Linie mehr, als sie hilft. */
+@media (max-width: 63.99rem) {
+  .guide-toc {
+    padding-left: 0;
+    border-left: 0;
+  }
 }
 
 .entry .toc ol {

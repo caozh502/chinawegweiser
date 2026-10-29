@@ -73,7 +73,7 @@ const areaPayload = JSON.stringify(
         </p>
       )}
       <p class="map-note">
-        <span data-outlier-note>Ausflugsziele außerhalb der Stadt</span> sind in der Ansicht
+        <span data-outlier-note>Ausflugsziele außerhalb der Stadt</span> werden in der Ansicht
         „Stadtzentrum" ausgeblendet – über „Alle" werden sie sichtbar. Amap und Baidu zeigen
         dieselben Orte leicht versetzt (amtliches GCJ-02-System); diese Karte rechnet in WGS-84.
       </p>
@@ -190,7 +190,7 @@ const areaPayload = JSON.stringify(
       if (note) {
         note.textContent =
           far.length > 0
-            ? 'Punkte ' + far.map(function (p) { return p.no; }).join(' und ') + ' liegen weit außerhalb'
+            ? 'Punkte ' + far.map(function (p) { return p.no; }).join(' und ') + ' der Karte'
             : 'Weit entfernte Ziele';
       }
       if (pending !== null) {

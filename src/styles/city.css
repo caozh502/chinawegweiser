@@ -92,14 +92,17 @@
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1rem 1.05rem 0.4rem;
+  padding: 1.05rem 1.15rem 1.15rem;
   scroll-margin-top: 1rem;
 }
 .s-head {
   display: flex;
-  gap: 0.65rem;
+  gap: 0.7rem;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
+/* „auf Karte" gehört an die rechte Kante, nicht hinter den Titel. */
+.s-head .zoom-link { margin-left: auto; }
 .num {
   flex: 0 0 auto;
   width: 1.9rem;
@@ -157,21 +160,18 @@
 }
 
 /* ---------- Routen ---------- */
+/* Eine Spalte: die Routen enthalten Morgen/Nachmittag/Abend-Sätze, die in
+   drei nebeneinanderliegenden Karten auf drei Wörter pro Zeile umbrechen. */
 .plans {
   display: grid;
-  gap: 0.9rem;
+  gap: 1rem;
   margin: 1.2rem 0 2rem;
-}
-@media (min-width: 46rem) {
-  .plans {
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  }
 }
 .plan {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--card);
-  padding: 0.9rem 1rem;
+  padding: 1rem 1.15rem 1.1rem;
 }
 .p-head h3 {
   margin: 0 0 0.1rem;
@@ -190,21 +190,32 @@
 }
 .plan li {
   display: grid;
-  grid-template-columns: 3.4rem 1fr;
-  gap: 0.2rem 0.5rem;
-  align-items: baseline;
+  grid-template-columns: 4.6rem 1fr;
+  gap: 0 0.9rem;
+  align-items: start;
   border-top: 1px dashed var(--line);
-  padding-top: 0.5rem;
+  padding-top: 0.6rem;
 }
+.plan li:first-child { border-top: 0; padding-top: 0.1rem; }
 .d-label {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   font-weight: 650;
   color: var(--muted);
+  padding-top: 0.16em;
 }
+.d-body { display: block; min-width: 0; }
 .d-chips {
   display: flex;
   gap: 0.25rem;
   flex-wrap: wrap;
+}
+.chip-empty {
+  min-width: 1.6rem;
+  text-align: center;
+  color: var(--muted);
+  border-style: dashed;
 }
 .num-chip {
   text-decoration: none;
@@ -216,10 +227,11 @@
   background: var(--accent-soft);
 }
 .d-note {
-  grid-column: 2;
-  font-size: 0.8rem;
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
   color: var(--muted);
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 /* ---------- Wohnen ---------- */
@@ -309,8 +321,8 @@
 .s-facts {
   margin: 0.9rem 0 0;
   display: grid;
-  grid-template-columns: minmax(7.5rem, max-content) 1fr;
-  gap: 0.3rem 1rem;
+  grid-template-columns: minmax(7rem, max-content) 1fr;
+  gap: 0.45rem 1.1rem;
   font-family: var(--font-ui);
   font-size: 0.82rem;
   line-height: 1.45;
@@ -330,44 +342,49 @@
 
 /* ---------- Tarife ---------- */
 .s-tickets {
-  width: 100%;
-  max-width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
+  list-style: none;
   margin: 0.9rem 0 0;
+  padding: 0;
   font-family: var(--font-ui);
-  font-size: 0.82rem;
+  font-size: 0.85rem;
 }
-.s-tickets th,
-.s-tickets td {
-  text-align: left;
-  padding: 0.34rem 0.6rem 0.34rem 0;
-  border-bottom: 1px solid var(--line);
-  vertical-align: top;
+.s-tickets li { margin: 0; padding: 0.32rem 0; border-bottom: 1px solid var(--line); }
+.s-tickets li:last-child { border-bottom: 0; }
+.t-row { display: flex; align-items: baseline; gap: 0.45rem; }
+.t-label { flex: 0 1 auto; color: var(--fg); }
+/* Punktführung: füllt die Lücke, damit Preis und Bezeichnung auf einer Linie sitzen. */
+.t-fill {
+  flex: 1 1 1rem;
+  min-width: 1rem;
+  border-bottom: 1px dotted color-mix(in srgb, var(--muted) 55%, transparent);
+  transform: translateY(-0.2em);
 }
-.s-tickets th { font-weight: 500; color: var(--fg); width: 45%; }
-.s-tickets td:nth-child(2) {
-  width: 7.5rem;
-  white-space: normal;
-  overflow-wrap: anywhere;
+.t-price {
+  flex: 0 0 auto;
   font-variant-numeric: tabular-nums;
   color: var(--accent);
+  font-weight: 600;
 }
-.s-tickets td:nth-child(3) {
-  color: var(--muted);
+.t-note {
+  display: block;
+  margin-top: 0.15rem;
   font-size: 0.78rem;
-  overflow-wrap: anywhere;
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 34rem;
 }
 
 /* ---------- Videozeile ---------- */
 .s-video {
-  margin: 0.9rem 0 0;
+  margin: 1rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.3rem 0.5rem;
+  gap: 0.3rem 0.55rem;
   font-family: var(--font-ui);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: var(--muted);
 }
 .s-video .v-label {
@@ -393,23 +410,32 @@
 }
 
 /* ---------- Weitere Fotos ---------- */
-.s-photos { display: grid; gap: 0.7rem; margin-top: 0.8rem; }
-@media (min-width: 40rem) {
-  .s-photos { grid-template-columns: 1fr 1fr; }
-  .s-photos > .photo { margin: 0; }
+.s-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.7rem;
+  margin-top: 0.7rem;
 }
+.s-photos > .photo { margin: 0; }
 
 /* ---------- Tageszeiten in Routen ---------- */
 .d-slots {
-  display: block;
-  margin-top: 0.3rem;
+  display: grid;
+  grid-template-columns: 5.2rem 1fr;
+  gap: 0.2rem 0.7rem;
+  margin: 0.45rem 0 0;
   font-family: var(--font-ui);
-  font-size: 0.8rem;
-  color: var(--muted);
+  font-size: 0.82rem;
   line-height: 1.5;
 }
-.d-slots span { display: block; }
-.d-slots b { display: inline-block; min-width: 3.2rem; color: var(--fg); font-weight: 600; }
+.d-slots dt {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-top: 0.16em;
+}
+.d-slots dd { margin: 0; color: var(--fg); }
 
 /* ---------- Änderungsprotokoll ---------- */
 .changelog {

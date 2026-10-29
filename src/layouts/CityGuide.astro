@@ -194,7 +194,7 @@ const faqLd = {
                 </div>
                 {typeof s.lat === 'number' && (
                   <button type="button" class="zoom-link" data-zoom-sight={s.no}>
-                    auf Karte
+                    Auf Karte
                   </button>
                 )}
               </div>
@@ -214,17 +214,18 @@ const faqLd = {
               )}
 
               {s.tickets.length > 0 && (
-                <table class="s-tickets">
-                  <tbody>
-                    {s.tickets.map((t) => (
-                      <tr>
-                        <th scope="row">{t.label}</th>
-                        <td>{t.price}</td>
-                        <td>{t.note ?? ''}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                <ul class="s-tickets">
+                  {s.tickets.map((t) => (
+                    <li>
+                      <span class="t-row">
+                        <span class="t-label">{t.label}</span>
+                        <span class="t-fill" aria-hidden="true"></span>
+                        <span class="t-price">{t.price}</span>
+                      </span>
+                      {t.note && <span class="t-note">{t.note}</span>}
+                    </li>
+                  ))}
+                </ul>
               )}
 
               {s.photo && <Photo photo={s.photo} />}
@@ -268,21 +269,27 @@ const faqLd = {
                 {p.days.map((day) => (
                   <li>
                     <span class="d-label">Tag {day.day}</span>
-                    <span class="d-chips">
-                      {day.sights.map((no) => (
-                        <a class="chip num-chip" href={`#s${no}`} title={sightName(no)}>
-                          {no}
-                        </a>
-                      ))}
-                    </span>
-                    {(day.morning || day.afternoon || day.evening) && (
-                      <span class="d-slots">
-                        {day.morning && <span><b>Morgen</b>{day.morning}</span>}
-                        {day.afternoon && <span><b>Mittag</b>{day.afternoon}</span>}
-                        {day.evening && <span><b>Abend</b>{day.evening}</span>}
+                    <div class="d-body">
+                      <span class="d-chips">
+                        {day.sights.length === 0 ? (
+                          <span class="chip chip-empty" aria-hidden="true">—</span>
+                        ) : (
+                          day.sights.map((no) => (
+                            <a class="chip num-chip" href={`#s${no}`} title={sightName(no)}>
+                              {no}
+                            </a>
+                          ))
+                        )}
                       </span>
-                    )}
-                    {day.note && <span class="d-note">{day.note}</span>}
+                      {(day.morning || day.afternoon || day.evening) && (
+                        <dl class="d-slots">
+                          {day.morning && (<><dt>Morgen</dt><dd>{day.morning}</dd></>)}
+                          {day.afternoon && (<><dt>Nachmittag</dt><dd>{day.afternoon}</dd></>)}
+                          {day.evening && (<><dt>Abend</dt><dd>{day.evening}</dd></>)}
+                        </dl>
+                      )}
+                      {day.note && <span class="d-note">{day.note}</span>}
+                    </div>
                   </li>
                 ))}
               </ol>
