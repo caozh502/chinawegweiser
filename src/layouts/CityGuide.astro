@@ -78,7 +78,7 @@ const toc = [
   ...(d.connections.length > 0 ? [{ title: 'Anreise', id: 'anreise' }] : []),
   ...(d.areas.length > 0 ? [{ title: 'Wo wohnen', id: 'wohnen' }] : []),
   ...(d.sights.length > 0 ? [{ title: 'Sehenswürdigkeiten', id: 'sehenswuerdigkeiten' }] : []),
-  ...(d.sights.length > 0 ? [{ title: 'Was man gesehen haben sollte', id: 'pflichtprogramm', sub: true }] : []),
+  ...(d.sights.length > 0 ? [{ title: 'Was man sehen sollte', id: 'pflichtprogramm', sub: true }] : []),
   ...(optSights.length > 0 ? [{ title: 'Wenn noch Zeit ist', id: 'weitere', sub: true }] : []),
   ...(d.plans.length > 0 ? [{ title: 'Routen', id: 'routen' }] : []),
   ...(d.experiences.length > 0 ? [{ title: 'Erlebnisse', id: 'erlebnisse' }] : []),
@@ -204,7 +204,7 @@ const faqLd = {
         <div class="sights">
         {mustSights.length > 0 && (
           <h3 class="sights-sub is-first" id="pflichtprogramm">
-            Was man gesehen haben sollte{' '}<span class="sub-count">{mustSights.length} Orte</span>
+            Was man sehen sollte{' '}<span class="sub-count">{mustSights.length} Orte</span>
           </h3>
         )}
           {mustSights.map((s) => (
