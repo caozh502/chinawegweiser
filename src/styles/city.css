@@ -1060,6 +1060,11 @@
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
   opacity: 0;
   visibility: hidden;
+  /* white-space ist vererbbar: die Inline-Variante des Auslösers setzt
+     nowrap, damit der Link nicht umbricht – ohne diese Zeile lief die
+     Bildunterschrift in einer Zeile aus dem Kasten heraus. */
+  white-space: normal;
+  text-align: left;
   transform: translateY(4px);
   transition: opacity 0.14s ease, transform 0.14s ease;
   pointer-events: none;
@@ -1083,6 +1088,7 @@
 .qr-cap {
   display: block;
   margin-top: 0.35rem;
+  white-space: normal;
   font-size: 0.72rem;
   line-height: 1.4;
   color: var(--muted);
