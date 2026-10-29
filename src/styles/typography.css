@@ -461,6 +461,24 @@ nav.top a:hover {
   color: var(--accent);
 }
 
+/* Unterpunkte (z. B. Pflichtprogramm): keine eigene Nummer, damit die
+   Zählung der Hauptabschnitte stimmt – stattdessen ein Gedankenstrich. */
+.entry .toc li.is-sub a {
+  padding: 0.16rem 0 0.16rem 0.9rem;
+  font-size: 0.82rem;
+}
+
+.entry .toc li.is-sub a::before {
+  counter-increment: none;
+  content: '–';
+  color: color-mix(in srgb, var(--muted) 75%, transparent);
+  font-size: 0.72rem;
+}
+
+.entry .toc li.is-sub + li:not(.is-sub) a {
+  padding-top: 0.42rem;
+}
+
 .entry .toc li a::before {
   counter-increment: toc;
   content: counter(toc, decimal-leading-zero);

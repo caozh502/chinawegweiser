@@ -7,6 +7,8 @@
 interface Item {
   title: string;
   id: string;
+  /** Unterpunkt einer Gruppe (z. B. Pflichtprogramm unter Sehenswürdigkeiten). */
+  sub?: boolean;
 }
 interface Props {
   items: Item[];
@@ -21,7 +23,9 @@ const { items, title = 'Inhalt' } = Astro.props;
     <p class="toc-title" id="toc-title">{title}</p>
     <ol>
       {items.map((t) => (
-        <li><a href={`#${t.id}`}>{t.title}</a></li>
+        <li class:list={[t.sub && 'is-sub']}>
+          <a href={`#${t.id}`}>{t.title}</a>
+        </li>
       ))}
     </ol>
   </nav>

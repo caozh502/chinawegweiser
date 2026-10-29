@@ -215,7 +215,7 @@ const areaPayload = JSON.stringify(
       if (note) {
         note.textContent =
           far.length > 0
-            ? 'Punkte ' + far.map(function (p) { return p.no; }).join(' und ') + ' der Karte'
+            ? (far.length === 1 ? 'Punkt ' : 'Punkte ') + far.map(function (p) { return p.no; }).join(' und ') + ' der Karte'
             : 'Weit entfernte Ziele';
       }
       if (pending !== null) {

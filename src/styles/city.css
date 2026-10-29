@@ -632,6 +632,23 @@
   border-top: 1px solid var(--line);
 }
 
+.sights-sub.is-first {
+  margin-top: 1.1rem;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.sub-count {
+  display: inline-block;
+  margin-left: 0.55rem;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  vertical-align: 0.12em;
+}
+
 .sources.sub {
   margin-bottom: 1rem;
 }
