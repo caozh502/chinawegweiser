@@ -29,6 +29,9 @@
 .steckbrief > div {
   background: var(--card);
   padding: 0.7rem 0.8rem;
+  /* Grid-Spalten schrumpfen sonst nur bis zur Breite des längsten Wortes und
+     laufen bei 360px aus dem Rahmen. */
+  min-width: 0;
 }
 .steckbrief .k {
   display: block;
@@ -39,6 +42,7 @@
   margin-bottom: 0.2rem;
 }
 .steckbrief .v {
+  overflow-wrap: anywhere;
   font-size: 0.92rem;
   font-weight: 620;
   line-height: 1.35;
@@ -596,6 +600,20 @@
   padding: 0.3rem 0;
   margin: 0;
 }
+
+/* Ohne min-width:0 sprengt der Text die 1fr-Spalte, sobald ein Wort länger
+   ist als die Spalte (360px: Änderungseintrag lief 26px aus dem Rahmen). */
+.changelog li > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 30rem) {
+  .changelog li {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}
 .changelog time { color: var(--muted); font-variant-numeric: tabular-nums; }
 
 /* ---------- Kartenlegende: Viertel ---------- */
@@ -1011,6 +1029,16 @@
   color: var(--accent);
   font: 500 0.82rem var(--font-ui);
   text-align: left;
+}
+
+/* Im Satz: erbt Schrift und Farbe, nur die Punktlinie zeigt, dass hier etwas
+   aufklappt. */
+.qr-hint-inline {
+  font: inherit;
+  color: inherit;
+  border-bottom: 1px dotted var(--accent);
+  cursor: help;
+  white-space: nowrap;
 }
 
 .qr-hint:focus-visible {

@@ -161,7 +161,7 @@ sights:
     hours: 'Park 06:00–22:00; Hallen 08:00–17:30, im Winter bis 16:30'
     transit: 'Am Osttor (天坛东门) rein, am Westtor (天坛西门) raus – beide haben eine eigene U-Bahn-Station (Linie 5 bzw. Linie 8), so läuft man den Weg nicht zurück.'
     buyTickets: 'Am Eingang – Schalter oder Automat'
-    buyTicketsAlt: 'Vorab auch über die App 畅游公园 (Changyou Gongyuan) – chinesische Oberfläche, alle Stadtparks Pekings laufen darüber. Kombi-Ticket wählen – nur damit ist die Halle des Gebets offen.'
+    buyTicketsAlt: 'Vorab auch über das {{qr}} 畅游公园 – chinesische Oberfläche, alle Stadtparks Pekings laufen darüber. Kombi-Ticket wählen – nur damit ist die Halle des Gebets offen.'
     ticketUrl: 'https://www.bjgyol.com.cn/'
     ticketLabel: 'Ticketseite (chinesisch)'
     tickets:
@@ -184,6 +184,7 @@ sights:
       licenseUrl: 'http://creativecommons.org/publicdomain/zero/1.0/deed.en'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:20200110_Temple_of_Heaven-1.jpg'
     qr: 'tiantan'
+    qrNote: 'WeChat-Mini-Programm 畅游公园 – alle Stadtparks Pekings. Nur mit WeChat scannen, die Kamera-App liest diesen Code nicht.'
   - no: 3
     name: '慕田峪长城'
     pinyin: 'Mùtiányù'
@@ -284,7 +285,7 @@ sights:
     hours: '05:00–22:00; das Zeitfenster wird bei der Buchung gewählt'
     closed: 'bei Veranstaltungen und Sitzungen zeitweise komplett gesperrt'
     transit: 'Kontrolle am Nordende des Platzes; U-Bahn 1, Tian''anmen Ost (天安门东), Ausgang A führt direkt dorthin.'
-    buyTickets: 'Zeitfenster im Mini-Programm 天安门广场预约参观 – kostenlos, aber Pflicht'
+    buyTickets: 'Zeitfenster im {{qr}} 天安门广场预约参观 – kostenlos, aber Pflicht'
     buyTicketsAlt: 'Passnummer wird bei der Buchung abgefragt. Ohne Reservierung kommt man an der Kontrolle nicht durch.'
     tickets:
       - label: 'Eintritt'
@@ -304,7 +305,7 @@ sights:
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gate_of_Heavenly_Peace,_Tiananmen_-_panoramio.jpg'
     qr: 'tiananmen'
-    qrNote: 'Mini-Programm 天安门广场 – kostenloses Zeitfenster, dafür wird die Passnummer gebraucht. Nur mit WeChat scannen, die Kamera-App liest diesen Code nicht.'
+    qrNote: 'WeChat-Mini-Programm 天安门广场 – kostenloses Zeitfenster, dafür wird die Passnummer gebraucht. Nur mit WeChat scannen, die Kamera-App liest diesen Code nicht.'
   - no: 6
     name: '景山公园'
     pinyin: 'Jǐngshān Gōngyuán'

@@ -1,0 +1,29 @@
+---
+/**
+ * WeChat-Mini-Programm-Code als Popover.
+ * variant="row":    eigene Zeile im Datenblatt ("WeChat-Code anzeigen")
+ * variant="inline": mitten im Satz, erbt Schrift und Farbe des Fließtexts
+ */
+interface Props {
+  src: string;
+  name: string;
+  note: string;
+  label?: string;
+  variant?: 'row' | 'inline';
+}
+
+const { src, name, note, label = 'WeChat-Code anzeigen', variant = 'row' } = Astro.props;
+---
+
+<button
+  type="button"
+  class:list={['qr-hint', variant === 'inline' && 'qr-hint-inline']}
+  aria-expanded="false"
+  onclick="const o=this.classList.toggle('is-open');this.setAttribute('aria-expanded',o);"
+>
+  {label}
+  <span class="qr-pop" role="tooltip">
+    <img src={src} alt={`Mini-Programm-Code für ${name}`} width="210" height="210" decoding="async" />
+    <span class="qr-cap">{note}</span>
+  </span>
+</button>

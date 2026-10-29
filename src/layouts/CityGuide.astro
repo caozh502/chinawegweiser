@@ -8,6 +8,7 @@ import AffiliateBox from '../components/AffiliateBox.astro';
 import { affiliates } from '../data/affiliates';
 
 import AffiliateInline from '../components/AffiliateInline.astro';
+import QrHint from '../components/QrHint.astro';
 import { render, getCollection, type CollectionEntry } from 'astro:content';
 import { slugify } from '../lib/rehype-heading-ids.mjs';
 import '../styles/city.css';
@@ -251,8 +252,37 @@ const faqLd = {
                     <>
                       <dt>Tickets</dt>
                       <dd>
-                        <strong>{s.buyTickets}</strong>
-                        {s.buyTicketsAlt && <> {s.buyTicketsAlt}</>}
+                        <strong>
+                          {s.buyTickets.split('{{qr}}').map((teil, i) => (
+                            <Fragment>
+                              {i > 0 && s.qr && qrMap[s.qr] && (
+                                <QrHint
+                                  src={qrMap[s.qr]}
+                                  name={s.name}
+                                  note={s.qrNote ?? 'Nur mit WeChat scannen – die Kamera-App liest diesen Code nicht.'}
+                                  label="WeChat-Mini-Programm"
+                                  variant="inline"
+                                />
+                              )}
+                              {teil}
+                            </Fragment>
+                          ))}
+                        </strong>
+                        {s.buyTicketsAlt &&
+                          s.buyTicketsAlt.split('{{qr}}').map((teil, i) => (
+                            <Fragment>
+                              {i > 0 && s.qr && qrMap[s.qr] && (
+                                <QrHint
+                                  src={qrMap[s.qr]}
+                                  name={s.name}
+                                  note={s.qrNote ?? 'Nur mit WeChat scannen – die Kamera-App liest diesen Code nicht.'}
+                                  label="WeChat-Mini-Programm"
+                                  variant="inline"
+                                />
+                              )}
+                              {teil}
+                            </Fragment>
+                          ))}
                         {s.ticketUrl && (
                           <span class="ticket-link">
                             <a class="s-ext" href={s.ticketUrl} target="_blank" rel="noopener noreferrer">
@@ -260,28 +290,15 @@ const faqLd = {
                             </a>
                           </span>
                         )}
-                        {s.qr && qrMap[s.qr] && (
+                        {s.qr &&
+                          qrMap[s.qr] &&
+                          !(s.buyTickets?.includes('{{qr}}') || s.buyTicketsAlt?.includes('{{qr}}')) && (
                           <span class="qr-line">
-                            <button
-                              type="button"
-                              class="qr-hint"
-                              aria-expanded="false"
-                              onclick="const o=this.classList.toggle('is-open');this.setAttribute('aria-expanded',o);"
-                            >
-                              WeChat-Code anzeigen
-                              <span class="qr-pop" role="tooltip">
-                                <img
-                                  src={qrMap[s.qr]}
-                                  alt={`Mini-Programm-Code für ${s.name}`}
-                                  width="210"
-                                  height="210"
-                                  decoding="async"
-                                />
-                                <span class="qr-cap">
-                                  {s.qrNote ?? 'Nur mit WeChat scannen – die Kamera-App liest diesen Code nicht.'}
-                                </span>
-                              </span>
-                            </button>
+                            <QrHint
+                              src={qrMap[s.qr]}
+                              name={s.name}
+                              note={s.qrNote ?? 'Nur mit WeChat scannen – die Kamera-App liest diesen Code nicht.'}
+                            />
                           </span>
                         )}
                       </dd>
