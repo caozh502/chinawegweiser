@@ -400,11 +400,16 @@ nav.top a:hover {
   color: var(--accent);
 }
 
+.guide-toc {
+  padding-left: 1rem;
+  border-left: 2px solid var(--line);
+}
+
 .entry .toc ol {
   list-style: none;
   margin: 0;
-  padding: 0 0 0 0.95rem;
-  border-left: 2px solid var(--line);
+  padding: 0;
+  border-left: 0;
   display: grid;
   gap: 0.05rem;
   /* Eine Spalte: die Leserichtung bleibt oben → unten. Bei zwei Spalten
