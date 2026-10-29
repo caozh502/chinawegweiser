@@ -20,6 +20,11 @@ hero:
   licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
   sourceUrl: 'https://commons.wikimedia.org/wiki/File:Forbidden_City_Panorama_3.jpg'
 affiliate: ['esim']
+changelog:
+  - date: '2026-10-29'
+    text: 'Je Sehenswürdigkeit Öffnungszeiten, Schließtage, nächste Station und Einzeltarife ergänzt; Videoempfehlungen hinzugefügt.'
+  - date: '2026-10-29'
+    text: 'Tiananmen: Zeitfenster seit 2024 Pflicht – Hinweis auf das Mini-Programm 天安门广场预约参观 aufgenommen.'
 sources:
   - label: 'Palace Museum (Verbotene Stadt)'
     url: 'https://www.dpm.org.cn/'
@@ -53,6 +58,8 @@ connections:
     note: 'Ankunft Beijing South; von dort U-Bahn Linie 4.'
 areas:
   - name: 'Dongcheng / Wangfujing'
+    lat: 39.9155
+    lng: 116.41
     pro: 'Fußweg zur Verbotenen Stadt, dichteste Hotelauswahl, viele Restaurants'
     con: 'Teuer, abends ruhig, viele Touristennepp-Lokale'
     hotels:
@@ -72,6 +79,8 @@ areas:
         reviews: 'ca. 700'
         note: 'Klein, im Hutong, Dachterrasse'
   - name: 'Sanlitun / Chaoyang'
+    lat: 39.934
+    lng: 116.455
     pro: 'Restaurants, Bars, gutes Essen, moderne Hotels'
     con: '30–40 Min zur Verbotenen Stadt, mehr Fahrten'
     hotels:
@@ -92,9 +101,27 @@ sights:
     price: '40–60 ¥'
     duration: '3–4 Std'
     booking: required
-    note: 'Eingang nur am Meridian-Tor (Süden), Ausgang Norden. Montags geschlossen. Danach fünf Minuten zum Jingshan-Park – von dort der Blick auf die Dächer.'
+    note: 'Tickets nur online und meist sieben Tage im Voraus – in der Hochsaison sind sie in Minuten weg. Der Reisepass gilt als Ausweis, eine chinesische ID ist nicht nötig. Eingang nur am Meridian-Tor (Süden), Ausgang Norden; danach fünf Minuten zum Jingshan-Park.'
     lat: 39.91583
     lng: 116.39083
+    hours: '08:30–17:00 (1.4.–31.10.), 08:30–16:30 (1.11.–31.3.); letzter Einlass eine Stunde vor Schluss'
+    closed: 'Montags, außer an Feiertagen'
+    transit: 'U-Bahn 1, Tian''anmen Ost (天安门东), Ausgang A – von dort nordwärts durch das Meridian-Tor'
+    tickets:
+      - label: 'Hochsaison (1.4.–31.10.)'
+        price: '60 ¥'
+      - label: 'Nebensaison (1.11.–31.3.)'
+        price: '40 ¥'
+      - label: 'Schätze-Galerie (珍宝馆)'
+        price: '10 ¥'
+        note: 'Lohnt sich, wird aber gern übersehen – Zugang im Nordosten.'
+      - label: 'Uhren-Galerie (钟表馆)'
+        price: '10 ¥'
+    video:
+      id: 'vN7UoJs1aeY'
+      title: 'Das musst über die Verbotene Stadt wissen'
+      channel: 'Dennis Besseler'
+      lang: de
     photo:
       file: 'peking/gugong-courtyard.jpg'
       alt: 'Innenhof der Verbotenen Stadt in Peking'
@@ -112,6 +139,20 @@ sights:
     note: 'Der Park ist morgens voll mit Einheimischen, die Taiji machen – das ist der eigentliche Grund, früh zu kommen. Kombi-Ticket nehmen, sonst bleibt die Haupthalle zu.'
     lat: 39.8822
     lng: 116.4066
+    hours: 'Park 06:00–22:00; Hallen 08:00–17:30, im Winter bis 16:30'
+    closed: 'täglich geöffnet'
+    transit: 'U-Bahn 5, Tiantan Dongmen (天坛东门), Ausgang A – der Nordeingang liegt auf der anderen Seite'
+    tickets:
+      - label: 'Park (Hoch-/Nebensaison)'
+        price: '15 ¥ / 10 ¥'
+      - label: 'Kombi mit Halle des Gebets'
+        price: '34 ¥ / 28 ¥'
+        note: 'Nur das Kombi-Ticket öffnet die Haupthalle.'
+    video:
+      id: 'nbhictKmXLc'
+      title: 'Die Verbotene Stadt & Himmelstempel'
+      channel: 'weitweitweg'
+      lang: de
     photo:
       file: 'peking/tiantan.jpg'
       alt: 'Halle des Gebets für eine gute Ernte im Himmelstempel'
@@ -129,6 +170,24 @@ sights:
     note: 'Der Abschnitt für alle, die die Mauer ohne Kletterei sehen wollen. Seilbahn hoch,rodeln oder laufen runter. Früh losfahren: ab 10 Uhr stehen die Busse.'
     lat: 40.43802
     lng: 116.5619
+    hours: '07:30–17:30 (Hochsaison), 08:00–17:00 (Nebensaison)'
+    closed: 'täglich geöffnet'
+    transit: 'Schnellbus 916 ab Dongzhimen nach Huairou, dann Shuttle; Direktbusse ab Qianmen starten gegen 07:30'
+    tickets:
+      - label: 'Eintritt'
+        price: '45 ¥'
+      - label: 'Shuttle Parkplatz–Talstation'
+        price: '15 ¥'
+        note: 'Pflicht, der Weg ist zu Fuß nicht zugelassen.'
+      - label: 'Seilbahn'
+        price: '100 ¥ einfach / 140 ¥ hin und zurück'
+      - label: 'Rodelbahn (Toboggan)'
+        price: '100 ¥'
+    video:
+      id: 'JCmxoWWydo4'
+      title: 'Mutianyu – die Chinesische Mauer bei Mutianyu'
+      channel: 'KT4Dani'
+      lang: de
     photo:
       file: 'peking/mutianyu.jpg'
       alt: 'Große Mauer am Abschnitt Mutianyu'
@@ -146,6 +205,18 @@ sights:
     note: 'Unrestauriert und offiziell gesperrt. Wer trotzdem geht, riskiert Bußgeld und echte Verletzungen – die Wegabschnitte sind teilweise eingestürzt.'
     lat: 40.4386
     lng: 116.533
+    hours: 'kein offizieller Zugang, keine Öffnungszeiten'
+    closed: 'ganzjährig gesperrt, Kontrollen an den Zustiegen'
+    transit: 'kein ÖPNV; Taxi oder Chauffeur ab Peking ca. 2 Stunden, Rückfahrt vorher fest vereinbaren'
+    tickets:
+      - label: 'Eintritt'
+        price: '—'
+        note: 'Es gibt keine Kasse – aber ein Bußgeld, wenn man kontrolliert wird.'
+    video:
+      id: 'wb8p1fs_ihQ'
+      title: 'Hiking the Jiankou Wall: Danger, Beauty, and Solitude'
+      channel: 'WildGreatWall Adventure'
+      lang: en
     photo:
       file: 'peking/jiankou.jpg'
       alt: 'Unrestaurierter Abschnitt der Großen Mauer bei Jiankou'
@@ -163,6 +234,18 @@ sights:
     note: 'Kostenlos, aber nur mit vorab gebuchtem Zeitfenster und Pass. Taschen klein halten, Kontrollen sind gründlich.'
     lat: 39.9042
     lng: 116.39748
+    hours: '05:00–22:00; das Zeitfenster wird bei der Buchung gewählt'
+    closed: 'bei Veranstaltungen und Sitzungen zeitweise komplett gesperrt'
+    transit: 'U-Bahn 1, Tian''anmen Ost (天安门东) – Ausgang A führt direkt zur Kontrolle'
+    tickets:
+      - label: 'Eintritt'
+        price: 'frei'
+        note: 'Zeitfenster über das Mini-Programm 天安门广场预约参观 buchen; Pass nötig.'
+    video:
+      id: 'DcUrQlglaAk'
+      title: 'Peking-Guide: Verbotene Stadt, Tian''anmen-Platz, Peking-Ente'
+      channel: 'Marco Travels'
+      lang: de
     photo:
       file: 'peking/tiananmen.jpg'
       alt: 'Tiananmen-Tor am Platz des Himmlischen Friedens'
@@ -180,6 +263,17 @@ sights:
     note: 'Die Hauptgasse ist touristisch, die Nebengassen sind es nicht. Am besten nachmittags, dann sieht man noch, wie dort gewohnt wird.'
     lat: 39.93215
     lng: 116.39683
+    hours: 'Gassen jederzeit; Läden meist 10:00–21:00'
+    closed: '—'
+    transit: 'U-Bahn 6 oder 8, Nanluoguxiang (南锣鼓巷), Ausgang E'
+    tickets:
+      - label: 'Eintritt'
+        price: 'frei'
+    video:
+      id: 'FywnE3VBe6c'
+      title: 'Beijing Hutongs – Exploring the Hidden Heart of Old Beijing'
+      channel: 'Diversity Travellers'
+      lang: en
     photo:
       file: 'peking/hutong.jpg'
       alt: 'Gasse in einem Pekinger Hutong-Viertel'
@@ -197,6 +291,19 @@ sights:
     note: 'Ehemalige Fabrikhallen, heute Galerien. Am Wochenende voll, unter der Woche besser. Weit im Nordosten – mit der U-Bahn Linie 14.'
     lat: 39.98294
     lng: 116.48978
+    hours: 'Gelände jederzeit; Galerien meist 10:00–18:00'
+    closed: 'viele Galerien montags'
+    transit: 'U-Bahn 14, Jiangtai (将台), danach 15 Minuten zu Fuß oder kurzes Taxi'
+    tickets:
+      - label: 'Gelände'
+        price: 'frei'
+      - label: 'Einzelne Ausstellungen'
+        price: '30–100 ¥'
+    video:
+      id: '1t37-vRGmL4'
+      title: 'Inside 798 Art Zone in Beijing'
+      channel: 'omni naomi'
+      lang: en
     photo:
       file: 'peking/798.jpg'
       alt: 'Backsteinhallen im Kunstviertel 798'
@@ -214,6 +321,18 @@ sights:
     note: 'Nicht der teuerste Laden ist der beste. Wer ohne Reservierung kommt, wartet 45–90 Minuten – Uhrzeit entsprechend planen.'
     lat: 39.9138
     lng: 116.4106
+    hours: 'meist 11:00–21:30, Küche bis 21:00'
+    closed: '—'
+    transit: 'je nach Haus; Siji Minfu (四季民福) an der Ostmauer: U-Bahn 1, Tian''anmen Ost'
+    tickets:
+      - label: 'Ganze Ente'
+        price: '200–350 ¥'
+        note: 'Reicht für zwei bis drei Personen; Beilagen kommen extra.'
+    video:
+      id: 'sqb1e4Z2xec'
+      title: 'Verbotene Stadt & Pekingente – Senad Gashi in Beijing'
+      channel: 'RINGFLUENCER'
+      lang: de
     photo:
       file: 'peking/entenda.jpg'
       alt: 'Aufgeschnittene Peking-Ente mit Beilagen'
@@ -228,19 +347,27 @@ plans:
     days:
       - day: 1
         sights: [1, 5, 6]
-        note: 'Morgens Verbotene Stadt (Ticket vorab!), mittags Jingshan, nachmittags Tiananmen von außen und die Hutongs. Ente zum Abendessen.'
+        morning: '08:30 Einlass Verbotene Stadt (Ticket vorab gebucht), danach Jingshan-Park'
+        afternoon: 'Tiananmen von außen, dann durch die Hutongs nach Norden'
+        evening: 'Peking-Ente – Tisch reservieren'
   - title: '3 Tage – das Übliche'
     forWhom: 'Erste China-Reise, Standardroute'
     days:
       - day: 1
         sights: [1, 5]
-        note: 'Verbotene Stadt, danach Jingshan; Tiananmen nur mit gebuchtem Zeitfenster.'
+        morning: 'Verbotene Stadt ab 08:30'
+        afternoon: 'Jingshan-Park, dann Tiananmen (Zeitfenster gebucht)'
+        evening: 'Wangfujing oder ein Hutong-Restaurant in Laufweite'
       - day: 2
         sights: [3, 8]
-        note: 'Früh zur Mauer (Mutianyu), nachmittags zurück, abends Ente.'
+        morning: '07:00 los zur Mauer (Mutianyu), Seilbahn hoch'
+        afternoon: 'Rückkehr gegen 15:00, Pause im Hotel'
+        evening: 'Ente – die Wartezeit ohne Reservierung einplanen'
       - day: 3
         sights: [2, 6, 7]
-        note: 'Himmelstempel am Morgen (Taiji!), Hutongs mittags, 798 am Nachmittag.'
+        morning: 'Himmelstempel ab 07:00 – dann sind die Einheimischen da'
+        afternoon: 'Hutongs, danach mit der Linie 14 nach 798'
+        evening: '798 schließt früh: letzte Galerie gegen 18:00'
   - title: '5 Tage – mit Luft'
     forWhom: 'Wer Museen und Essen ernst nimmt, Familien'
     days:

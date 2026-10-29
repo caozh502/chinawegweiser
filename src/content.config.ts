@@ -24,6 +24,9 @@ const area = z.object({
   name: z.string(),
   pro: z.string().optional(),
   con: z.string().optional(),
+  /** Ungefähre Mitte des Viertels – für die Karte. */
+  lat: z.number().optional(),
+  lng: z.number().optional(),
   hotels: z.array(hotel).default([]),
 });
 
@@ -37,7 +40,28 @@ const sight = z.object({
   note: z.string().optional(),
   lat: z.number().optional(),
   lng: z.number().optional(),
+  /** Öffnungszeiten im Klartext, inkl. Saisonunterschiede. */
+  hours: z.string().optional(),
+  /** Schließtage – der häufigste Grund für einen umsonst gefahrenen Weg. */
+  closed: z.string().optional(),
+  /** Nächste Haltestelle mit Ausgang, z. B. 'U-Bahn 1, Tian'anmen Ost, Ausgang B'. */
+  transit: z.string().optional(),
+  /** Mehrere Tarife (Saison, Zusatzausstellung) statt einer Preisspanne. */
+  tickets: z
+    .array(z.object({ label: z.string(), price: z.string(), note: z.string().optional() }))
+    .default([]),
   photo: photo.optional(),
+  /** Weitere Fotos: Eingang, Innenraum, Details. Erstes Bild bleibt `photo`. */
+  photos: z.array(photo).default([]),
+  /** Ein Video, das den Ort zeigt – Sprache ehrlich angegeben. */
+  video: z
+    .object({
+      id: z.string().regex(/^[A-Za-z0-9_-]{11}$/),
+      title: z.string(),
+      channel: z.string(),
+      lang: z.enum(['de', 'en']).default('de'),
+    })
+    .optional(),
 });
 
 const plan = z.object({
@@ -47,6 +71,9 @@ const plan = z.object({
     z.object({
       day: z.number().int().min(1),
       sights: z.array(z.number().int()),
+      morning: z.string().optional(),
+      afternoon: z.string().optional(),
+      evening: z.string().optional(),
       note: z.string().optional(),
     })
   ),
@@ -110,6 +137,8 @@ const cities = defineCollection({
     traps: z.array(z.string()).default([]),
     status: z.enum(['verified', 'draft', 'stale']).default('draft'),
     verified: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+    /** Was sich geändert hat – macht das Prüfdatum überprüfbar. */
+    changelog: z.array(z.object({ date: z.string(), text: z.string() })).default([]),
     sources: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
     affiliate: z.array(z.string()).default([]),
     order: z.number().default(100),

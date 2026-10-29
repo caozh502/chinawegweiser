@@ -302,3 +302,118 @@
     gap: 2rem;
   }
 }
+
+/* ---------- Sehenswürdigkeit: Faktenzeilen ---------- */
+.s-facts {
+  margin: 0.9rem 0 0;
+  display: grid;
+  grid-template-columns: minmax(7.5rem, max-content) 1fr;
+  gap: 0.3rem 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+.s-facts dt { color: var(--muted); letter-spacing: 0.02em; }
+.s-facts dd { margin: 0; color: var(--fg); }
+
+/* ---------- Tarife ---------- */
+.s-tickets {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.9rem 0 0;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+}
+.s-tickets th,
+.s-tickets td {
+  text-align: left;
+  padding: 0.34rem 0.6rem 0.34rem 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.s-tickets th { font-weight: 500; color: var(--fg); width: 45%; }
+.s-tickets td:nth-child(2) {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+.s-tickets td:nth-child(3) { color: var(--muted); font-size: 0.78rem; }
+
+/* ---------- Videozeile ---------- */
+.s-video {
+  margin: 0.9rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.s-video .v-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.08rem 0.34rem;
+}
+.s-video a { color: var(--accent); }
+.s-video .v-channel { color: var(--muted); font-size: 0.76rem; }
+
+/* ---------- Weitere Fotos ---------- */
+.s-photos { display: grid; gap: 0.7rem; margin-top: 0.8rem; }
+@media (min-width: 40rem) {
+  .s-photos { grid-template-columns: 1fr 1fr; }
+  .s-photos > .photo { margin: 0; }
+}
+
+/* ---------- Tageszeiten in Routen ---------- */
+.d-slots {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.d-slots span { display: block; }
+.d-slots b { display: inline-block; min-width: 3.6rem; color: var(--fg); font-weight: 600; }
+
+/* ---------- Änderungsprotokoll ---------- */
+.changelog {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0 0 0 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.84rem;
+  border-left: 2px solid var(--line);
+}
+.changelog li {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.8rem;
+  padding: 0.3rem 0;
+  margin: 0;
+}
+.changelog time { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* ---------- Kartenlegende: Viertel ---------- */
+.map-legend-areas {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+.area-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px dashed var(--accent);
+  background: var(--accent-soft);
+  flex: 0 0 auto;
+}

@@ -68,6 +68,7 @@ const toc = [
   ...(d.bookAhead.length > 0 ? [{ title: 'Vorher buchen', id: 'buchen' }] : []),
   ...(d.traps.length > 0 ? [{ title: 'Typische Fehler', id: 'fehler' }] : []),
   ...(subpages.length > 0 ? [{ title: 'Detailseiten', id: 'detailseiten' }] : []),
+  ...(d.changelog.length > 0 ? [{ title: 'Aktualisierungen', id: 'changelog' }] : []),
   ...(d.sources.length > 0 ? [{ title: 'Quellen', id: 'quellen' }] : []),
 ];
 
@@ -180,7 +181,7 @@ const faqLd = {
           Nummern gelten für Karte und Routen weiter unten.
         </p>
 
-        <SightMap sights={d.sights} city={d.city} />
+        <SightMap sights={d.sights} areas={d.areas} city={d.city} />
 
         <div class="sights">
           {d.sights.map((s) => (
@@ -203,7 +204,47 @@ const faqLd = {
                 <span class={`chip book-${s.booking}`}>{bookingLabel[s.booking]}</span>
               </div>
               {s.note && <p class="s-note">{s.note}</p>}
+
+              {(s.hours || s.closed || s.transit) && (
+                <dl class="s-facts">
+                  {s.hours && (<><dt>Öffnungszeiten</dt><dd>{s.hours}</dd></>)}
+                  {s.closed && (<><dt>Geschlossen</dt><dd>{s.closed}</dd></>)}
+                  {s.transit && (<><dt>Nächste Station</dt><dd>{s.transit}</dd></>)}
+                </dl>
+              )}
+
+              {s.tickets.length > 0 && (
+                <table class="s-tickets">
+                  <tbody>
+                    {s.tickets.map((t) => (
+                      <tr>
+                        <th scope="row">{t.label}</th>
+                        <td>{t.price}</td>
+                        <td>{t.note ?? ''}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+
               {s.photo && <Photo photo={s.photo} />}
+              {s.photos.length > 0 && (
+                <div class="s-photos">
+                  {s.photos.map((p) => <Photo photo={p} />)}
+                </div>
+              )}
+
+              {s.video && (
+                <p class="s-video">
+                  <span class="v-label">Video · {s.video.lang === 'de' ? 'Deutsch' : 'Englisch'}</span>
+                  <a
+                    href={`https://www.youtube.com/watch?v=${s.video.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >{s.video.title}</a>
+                  <span class="v-channel">{s.video.channel}</span>
+                </p>
+              )}
             </div>
           ))}
         </div>
@@ -234,6 +275,13 @@ const faqLd = {
                         </a>
                       ))}
                     </span>
+                    {(day.morning || day.afternoon || day.evening) && (
+                      <span class="d-slots">
+                        {day.morning && <span><b>Morgen</b>{day.morning}</span>}
+                        {day.afternoon && <span><b>Mittag</b>{day.afternoon}</span>}
+                        {day.evening && <span><b>Abend</b>{day.evening}</span>}
+                      </span>
+                    )}
                     {day.note && <span class="d-note">{day.note}</span>}
                   </li>
                 ))}
@@ -284,6 +332,20 @@ const faqLd = {
             </a>
           ))}
         </div>
+      </>
+    )}
+
+    {d.changelog.length > 0 && (
+      <>
+        <h2 id="changelog">Aktualisierungen</h2>
+        <ul class="changelog">
+          {d.changelog.map((c) => (
+            <li>
+              <time datetime={c.date}>{fmt(c.date)}</time>
+              <span>{c.text}</span>
+            </li>
+          ))}
+        </ul>
       </>
     )}
 

@@ -9,21 +9,35 @@ interface Sight {
   price?: string;
 }
 
+interface Area {
+  name: string;
+  lat?: number;
+  lng?: number;
+  pro?: string;
+}
+
 interface Props {
   sights: Sight[];
+  areas?: Area[];
   city: string;
 }
 
 const pts = (Astro.props.sights ?? []).filter(
   (s) => typeof s.lat === 'number' && typeof s.lng === 'number'
 );
+const areas = (Astro.props.areas ?? []).filter(
+  (a) => typeof a.lat === 'number' && typeof a.lng === 'number'
+);
 const payload = JSON.stringify(
   pts.map((p) => ({ no: p.no, name: p.name, lat: p.lat, lng: p.lng, price: p.price ?? '' }))
+);
+const areaPayload = JSON.stringify(
+  areas.map((a) => ({ name: a.name, lat: a.lat, lng: a.lng, pro: a.pro ?? '' }))
 );
 ---
 
 {pts.length > 1 && (
-  <div class="sightmap" data-points={payload}>
+  <div class="sightmap" data-points={payload} data-areas={areaPayload}>
     <div class="map-wrap">
       <div class="map-tools" role="group" aria-label="Kartenausschnitt">
         <button type="button" data-view="center">Stadtzentrum</button>
@@ -52,6 +66,12 @@ const payload = JSON.stringify(
           </li>
         ))}
       </ol>
+      {areas.length > 0 && (
+        <p class="map-legend-areas">
+          <span class="area-dot" aria-hidden="true"></span>
+          {areas.length} Wohnviertel als offener Kreis (siehe „Wo wohnen")
+        </p>
+      )}
       <p class="map-note">
         <span data-outlier-note>Ausflugsziele außerhalb der Stadt</span> sind in der Ansicht
         „Stadtzentrum" ausgeblendet – über „Alle" werden sie sichtbar. Amap und Baidu zeigen
@@ -142,6 +162,25 @@ const payload = JSON.stringify(
         m.bindPopup('<b>' + p.no + '</b> ' + p.name + (p.price ? '<br>' + p.price : ''));
         m.on('click', function () { setActive(p.no); });
         markers[p.no] = m;
+      });
+
+      var areas = [];
+      try {
+        areas = JSON.parse(el.getAttribute('data-areas') || '[]') || [];
+      } catch (e) {
+        areas = [];
+      }
+      areas.forEach(function (a) {
+        L.circleMarker([a.lat, a.lng], {
+          radius: 16,
+          color: '#8a5a12',
+          weight: 2,
+          fillColor: '#8a5a12',
+          fillOpacity: 0.08,
+          dashArray: '3 3',
+        })
+          .addTo(map)
+          .bindTooltip(a.name, { direction: 'top' });
       });
 
       fit('center');
