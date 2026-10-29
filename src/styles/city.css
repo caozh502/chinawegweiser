@@ -313,15 +313,17 @@
 .traps li::marker {
   color: var(--accent);
 }
+/* Untereinander statt nebeneinander: zwei 320px-Spalten brechen deutsche
+   Aufzählungen auf drei Wörter pro Zeile um. */
 .two-col {
   display: grid;
-  gap: 1rem;
+  gap: 1.6rem;
+  margin: 2rem 0;
 }
-@media (min-width: 46rem) {
-  .two-col {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
+/* Die Überschrift bringt sonst 72px Abstand von der Sektionslogik mit und
+   reißt im gestapelten Block eine Lücke auf. */
+.two-col > div > h2:first-child {
+  margin-top: 0;
 }
 
 /* ---------- Sehenswürdigkeit: Faktenzeilen ---------- */
