@@ -24,9 +24,9 @@ const d = entry.data;
 const bild = photo ?? d.sights.find((s) => s.photo)?.photo ?? d.hero;
 
 const facts = [
-  { n: d.sights.length, l: 'Orte, nummeriert' },
+  { n: d.sights.length, l: 'Orte' },
   { n: d.plans.length, l: 'Routen' },
-  { n: d.areas.length, l: 'Wohnviertel' },
+  { n: d.areas.length, l: 'Viertel' },
   { n: d.bookAhead.length, l: 'vorab buchen' },
 ].filter((f) => f.n > 0);
 

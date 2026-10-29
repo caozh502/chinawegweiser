@@ -78,7 +78,8 @@ const faqLd = d.faq.length
 <Base title={d.title} description={d.description}>
   <article class="entry">
     <div class="eyebrow">
-      <a href={`/stadt/${d.city}/`}>{cityName}</a> · {d.category}
+      <a href={d.city === 'system' ? '/praktisch/' : `/stadt/${d.city}/`}>{cityName}</a> ·
+      {d.category}
     </div>
     <h1>{d.title}</h1>
 

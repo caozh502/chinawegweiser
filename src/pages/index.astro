@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Photo from '../components/Photo.astro';
 import CityTeaser from '../components/CityTeaser.astro';
-import AffiliateInline from '../components/AffiliateInline.astro';
+// AffiliateInline wird hier nicht mehr verwendet – die Zeile lenkte mitten im Fluss ab.
 import { getCollection } from 'astro:content';
 import '../styles/home.css';
 
@@ -40,34 +40,23 @@ const hero = {
   sourceUrl: 'https://commons.wikimedia.org/wiki/File:Forbidden_City_Panorama_3.jpg',
 };
 
-/** Drei Motive für die Fotoreihe – gleiche Quelle wie die Stadtseite. */
-const bilder = [
+/** Schritt 1 nach dem Hero: die zwei Fragen, die vor dem Abflug geklärt sein müssen. */
+const vorabflug = [
   {
-    file: 'peking/tiantan.jpg',
-    alt: 'Halle des Gebets für gute Ernten im Himmelstempel',
-    caption: 'Himmelstempel: der runde Bau ist das Motiv, für das die meisten anreisen.',
-    author: 'Tianjin Mansion',
-    license: 'CC BY-SA 4.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
-    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Temple_of_Heaven,_Beijing,_China_-_011.jpg',
+    no: '01',
+    title: 'Einreise ohne Visum',
+    answer:
+      '30 Tage visumfrei mit deutschem Pass – aber mit Rückflugticket, Unterkunft und einer Adresse, die an der Grenze abgefragt werden kann.',
+    href: '/system/visumfrei-china-30-tage/',
+    meta: 'geprüft',
   },
   {
-    file: 'peking/mutianyu.jpg',
-    alt: 'Mauerabschnitt Mutianyu mit Wachtürmen auf bewaldetem Bergrücken',
-    caption: 'Mutianyu: der Abschnitt, den die meisten zuerst sehen – und der am besten organisiert ist.',
-    author: 'Severin.stalder',
-    license: 'CC BY-SA 4.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
-    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Great_Wall_of_China_at_Mutianyu.jpg',
-  },
-  {
-    file: 'peking/tiananmen.jpg',
-    alt: 'Tor des Himmlischen Friedens am Tiananmen-Platz',
-    caption: 'Tiananmen: das Tor ist der Fixpunkt, von dem aus fast jede Route beginnt.',
-    author: 'konget',
-    license: 'CC BY-SA 3.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0',
-    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gate_of_Heavenly_Peace,_Tiananmen_-_panoramio.jpg',
+    no: '02',
+    title: 'Internet ab der Landung',
+    answer:
+      'Deutsche SIM-Karten funktionieren, aber Google, WhatsApp und vieles andere laufen nur über einen Zugang, der vorher eingerichtet ist.',
+    href: '/system/internet-esim/',
+    meta: 'geprüft',
   },
 ];
 
@@ -91,36 +80,38 @@ const teaserBild: Record<string, any> = {
   description="Alles, was auf einer China-Reise schiefgeht – Einreise, Bezahlen, Tickets, Internet, Transport – an einem Ort, mit Datum der letzten Prüfung."
 >
   <section class="home-hero">
-    <div class="eyebrow">China · unabhängig · geprüft</div>
+    <div class="eyebrow">China · unabhängig · Stand 29.10.2026</div>
     <h1>China ohne Umwege</h1>
     <p class="lead">
-      Kein Visum mehr – dafür ein Reservierungssystem, das eine chinesische ID verlangt. Bezahlen
-      ohne Bargeld. Internet, das nicht wie zu Hause funktioniert. Diese Seite beantwortet genau
-      diese Fragen: eine Seite, ein Problem, mit Datum der letzten Prüfung.
+      Visumfrei einreisen – und dann an einem Reservierungssystem scheitern, das eine chinesische ID
+      verlangt. Bargeldlos zahlen, ohne zu wissen wie. Internet, das nicht wie zu Hause
+      funktioniert. Diese Seite klärt zuerst, was vor dem Abflug entschieden sein muss.
     </p>
     <div class="hero-actions">
-      <a class="btn-primary" href="/stadt/peking/">Zum Peking-Führer →</a>
-      <a class="btn-quiet" href="/warum/">Wie diese Seite arbeitet</a>
+      <a class="btn-primary" href="/praktisch/">Was vor dem Abflug zählt →</a>
+      <a class="btn-quiet" href="/stadt/peking/">Schon entschieden: direkt nach Peking</a>
     </div>
 
     <Photo photo={hero} loading="eager" class="home-hero-photo" />
   </section>
 
-  <ul class="trust-strip">
-    <li>Chinesische Quellen im Original</li>
-    <li>Zuletzt geprüft: 29.10.2026</li>
-    <li>Anzeigen gekennzeichnet</li>
-    <li>Kostenlos, ohne Konto</li>
-  </ul>
-
-  <section class="photo-row">
+  <section class="preflight">
     <div class="section-h">
-      <h2>Drei Ansichten aus Peking</h2>
-      <span>alle mit Lizenz und Urheber</span>
+      <h2>Zwei Dinge, die vor dem Abflug stehen müssen</h2>
+      <span>alles andere lässt sich vor Ort lösen</span>
     </div>
-    <Photo photo={bilder[0]} />
-    <Photo photo={bilder[1]} />
-    <Photo photo={bilder[2]} />
+    <div class="preflight-grid">
+      {vorabflug.map((v) => (
+        <a class="preflight-card" href={v.href}>
+          <span class="p-no">{v.no}</span>
+          <span class="p-body">
+            <span class="p-title">{v.title}</span>
+            <span class="p-answer">{v.answer}</span>
+            <span class="p-meta">{v.meta} · zur Seite →</span>
+          </span>
+        </a>
+      ))}
+    </div>
   </section>
 
   {fertigeStaedte.map((stadt) => (
@@ -131,26 +122,25 @@ const teaserBild: Record<string, any> = {
     />
   ))}
 
-  <div class="callout-home">
-    <strong>Neu hier?</strong> Fang mit
-    <a href="/system/visumfrei-china-30-tage/">Einreise ohne Visum</a> und
-    <a href="/system/internet-esim/">Internet &amp; eSIM</a> an – das sind die zwei Dinge, die vor
-    dem Abflug geklärt sein müssen.
-  </div>
+  <ul class="trust-strip">
+    <li>Chinesische Quellen im Original</li>
+    <li>Jede Seite mit Prüfdatum</li>
+    <li>Anzeigen gekennzeichnet</li>
+    <li>Kostenlos, ohne Konto</li>
+  </ul>
 
-  <AffiliateInline name="esim" prefix="Internet unterwegs" />
-
-  {grouped.map(({ city, items }) => (
+  {/* Der Index erscheint erst, wenn es mehr Seiten gibt, als oben schon verlinkt sind. */}
+  {grouped.filter((g) => g.items.length > 2).map(({ city, items }) => (
     <section>
       <div class="section-h">
-        <h2>{cityNames[city] ?? city}</h2>
+        <h2>Alle Seiten: {cityNames[city] ?? city}</h2>
         <span>{items.length} Seiten</span>
       </div>
       <div class="grid">
         {items.map((g) => (
           <a class="card" href={`/${g.id}/`}>
             <div class="t">{g.data.title}</div>
-            <div class="c">{g.data.category}</div>
+            <div class="c">{g.data.status === 'verified' ? 'geprüft' : 'Entwurf'}</div>
           </a>
         ))}
       </div>
@@ -178,8 +168,8 @@ const teaserBild: Record<string, any> = {
       Jede Seite trägt ein Datum. <strong>„Geprüft"</strong> heißt: an einer offiziellen Quelle
       oder vor Ort kontrolliert. <strong>„Recherchiert"</strong> heißt: zusammengetragen, aber noch
       nicht gegengeprüft – das steht dann auch so auf der Seite. Wenn etwas nicht mehr stimmt,
-      <a href="/transparenz/">melde es uns</a>. Warum es diese Seite überhaupt gibt, steht
-      <a href="/warum/">hier</a>.
+      <a href="/transparenz/">melde es uns</a>. Wer dahintersteht, steht
+      <a href="/autoren/">hier</a>, warum es diese Seite gibt, <a href="/warum/">hier</a>.
     </p>
   </section>
 </Base>

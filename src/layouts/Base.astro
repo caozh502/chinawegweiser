@@ -2,6 +2,20 @@
 import '../styles/global.css';
 import '../styles/typography.css';
 import { site } from '../data/site';
+import { getCollection } from 'astro:content';
+
+const NAMEN: Record<string, string> = {
+  peking: 'Peking',
+  shanghai: 'Shanghai',
+  xian: "Xi'an",
+  chengdu: 'Chengdu',
+  guilin: 'Guilin',
+  system: 'Praktisches',
+};
+const REIHE = ['peking', 'shanghai', 'xian', 'chengdu', 'guilin'];
+const staedte = (await getCollection('cities'))
+  .filter((c) => c.data.city !== 'system')
+  .sort((a, b) => REIHE.indexOf(a.data.city) - REIHE.indexOf(b.data.city));
 
 interface Props {
   title: string;
@@ -64,9 +78,9 @@ const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
       <div class="wrap">
         <a class="brand" href="/">China <span>Wegweiser</span></a>
         <nav class="top">
-          <a href="/stadt/peking/">Peking</a>
-          <a href="/stadt/shanghai/">Shanghai</a>
-          <a href="/stadt/xian/">Xi'an</a>
+          {staedte.map((c) => (
+            <a href={`/stadt/${c.data.city}/`}>{NAMEN[c.data.city] ?? c.data.city}</a>
+          ))}
           <a href="/praktisch/">Praktisches</a>
           <a href="/transparenz/">Transparenz</a>
           <button type="button" class="theme-toggle" aria-label="Farbschema wechseln (hell / dunkel)">
@@ -86,10 +100,10 @@ const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
           <div>
             <h4>Städte</h4>
             <ul>
-              <li><a href="/stadt/peking/">Peking</a></li>
-              <li><a href="/stadt/shanghai/">Shanghai</a></li>
-              <li><a href="/stadt/xian/">Xi'an</a></li>
-              <li><a href="/stadt/chengdu/">Chengdu</a></li>
+              {staedte.map((c) => (
+                <li><a href={`/stadt/${c.data.city}/`}>{NAMEN[c.data.city] ?? c.data.city}</a></li>
+              ))}
+              <li><span class="soon">Shanghai, Xi'an, Chengdu, Guilin in Arbeit</span></li>
             </ul>
           </div>
           <div>
@@ -97,7 +111,7 @@ const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
             <ul>
               <li><a href="/system/visumfrei-china-30-tage/">Einreise ohne Visum</a></li>
               <li><a href="/system/internet-esim/">Internet &amp; eSIM</a></li>
-              <li><a href="/praktisch/bezahlen/">Bezahlen</a></li>
+              <li><a href="/praktisch/">Alle Grundlagen</a></li>
             </ul>
           </div>
           <div>

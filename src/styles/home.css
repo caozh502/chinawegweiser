@@ -79,6 +79,75 @@ section + .callout-home,
   line-height: 1.6;
 }
 
+/* ---------- Vor dem Abflug: zwei Karten, Text zuerst ---------- */
+.preflight-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+@media (min-width: 46rem) {
+  .preflight-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.preflight-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0 0.9rem;
+  padding: 1rem 1.1rem 1.05rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+
+.preflight-card:hover {
+  border-color: var(--accent);
+}
+
+.p-no {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  padding-top: 0.25rem;
+}
+
+.p-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.p-title {
+  font-family: var(--font-ui);
+  font-size: 1.02rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.p-answer {
+  font-family: var(--font-serif);
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+.p-meta {
+  font-family: var(--font-ui);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.preflight-card:hover .p-meta {
+  color: var(--accent);
+}
+
 /* ---------- In Arbeit ---------- */
 .soon-list {
   list-style: none;
