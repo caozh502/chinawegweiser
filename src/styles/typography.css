@@ -1,0 +1,448 @@
+/*
+ * Typografie-Ebene (v2) – wird nach global.css geladen und überschreibt sie.
+ *
+ * Warum so:
+ *  - Fließtext in Serife, UI (Badges, Karten, Tabellen, Navigation) in Sans.
+ *    Das ist die Trennung, die Zeit/SZ/Guardian und gute Guides nutzen:
+ *    ein Blick sagt „das ist Text" vs. „das ist Werkzeug".
+ *  - Deutlich größerer Sprung bei H2 (1.5 rem statt 1.22 rem) + Nummer davor.
+ *    Gleiche Schriftgröße bei Titel und Text war der Hauptgrund für die
+ *    Lesemüdigkeit.
+ *  - Zeilenlänge auf ~34 rem (≈ 65–70 Zeichen) begrenzt; Karten/Tabellen
+ *    dürfen breiter bleiben.
+ *  - Deutsche Silbentrennung (hyphens: auto + lang="de").
+ */
+
+:root {
+  --font-ui: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  --font-serif: 'Iowan Old Style', 'Charter', 'Bitstream Charter', 'Source Serif 4', Georgia,
+    'Times New Roman', serif;
+  --measure: 34rem;
+  --wrap: 42rem;
+  --space-section: 4rem;
+}
+
+/* --muted kommt aus global.css (dort pro Theme definiert) */
+
+body {
+  font-family: var(--font-ui);
+}
+
+/* ---------- Fließtext ---------- */
+.entry {
+  counter-reset: sec;
+}
+
+.entry p,
+.entry li,
+.entry blockquote,
+.entry td {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+.entry p {
+  margin: 0 0 1.1em;
+  max-width: var(--measure);
+  text-wrap: pretty;
+  hyphens: auto;
+}
+
+.entry > p,
+.entry > ul,
+.entry > ol,
+.entry > blockquote,
+.entry > h2,
+.entry > h3 {
+  max-width: var(--measure);
+}
+
+.entry ul,
+.entry ol {
+  margin: 0 0 1.3em;
+  padding-left: 1.1em;
+}
+
+.entry li {
+  margin: 0 0 0.5em;
+}
+
+.entry li::marker {
+  color: var(--accent);
+  font-family: var(--font-ui);
+}
+
+.entry strong {
+  font-weight: 650;
+}
+
+.entry blockquote {
+  margin: 1.6em 0;
+  padding: 0.1em 0 0.1em 1.1em;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- Überschriften ---------- */
+.entry h2 {
+  counter-increment: sec;
+  font-family: var(--font-ui);
+  font-size: 1.5rem;
+  font-weight: 680;
+  line-height: 1.22;
+  letter-spacing: -0.018em;
+  color: var(--fg);
+  margin: var(--space-section) 0 1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line);
+  text-wrap: balance;
+}
+
+.entry h2::before {
+  content: counter(sec, decimal-leading-zero);
+  display: block;
+  font: 600 0.7rem/1 var(--font-ui);
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 0.55rem;
+}
+
+.entry h3 {
+  font-family: var(--font-ui);
+  font-size: 1.06rem;
+  font-weight: 650;
+  letter-spacing: -0.005em;
+  margin: 2.1rem 0 0.5rem;
+  color: var(--fg);
+}
+
+.entry h2 + p,
+.entry h3 + p {
+  margin-top: 0;
+}
+
+/* Erster Abschnitt nach dem Steckbrief braucht keinen Riesenabstand */
+.steckbrief + .entry > h2,
+.entry > h2:first-child {
+  margin-top: 2.6rem;
+}
+
+/* ---------- Einleitung ---------- */
+.lead {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.62;
+  color: var(--muted);
+  max-width: var(--measure);
+}
+
+.answer p {
+  font-family: var(--font-serif);
+  font-size: 1.06rem;
+  line-height: 1.65;
+}
+
+/* ---------- UI bleibt Sans ---------- */
+header.site,
+footer.site,
+nav.top,
+.brand,
+.eyebrow,
+.metabar,
+.badge,
+.card,
+.chip,
+.aff,
+.aff p,
+.aff-title,
+.steckbrief,
+.sights,
+.sight,
+.plans,
+.plan,
+.areas,
+.area,
+.hotels,
+.map-legend,
+.map-tools,
+.map-note,
+.report,
+.sources,
+table,
+.photo figcaption,
+.zoom-link,
+.answer strong:first-child,
+.legal {
+  font-family: var(--font-ui);
+}
+
+/* ---------- Feinschliff ---------- */
+.entry table {
+  font-size: 0.94rem;
+  margin: 1.4em 0 2em;
+}
+
+.entry th {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+}
+
+.badge {
+  font-size: 0.76rem;
+  letter-spacing: 0.01em;
+}
+
+.sources li {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 40rem) {
+  :root {
+    --space-section: 3rem;
+    --measure: 100%;
+  }
+  .entry h2 {
+    font-size: 1.32rem;
+  }
+  .entry p,
+  .entry li {
+    font-size: 1.02rem;
+  }
+}
+
+/* ---------- Zitat = Hinweiskasten (statt kursiver Textwand) ----------
+   Vorbild: Guardian/NYT „key facts", GOV.UK-Inserts. Ein Kasten unterbricht
+   den Fließtext und gibt dem Auge einen Halt. */
+.entry blockquote {
+  font-style: normal;
+  color: var(--fg);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.95rem 1.15rem;
+  margin: 1.7em 0 2em;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+.entry blockquote p {
+  margin-bottom: 0.6em;
+}
+.entry blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Tabellen: lesbar statt gequetscht ---------- */
+.entry table {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  width: 100%;
+  margin: 1.4em 0 2.2em;
+}
+.entry thead th {
+  background: color-mix(in srgb, var(--line) 30%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+.entry tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--line) 14%, transparent);
+}
+.entry th,
+.entry td {
+  padding: 0.62rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.entry tbody tr:last-child td {
+  border-bottom: 0;
+}
+.entry td:first-child {
+  font-family: var(--font-ui);
+  font-weight: 600;
+}
+@media (min-width: 48rem) {
+  .entry td:nth-child(2),
+  .entry td:nth-child(3) {
+    white-space: nowrap;
+  }
+}
+
+/* ---------- Navigation und Steckbrief: mehr Kontrast ---------- */
+nav.top {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav.top a {
+  color: color-mix(in srgb, var(--fg) 76%, transparent);
+}
+nav.top a:hover {
+  color: var(--accent);
+}
+.steckbrief {
+  border-color: color-mix(in srgb, var(--line) 65%, var(--muted));
+}
+.steckbrief .k {
+  color: var(--accent);
+  font-weight: 600;
+}
+.steckbrief .v {
+  font-size: 0.95rem;
+}
+
+/* ---------- Absätze mit Auszeichnung bekommen Luft ---------- */
+.entry p strong:only-child {
+  font-weight: 650;
+}
+
+/* ---------- Basisstile der Photo-Komponente (gelten auf jeder Seite) ----------
+   Vorher lagen sie nur in city.css → auf der Startseite hatten die Bilder
+   keine Breite und sprengten das Grid. */
+.photo {
+  margin: 1.2rem 0;
+}
+.photo img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.photo figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+.photo .cap {
+  color: var(--fg);
+}
+.photo .credit a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+}
+
+/* ---------- Inhaltsverzeichnis (Stadtseiten) ----------
+   Muster wie bei Guardian/SZ-Guides: kompakte Kastenliste statt klebender
+   Sidebar – funktioniert in einer Spalte und kostet kein JavaScript. */
+.toc {
+  margin: 2.6rem 0 0;
+  padding: 1.05rem 1.2rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  max-width: var(--wrap);
+}
+
+.toc-title {
+  margin: 0 0 0.7rem;
+  max-width: none;
+  font: 600 0.7rem/1 var(--font-ui);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.entry .toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.05rem;
+  /* Eine Spalte: die Leserichtung bleibt oben → unten. Bei zwei Spalten
+     springt das Auge zwischen den Spalten hin und her, und die Nummern
+     laufen nicht mehr in der Reihenfolge, in der man liest. */
+  grid-template-columns: 1fr;
+  counter-reset: toc;
+  max-width: none;
+}
+
+.entry .toc li {
+  margin: 0;
+  max-width: none;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
+.entry .toc li a {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.26rem 0;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.entry .toc li a::before {
+  counter-increment: toc;
+  content: counter(toc, decimal-leading-zero);
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.72rem;
+  padding-top: 0.12rem;
+}
+
+.entry .toc li a:hover {
+  color: var(--accent);
+}
+
+/* Faktentabelle (dl): Herkunft/Ausbildung/Beruf – für „Über"- und Autorenblöcke */
+.factgrid {
+  display: grid;
+  /* 9.5rem, damit vier Felder auch im 42rem-Container nebeneinander passen */
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1.5rem 0 1.9rem;
+  max-width: var(--wrap);
+}
+.factgrid > div {
+  background: var(--card);
+  padding: 0.7rem 0.85rem;
+}
+.factgrid dt {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+.factgrid dd {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--fg);
+}
+
+/* Anker sollen nicht unter dem Rand kleben */
+.entry h2[id],
+.entry [id] {
+  scroll-margin-top: 4.5rem;
+}
+
+@media (max-width: 40rem) {
+  .entry .toc ol {
+    grid-template-columns: 1fr;
+  }
+}
+
+

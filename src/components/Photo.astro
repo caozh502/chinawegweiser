@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  photo: {
+    file: string;
+    alt: string;
+    author: string;
+    license: string;
+    licenseUrl: string;
+    sourceUrl: string;
+    caption?: string;
+  };
+  loading?: 'eager' | 'lazy';
+  class?: string;
+}
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.jpg', {
+  eager: true,
+});
+
+const { photo, loading = 'lazy', class: cls = '' } = Astro.props;
+const mod = images[`/src/assets/${photo.file}`];
+
+if (!mod) {
+  throw new Error(`Bild nicht gefunden: ${photo.file} – Datei in src/assets/ ablegen.`);
+}
+const img = mod.default;
+---
+
+<figure class={`photo ${cls}`}>
+  <Image
+    src={img}
+    alt={photo.alt}
+    widths={[400, 680, 960]}
+    sizes="(max-width: 760px) 100vw, 640px"
+    format="webp"
+    quality={62}
+    loading={loading}
+    decoding={loading === 'eager' ? 'sync' : 'async'}
+  />
+  <figcaption>
+    {photo.caption && <span class="cap">{photo.caption}</span>}
+    <span class="credit">
+      Foto:
+      <a href={photo.sourceUrl} target="_blank" rel="noopener nofollow">{photo.author}</a>
+      ·
+      <a href={photo.licenseUrl} target="_blank" rel="noopener nofollow">{photo.license}</a>
+    </span>
+  </figcaption>
+</figure>

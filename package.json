@@ -1,0 +1,20 @@
+{
+  "name": "chinawegweiser",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "check:legal": "node scripts/check-legal.mjs",
+    "deploy": "npm run build && npm run check:legal && wrangler pages deploy dist --project-name=chinawegweiser",
+    "new": "node scripts/new-guide.mjs",
+    "img": "node scripts/fetch-images.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.0.0"
+  }
+}

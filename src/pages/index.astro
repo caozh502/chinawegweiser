@@ -1,0 +1,132 @@
+---
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import CityTeaser from '../components/CityTeaser.astro';
+import AffiliateInline from '../components/AffiliateInline.astro';
+import { getCollection } from 'astro:content';
+import '../styles/home.css';
+
+const guides = (await getCollection('guides')).sort((a, b) => a.data.order - b.data.order);
+const städte = await getCollection('cities');
+
+const cityNames: Record<string, string> = {
+  system: 'Praktisches',
+  peking: 'Peking',
+  shanghai: 'Shanghai',
+  xian: "Xi'an",
+  chengdu: 'Chengdu',
+  guilin: 'Guilin',
+};
+
+const cityOrder = ['system', 'peking', 'shanghai', 'xian', 'chengdu', 'guilin'];
+
+const grouped = cityOrder
+  .map((city) => ({ city, items: guides.filter((g) => g.data.city === city) }))
+  .filter((g) => g.items.length > 0);
+
+/** Fertige Stadtführer – Reihenfolge wie im Menü. */
+const fertigeStaedte = städte.sort(
+  (a, b) => cityOrder.indexOf(a.data.city) - cityOrder.indexOf(b.data.city)
+);
+
+/** Startseiten-Hero. */
+const hero = {
+  file: 'peking/hero-jingshan.jpg',
+  alt: 'Blick vom Jingshan-Park über die Dächer der Verbotenen Stadt',
+  caption: 'Peking, vom Jingshan-Park nach Süden: die Achse, an der sich fast jede Route entscheidet.',
+  author: 'Tojan76',
+  license: 'CC BY-SA 3.0',
+  licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0',
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Forbidden_City_Panorama_3.jpg',
+};
+
+/** Teaser-Bild je Stadt; fehlt es, nimmt CityTeaser das erste Sehenswürdigkeitsfoto. */
+const teaserBild: Record<string, any> = {
+  peking: {
+    file: 'peking/gugong-supreme.jpg',
+    alt: 'Halle der höchsten Harmonie in der Verbotenen Stadt',
+    caption: 'Halle der höchsten Harmonie',
+    author: 'Perry Li',
+    license: 'CC BY-SA 2.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/2.0',
+    sourceUrl:
+      'https://commons.wikimedia.org/wiki/File:2015-03-15_Hall_of_Supreme_Harmony_(Forbidden_City).jpg',
+  },
+};
+---
+
+<Base
+  title="China Wegweiser – der praktische Reiseführer für deutsche China-Reisende"
+  description="Alles, was auf einer China-Reise schiefgeht – Einreise, Bezahlen, Tickets, Internet, Transport – an einem Ort, mit Datum der letzten Prüfung."
+>
+  <section class="home-hero">
+    <div class="eyebrow">China · unabhängig · geprüft</div>
+    <h1>China ohne Umwege</h1>
+    <p class="lead">
+      Kein Visum mehr – dafür ein Reservierungssystem, das eine chinesische ID verlangt. Bezahlen
+      ohne Bargeld. Internet, das nicht wie zu Hause funktioniert. Diese Seite beantwortet genau
+      diese Fragen: eine Seite, ein Problem, mit Datum der letzten Prüfung.
+    </p>
+    <Photo photo={hero} loading="eager" class="home-hero-photo" />
+  </section>
+
+  {fertigeStaedte.map((stadt) => (
+    <CityTeaser
+      entry={stadt}
+      name={cityNames[stadt.data.city] ?? stadt.data.city}
+      photo={teaserBild[stadt.data.city]}
+    />
+  ))}
+
+  <div class="callout-home">
+    <strong>Neu hier?</strong> Fang mit
+    <a href="/system/visumfrei-china-30-tage/">Einreise ohne Visum</a> und
+    <a href="/system/internet-esim/">Internet &amp; eSIM</a> an – das sind die zwei Dinge, die vor
+    dem Abflug geklärt sein müssen.
+  </div>
+
+  <AffiliateInline name="esim" prefix="Internet unterwegs" />
+
+  {grouped.map(({ city, items }) => (
+    <section>
+      <div class="section-h">
+        <h2>{cityNames[city] ?? city}</h2>
+        <span>{items.length} Seiten</span>
+      </div>
+      <div class="grid">
+        {items.map((g) => (
+          <a class="card" href={`/${g.id}/`}>
+            <div class="t">{g.data.title}</div>
+            <div class="c">{g.data.category}</div>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <section class="soon">
+    <div class="section-h">
+      <h2>In Arbeit</h2>
+      <span>Reihenfolge nach Nachfrage</span>
+    </div>
+    <ul class="soon-list">
+      <li><b>Shanghai</b> – Bund, Yu-Garten, Disney, Suzhou als Tagesausflug</li>
+      <li><b>Xi'an</b> – Terrakotta-Armee, Stadtmauer, Muslim Quarter</li>
+      <li><b>Chengdu</b> – Pandabasis, Teehäuser, Leshan</li>
+      <li><b>Guilin</b> – Li-Fluss, Yangshuo, Longji-Reisterrassen</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-h">
+      <h2>Wie diese Seite funktioniert</h2>
+    </div>
+    <p class="prose-sm">
+      Jede Seite trägt ein Datum. <strong>„Geprüft"</strong> heißt: an einer offiziellen Quelle
+      oder vor Ort kontrolliert. <strong>„Recherchiert"</strong> heißt: zusammengetragen, aber noch
+      nicht gegengeprüft – das steht dann auch so auf der Seite. Wenn etwas nicht mehr stimmt,
+      <a href="/transparenz/">melde es uns</a>. Warum es diese Seite überhaupt gibt, steht
+      <a href="/warum/">hier</a>.
+    </p>
+  </section>
+</Base>

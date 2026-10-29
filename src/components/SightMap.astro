@@ -1,0 +1,396 @@
+---
+import { mapTiles } from '../data/map';
+
+interface Sight {
+  no: number;
+  name: string;
+  lat?: number;
+  lng?: number;
+  price?: string;
+}
+
+interface Props {
+  sights: Sight[];
+  city: string;
+}
+
+const pts = (Astro.props.sights ?? []).filter(
+  (s) => typeof s.lat === 'number' && typeof s.lng === 'number'
+);
+const payload = JSON.stringify(
+  pts.map((p) => ({ no: p.no, name: p.name, lat: p.lat, lng: p.lng, price: p.price ?? '' }))
+);
+---
+
+{pts.length > 1 && (
+  <div class="sightmap" data-points={payload}>
+    <div class="map-wrap">
+      <div class="map-tools" role="group" aria-label="Kartenausschnitt">
+        <button type="button" data-view="center">Stadtzentrum</button>
+        <button type="button" data-view="all">Alle {pts.length}</button>
+      </div>
+      <div
+        class="map"
+        role="img"
+        aria-label={`Karte der Sehenswürdigkeiten in ${Astro.props.city}`}
+        data-tile-url={mapTiles.url}
+        data-tile-attr={mapTiles.attribution}
+        data-tile-maxzoom={mapTiles.maxZoom}
+      >
+        <span class="map-hint">Karte wird geladen …</span>
+      </div>
+    </div>
+    <div class="map-legend">
+      <div class="legend-title">Legende – antippen zum Zoomen</div>
+      <ol>
+        {pts.map((p) => (
+          <li>
+            <button type="button" class="legend-btn" data-no={p.no} aria-label={`Auf Karte zeigen: ${p.name}`}>
+              <b>{p.no}</b>
+              <span>{p.name}</span>
+            </button>
+          </li>
+        ))}
+      </ol>
+      <p class="map-note">
+        <span data-outlier-note>Ausflugsziele außerhalb der Stadt</span> sind in der Ansicht
+        „Stadtzentrum" ausgeblendet – über „Alle" werden sie sichtbar. Amap und Baidu zeigen
+        dieselben Orte leicht versetzt (amtliches GCJ-02-System); diese Karte rechnet in WGS-84.
+      </p>
+    </div>
+  </div>
+)}
+
+<script is:inline>
+  (function () {
+    var box = document.querySelector('.sightmap');
+    if (!box) return;
+    var pts;
+    try {
+      pts = JSON.parse(box.getAttribute('data-points') || '[]');
+    } catch (e) {
+      return;
+    }
+    if (!pts.length) return;
+
+    var map = null;
+    var markers = {};
+    var pending = null;
+    var started = false;
+
+    /* Punkte, die weiter als 20 km vom Median entfernt liegen, gelten als Ausflüge
+       und werden in der Ansicht "Stadtzentrum" ausgeblendet. */
+    function splitOutliers() {
+      var lat = pts.map(function (p) { return p.lat; }).sort(function (a, b) { return a - b; });
+      var lng = pts.map(function (p) { return p.lng; }).sort(function (a, b) { return a - b; });
+      var mLat = lat[Math.floor(lat.length / 2)];
+      var mLng = lng[Math.floor(lng.length / 2)];
+      var near = [], far = [];
+      pts.forEach(function (p) {
+        var dy = (p.lat - mLat) * 111;
+        var dx = (p.lng - mLng) * 111 * Math.cos((mLat * Math.PI) / 180);
+        if (Math.sqrt(dx * dx + dy * dy) > 20) far.push(p);
+        else near.push(p);
+      });
+      return { near: near.length > 0 ? near : pts, far: far };
+    }
+
+    function start() {
+      if (started) return;
+      started = true;
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+      document.head.appendChild(css);
+
+      var js = document.createElement('script');
+      js.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      js.onload = init;
+      js.onerror = function () {
+        var h = box.querySelector('.map-hint');
+        if (h) h.textContent = 'Karte konnte nicht geladen werden – Liste rechts nutzen.';
+      };
+      document.head.appendChild(js);
+    }
+
+    function init() {
+      var el = box.querySelector('.map');
+      if (!el || typeof L === 'undefined') return;
+      var hint = box.querySelector('.map-hint');
+      if (hint) hint.remove();
+
+      map = L.map(el, { scrollWheelZoom: false, zoomSnap: 0.5 });
+      box._leaflet = map; // für Tests/Debugging
+      // Container war beim Init evtl. noch nicht final gelayoutet
+      setTimeout(function () {
+        if (map) map.invalidateSize();
+      }, 0);
+      L.tileLayer(el.getAttribute('data-tile-url'), {
+        maxZoom: parseInt(el.getAttribute('data-tile-maxzoom') || '18', 10),
+        attribution: el.getAttribute('data-tile-attr') || '',
+      }).addTo(map);
+
+      pts.forEach(function (p) {
+        var icon = L.divIcon({
+          className: 'pin',
+          html: '<span>' + p.no + '</span>',
+          iconSize: [30, 30],
+          iconAnchor: [15, 15],
+          popupAnchor: [0, -14],
+        });
+        var m = L.marker([p.lat, p.lng], { icon: icon, title: p.name, alt: p.name }).addTo(map);
+        m.bindPopup('<b>' + p.no + '</b> ' + p.name + (p.price ? '<br>' + p.price : ''));
+        m.on('click', function () { setActive(p.no); });
+        markers[p.no] = m;
+      });
+
+      fit('center');
+      // Hinweistext mit den tatsächlich ausgeblendeten Nummern füllen
+      var far = splitOutliers().far;
+      var note = box.querySelector('[data-outlier-note]');
+      if (note) {
+        note.textContent =
+          far.length > 0
+            ? 'Punkte ' + far.map(function (p) { return p.no; }).join(' und ') + ' liegen weit außerhalb'
+            : 'Weit entfernte Ziele';
+      }
+      if (pending !== null) {
+        zoomTo(pending);
+        pending = null;
+      }
+    }
+
+    function fit(mode) {
+      if (!map) return;
+      var groups = splitOutliers();
+      var list = mode === 'all' ? pts : groups.near;
+      var b = list.map(function (p) { return [p.lat, p.lng]; });
+      map.fitBounds(b, {
+        padding: [36, 36],
+        maxZoom: mode === 'all' ? 11 : 13,
+        animate: false,
+      });
+      setActive(null);
+      var btns = box.querySelectorAll('[data-view]');
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-view') === mode ? 'true' : 'false');
+      }
+    }
+
+    function setActive(no) {
+      var btns = box.querySelectorAll('.legend-btn');
+      for (var i = 0; i < btns.length; i++) {
+        var on = String(btns[i].getAttribute('data-no')) === String(no);
+        btns[i].classList.toggle('is-active', on);
+        btns[i].setAttribute('aria-current', on ? 'true' : 'false');
+      }
+    }
+
+    function zoomTo(no) {
+      if (!map || !markers[no]) return;
+      var p = null;
+      for (var i = 0; i < pts.length; i++) if (String(pts[i].no) === String(no)) p = pts[i];
+      if (!p) return;
+      // animate:false – springt sofort, funktioniert auch bei prefers-reduced-motion
+      map.setView([p.lat, p.lng], 15, { animate: false });
+      markers[no].openPopup();
+      setActive(no);
+    }
+
+    /* Klick auf Legende, Karte-Werkzeuge und "Auf Karte zeigen"-Links in den Karten */
+    document.addEventListener('click', function (ev) {
+      var t = ev.target.closest ? ev.target.closest('[data-no], [data-view], [data-zoom-sight]') : null;
+      if (!t) return;
+      if (t.hasAttribute('data-view')) {
+        ev.preventDefault();
+        if (!map) { start(); pending = null; return; }
+        fit(t.getAttribute('data-view'));
+        return;
+      }
+      var no = t.getAttribute('data-zoom-sight') || t.getAttribute('data-no');
+      if (!no) return;
+      ev.preventDefault();
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (!map) {
+        pending = no;
+        start();
+      } else {
+        zoomTo(no);
+      }
+    });
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              io.disconnect();
+              start();
+            }
+          });
+        },
+        { rootMargin: '300px' }
+      );
+      io.observe(box);
+    }
+
+    /* Fallback: manche Umgebungen (alte Browser, gedrosselte Tabs, Headless)
+       feuern keine IntersectionObserver-Callbacks. Deshalb zusätzlich bei
+       Scroll/Resize/Timeout prüfen. */
+    function maybeStart() {
+      if (started) return;
+      var r = box.getBoundingClientRect();
+      if (r.top < window.innerHeight + 400 && r.bottom > -400) start();
+    }
+    window.addEventListener('scroll', maybeStart, { passive: true });
+    window.addEventListener('resize', maybeStart);
+    document.addEventListener('visibilitychange', maybeStart);
+    setTimeout(maybeStart, 1200);
+  })();
+</script>
+
+<style>
+  .sightmap {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    margin: 1.4rem 0 2rem;
+  }
+  @media (min-width: 46rem) {
+    .sightmap {
+      grid-template-columns: 1.35fr 1fr;
+      align-items: start;
+    }
+  }
+  .map-wrap {
+    position: relative;
+  }
+  .map-tools {
+    display: flex;
+    gap: 0.35rem;
+    margin-bottom: 0.45rem;
+  }
+  .map-tools button {
+    font: inherit;
+    font-size: 0.78rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .map-tools button[aria-pressed='true'] {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .map {
+    min-height: 340px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--line) 35%, var(--bg));
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+  }
+  /* Platzhalter darf NICHT über display:grid im Kartencontainer zentriert werden –
+     das verschiebt die Leaflet-Panes. Deshalb absolut positioniert. */
+  .map-hint {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: 0.84rem;
+    color: var(--muted);
+    pointer-events: none;
+  }
+  .map-legend ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.15rem;
+    font-size: 0.9rem;
+  }
+  .legend-btn {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    font-size: 0.9rem;
+    padding: 0.2rem 0.35rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: none;
+    color: var(--fg);
+    cursor: pointer;
+  }
+  .legend-btn:hover {
+    background: var(--accent-soft);
+  }
+  .legend-btn.is-active {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .legend-btn b {
+    flex: 0 0 auto;
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.75rem;
+    display: inline-grid;
+    place-items: center;
+    font-weight: 700;
+  }
+  .legend-title {
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 0.45rem;
+  }
+  .map-note {
+    font-size: 0.76rem;
+    color: var(--muted);
+    margin: 0.7rem 0 0;
+    line-height: 1.5;
+  }
+  .sight .s-head {
+    position: relative;
+  }
+  .zoom-link {
+    font: inherit;
+    font-size: 0.76rem;
+    border: 1px solid var(--line);
+    background: none;
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 0.1rem 0.5rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .zoom-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+</style>
+
+<style is:global>
+  .pin span {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #a8321f;
+    color: #fff;
+    font: 700 13px/1 ui-sans-serif, system-ui, sans-serif;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
+    border: 2px solid #fff;
+  }
+</style>

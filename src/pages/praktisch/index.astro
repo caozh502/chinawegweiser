@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import AffiliateBox from '../../components/AffiliateBox.astro';
+import AffiliateInline from '../../components/AffiliateInline.astro';
+import { getCollection } from 'astro:content';
+
+const items = (await getCollection('guides'))
+  .filter((g) => g.data.city === 'system')
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base
+  title="Praktisches – Einreise, Geld, Internet, Transport"
+  description="Die Grundlagen einer China-Reise: visumfreie Einreise, Bezahlen ohne Bargeld, Internet, Züge, Tickets und Reservierungen."
+>
+  <div class="eyebrow"><a href="/">Start</a> · Praktisches</div>
+  <h1>Praktisches</h1>
+  <p class="lead">
+    Diese Seiten gelten unabhängig von der Stadt. Wenn du nur zwei davon liest, nimm Einreise und
+    Internet – der Rest lässt sich vor Ort lösen.
+  </p>
+
+  <div class="grid">
+    {items.map((g) => (
+      <a class="card" href={`/${g.id}/`}>
+        <div class="t">{g.data.title}</div>
+        <div class="c">{g.data.status === 'verified' ? 'geprüft' : 'Entwurf'}</div>
+      </a>
+    ))}
+  </div>
+
+  <h2>Vor dem Abflug buchen</h2>
+  <p class="prose-sm">
+    Zwei Dinge, die man vor der Reise klärt und nicht am Flughafen: funktionierendes Internet ab der
+    Landung und ein Krankenversicherungsschutz, der auch in China zahlt.
+  </p>
+  <div class="aff-pair">
+    <AffiliateBox name="esim" />
+    <AffiliateBox name="insurance" />
+  </div>
+  <AffiliateInline name="train" prefix="Züge innerhalb Chinas" />
+</Base>

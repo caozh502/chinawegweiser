@@ -1,0 +1,21 @@
+---
+import { affiliates } from '../data/affiliates';
+
+interface Props {
+  /** Nicht `slot` nennen – das ist in Astro reserviert. */
+  name: string;
+}
+
+const { name } = Astro.props;
+const a = affiliates[name];
+---
+
+{a && (
+  <aside class="aff" aria-label="Anzeige: Partnertipp">
+    <span class="aff-badge">Anzeige</span>
+    <div class="aff-title">{a.title}</div>
+    <p>{a.text}</p>
+    <a class="btn" href={a.url} target="_blank" rel="sponsored nofollow noopener">{a.cta} →</a>
+    {a.hint && <div class="hint">{a.hint} <a href="/transparenz">Wie wir Geld verdienen</a></div>}
+  </aside>
+)}

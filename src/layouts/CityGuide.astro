@@ -1,0 +1,312 @@
+---
+import Base from './Base.astro';
+import { contactEmail } from '../data/site';
+import Photo from '../components/Photo.astro';
+import SightMap from '../components/SightMap.astro';
+import AffiliateBox from '../components/AffiliateBox.astro';
+import AffiliateInline from '../components/AffiliateInline.astro';
+import { render, getCollection, type CollectionEntry } from 'astro:content';
+import { slugify } from '../lib/rehype-heading-ids.mjs';
+import '../styles/city.css';
+
+interface Props {
+  entry: CollectionEntry<'cities'>;
+}
+
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+
+const subpages = (await getCollection('guides'))
+  .filter((g) => g.data.city === d.city)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const statusText: Record<string, string> = {
+  verified: 'Verifiziert',
+  draft: 'Entwurf – nicht vor Ort geprüft',
+  stale: 'Prüfung überfällig',
+};
+const bookingLabel: Record<string, string> = {
+  required: 'Reservierung Pflicht',
+  recommended: 'Reservierung empfohlen',
+  none: 'ohne Reservierung',
+};
+
+const fmt = (iso?: string) =>
+  iso
+    ? new Date(`${iso}T12:00:00Z`).toLocaleDateString('de-DE', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+      })
+    : null;
+const verifiedText = fmt(d.verified);
+
+const sightName = (no: number) => d.sights.find((s) => s.no === no)?.name ?? String(no);
+
+/* Inhaltsverzeichnis: Abschnitte aus dem Markdown plus die datengetriebenen
+   Blöcke weiter unten. Die IDs der Markdown-Überschriften setzt
+   src/lib/rehype-heading-ids.mjs mit derselben slugify-Funktion. */
+const mdSections = [...(entry.body ?? '').matchAll(/^##\s+(.+)$/gm)].map((m) => {
+  const title = m[1].trim();
+  return { title, id: slugify(title) };
+});
+
+const toc = [
+  ...mdSections,
+  ...(d.connections.length > 0 ? [{ title: 'Anreise', id: 'anreise' }] : []),
+  ...(d.areas.length > 0 ? [{ title: 'Wo wohnen', id: 'wohnen' }] : []),
+  ...(d.sights.length > 0 ? [{ title: 'Sehenswürdigkeiten', id: 'sehenswuerdigkeiten' }] : []),
+  ...(d.plans.length > 0 ? [{ title: 'Routen', id: 'routen' }] : []),
+  ...(d.bookAhead.length > 0 ? [{ title: 'Vorher buchen', id: 'buchen' }] : []),
+  ...(d.traps.length > 0 ? [{ title: 'Typische Fehler', id: 'fehler' }] : []),
+  ...(subpages.length > 0 ? [{ title: 'Detailseiten', id: 'detailseiten' }] : []),
+  ...(d.sources.length > 0 ? [{ title: 'Quellen', id: 'quellen' }] : []),
+];
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `Sehenswürdigkeiten ${d.city}`,
+  itemListElement: d.sights.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'TouristAttraction',
+      name: s.name,
+      ...(s.lat && s.lng
+        ? { geo: { '@type': 'GeoCoordinates', latitude: s.lat, longitude: s.lng } }
+        : {}),
+    },
+  })),
+};
+---
+
+<Base title={d.title} description={d.description}>
+  <article class="entry">
+    <div class="eyebrow"><a href="/">Start</a> · Stadt</div>
+    <h1>{d.title}</h1>
+
+    <div class="metabar">
+      <span class={`badge ${d.status}`}>{statusText[d.status]}</span>
+      {verifiedText && (
+        <span class="badge"
+          >{d.status === 'verified' ? 'Geprüft' : 'Recherchiert'}: {verifiedText}</span
+        >
+      )}
+      {d.days && <span class="badge">{d.days}</span>}
+    </div>
+
+    <p class="lead">{d.intro}</p>
+
+    <Photo photo={d.hero} loading="eager" class="hero-photo" />
+
+    <section class="steckbrief">
+      <div><span class="k">Zeit vor Ort</span><span class="v">{d.days}</span></div>
+      {d.season && <div><span class="k">Beste Zeit</span><span class="v">{d.season}</span></div>}
+      {d.budget && <div><span class="k">Budget / Tag</span><span class="v">{d.budget}</span></div>}
+      {d.base && <div><span class="k">Basis</span><span class="v">{d.base}</span></div>}
+    </section>
+
+    {toc.length > 2 && (
+      <nav class="toc" aria-labelledby="toc-title">
+        <p class="toc-title" id="toc-title">Inhalt</p>
+        <ol>
+          {toc.map((t) => (
+            <li><a href={`#${t.id}`}>{t.title}</a></li>
+          ))}
+        </ol>
+      </nav>
+    )}
+
+    <Content />
+
+    {d.connections.length > 0 && (
+      <>
+        <h2 id="anreise">Anreise</h2>
+        <table>
+          <thead>
+            <tr><th>Weg</th><th>Dauer</th><th>Preis</th><th>Hinweis</th></tr>
+          </thead>
+          <tbody>
+            {d.connections.map((c) => (
+              <tr>
+                <td>{c.mode}</td>
+                <td>{c.time}</td>
+                <td>{c.price ?? '–'}</td>
+                <td>{c.note ?? ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <AffiliateBox name="train" />
+      </>
+    )}
+
+    {d.areas.length > 0 && (
+      <>
+        <h2 id="wohnen">Wo wohnen</h2>
+        <div class="areas">
+          {d.areas.map((a) => (
+            <div class="area">
+              <h3>{a.name}</h3>
+              {a.pro && <p class="pro">+ {a.pro}</p>}
+              {a.con && <p class="con">− {a.con}</p>}
+              <ul class="hotels">
+                {a.hotels.map((h) => (
+                  <li>
+                    <span class="h-name">{h.name}</span>
+                    <span class="h-meta">
+                      {h.stars ? `${h.stars}★` : ''}
+                      {h.rating ? ` · ${h.rating.toFixed(1)}` : ''}
+                      {h.reviews ? ` (${h.reviews})` : ''}
+                    </span>
+                    {h.note && <span class="h-note">{h.note}</span>}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <AffiliateBox name="hotels" />
+      </>
+    )}
+
+    {d.sights.length > 0 && (
+      <>
+        <h2 id="sehenswuerdigkeiten">Sehenswürdigkeiten</h2>
+        <p class="sources" style="margin-top:-.4rem">
+          Nummern gelten für Karte und Routen weiter unten.
+        </p>
+
+        <SightMap sights={d.sights} city={d.city} />
+
+        <div class="sights">
+          {d.sights.map((s) => (
+            <div class="sight" id={`s${s.no}`}>
+              <div class="s-head">
+                <span class="num">{s.no}</span>
+                <div>
+                  <div class="s-name">{s.name}</div>
+                  {s.german && <div class="s-de">{s.german}</div>}
+                </div>
+                {typeof s.lat === 'number' && (
+                  <button type="button" class="zoom-link" data-zoom-sight={s.no}>
+                    auf Karte
+                  </button>
+                )}
+              </div>
+              <div class="s-meta">
+                {s.price && <span class="chip">{s.price}</span>}
+                {s.duration && <span class="chip">{s.duration}</span>}
+                <span class={`chip book-${s.booking}`}>{bookingLabel[s.booking]}</span>
+              </div>
+              {s.note && <p class="s-note">{s.note}</p>}
+              {s.photo && <Photo photo={s.photo} />}
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+
+    {d.plans.length > 0 && (
+      <>
+        <h2 id="routen">Routen</h2>
+        <p class="sources" style="margin-top:-.4rem">
+          Die Zahlen sind die Nummern der Sehenswürdigkeiten oben.
+        </p>
+        <div class="plans">
+          {d.plans.map((p) => (
+            <div class="plan">
+              <div class="p-head">
+                <h3>{p.title}</h3>
+                {p.forWhom && <span class="p-for">{p.forWhom}</span>}
+              </div>
+              <ol>
+                {p.days.map((day) => (
+                  <li>
+                    <span class="d-label">Tag {day.day}</span>
+                    <span class="d-chips">
+                      {day.sights.map((no) => (
+                        <a class="chip num-chip" href={`#s${no}`} title={sightName(no)}>
+                          {no}
+                        </a>
+                      ))}
+                    </span>
+                    {day.note && <span class="d-note">{day.note}</span>}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+
+    {(d.bookAhead.length > 0 || d.traps.length > 0) && (
+      <div class="two-col">
+        {d.bookAhead.length > 0 && (
+          <div id="buchen">
+            <h2>Vorher buchen</h2>
+            <ul class="check">
+              {d.bookAhead.map((b) => <li>{b}</li>)}
+            </ul>
+            <AffiliateInline name="tours" prefix="Wenn das Reservierungssystem klemmt" />
+          </div>
+        )}
+        {d.traps.length > 0 && (
+          <div id="fehler">
+            <h2>Typische Fehler</h2>
+            <ul class="traps">
+              {d.traps.map((t) => <li>{t}</li>)}
+            </ul>
+          </div>
+        )}
+      </div>
+    )}
+
+    {d.bookAhead.length > 0 && (
+      <div class="aff-pair">
+        <AffiliateBox name="esim" />
+        <AffiliateBox name="insurance" />
+      </div>
+    )}
+
+    {subpages.length > 0 && (
+      <>
+        <h2 id="detailseiten">Detailseiten</h2>
+        <div class="grid">
+          {subpages.map((g) => (
+            <a class="card" href={`/${g.id}/`}>
+              <div class="t">{g.data.title}</div>
+              <div class="c">{g.data.category}</div>
+            </a>
+          ))}
+        </div>
+      </>
+    )}
+
+    {d.sources.length > 0 && (
+      <div class="sources" id="quellen">
+        <h2>Quellen</h2>
+        <ul>
+          {d.sources.map((s) => (
+            <li><a href={s.url} target="_blank" rel="noopener nofollow">{s.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <div class="report">
+      <p>
+        <strong>Etwas stimmt nicht mehr?</strong> Preise, Öffnungszeiten und Reservierungsregeln
+        ändern sich in China schnell. Schreib uns eine Zeile – wir prüfen es.
+      </p>
+      <a href={`mailto:${contactEmail}?subject=${encodeURIComponent('Korrektur: ' + d.title)}`}
+        >Korrektur melden →</a
+      >
+    </div>
+
+    <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  </article>
+</Base>

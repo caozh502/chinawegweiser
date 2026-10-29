@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+
+<Base title="Datenschutz" description="Datenschutzerklärung: welche Daten anfallen und welche nicht.">
+  <div class="eyebrow"><a href="/">Start</a> · Rechtliches</div>
+  <h1>Datenschutz</h1>
+
+  <p class="sources">
+    Vorlage – vor dem Livegang prüfen und an den tatsächlichen Hoster anpassen. Keine
+    Rechtsberatung.
+  </p>
+
+  <h2>Kurzfassung</h2>
+  <p>
+    Diese Seite ist eine statische Website. Auf ihr selbst gibt es <strong>keine Analyse-Cookies,
+    kein Werbe-Tracking und keine Profile</strong>. Gesetzt wird nur eine einzige Information: deine
+    Wahl zwischen hellem und dunklem Farbschema, lokal in deinem Browser. Erst wenn du auf einen
+    Partner-Link klickst, setzt der jeweilige Partner eigene Cookies auf seiner Seite (Abschnitt 5).
+    Was sonst anfällt: Server-Logs beim Hoster und die Daten, die du uns selbst schickst, wenn du
+    eine Korrektur meldest.
+  </p>
+
+  <h2>1. Verantwortlicher</h2>
+  <p>
+    {site.owner.name}, {site.owner.street}, {site.owner.zipCity}<br />
+    E-Mail: <a href={`mailto:${site.owner.email || 'korrektur@example.com'}`}>{site.owner.email || 'korrektur@example.com'}</a><br />
+    Verantwortlich im Sinne der DSGVO; vollständige Angaben im <a href="/impressum/">Impressum</a>.
+  </p>
+
+  <h2>2. Hosting</h2>
+  <p>
+    Die Seite wird bei Cloudflare (Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA)
+    gehostet. Beim Aufruf verarbeitet Cloudflare technisch notwendige Verbindungsdaten
+    (IP-Adresse, Zeitpunkt, abgerufene Datei, User-Agent), um die Seite auszuliefern und Angriffe
+    abzuwehren. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherem,
+    stabilem Betrieb). Mit Cloudflare besteht ein Auftragsverarbeitungsvertrag; die Übermittlung in
+    die USA stützt sich auf die Standardvertragsklauseln bzw. den EU-US Data Privacy Framework.
+  </p>
+
+  <h2>3. Reichweitenmessung</h2>
+  <p>
+    Wir nutzen <strong>Cloudflare Web Analytics</strong>. Das Verfahren arbeitet ohne Cookies und
+    ohne geräteübergreifendes Profil; erfasst werden aggregierte Werte (Seitenaufrufe, Referrer,
+    Land, Gerätetyp). Eine Identifizierung einzelner Personen findet nicht statt.
+  </p>
+
+  <h2>4. Kontaktaufnahme</h2>
+  <p>
+    Wenn du uns eine Korrektur oder Frage per E-Mail schickst, verarbeiten wir deine Angaben zur
+    Beantwortung. Rechtsgrundlage: Art. 6 Abs. 1 lit. b bzw. f DSGVO. Die Daten löschen wir, sobald
+    der Vorgang abgeschlossen ist und keine Aufbewahrungspflichten entgegenstehen.
+  </p>
+
+  <h2>5. Affiliate-Links</h2>
+  <p>
+    Einige Links führen zu Partnerprogrammen (z. B. eSIM-Anbieter, Buchungsplattformen,
+    Versicherungen) und enthalten eine Kennung von uns. Diese Links sind im Text als
+    <strong>„Anzeige"</strong> gekennzeichnet. Beim Klick wird der Partner technisch informiert,
+    dass der Besuch von dieser Seite kam; typischerweise setzt er dabei ein Cookie zur
+    Provisionszuordnung. <strong>Diese Cookies entstehen erst durch deinen Klick und liegen außerhalb
+    dieser Seite</strong> – vorher wird nichts an Partner übertragen. Auf den verlinkten Seiten gelten
+    die Datenschutzbestimmungen des jeweiligen Anbieters. Details:
+    <a href="/transparenz/">Wie wir Geld verdienen</a>.
+  </p>
+
+  <h2>6. Externe Schriftarten und Skripte</h2>
+  <p>
+    Es werden keine externen Schriftarten und keine Analyse-Skripte Dritter geladen. Die Seite
+    funktioniert ohne JavaScript. Zwei Funktionen laufen lokal im Browser: das Kopieren chinesischer
+    Adressen und der Umschalter für das Farbschema. Für letzteren speichert der Browser unter dem
+    Schlüssel <code>theme</code> den Wert <code>light</code> oder <code>dark</code> – ohne Bezug zu
+    deiner Person, ohne Übertragung an uns.
+  </p>
+
+  <h2>7. Deine Rechte</h2>
+  <p>
+    Du hast das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17),
+    Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch
+    (Art. 21 DSGVO). Außerdem kannst du dich bei einer Aufsichtsbehörde beschweren, zuständig ist
+    die Behörde deines Wohnsitzlandes.
+  </p>
+</Base>

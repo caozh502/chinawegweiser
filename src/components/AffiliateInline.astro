@@ -1,0 +1,24 @@
+---
+/**
+ * Einzeiliger Partner-Hinweis für Stellen, an denen ein ganzer Kasten zu viel wäre
+ * (Startseite, Tabellen, Zwischenüberschriften). Kennzeichnung „Anzeige" ist Pflicht.
+ */
+import { affiliates } from '../data/affiliates';
+
+interface Props {
+  /** Nicht `slot` nennen – das ist in Astro reserviert. */
+  name: string;
+  prefix?: string;
+}
+
+const { name, prefix } = Astro.props;
+const a = affiliates[name];
+---
+
+{a && (
+  <p class="aff-inline">
+    <span class="aff-badge">Anzeige</span>
+    {prefix ?? a.title}:
+    <a href={a.url} target="_blank" rel="sponsored nofollow noopener">{a.cta} →</a>
+  </p>
+)}

@@ -1,0 +1,304 @@
+/* ---------- Hero & Steckbrief ---------- */
+.hero-photo {
+  margin: 0 0 1.6rem;
+}
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.steckbrief {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 0 0 1.8rem;
+}
+@media (min-width: 40rem) {
+  .steckbrief {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.steckbrief > div {
+  background: var(--card);
+  padding: 0.7rem 0.8rem;
+}
+.steckbrief .k {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+.steckbrief .v {
+  font-size: 0.92rem;
+  font-weight: 620;
+  line-height: 1.35;
+}
+
+/* ---------- Foto mit Attribution ---------- */
+.photo {
+  margin: 1.2rem 0;
+}
+.photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.photo figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.5rem;
+  font-size: 0.76rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+  line-height: 1.45;
+}
+.photo .cap {
+  color: var(--fg);
+}
+.photo .credit a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+}
+
+/* ---------- Sehenswürdigkeiten ---------- */
+.sights {
+  display: grid;
+  gap: 1.4rem;
+  margin: 1.4rem 0 2rem;
+}
+@media (min-width: 48rem) {
+  .sights {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+.sight {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.05rem 0.4rem;
+  scroll-margin-top: 1rem;
+}
+.s-head {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+}
+.num {
+  flex: 0 0 auto;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.s-name {
+  font-weight: 650;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+.s-de {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.s-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.6rem 0 0.4rem;
+}
+.chip {
+  font-size: 0.76rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.chip.book-required {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.chip.book-recommended {
+  color: var(--warn);
+  border-color: color-mix(in srgb, var(--warn) 40%, transparent);
+}
+.chip.book-none {
+  color: var(--ok);
+  border-color: color-mix(in srgb, var(--ok) 35%, transparent);
+}
+.s-note {
+  font-size: 0.89rem;
+  margin: 0.2rem 0 0.3rem;
+}
+.sight .photo img {
+  aspect-ratio: 4 / 3;
+  margin-bottom: 0.2rem;
+}
+
+/* ---------- Routen ---------- */
+.plans {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1.2rem 0 2rem;
+}
+@media (min-width: 46rem) {
+  .plans {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+}
+.plan {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  padding: 0.9rem 1rem;
+}
+.p-head h3 {
+  margin: 0 0 0.1rem;
+  font-size: 0.98rem;
+}
+.p-for {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.plan ol {
+  list-style: none;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+.plan li {
+  display: grid;
+  grid-template-columns: 3.4rem 1fr;
+  gap: 0.2rem 0.5rem;
+  align-items: baseline;
+  border-top: 1px dashed var(--line);
+  padding-top: 0.5rem;
+}
+.d-label {
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--muted);
+}
+.d-chips {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+.num-chip {
+  text-decoration: none;
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 650;
+  min-width: 1.6rem;
+  text-align: center;
+  background: var(--accent-soft);
+}
+.d-note {
+  grid-column: 2;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* ---------- Wohnen ---------- */
+.areas {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0 1.2rem;
+}
+@media (min-width: 46rem) {
+  .areas {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.area {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  padding: 0.9rem 1rem;
+}
+.area h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+}
+.area .pro,
+.area .con {
+  font-size: 0.84rem;
+  margin: 0.1rem 0;
+}
+.area .pro {
+  color: var(--ok);
+}
+.area .con {
+  color: var(--accent);
+}
+.hotels {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+.hotels li {
+  border-top: 1px dashed var(--line);
+  padding-top: 0.45rem;
+  font-size: 0.88rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.h-name {
+  font-weight: 600;
+}
+.h-meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.h-note {
+  flex-basis: 100%;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* ---------- Listen ---------- */
+.check,
+.traps {
+  padding-left: 1.2rem;
+  font-size: 0.92rem;
+}
+.check li::marker {
+  color: var(--ok);
+}
+.traps li::marker {
+  color: var(--accent);
+}
+.two-col {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 46rem) {
+  .two-col {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}

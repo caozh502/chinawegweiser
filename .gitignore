@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+preview/
+.env
+.env.*
+.DS_Store
+wrangler.toml.local

@@ -1,0 +1,131 @@
+---
+/**
+ * Stadtführer-Teaser — ein Block pro fertiger Stadt.
+ *
+ * Zieht alle Zahlen aus dem Inhalt (Anzahl Orte, Routen, Wohnviertel), damit
+ * eine neue Stadt nur einen Eintrag in src/content/cities/ braucht und der
+ * Teaser automatisch stimmt. Bild: explizit übergeben, sonst das erste
+ * Foto aus den Sehenswürdigkeiten, sonst das Hero-Bild.
+ */
+import Photo from './Photo.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'cities'>;
+  name: string;
+  photo?: any;
+  /** Text überschreiben; Standard ist das teaser-Feld aus dem Frontmatter. */
+  text?: string;
+}
+
+const { entry, name, photo, text } = Astro.props;
+const d = entry.data;
+
+const bild = photo ?? d.sights.find((s) => s.photo)?.photo ?? d.hero;
+
+const facts = [
+  { n: d.sights.length, l: 'Orte, nummeriert' },
+  { n: d.plans.length, l: 'Routen' },
+  { n: d.areas.length, l: 'Wohnviertel' },
+  { n: d.bookAhead.length, l: 'vorab buchen' },
+].filter((f) => f.n > 0);
+
+const kurz = text ?? d.teaser ?? d.intro;
+const statusLabel = d.status === 'verified' ? 'Stadtführer · geprüft' : 'Stadtführer · Entwurf';
+---
+
+<section class="teaser">
+  <div class="teaser-media">
+    <Photo photo={bild} />
+  </div>
+  <div class="teaser-text">
+    <div class="eyebrow">{statusLabel}</div>
+    <h2>{name}, komplett</h2>
+    <p>{kurz}</p>
+    <ul class="facts">
+      {facts.map((f) => (
+        <li><b>{f.n}</b> {f.l}</li>
+      ))}
+    </ul>
+    <a class="btn-teaser" href={`/stadt/${d.city}/`}>Zum {name}-Führer →</a>
+  </div>
+</section>
+
+<style>
+  .teaser {
+    display: grid;
+    gap: 1.4rem;
+    padding: 1.2rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--card);
+  }
+
+  @media (min-width: 48rem) {
+    .teaser {
+      grid-template-columns: 1.05fr 1fr;
+      align-items: center;
+      gap: 2rem;
+      padding: 1.4rem;
+    }
+  }
+
+  .teaser-media :global(.photo) {
+    margin: 0;
+  }
+  .teaser-media :global(img) {
+    aspect-ratio: 3 / 2;
+    border-radius: 12px;
+  }
+
+  .teaser-text h2 {
+    font-family: var(--font-ui);
+    font-size: 1.6rem;
+    font-weight: 680;
+    letter-spacing: -0.02em;
+    margin: 0.2rem 0 0.7rem;
+  }
+
+  .teaser-text p {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.68;
+    color: var(--muted);
+    margin: 0 0 1rem;
+    max-width: 34rem;
+  }
+
+  .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.2rem;
+    font-family: var(--font-ui);
+    font-size: 0.84rem;
+    color: var(--muted);
+  }
+
+  .facts b {
+    color: var(--accent);
+    font-size: 1.05rem;
+    margin-right: 0.15rem;
+  }
+
+  .btn-teaser {
+    display: inline-block;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--on-accent);
+    background: var(--accent);
+    padding: 0.55rem 1.05rem;
+    border-radius: 999px;
+  }
+
+  .btn-teaser:hover {
+    filter: brightness(1.08);
+  }
+</style>

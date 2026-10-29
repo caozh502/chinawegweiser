@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import CityGuide from '../../layouts/CityGuide.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { CITIES } from '../../data/cities';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('cities');
+  const byCity = new Map(entries.map((e) => [e.data.city, e]));
+  const keys = new Set<string>([...Object.keys(CITIES), ...entries.map((e) => e.data.city)]);
+  return [...keys].map((city) => ({
+    params: { city },
+    props: { city, entry: byCity.get(city) ?? null },
+  }));
+}
+
+const { city, entry } = Astro.props as {
+  city: string;
+  entry: CollectionEntry<'cities'> | null;
+};
+
+const meta = CITIES[city] ?? { name: city, intro: '' };
+---
+
+{entry ? (
+  <CityGuide entry={entry} />
+) : (
+  <Base title={`${meta.name} – in Arbeit`} description={meta.intro} noindex={true}>
+    <div class="eyebrow">
+      <a href="/">Start</a> · Stadt
+    </div>
+    <h1>{meta.name}</h1>
+    <p class="lead">{meta.intro}</p>
+    <p class="sources">
+      Diese Stadt ist noch in Arbeit. Fertig ist bisher Peking – dort steht der komplette Aufbau
+      mit Karte, Routen und Unterkünften.
+    </p>
+    <p><a class="card" href="/stadt/peking/" style="display:inline-block">
+      <span class="t">Peking: kompletter Reiseführer →</span>
+    </a></p>
+  </Base>
+)}

@@ -1,0 +1,151 @@
+---
+import Base from './Base.astro';
+import { contactEmail } from '../data/site';
+import AffiliateBox from '../components/AffiliateBox.astro';
+import { render, type CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'guides'>;
+}
+
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+
+const statusText: Record<string, string> = {
+  verified: 'Verifiziert',
+  draft: 'Entwurf – vor Ort noch nicht geprüft',
+  stale: 'Ältere Angaben – Prüfung steht aus',
+};
+
+const fmt = (iso?: string) =>
+  iso
+    ? new Date(`${iso}T12:00:00Z`).toLocaleDateString('de-DE', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+      })
+    : null;
+
+const cityNames: Record<string, string> = {
+  system: 'Praktisches',
+  peking: 'Peking',
+  shanghai: 'Shanghai',
+  xian: "Xi'an",
+  chengdu: 'Chengdu',
+  guilin: 'Guilin',
+};
+
+const cityName = cityNames[d.city] ?? d.city;
+const verifiedText = fmt(d.verified);
+const mailSubject = encodeURIComponent(`Korrektur: ${d.title}`);
+
+const faqLd = d.faq.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: d.faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    }
+  : null;
+---
+
+<Base title={d.title} description={d.description}>
+  <article class="entry">
+    <div class="eyebrow">
+      <a href={`/stadt/${d.city}/`}>{cityName}</a> · {d.category}
+    </div>
+    <h1>{d.title}</h1>
+
+    <div class="metabar">
+      <span class={`badge ${d.status}`}>{statusText[d.status]}</span>
+      {verifiedText && <span class="badge">Geprüft: {verifiedText}</span>}
+      {d.price && <span class="badge">Preis: {d.price}</span>}
+      {d.duration && <span class="badge">Dauer: {d.duration}</span>}
+    </div>
+
+    <div class="answer">
+      <strong>Kurz gesagt</strong>
+      <p>{d.answer}</p>
+    </div>
+
+    <Content />
+
+    {d.chinese && (
+      <div class="cn-card" id="cn-card">
+        <div class="label">Zum Vorzeigen (中文)</div>
+        <div class="cn">
+          {d.chinese.name}
+          <span class="addr">{d.chinese.address}</span>
+        </div>
+        {d.chinese.note && <div class="note">{d.chinese.note}</div>}
+        <button
+          type="button"
+          data-copy={`${d.chinese.name}\n${d.chinese.address}`}
+          >Chinesisch kopieren</button
+        >
+      </div>
+    )}
+
+    {d.affiliate.map((slot) => <AffiliateBox name={slot} />)}
+
+    {d.sources.length > 0 && (
+      <div class="sources">
+        <h2 style="margin-top:2rem">Quellen</h2>
+        <ul>
+          {d.sources.map((s) => (
+            <li>
+              <a href={s.url} target="_blank" rel="noopener nofollow">{s.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {d.faq.length > 0 && (
+      <>
+        <h2>Häufige Fragen</h2>
+        {d.faq.map((f) => (
+          <div>
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </>
+    )}
+
+    <div class="report">
+      <p>
+        <strong>Etwas stimmt nicht mehr?</strong> Preise, Öffnungszeiten und Reservierungsregeln
+        ändern sich in China schnell. Schreib uns eine Zeile – wir prüfen es und aktualisieren die
+        Seite.
+      </p>
+      <a href={`mailto:${contactEmail}?subject=${mailSubject}`}>Korrektur melden →</a>
+    </div>
+
+    {faqLd && <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />}
+  </article>
+</Base>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.cn-card button[data-copy]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const text = btn.dataset.copy ?? '';
+      try {
+        await navigator.clipboard.writeText(text);
+        const original = btn.textContent;
+        btn.textContent = 'Kopiert ✓';
+        btn.dataset.done = '1';
+        setTimeout(() => {
+          btn.textContent = original;
+          delete btn.dataset.done;
+        }, 2000);
+      } catch {
+        btn.textContent = 'Kopieren nicht möglich';
+      }
+    });
+  });
+</script>

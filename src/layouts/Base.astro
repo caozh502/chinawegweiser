@@ -1,0 +1,181 @@
+---
+import '../styles/global.css';
+import '../styles/typography.css';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+
+const { title, description, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const siteName = site.name;
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      // Theme vor dem ersten Paint setzen (verhindert Aufblitzen des falschen Schemes)
+      (function () {
+        // ?theme=light|dark überschreibt (für QA-Screenshots und teilbare Links)
+        var q = new URLSearchParams(location.search).get('theme');
+        if (q === 'light' || q === 'dark') {
+          document.documentElement.dataset.theme = q;
+          return;
+        }
+        try {
+          document.documentElement.dataset.theme =
+            localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="de_DE" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: siteName,
+      url: Astro.site?.toString(),
+      inLanguage: 'de',
+    })} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Zum Inhalt springen</a>
+
+    <header class="site">
+      <div class="wrap">
+        <a class="brand" href="/">China <span>Wegweiser</span></a>
+        <nav class="top">
+          <a href="/stadt/peking/">Peking</a>
+          <a href="/stadt/shanghai/">Shanghai</a>
+          <a href="/stadt/xian/">Xi'an</a>
+          <a href="/praktisch/">Praktisches</a>
+          <a href="/transparenz/">Transparenz</a>
+          <button type="button" class="theme-toggle" aria-label="Farbschema wechseln (hell / dunkel)">
+            <span class="tt-icon" aria-hidden="true"></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <slot />
+    </main>
+
+    <footer class="site">
+      <div class="wrap">
+        <div class="cols">
+          <div>
+            <h4>Städte</h4>
+            <ul>
+              <li><a href="/stadt/peking/">Peking</a></li>
+              <li><a href="/stadt/shanghai/">Shanghai</a></li>
+              <li><a href="/stadt/xian/">Xi'an</a></li>
+              <li><a href="/stadt/chengdu/">Chengdu</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Praktisches</h4>
+            <ul>
+              <li><a href="/system/visumfrei-china-30-tage/">Einreise ohne Visum</a></li>
+              <li><a href="/system/internet-esim/">Internet &amp; eSIM</a></li>
+              <li><a href="/praktisch/bezahlen/">Bezahlen</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Rechtliches</h4>
+            <ul>
+              <li><a href="/warum/">Warum es diese Seite gibt</a></li>
+              <li><a href="/impressum/">Impressum</a></li>
+              <li><a href="/datenschutz/">Datenschutz</a></li>
+              <li><a href="/transparenz/">Wie wir Geld verdienen</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="legal">
+          Unabhängiger Reiseführer für China-Reisen aus Deutschland. Alle Angaben nach bestem Wissen,
+          jeweils mit Datum der letzten Prüfung. Diese Seite enthält Affiliate-Links: Kaufst du darüber,
+          erhalten wir eine Provision – der Preis ändert sich dadurch nicht.
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest && e.target.closest('.theme-toggle');
+        if (!btn) return;
+        var next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        try {
+          localStorage.setItem('theme', next);
+        } catch (err) {}
+        btn.setAttribute('aria-pressed', String(next === 'dark'));
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  .skip {
+    position: absolute;
+    left: -9999px;
+  }
+  .skip:focus {
+    left: 1rem;
+    top: 1rem;
+    background: var(--card);
+    padding: .5rem .8rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    z-index: 10;
+  }
+
+  /* Theme-Umschalter: Sonne = „jetzt hell", Mond = „jetzt dunkel".
+     Das Symbol hängt am data-Attribut, nicht an JavaScript. */
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    margin-left: .2rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--card);
+    color: var(--fg);
+    cursor: pointer;
+    line-height: 1;
+  }
+  .theme-toggle:hover,
+  .theme-toggle:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+    outline: none;
+  }
+  .theme-toggle .tt-icon::before {
+    content: '☀';
+    font-size: .95rem;
+  }
+  :root[data-theme='light'] .theme-toggle .tt-icon::before {
+    content: '☾';
+  }
+</style>

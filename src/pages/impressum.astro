@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, legalReady } from '../data/site';
+
+const o = site.owner;
+const ph = (v: string, label: string) => (v ? v : `[${label}]`);
+---
+
+<Base title="Impressum" description="Impressum und Anbieterkennzeichnung nach § 5 DDG.">
+  <article class="entry">
+    <div class="eyebrow"><a href="/">Start</a> · Rechtliches</div>
+    <h1>Impressum</h1>
+
+    {!legalReady && (
+      <blockquote>
+        <p>
+          <strong>Noch nicht livegang-fähig:</strong> Name, Anschrift und E-Mail fehlen. Pflichtangaben
+          nach § 5 DDG – ohne sie nicht veröffentlichen.
+        </p>
+      </blockquote>
+    )}
+
+    <h2>Angaben gemäß § 5 DDG</h2>
+    <p>
+      {ph(o.name, 'Vor- und Nachname')}<br />
+      {ph(o.street, 'Straße und Hausnummer')}<br />
+      {ph(o.zipCity, 'PLZ Ort')}<br />
+      {o.country}
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+      E-Mail: {o.email ? <a href={`mailto:${o.email}`}>{o.email}</a> : '[E-Mail-Adresse]'}<br />
+      Telefon: {o.phone ? o.phone : '[optional, aber empfohlen]'}
+    </p>
+
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>{ph(o.name, 'Vor- und Nachname')}, Anschrift wie oben</p>
+
+    <h2>Umsatzsteuer</h2>
+    <p>
+      {site.vatId
+        ? `Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG: ${site.vatId}`
+        : 'Umsatzsteuer wird gemäß § 19 UStG (Kleinunternehmerregelung) nicht erhoben.'}
+    </p>
+
+    <h2>Haftung für Inhalte</h2>
+    <p>
+      Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
+      Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+      Insbesondere Preise, Öffnungszeiten und Buchungsregeln in China ändern sich kurzfristig. Jede
+      Seite nennt das Datum der letzten Prüfung; verbindlich sind ausschließlich die Angaben der
+      jeweiligen offiziellen Stellen.
+    </p>
+
+    <h2>Haftung für Links</h2>
+    <p>
+      Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
+      Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
+      verantwortlich. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar.
+    </p>
+
+    <h2>Urheberrecht</h2>
+    <p>
+      Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
+      deutschen Urheberrecht. Bilder Dritter sind mit Urheber, Lizenz und Quelle gekennzeichnet.
+      Vervielfältigung, Bearbeitung und Verbreitung außerhalb der Grenzen des Urheberrechts bedürfen
+      der schriftlichen Zustimmung.
+    </p>
+
+    <h2>Verbraucherstreitbeilegung</h2>
+    <p>
+      Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
+      Verbraucherschlichtungsstelle teilzunehmen.
+    </p>
+  </article>
+</Base>
