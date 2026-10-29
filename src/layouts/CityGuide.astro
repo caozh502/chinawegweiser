@@ -205,11 +205,37 @@ const faqLd = {
               </div>
               {s.note && <p class="s-note">{s.note}</p>}
 
-              {(s.hours || s.closed || s.transit) && (
+              {(s.hours || s.closed || s.transit || s.official || s.buyTickets) && (
                 <dl class="s-facts">
                   {s.hours && (<><dt>Öffnungszeiten</dt><dd>{s.hours}</dd></>)}
                   {s.closed && (<><dt>Geschlossen</dt><dd>{s.closed}</dd></>)}
                   {s.transit && (<><dt>Nächste Station</dt><dd>{s.transit}</dd></>)}
+                  {s.buyTickets && (
+                    <>
+                      <dt>Tickets</dt>
+                      <dd>
+                        {s.buyTickets}
+                        {s.ticketUrl && (
+                          <>
+                            {' '}
+                            <a class="s-ext" href={s.ticketUrl} target="_blank" rel="noopener noreferrer">
+                              Ticketseite ↗
+                            </a>
+                          </>
+                        )}
+                      </dd>
+                    </>
+                  )}
+                  {s.official && (
+                    <>
+                      <dt>Website</dt>
+                      <dd>
+                        <a class="s-ext" href={s.official.url} target="_blank" rel="noopener noreferrer">
+                          {s.official.label} ↗
+                        </a>
+                      </dd>
+                    </>
+                  )}
                 </dl>
               )}
 

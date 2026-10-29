@@ -50,6 +50,12 @@ const sight = z.object({
   tickets: z
     .array(z.object({ label: z.string(), price: z.string(), note: z.string().optional() }))
     .default([]),
+  /** Offizielle Seite des Orts – nur wenn sie sich lohnt (Buchung, Öffnungszeiten). */
+  official: z.object({ label: z.string(), url: z.string() }).optional(),
+  /** Wie man tatsächlich an ein Ticket kommt – WeChat-Mini-App, Schalter, Zeitfenster. */
+  buyTickets: z.string().optional(),
+  /** Direktlink zur Buchung, falls vorhanden. */
+  ticketUrl: z.string().optional(),
   photo: photo.optional(),
   /** Weitere Fotos: Eingang, Innenraum, Details. Erstes Bild bleibt `photo`. */
   photos: z.array(photo).default([]),

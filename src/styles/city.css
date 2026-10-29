@@ -321,8 +321,8 @@
 .s-facts {
   margin: 0.9rem 0 0;
   display: grid;
-  grid-template-columns: minmax(7rem, max-content) 1fr;
-  gap: 0.45rem 1.1rem;
+  grid-template-columns: minmax(6.4rem, max-content) 1fr;
+  gap: 0.55rem 1.1rem;
   font-family: var(--font-ui);
   font-size: 0.82rem;
   line-height: 1.45;
@@ -334,6 +334,14 @@
   overflow-wrap: anywhere;
   text-wrap: pretty;
 }
+.s-facts .s-ext {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+.s-facts .s-ext:hover { text-decoration-thickness: 2px; }
 /* Auf schmalen Bildschirmen Label über den Wert statt zwei Spalten. */
 @media (max-width: 34rem) {
   .s-facts { grid-template-columns: 1fr; gap: 0.1rem; }

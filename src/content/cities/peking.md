@@ -107,6 +107,9 @@ sights:
     hours: '08:30–17:00 (1.4.–31.10.), 08:30–16:30 (1.11.–31.3.); letzter Einlass eine Stunde vor Schluss'
     closed: 'Montags, außer an Feiertagen'
     transit: 'U-Bahn 1, Tian''anmen Ost (天安门东), Ausgang A – von dort nordwärts durch das Meridian-Tor'
+    buyTickets: 'Nur online – über die WeChat-Mini-App „故宫博物院" oder die Buchungsseite. Das Kontingent wird sieben Tage vorher freigegeben, meist gegen 20:00 Uhr; am Tor braucht man Pass und QR-Code. Eine Kasse für Tagesgäste gibt es nicht.'
+    ticketUrl: 'https://ticket.dpm.org.cn/'
+    official: { label: 'dpm.org.cn', url: 'https://www.dpm.org.cn/' }
     tickets:
       - label: 'Hochsaison (1.4.–31.10.)'
         price: '60 ¥'
@@ -150,6 +153,8 @@ sights:
     hours: 'Park 06:00–22:00; Hallen 08:00–17:30, im Winter bis 16:30'
     closed: 'täglich geöffnet'
     transit: 'U-Bahn 5, Tiantan Dongmen (天坛东门), Ausgang A – der Nordeingang liegt auf der anderen Seite'
+    buyTickets: 'Am Schalter oder Automaten am Eingang, vorab auch über die App 畅游公园, über die alle Stadtparks Pekings verkauft werden. Kombi-Ticket wählen – nur damit ist die Halle des Gebets offen.'
+    ticketUrl: 'https://www.bjgyol.com.cn/'
     tickets:
       - label: 'Park (Hoch-/Nebensaison)'
         price: '15 ¥ / 10 ¥'
@@ -181,6 +186,8 @@ sights:
     hours: '07:30–17:30 (Hochsaison), 08:00–17:00 (Nebensaison)'
     closed: 'täglich geöffnet'
     transit: 'Schnellbus 916 ab Dongzhimen nach Huairou, dann Shuttle; Direktbusse ab Qianmen starten gegen 07:30'
+    buyTickets: 'Am Ticketbüro am Parkplatz oder vorab über die WeChat-Mini-App des Parks. Shuttle und Seilbahn sind eigene Tickets. Am Schalter zählt der Pass, Karte wird genommen.'
+    official: { label: 'mutianyugreatwall.com', url: 'https://www.mutianyugreatwall.com/' }
     tickets:
       - label: 'Eintritt'
         price: '45 ¥'
@@ -216,6 +223,7 @@ sights:
     hours: 'kein offizieller Zugang, keine Öffnungszeiten'
     closed: 'ganzjährig gesperrt, Kontrollen an den Zustiegen'
     transit: 'kein ÖPNV; Taxi oder Chauffeur ab Peking ca. 2 Stunden, Rückfahrt vorher fest vereinbaren'
+    buyTickets: 'Keine Kasse, keine Buchung – es gibt keine Tickets. Die Zustiege sind gesperrt; wer kontrolliert wird, zahlt Bußgeld.'
     tickets:
       - label: 'Eintritt'
         price: '—'
@@ -245,6 +253,7 @@ sights:
     hours: '05:00–22:00; das Zeitfenster wird bei der Buchung gewählt'
     closed: 'bei Veranstaltungen und Sitzungen zeitweise komplett gesperrt'
     transit: 'U-Bahn 1, Tian''anmen Ost (天安门东) – Ausgang A führt direkt zur Kontrolle'
+    buyTickets: 'Kostenlos, aber Zeitfenster sind Pflicht: Reservierung über das WeChat-Mini-Programm 天安门广场预约参观, Passnummer nötig. Ohne Reservierung kommt man an der Kontrolle nicht durch.'
     tickets:
       - label: 'Eintritt'
         price: 'frei'
@@ -274,6 +283,7 @@ sights:
     hours: 'Gassen jederzeit; Läden meist 10:00–21:00'
     closed: '—'
     transit: 'U-Bahn 6 oder 8, Nanluoguxiang (南锣鼓巷), Ausgang E'
+    buyTickets: 'Kein Ticket, keine Buchung. Wer in einen Hof oder ein Teehaus will, zahlt dort separat.'
     tickets:
       - label: 'Eintritt'
         price: 'frei'
@@ -310,6 +320,8 @@ sights:
     hours: 'Gelände jederzeit; Galerien meist 10:00–18:00'
     closed: 'viele Galerien montags'
     transit: 'U-Bahn 14, Jiangtai (将台), danach 15 Minuten zu Fuß oder kurzes Taxi'
+    buyTickets: 'Das Gelände ist frei zugänglich. Einzelne Ausstellungen kosten 30–100 ¥, Kasse vor Ort oder über die Galerie; viele Häuser haben montags zu.'
+    official: { label: '798artdistrict.com.cn', url: 'https://798artdistrict.com.cn/' }
     tickets:
       - label: 'Gelände'
         price: 'frei'
@@ -340,6 +352,8 @@ sights:
     hours: 'meist 11:00–21:30, Küche bis 21:00'
     closed: '—'
     transit: 'je nach Haus; Siji Minfu (四季民福) an der Ostmauer: U-Bahn 1, Tian''anmen Ost'
+    buyTickets: 'Kein Ticket – Tischreservierung: direkt in der Filiale, über die App des Hauses oder über 大众点评 (Dianping). Ohne Reservierung ein bis zwei Stunden Wartezeit.'
+    official: { label: 'quanjude.com.cn', url: 'https://www.quanjude.com.cn/' }
     tickets:
       - label: 'Ganze Ente'
         price: '200–350 ¥'
