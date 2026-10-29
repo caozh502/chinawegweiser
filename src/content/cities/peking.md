@@ -105,6 +105,8 @@ sights:
     duration: '3–4 Std'
     booking: required
     note: 'Die Anlage ist kein Gebäude, sondern eine Abfolge von Höfen: Wer am Nordausgang steht, hat den wichtigsten Teil gesehen. Der Aufstieg zum Jingshan-Park dauert danach fünfzehn Minuten und liefert den Blick über die Dächer – der eigentliche Abschluss des Besuchs.'
+    guideNote: '72 Hektar, über 9 000 Räume, und die Schilder erklären nur, wie ein Gebäude heißt – nicht, warum der Kaiser hier stehen blieb. Der Audioguide nennt Daten zu einzelnen Objekten, nicht den Ablauf der Zeremonie. Mit Führung versteht man dieselben drei Kilometer in der richtigen Reihenfolge.'
+    guideSlot: 'guide'
     lat: 39.91583
     lng: 116.39083
     hours: '08:30–17:00 (1.4.–31.10.), 08:30–16:30 (1.11.–31.3.); letzter Einlass eine Stunde vor Schluss'
@@ -332,9 +334,9 @@ sights:
         licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Corner_Tower_of_the_Forbidden_City,_Beijing.jpg'
   - no: 7
-    name: '妙应寺白塔'
+    name: '妙应寺白塔与当地胡同'
     pinyin: 'Miàoyìngsì Báitǎ'
-    german: 'Weiße Pagode und Hutong-Viertel'
+    german: 'Weiße Pagode und die Gassen drumherum'
     tier: optional
     price: '20 ¥'
     duration: '1–2 Std'

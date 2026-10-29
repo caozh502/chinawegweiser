@@ -47,6 +47,10 @@ const sight = z.object({
   note: z.string().optional(),
   /** Was in Gehweite liegt und den Weg lohnt – steht als eigene Zeile in der Karte. */
   nearby: z.string().optional(),
+  /** Begründung, warum hier eine Führung hilft (erscheint als eigener Kasten). */
+  guideNote: z.string().optional(),
+  /** Welcher Affiliate-Slot den Führungs-Link liefert (z. B. 'tours'). */
+  guideSlot: z.string().optional(),
   lat: z.number().optional(),
   lng: z.number().optional(),
   /** Öffnungszeiten im Klartext, inkl. Saisonunterschiede. */

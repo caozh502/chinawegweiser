@@ -5,6 +5,7 @@ import Photo from '../components/Photo.astro';
 import SightMap from '../components/SightMap.astro';
 import Toc from '../components/Toc.astro';
 import AffiliateBox from '../components/AffiliateBox.astro';
+import { affiliates } from '../data/affiliates';
 import AffiliateInline from '../components/AffiliateInline.astro';
 import { render, getCollection, type CollectionEntry } from 'astro:content';
 import { slugify } from '../lib/rehype-heading-ids.mjs';
@@ -67,7 +68,7 @@ const toc = [
   ...(d.connections.length > 0 ? [{ title: 'Anreise', id: 'anreise' }] : []),
   ...(d.areas.length > 0 ? [{ title: 'Wo wohnen', id: 'wohnen' }] : []),
   ...(d.sights.length > 0 ? [{ title: 'Sehenswürdigkeiten', id: 'sehenswuerdigkeiten' }] : []),
-  ...(d.sights.length > 0 ? [{ title: 'Pflichtprogramm', id: 'pflichtprogramm', sub: true }] : []),
+  ...(d.sights.length > 0 ? [{ title: 'Was man gesehen haben sollte', id: 'pflichtprogramm', sub: true }] : []),
   ...(optSights.length > 0 ? [{ title: 'Wenn noch Zeit ist', id: 'weitere', sub: true }] : []),
   ...(d.plans.length > 0 ? [{ title: 'Routen', id: 'routen' }] : []),
   ...(d.experiences.length > 0 ? [{ title: 'Erlebnisse', id: 'erlebnisse' }] : []),
@@ -192,7 +193,7 @@ const faqLd = {
         <div class="sights">
         {mustSights.length > 0 && (
           <h3 class="sights-sub is-first" id="pflichtprogramm">
-            Pflichtprogramm{' '}<span class="sub-count">{mustSights.length} Orte</span>
+            Was man gesehen haben sollte{' '}<span class="sub-count">{mustSights.length} Orte</span>
           </h3>
         )}
           {mustSights.map((s) => (
@@ -217,6 +218,18 @@ const faqLd = {
                 <span class={`chip book-${s.booking}`}>{bookingLabel[s.booking]}</span>
               </div>
               {s.note && <p class="s-note">{s.note}</p>}
+              {s.guideNote && (
+                <div class="guide-box">
+                  <span class="aff-badge">Anzeige</span>
+                  <div class="guide-lead">Warum eine Führung hier hilft</div>
+                  <p>{s.guideNote}</p>
+                  {s.guideSlot && affiliates[s.guideSlot] && (
+                    <a class="btn btn-small" href={affiliates[s.guideSlot].url} target="_blank" rel="sponsored nofollow noopener">
+                      {affiliates[s.guideSlot].cta} →
+                    </a>
+                  )}
+                </div>
+              )}
 
               {(s.hours || s.closed || s.transit || s.official || s.buyTickets) && (
                 <dl class="s-facts">

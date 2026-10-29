@@ -38,12 +38,20 @@ export const affiliates: Record<string, AffiliateSlot> = {
     url: 'https://www.trip.com/',
     hint: 'Der Preis bleibt gleich.',
   },
+  guide: {
+    id: 'guide',
+    title: 'Führung durch die Verbotene Stadt',
+    text: 'Dreistündige Führung mit Einlass, deutsch- oder englischsprachig, Treffpunkt vor dem Meridian-Tor.',
+    cta: 'Führungen ansehen',
+    url: 'https://www.getyourguide.de/peking-l186/',
+    hint: 'Der Preis bleibt gleich.',
+  },
   tours: {
     id: 'tours',
     title: 'Führungen und Tickets mit Abholung',
     text: 'Für Sehenswürdigkeiten mit chinesischem Reservierungssystem ist eine geführte Variante oft der einfachste Weg hinein.',
     cta: 'Touren ansehen',
-    url: 'https://www.getyourguide.de/',
+    url: 'https://www.getyourguide.de/peking-l186/',
     hint: 'Der Preis bleibt gleich.',
   },
   insurance: {

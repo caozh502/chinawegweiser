@@ -871,3 +871,61 @@
   font-size: 0.82rem;
   line-height: 1.55;
 }
+
+/* ---------- Führungs-Hinweis in einer Karte ---------- */
+.guide-box {
+  position: relative;
+  margin: 0.9rem 0 0;
+  padding: 0.75rem 0.85rem 0.8rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: color-mix(in srgb, var(--accent) 5%, var(--bg));
+}
+
+.guide-box .aff-badge {
+  margin-bottom: 0.4rem;
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.guide-lead {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.25rem;
+  color: var(--fg);
+}
+
+.guide-box p {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 0.87rem;
+  line-height: 1.6;
+  color: var(--fg);
+}
+
+.guide-box .btn {
+  display: inline-block;
+  margin-top: 0.7rem;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.36rem 0.95rem;
+  font-family: var(--font-ui);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.guide-box .btn:hover {
+  background: color-mix(in srgb, var(--accent) 86%, #000);
+}
+
+.btn-small {
+  font-size: 0.82rem;
+  padding: 0.34rem 0.8rem;
+}
