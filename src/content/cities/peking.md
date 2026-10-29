@@ -354,12 +354,12 @@ sights:
         price: '10 ¥'
     photo:
       file: 'peking/baitasi.jpg'
-      alt: 'Weiße Pagode des Miaoying-Tempels über den grauen Ziegeldächern des Viertels'
-      caption: 'Die Pagode steht zwischen grauen Ziegeldächern – kein Museumsgelände, sondern ein Wohnviertel.'
+      alt: 'Der weiße Stupa des Miaoying-Tempels, vom Eingang der Gasse aus gesehen'
+      caption: 'Der Stupa von 1279: 51 Meter hoch, unter Kublai Khan nach Plänen des Nepalesen Araniko gebaut.'
       author: 'EditQ'
       license: 'CC0'
       licenseUrl: 'http://creativecommons.org/publicdomain/zero/1.0/deed.en'
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Miaoying_Temple_8.jpg'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Miaoying_Temple_5.jpg'
   - no: 8
     name: '798 艺术区'
     pinyin: 'Yìshùqū'

@@ -692,6 +692,12 @@
   width: 100%;
 }
 
+/* Hochformat (z. B. Weiße Pagode): nicht auf 4:3 beschneiden */
+.m-photo .is-portrait img {
+  aspect-ratio: 3 / 4;
+  object-position: center 40%;
+}
+
 .warn-line {
   margin: 0.55rem 0 0;
   padding: 0.42rem 0.65rem 0.44rem 0.72rem;

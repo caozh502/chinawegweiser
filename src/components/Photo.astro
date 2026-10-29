@@ -28,7 +28,7 @@ if (!mod) {
 const img = mod.default;
 ---
 
-<figure class={`photo ${cls}`}>
+<figure class:list={['photo', cls, img.width < img.height && 'is-portrait']}>
   <Image
     src={img}
     alt={photo.alt}
