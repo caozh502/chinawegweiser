@@ -183,6 +183,7 @@ sights:
       license: 'CC0'
       licenseUrl: 'http://creativecommons.org/publicdomain/zero/1.0/deed.en'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:20200110_Temple_of_Heaven-1.jpg'
+    qr: 'tiantan'
   - no: 3
     name: '慕田峪长城'
     pinyin: 'Mùtiányù'
@@ -221,6 +222,8 @@ sights:
       license: 'CC BY 2.0'
       licenseUrl: 'https://creativecommons.org/licenses/by/2.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:66954-The-Great-Wall,_Mutianyu.jpg'
+    qr: 'mutianyu'
+    qrNote: 'App 长城内外 (Through the Great Wall) – Shuttle und Tickets am Mutianyu. Nur mit WeChat scannen, die Kamera-App liest diesen Code nicht.'
   - no: 4
     name: '颐和园'
     pinyin: 'Yíhéyuán'
@@ -266,6 +269,7 @@ sights:
         license: 'CC BY-SA 4.0'
         licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seventeen_Arch_Bridge_IMG_0439.jpg'
+    qr: 'yiheyuan'
   - no: 5
     name: '天安门广场'
     pinyin: "Tiān'ānmén"
@@ -299,6 +303,8 @@ sights:
       license: 'CC BY-SA 3.0'
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gate_of_Heavenly_Peace,_Tiananmen_-_panoramio.jpg'
+    qr: 'tiananmen'
+    qrNote: 'Mini-Programm 天安门广场 – kostenloses Zeitfenster, dafür wird die Passnummer gebraucht. Nur mit WeChat scannen, die Kamera-App liest diesen Code nicht.'
   - no: 6
     name: '景山公园'
     pinyin: 'Jǐngshān Gōngyuán'

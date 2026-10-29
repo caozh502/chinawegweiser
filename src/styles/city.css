@@ -979,3 +979,67 @@
   opacity: 0.85;
   margin-top: 0.05rem;
 }
+
+/* ---------- WeChat-Mini-Programm-Codes ----------
+   Der Code soll die Seite nicht aufblähen: er liegt in einem Popover, das bei
+   Hover oder Tastaturfokus erscheint. Auf dem Telefon reicht ein Tippen, weil
+   das den Fokus setzt. */
+.qr-hint {
+  position: relative;
+  appearance: none;
+  background: none;
+  border: 0;
+  border-bottom: 1px dotted color-mix(in srgb, var(--accent) 55%, transparent);
+  padding: 0;
+  cursor: help;
+  color: var(--accent);
+  font: 500 0.82rem var(--font-ui);
+  text-align: left;
+}
+
+.qr-hint:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.qr-pop {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.5rem);
+  z-index: 40;
+  width: 232px;
+  padding: 0.5rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity 0.14s ease, transform 0.14s ease;
+  pointer-events: none;
+}
+
+.qr-hint:hover .qr-pop,
+.qr-hint.is-open .qr-pop {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.qr-pop img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.qr-cap {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--muted);
+}

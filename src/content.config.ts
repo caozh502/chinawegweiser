@@ -72,6 +72,10 @@ const sight = z.object({
   ticketUrl: z.string().optional(),
   /** Sprachanzeige hinter dem Ticket-Link, z. B. 'Ticketseite (englisch)'. */
   ticketLabel: z.string().optional(),
+  /** Schlüssel eines WeChat-Mini-Programm-Codes (Datei src/assets/peking/qr-<key>.png). */
+  qr: z.string().optional(),
+  /** Was der Code öffnet und wofür er gut ist. */
+  qrNote: z.string().optional(),
   photo: photo.optional(),
   /** Weitere Fotos: Eingang, Innenraum, Details. Erstes Bild bleibt `photo`. */
   photos: z.array(photo).default([]),

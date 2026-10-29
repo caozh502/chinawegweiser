@@ -6,10 +6,19 @@ import SightMap from '../components/SightMap.astro';
 import Toc from '../components/Toc.astro';
 import AffiliateBox from '../components/AffiliateBox.astro';
 import { affiliates } from '../data/affiliates';
+
 import AffiliateInline from '../components/AffiliateInline.astro';
 import { render, getCollection, type CollectionEntry } from 'astro:content';
 import { slugify } from '../lib/rehype-heading-ids.mjs';
 import '../styles/city.css';
+
+/** WeChat-Mini-Programm-Codes der Stadt (Dateien qr-<key>.png im Stadt-Ordner). */
+const qrFiles = import.meta.glob('/src/assets/*/qr-*.png', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
+const qrMap: Record<string, string> = {};
+for (const [pfad, url] of Object.entries(qrFiles)) {
+  const key = pfad.split('/').pop()!.replace(/^qr-/, '').replace(/\.png$/, '');
+  qrMap[key] = url;
+}
 
 interface Props {
   entry: CollectionEntry<'cities'>;
@@ -232,7 +241,7 @@ const faqLd = {
                 </div>
               )}
 
-              {(s.hours || s.closed || s.transit || s.buyTickets) && (
+              {(s.hours || s.closed || s.transit || s.buyTickets || s.qr) && (
                 <dl class="s-facts">
                   {s.hours && (<><dt>Öffnungszeiten</dt><dd>{s.hours}</dd></>)}
                   {s.closed && (<><dt>Geschlossen</dt><dd>{s.closed}</dd></>)}
@@ -251,6 +260,33 @@ const faqLd = {
                             </a>
                           </span>
                         )}
+                      </dd>
+                    </>
+                  )}
+                  {s.qr && qrMap[s.qr] && (
+                    <>
+                      <dt>WeChat-Code</dt>
+                      <dd>
+                        <button
+                          type="button"
+                          class="qr-hint"
+                          aria-expanded="false"
+                          onclick="const o=this.classList.toggle('is-open');this.setAttribute('aria-expanded',o);"
+                        >
+                          Code anzeigen
+                          <span class="qr-pop" role="tooltip">
+                            <img
+                              src={qrMap[s.qr]}
+                              alt={`Mini-Programm-Code für ${s.name}`}
+                              width="210"
+                              height="210"
+                              decoding="async"
+                            />
+                            <span class="qr-cap">
+                              {s.qrNote ?? 'Nur mit WeChat scannen – die Kamera-App liest diesen Code nicht.'}
+                            </span>
+                          </span>
+                        </button>
                       </dd>
                     </>
                   )}
@@ -570,3 +606,16 @@ const faqLd = {
   });
 </script>
 </Base>
+
+<!-- Immer nur ein Code offen: Tippen auf den nächsten schließt den vorigen. -->
+<script is:inline>
+  document.addEventListener('click', (e) => {
+    const t = e.target.closest('.qr-hint');
+    document.querySelectorAll('.qr-hint.is-open').forEach((h) => {
+      if (h !== t) {
+        h.classList.remove('is-open');
+        h.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
