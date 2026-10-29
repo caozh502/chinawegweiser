@@ -3,11 +3,14 @@
  *   affiliate: ['esim', 'hotels']
  *
  * TODO: eigene Tracking-Links einsetzen, sobald die Programme freigeschaltet sind.
- *      Airalo  -> partners.airalo.com (10–12 %)
- *      Klook   -> affiliate.klook.com  (eSIM ~20 %, Touren ~6,5 %)
- *      GYG     -> partner.getyourguide.com (8 %)
- *      Trip.com-> trip.com/partners (Hotels 5–7 %)
- *      Awin    -> Allianz Direct ~30 €/Abschluss, HanseMerkur 12 %
+ *      Airalo   -> partners.airalo.com
+ *      Klook    -> affiliate.klook.com
+ *      GYG      -> partner.getyourguide.com
+ *      Trip.com -> trip.com/partners
+ *      Awin     -> Allianz Direct, HanseMerkur
+ *
+ * Konditionen bewusst nicht im Code: Das Repo ist öffentlich, und die
+ * Provisionshöhe gehört nicht auf die Website.
  */
 export type AffiliateSlot = {
   id: string;
@@ -33,7 +36,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     text: 'Bei der Buchung auf „akzeptiert ausländische Gäste" achten – seit Mai 2024 ist die Ablehnung verboten, kontrolliert wird es aber nicht überall.',
     cta: 'Hotels suchen',
     url: 'https://www.trip.com/',
-    hint: 'Affiliate-Link (Trip.com, 5–7 %).',
+    hint: 'Affiliate-Link (Trip.com). Der Preis bleibt gleich.',
   },
   tours: {
     id: 'tours',
@@ -41,7 +44,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     text: 'Für Sehenswürdigkeiten mit chinesischem Reservierungssystem ist eine geführte Variante oft der einfachste Weg hinein.',
     cta: 'Touren ansehen',
     url: 'https://www.getyourguide.de/',
-    hint: 'Affiliate-Link (GetYourGuide, 8 %).',
+    hint: 'Affiliate-Link (GetYourGuide). Der Preis bleibt gleich.',
   },
   insurance: {
     id: 'insurance',
@@ -49,7 +52,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     text: 'Ein Arztbesuch in China ohne Versicherung kostet schnell vierstellig. Jahresverträge gibt es ab etwa 12 €.',
     cta: 'Tarife vergleichen',
     url: 'https://www.allianz-direct.de/',
-    hint: 'Affiliate-Link (Awin).',
+    hint: 'Affiliate-Link (Awin). Der Preis bleibt gleich.',
   },
   train: {
     id: 'train',
@@ -57,6 +60,6 @@ export const affiliates: Record<string, AffiliateSlot> = {
     text: 'Buchung über die englische 12306-Seite ist offiziell und günstiger, über Trip.com bequemer.',
     cta: 'Verbindungen prüfen',
     url: 'https://www.trip.com/trains/',
-    hint: 'Affiliate-Link (Trip.com, ca. 2 %).',
+    hint: 'Affiliate-Link (Trip.com). Der Preis bleibt gleich.',
   },
 };
