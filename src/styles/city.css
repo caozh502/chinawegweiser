@@ -314,7 +314,17 @@
   line-height: 1.45;
 }
 .s-facts dt { color: var(--muted); letter-spacing: 0.02em; }
-.s-facts dd { margin: 0; color: var(--fg); }
+.s-facts dd {
+  margin: 0;
+  color: var(--fg);
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+/* Auf schmalen Bildschirmen Label über den Wert statt zwei Spalten. */
+@media (max-width: 34rem) {
+  .s-facts { grid-template-columns: 1fr; gap: 0.1rem; }
+  .s-facts dt { margin-top: 0.45rem; }
+}
 
 /* ---------- Tarife ---------- */
 .s-tickets {
@@ -359,8 +369,18 @@
   border-radius: 4px;
   padding: 0.08rem 0.34rem;
 }
-.s-video a { color: var(--accent); }
-.s-video .v-channel { color: var(--muted); font-size: 0.76rem; }
+.s-video a {
+  color: var(--accent);
+  flex: 1 1 auto;
+  text-decoration-thickness: 1px;
+}
+/* Kanalname in eigene Zeile: sonst klebt er am Titel und liest sich als dessen Ende. */
+.s-video .v-channel {
+  flex: 0 0 100%;
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.01em;
+}
 
 /* ---------- Weitere Fotos ---------- */
 .s-photos { display: grid; gap: 0.7rem; margin-top: 0.8rem; }
