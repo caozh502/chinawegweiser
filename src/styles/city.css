@@ -152,6 +152,10 @@
   line-height: 1.3;
 }
 .s-de {
+  /* Pinyin: ǎ ǐ ǒ ǔ liegen in Lateinisch, erweitert-B. Georgia hat sie nicht –
+     in den Kompaktkarten erbte diese Zeile die Serifenschrift und die dritte
+     Tonebene sprang in eine Ersatzschrift. Deshalb hier fest die UI-Schrift. */
+  font-family: var(--font-ui);
   font-size: 0.8rem;
   color: var(--muted);
 }

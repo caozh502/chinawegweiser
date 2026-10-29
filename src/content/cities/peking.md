@@ -266,7 +266,7 @@ sights:
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seventeen_Arch_Bridge_IMG_0439.jpg'
   - no: 5
     name: '天安门广场'
-    pinyin: 'Tiānʾānmén'
+    pinyin: "Tiān'ānmén"
     german: 'Platz des Himmlischen Friedens'
     tier: must
     price: 'kostenlos'

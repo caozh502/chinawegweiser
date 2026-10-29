@@ -34,7 +34,7 @@
 * { box-sizing: border-box; }
 
 html {
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-ui);
   font-size: 18px;
   line-height: 1.65;
   scroll-behavior: smooth;
