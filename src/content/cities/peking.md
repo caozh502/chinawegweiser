@@ -325,12 +325,12 @@ sights:
     nearby: 'Fünf Minuten zu Fuß: der Eckenturm (角楼) an der Nordost-Ecke des Stadtgrabens – das klassische Abendfoto, wenn die Sonne hinter der Verbotenen Stadt steht.'
     photos:
       - file: 'peking/jiaolou.jpg'
-        alt: 'Eckenturm der Verbotenen Stadt am Stadtgraben'
-        caption: 'Der Eckenturm im Wasser: fünf Minuten vom Nordausgang des Parks am Graben entlang.'
-        author: 'Daniel Case'
-        license: 'CC BY-SA 3.0'
-        licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
-        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Forbidden_City_northwest_corner_tower_and_moat.jpg'
+        alt: 'Eckenturm der Verbotenen Stadt im Abendlicht'
+        caption: 'Der Eckenturm (角楼), aufgenommen kurz vor Sonnenuntergang – fünf Minuten vom Nordausgang des Jingshan-Parks.'
+        author: 'ZhengZhou'
+        license: 'CC BY-SA 4.0'
+        licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Corner_Tower_of_the_Forbidden_City,_Beijing.jpg'
   - no: 7
     name: '妙应寺白塔'
     pinyin: 'Miàoyìngsì Báitǎ'
