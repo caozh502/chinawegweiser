@@ -336,18 +336,16 @@ const faqLd = {
                   <div class="m-text">
                     <div class="m-head">
                       <span class="num">{s.no}</span>
-                      <span class="m-title">
-                        <span class="s-name">{s.name}</span>
-                        {(s.pinyin || s.german) && (
-                          <span class="s-de">{[s.pinyin, s.german].filter(Boolean).join(' · ')}</span>
-                        )}
-                      </span>
+                      <span class="s-name m-name">{s.name}</span>
                       {typeof s.lat === 'number' && (
                         <button type="button" class="zoom-link" data-zoom-sight={s.no}>
                           Auf Karte
                         </button>
                       )}
                     </div>
+                    {(s.pinyin || s.german) && (
+                      <p class="s-de m-sub">{[s.pinyin, s.german].filter(Boolean).join(' · ')}</p>
+                    )}
                     <div class="s-meta">
                       {s.price && <span class="chip">{s.price}</span>}
                       {s.duration && <span class="chip">{s.duration}</span>}

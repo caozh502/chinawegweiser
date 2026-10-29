@@ -685,8 +685,12 @@
 
 .m-head {
   display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
+  /* nowrap, damit der Kartenknopf nicht unter den Titel rutscht: Bei langen
+     Namen wie 妙应寺白塔与当地胡同 brach die Zeile um und "Auf Karte" landete
+     rechts unten neben dem Untertitel. Der Titel darf stattdessen selbst
+     umbrechen (min-width: 0). */
+  align-items: center;
+  flex-wrap: nowrap;
   gap: 0.5rem;
 }
 
@@ -705,14 +709,26 @@
   align-self: center;
 }
 
-.m-title {
-  display: flex;
-  flex-direction: column;
-  gap: 0.05rem;
+/* Pinyin/Deutsch steht in eigener Zeile über die volle Kartenbreite – im
+   Kopf neben dem Knopf blieben nur ~320px, und lange Namen wie
+   "Miàoyìngsì Báitǎ · Weiße Pagode und die Gassen drumherum" brachen mit
+   einem Waisenwort um. */
+.m-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.m-sub {
+  margin: 0.15rem 0 0;
+  padding-left: 2.25rem;
+  text-wrap: pretty;
 }
 
 .m-head .zoom-link {
+  flex: 0 0 auto;
   margin-left: auto;
+  white-space: nowrap;
 }
 
 .m-facts {

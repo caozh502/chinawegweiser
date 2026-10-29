@@ -16,6 +16,14 @@
   max-width: 38rem;
 }
 
+/* Zweiter Absatz direkt unter dem Lead: Herkunft/Anspruch, eine Stufe leiser
+   als der Lead, aber noch deutlich vor den Handlungsknöpfen. */
+.home-hero .lead-2 {
+  margin-top: 0.7rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
 .home-hero-photo {
   margin: 1.8rem 0 0;
 }
