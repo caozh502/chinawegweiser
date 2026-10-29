@@ -254,23 +254,52 @@ const faqLd = {
                 </ul>
               )}
 
-              {s.photo && <Photo photo={s.photo} />}
-              {s.photos.length > 0 && (
-                <div class="s-photos">
-                  {s.photos.map((p) => <Photo photo={p} />)}
-                </div>
-              )}
+              {(() => {
+                const alle = s.photo ? [s.photo, ...s.photos] : s.photos;
+                if (alle.length === 0) return null;
+                return (
+                  <div class={`s-gallery${alle.length === 1 ? ' single' : ''}`}>
+                    {alle.map((p) => <Photo photo={p} />)}
+                  </div>
+                );
+              })()}
 
               {s.video && (
-                <p class="s-video">
-                  <span class="v-label">Video · {s.video.lang === 'de' ? 'Deutsch' : 'Englisch'}</span>
-                  <a
-                    href={`https://www.youtube.com/watch?v=${s.video.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >{s.video.title}</a>
-                  <span class="v-channel">{s.video.channel}</span>
-                </p>
+                <div class="s-video">
+                  <button
+                    type="button"
+                    class="v-thumb"
+                    data-play={s.video.id}
+                    aria-label={`Video abspielen: ${s.video.title}`}
+                  >
+                    <img
+                      src={`https://i.ytimg.com/vi/${s.video.id}/hqdefault.jpg`}
+                      alt=""
+                      width="480"
+                      height="360"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                    />
+                    <span class="v-play" aria-hidden="true"></span>
+                  </button>
+                  <div class="v-meta">
+                    <span class="v-kicker">Video · {s.video.lang === 'de' ? 'Deutsch' : 'Englisch'}</span>
+                    <a
+                      class="v-title"
+                      href={`https://www.youtube.com/watch?v=${s.video.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >{s.video.title}</a>
+                    <span class="v-sub">{s.video.channel}</span>
+                    <a
+                      class="v-open"
+                      href={`https://www.youtube.com/watch?v=${s.video.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >Auf YouTube öffnen ↗</a>
+                  </div>
+                </div>
               )}
             </div>
           ))}
@@ -408,4 +437,21 @@ const faqLd = {
 
     <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
   </article>
+<script>
+  // Video erst auf Klick laden: bis dahin geht kein Request an YouTube außer dem Vorschaubild.
+  document.addEventListener('click', (ev) => {
+    const target = ev.target as HTMLElement | null;
+    const btn = target?.closest<HTMLButtonElement>('.v-thumb');
+    if (!btn) return;
+    const id = btn.dataset.play;
+    if (!id) return;
+    const frame = document.createElement('iframe');
+    frame.className = 'v-frame';
+    frame.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+    frame.title = btn.getAttribute('aria-label') ?? 'Video';
+    frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    frame.allowFullscreen = true;
+    btn.replaceWith(frame);
+  });
+</script>
 </Base>
