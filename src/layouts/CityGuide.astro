@@ -28,7 +28,7 @@ const statusText: Record<string, string> = {
   stale: 'Prüfung überfällig',
 };
 const bookingLabel: Record<string, string> = {
-  required: 'Reservierung Pflicht',
+  required: 'Reservierung nötig',
   recommended: 'Reservierung empfohlen',
   none: 'ohne Reservierung',
 };
@@ -211,12 +211,13 @@ const faqLd = {
                 <dl class="s-facts">
                   {s.hours && (<><dt>Öffnungszeiten</dt><dd>{s.hours}</dd></>)}
                   {s.closed && (<><dt>Geschlossen</dt><dd>{s.closed}</dd></>)}
-                  {s.transit && (<><dt>Nächste Station</dt><dd>{s.transit}</dd></>)}
+                  {s.transit && (<><dt>Eingang</dt><dd>{s.transit}</dd></>)}
                   {s.buyTickets && (
                     <>
                       <dt>Tickets</dt>
                       <dd>
-                        {s.buyTickets}
+                        <strong>{s.buyTickets}</strong>
+                        {s.buyTicketsAlt && <> {s.buyTicketsAlt}</>}
                         {s.ticketUrl && (
                           <>
                             {' '}

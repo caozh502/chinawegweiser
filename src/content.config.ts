@@ -55,8 +55,10 @@ const sight = z.object({
     .default([]),
   /** Offizielle Seite des Orts – nur wenn sie sich lohnt (Buchung, Öffnungszeiten). */
   official: z.object({ label: z.string(), url: z.string() }).optional(),
-  /** Wie man tatsächlich an ein Ticket kommt – WeChat-Mini-App, Schalter, Zeitfenster. */
+  /** Empfohlener Weg zum Ticket – wird fett gesetzt und steht vorn. */
   buyTickets: z.string().optional(),
+  /** Alles andere: Alternativen, Vorverkaufsfristen, Hinweise am Tor. */
+  buyTicketsAlt: z.string().optional(),
   /** Direktlink zur Buchung, falls vorhanden. */
   ticketUrl: z.string().optional(),
   photo: photo.optional(),

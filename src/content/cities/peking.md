@@ -103,13 +103,14 @@ sights:
     price: '40–60 ¥'
     duration: '3–4 Std'
     booking: required
-    note: 'Tickets nur online und meist sieben Tage im Voraus – in der Hochsaison sind sie in Minuten weg. Der Reisepass gilt als Ausweis, eine chinesische ID ist nicht nötig. Eingang nur am Meridian-Tor (Süden), Ausgang Norden; danach fünf Minuten zum Jingshan-Park.'
+    note: 'Die Anlage ist kein Gebäude, sondern eine Abfolge von Höfen: Wer am Nordausgang steht, hat den wichtigsten Teil gesehen. Der Aufstieg zum Jingshan-Park dauert danach fünfzehn Minuten und liefert den Blick über die Dächer – der eigentliche Abschluss des Besuchs.'
     lat: 39.91583
     lng: 116.39083
     hours: '08:30–17:00 (1.4.–31.10.), 08:30–16:30 (1.11.–31.3.); letzter Einlass eine Stunde vor Schluss'
     closed: 'Montags, außer an Feiertagen'
-    transit: 'U-Bahn 1, Tian''anmen Ost (天安门东), Ausgang A – von dort nordwärts durch das Meridian-Tor'
-    buyTickets: 'Nur online – über die WeChat-Mini-App „故宫博物院" oder die Buchungsseite. Das Kontingent wird sieben Tage vorher freigegeben, meist gegen 20:00 Uhr; am Tor braucht man Pass und QR-Code. Eine Kasse für Tagesgäste gibt es nicht.'
+    transit: 'Einlass ist nur am Meridian-Tor (午门) im Süden. Der ruhigere Weg dorthin: über das Donghua-Tor (东华门) im Osten, dann zehn Minuten am Stadtgraben entlang – dort ist die Warteschlange kürzer als über den Tian''anmen-Platz. Nachmittags ist weniger los als morgens. U-Bahn-Linie 1, Tian''anmen Ost (天安门东) liegt näher, dort ist der Andrang größer.'
+    buyTickets: 'WeChat-Mini-App „故宫博物院" – oder ticket.dpm.org.cn.'
+    buyTicketsAlt: 'Tickets gibt es nur online, eine Tageskasse existiert nicht. Das Kontingent wird sieben Tage vorher freigegeben, meist gegen 20:00 Uhr, in der Hochsaison sind die Plätze in Minuten weg. Am Eingang: Pass und QR-Code vorzeigen. Für den Jingshan-Park nebenan ist kein Vorverkauf nötig – Ticket am Eingang per QR-Code oder am Automaten.'
     ticketUrl: 'https://ticket.dpm.org.cn/'
     official: { label: 'dpm.org.cn', url: 'https://www.dpm.org.cn/' }
     tickets:
@@ -155,8 +156,9 @@ sights:
     lng: 116.4066
     hours: 'Park 06:00–22:00; Hallen 08:00–17:30, im Winter bis 16:30'
     closed: 'täglich geöffnet'
-    transit: 'U-Bahn 5, Tiantan Dongmen (天坛东门), Ausgang A – der Nordeingang liegt auf der anderen Seite'
-    buyTickets: 'Am Schalter oder Automaten am Eingang, vorab auch über die App 畅游公园, über die alle Stadtparks Pekings verkauft werden. Kombi-Ticket wählen – nur damit ist die Halle des Gebets offen.'
+    transit: 'Am Osttor (天坛东门) rein, am Westtor (天坛西门) raus – beide haben eine eigene U-Bahn-Station (Linie 5 bzw. Linie 8), so läuft man den Weg nicht zurück.'
+    buyTickets: 'Am Eingang – Schalter oder Automat'
+    buyTicketsAlt: 'Vorab auch über die App 畅游公园, über die alle Stadtparks Pekings verkauft werden. Kombi-Ticket wählen – nur damit ist die Halle des Gebets offen.'
     ticketUrl: 'https://www.bjgyol.com.cn/'
     tickets:
       - label: 'Park (Hoch-/Nebensaison)'
@@ -189,8 +191,9 @@ sights:
     lng: 116.5619
     hours: '07:30–17:30 (Hochsaison), 08:00–17:00 (Nebensaison)'
     closed: 'täglich geöffnet'
-    transit: 'Schnellbus 916 ab Dongzhimen nach Huairou, dann Shuttle; Direktbusse ab Qianmen starten gegen 07:30'
-    buyTickets: 'Am Ticketbüro am Parkplatz oder vorab über die WeChat-Mini-App des Parks. Shuttle und Seilbahn sind eigene Tickets. Am Schalter zählt der Pass, Karte wird genommen.'
+    transit: 'Ticketbüro am Parkplatz, von dort Shuttle zur Talstation; die Seilbahn steht direkt daneben. Anfahrt: Schnellbus 916 ab Dongzhimen nach Huairou, dann Shuttle – Direktbusse ab Qianmen starten gegen 07:30.'
+    buyTickets: 'Ticketbüro am Parkplatz'
+    buyTicketsAlt: 'Oder vorab über die WeChat-Mini-App des Parks. Shuttle und Seilbahn sind eigene Tickets. Am Schalter zählt der Pass, Karte wird genommen.'
     official: { label: 'mutianyugreatwall.com', url: 'https://www.mutianyugreatwall.com/' }
     tickets:
       - label: 'Eintritt'
@@ -227,8 +230,9 @@ sights:
     lng: 116.533
     hours: 'kein offizieller Zugang, keine Öffnungszeiten'
     closed: 'ganzjährig gesperrt, Kontrollen an den Zustiegen'
-    transit: 'kein ÖPNV; Taxi oder Chauffeur ab Peking ca. 2 Stunden, Rückfahrt vorher fest vereinbaren'
-    buyTickets: 'Keine Kasse, keine Buchung – es gibt keine Tickets. Die Zustiege sind gesperrt; wer kontrolliert wird, zahlt Bußgeld.'
+    transit: 'Kein offizieller Eingang und kein ÖPNV: Taxi oder Chauffeur ab Peking, rund zwei Stunden, Rückfahrt vorher fest vereinbaren.'
+    buyTickets: 'Keine Kasse, keine Buchung, kein Ticket'
+    buyTicketsAlt: 'Die Zustiege sind gesperrt; wer kontrolliert wird, zahlt Bußgeld.'
     tickets:
       - label: 'Eintritt'
         price: '—'
@@ -258,8 +262,9 @@ sights:
     lng: 116.39748
     hours: '05:00–22:00; das Zeitfenster wird bei der Buchung gewählt'
     closed: 'bei Veranstaltungen und Sitzungen zeitweise komplett gesperrt'
-    transit: 'U-Bahn 1, Tian''anmen Ost (天安门东) – Ausgang A führt direkt zur Kontrolle'
-    buyTickets: 'Kostenlos, aber Zeitfenster sind Pflicht: Reservierung über das WeChat-Mini-Programm 天安门广场预约参观, Passnummer nötig. Ohne Reservierung kommt man an der Kontrolle nicht durch.'
+    transit: 'Kontrolle am Nordende des Platzes; U-Bahn 1, Tian''anmen Ost (天安门东), Ausgang A führt direkt dorthin.'
+    buyTickets: 'Zeitfenster im Mini-Programm 天安门广场预约参观 – kostenlos, aber Pflicht'
+    buyTicketsAlt: 'Passnummer wird bei der Buchung abgefragt. Ohne Reservierung kommt man an der Kontrolle nicht durch.'
     tickets:
       - label: 'Eintritt'
         price: 'frei'
@@ -289,8 +294,9 @@ sights:
     lng: 116.39683
     hours: 'Gassen jederzeit; Läden meist 10:00–21:00'
     closed: '—'
-    transit: 'U-Bahn 6 oder 8, Nanluoguxiang (南锣鼓巷), Ausgang E'
-    buyTickets: 'Kein Ticket, keine Buchung. Wer in einen Hof oder ein Teehaus will, zahlt dort separat.'
+    transit: 'U-Bahn 6 oder 8, Nanluoguxiang (南锣鼓巷), Ausgang E – man steht direkt am Südende der Gasse.'
+    buyTickets: 'Kein Ticket, keine Buchung'
+    buyTicketsAlt: 'Wer in einen Hof oder ein Teehaus will, zahlt dort separat.'
     tickets:
       - label: 'Eintritt'
         price: 'frei'
@@ -327,8 +333,9 @@ sights:
     lng: 116.48978
     hours: 'Gelände jederzeit; Galerien meist 10:00–18:00'
     closed: 'viele Galerien montags'
-    transit: 'U-Bahn 14, Jiangtai (将台), danach 15 Minuten zu Fuß oder kurzes Taxi'
-    buyTickets: 'Das Gelände ist frei zugänglich. Einzelne Ausstellungen kosten 30–100 ¥, Kasse vor Ort oder über die Galerie; viele Häuser haben montags zu.'
+    transit: 'Hauptzugang am Westtor (西门) an der Jiuxianqiao-Straße; U-Bahn 14, Jiangtai (将台), danach 15 Minuten zu Fuß oder kurzes Taxi.'
+    buyTickets: 'Gelände frei zugänglich'
+    buyTicketsAlt: 'Einzelne Ausstellungen kosten 30–100 ¥, Kasse vor Ort oder über die Galerie; viele Häuser haben montags zu.'
     official: { label: '798artdistrict.com.cn', url: 'https://798artdistrict.com.cn/' }
     tickets:
       - label: 'Gelände'
@@ -360,8 +367,9 @@ sights:
     lng: 116.4106
     hours: 'meist 11:00–21:30, Küche bis 21:00'
     closed: '—'
-    transit: 'je nach Haus; Siji Minfu (四季民福) an der Ostmauer: U-Bahn 1, Tian''anmen Ost'
-    buyTickets: 'Kein Ticket – Tischreservierung: direkt in der Filiale, über die App des Hauses oder über 大众点评 (Dianping). Ohne Reservierung ein bis zwei Stunden Wartezeit.'
+    transit: 'Je nach Haus; Siji Minfu (四季民福) an der Ostmauer ist der Klassiker mit Blick auf den Graben – U-Bahn 1, Tian''anmen Ost.'
+    buyTickets: 'Tisch reservieren – in der Filiale oder über 大众点评 (Dianping)'
+    buyTicketsAlt: 'Ohne Reservierung ein bis zwei Stunden Wartezeit, ab 18:00 Uhr am längsten.'
     official: { label: 'quanjude.com.cn', url: 'https://www.quanjude.com.cn/' }
     tickets:
       - label: 'Ganze Ente'
