@@ -76,6 +76,8 @@ const guides = defineCollection({
     status: z.enum(['verified', 'draft', 'stale']).default('draft'),
     verified: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
     sources: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
+    /** Aufmacherfoto. Pflicht wird es, sobald alle Seiten eins haben. */
+    hero: photo.optional(),
     chinese: z
       .object({ name: z.string(), address: z.string(), note: z.string().optional() })
       .optional(),

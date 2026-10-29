@@ -2,6 +2,14 @@
 title: 'Verbotene Stadt: Tickets für Ausländer (Peking)'
 description: 'Tickets für die Verbotene Stadt gibt es nur online und nur mit Vorausbuchung. Der Pass wird als Ausweis akzeptiert – eine chinesische ID ist nicht nötig. Montags geschlossen.'
 answer: 'Tickets gibt es ausschließlich online, meist sieben Tage im Voraus, und sie sind in der Hochsaison oft in Minuten weg. Der Reisepass funktioniert als Ausweis – eine chinesische ID brauchst du nicht. Montags ist geschlossen (außer an Feiertagen). Wer ohne Ticket anreist, steht vor dem Tor und kommt nicht hinein.'
+hero:
+  file: 'peking/gugong-courtyard.jpg'
+  alt: 'Innenhof der Verbotenen Stadt mit Blick auf ein Hallentor'
+  caption: 'In den nördlichen Höfen wird es deutlich leerer. Wer um 8:30 Uhr am Meridian-Tor steht, hat die ersten Höfe fast für sich.'
+  author: 'CEphoto, Uwe Aranas'
+  license: 'CC BY-SA 3.0'
+  licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Beijing_China_Forbidden-City-03.jpg'
 city: peking
 category: sehenswuerdigkeit
 price: '40–60 ¥ (ca. 5–8 €)'

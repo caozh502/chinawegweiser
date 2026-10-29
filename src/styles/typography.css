@@ -18,8 +18,12 @@
     sans-serif;
   --font-serif: 'Iowan Old Style', 'Charter', 'Bitstream Charter', 'Source Serif 4', Georgia,
     'Times New Roman', serif;
-  --measure: 34rem;
-  --wrap: 42rem;
+  /* Zeilenlänge: 38rem ≈ 76 Zeichen bei 1.05rem Fließtext – noch im
+     Komfortbereich (Bringhurst empfiehlt 45–75, über 85 wird es zäh). */
+  --measure: 38rem;
+  /* Seitenbreite: eigenständig von der Zeilenlänge, sonst werden Bilder
+     und Tabellen mit dem Text zusammengedrückt. */
+  --wrap: 56rem;
   --space-section: 4rem;
 }
 
@@ -336,16 +340,51 @@ nav.top a:hover {
   text-decoration-color: var(--line);
 }
 
-/* ---------- Inhaltsverzeichnis (Stadtseiten) ----------
-   Muster wie bei Guardian/SZ-Guides: kompakte Kastenliste statt klebender
-   Sidebar – funktioniert in einer Spalte und kostet kein JavaScript. */
+/* ---------- Inhaltsverzeichnis (mitlaufende Seitenspalte) ---------- */
+.guide-shell {
+  display: grid;
+  gap: 0;
+}
+
+.guide-body { min-width: 0; }
+
+/* Erst ab ~64rem gibt es Platz für eine Spalte daneben. */
+@media (min-width: 64rem) {
+  main.wrap:has(.guide-shell) {
+    /* 38 + 3 + 15 = 56rem Inhalt plus das .wrap-Padding */
+    max-width: 58.2rem;
+  }
+  .guide-shell {
+    grid-template-columns: minmax(0, 38rem) 15rem;
+    column-gap: 3rem;
+    align-items: start;
+  }
+  /* Kopfblock auf dieselbe Kante wie der Text: eine Lesekante, eine Randspalte. */
+  .entry > :not(.guide-shell) {
+    max-width: 38rem;
+  }
+  .guide-shell > .guide-body { grid-column: 1; grid-row: 1; }
+  .guide-shell > .guide-toc {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: 1.25rem;
+    align-self: start;
+    max-height: calc(100vh - 2.5rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    margin: 0;
+    padding: 0;
+  }
+  /* Die Bildspalte darf schmaler sein als der Text: kein Überlauf. */
+  .guide-body .photo,
+  .guide-body figure { max-width: 38rem; }
+}
+
 .toc {
-  margin: 2.6rem 0 0;
-  padding: 1.05rem 1.2rem 1.15rem;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--card);
+  margin: 2.4rem 0 0;
   max-width: var(--wrap);
+  font-family: var(--font-ui);
 }
 
 .toc-title {
@@ -360,7 +399,8 @@ nav.top a:hover {
 .entry .toc ol {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 0.95rem;
+  border-left: 2px solid var(--line);
   display: grid;
   gap: 0.05rem;
   /* Eine Spalte: die Leserichtung bleibt oben → unten. Bei zwei Spalten
@@ -383,8 +423,24 @@ nav.top a:hover {
   display: flex;
   gap: 0.6rem;
   padding: 0.26rem 0;
-  color: var(--fg);
+  color: var(--muted);
   text-decoration: none;
+  transition: color 0.12s ease;
+}
+
+.entry .toc li a:hover,
+.entry .toc li a:focus-visible {
+  color: var(--accent);
+}
+
+/* Scrollspy: der Abschnitt, in dem man gerade liest. */
+.entry .toc li a[aria-current='true'] {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.entry .toc li a[aria-current='true']::before {
+  color: var(--accent);
 }
 
 .entry .toc li a::before {

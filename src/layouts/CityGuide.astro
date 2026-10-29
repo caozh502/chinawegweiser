@@ -3,6 +3,7 @@ import Base from './Base.astro';
 import { site, contactEmail } from '../data/site';
 import Photo from '../components/Photo.astro';
 import SightMap from '../components/SightMap.astro';
+import Toc from '../components/Toc.astro';
 import AffiliateBox from '../components/AffiliateBox.astro';
 import AffiliateInline from '../components/AffiliateInline.astro';
 import { render, getCollection, type CollectionEntry } from 'astro:content';
@@ -41,6 +42,12 @@ const fmt = (iso?: string) =>
       })
     : null;
 const verifiedText = fmt(d.verified);
+
+/* Lesezeit: rund 200 Wörter pro Minute, Markdown-Text plus Datenblöcke. */
+const readingTime = Math.max(
+  3,
+  Math.round(((entry.body ?? '').split(/\s+/).filter(Boolean).length + 600) / 200)
+);
 
 const sightName = (no: number) => d.sights.find((s) => s.no === no)?.name ?? String(no);
 
@@ -96,6 +103,7 @@ const faqLd = {
         >
       )}
       {d.days && <span class="badge">{d.days}</span>}
+      <span class="badge">{readingTime} Min. Lesezeit</span>
     </div>
 
     <p class="lead">{d.intro}</p>
@@ -109,17 +117,9 @@ const faqLd = {
       {d.base && <div><span class="k">Basis</span><span class="v">{d.base}</span></div>}
     </section>
 
-    {toc.length > 2 && (
-      <nav class="toc" aria-labelledby="toc-title">
-        <p class="toc-title" id="toc-title">Inhalt</p>
-        <ol>
-          {toc.map((t) => (
-            <li><a href={`#${t.id}`}>{t.title}</a></li>
-          ))}
-        </ol>
-      </nav>
-    )}
-
+    <div class="guide-shell">
+      <Toc items={toc} />
+      <div class="guide-body">
     <Content />
 
     {d.connections.length > 0 && (
@@ -297,6 +297,9 @@ const faqLd = {
         </ul>
       </div>
     )}
+
+      </div>
+    </div>
 
     <div class="report">
       <p>

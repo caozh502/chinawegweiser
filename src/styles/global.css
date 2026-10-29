@@ -1,6 +1,22 @@
-/* Standard ist DUNKEL (auch ohne JavaScript). Hell wird über
-   <html data-theme="light"> eingeschaltet – gesetzt vom Inline-Skript im <head>. */
+/* Standard ist HELL (Papier) – Reisefotos stehen darauf besser als auf Schwarz.
+   Dunkel über <html data-theme="dark">, gesetzt vom Inline-Skript im <head>. */
 :root {
+  color-scheme: light;
+  --bg: #f9f7f2;
+  --fg: #1a1815;
+  --muted: #5d564d;
+  --line: #e5dfd4;
+  --card: #ffffff;
+  --accent: #8a5a12;
+  --on-accent: #ffffff;
+  --accent-soft: #f5ecdc;
+  --ok: #1f6f43;
+  --warn: #b4471f;
+  --wrap: 56rem; /* siehe typography.css – dort steht die Begründung */
+  --radius: 10px;
+}
+
+:root[data-theme='dark'] {
   color-scheme: dark;
   --bg: #14120f;
   --fg: #efebe4;
@@ -12,22 +28,6 @@
   --accent-soft: #33281a;
   --ok: #74d9a2;
   --warn: #f08a6d;
-  --wrap: 44rem;
-  --radius: 10px;
-}
-
-:root[data-theme='light'] {
-  color-scheme: light;
-  --bg: #faf8f4;
-  --fg: #191817;
-  --muted: #5a544c;
-  --line: #e3ddd3;
-  --card: #ffffff;
-  --accent: #8a5a12;
-  --on-accent: #ffffff;
-  --accent-soft: #f5ecdc;
-  --ok: #1f6f43;
-  --warn: #b4471f;
 }
 
 
@@ -80,10 +80,11 @@ nav.top a:hover { color: var(--fg); }
 
 /* ---------- headings ---------- */
 h1 {
-  font-size: 1.85rem;
-  line-height: 1.25;
-  letter-spacing: -.02em;
-  margin: .4rem 0 .9rem;
+  font-size: clamp(2.1rem, 1.3rem + 2.6vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -.025em;
+  margin: .4rem 0 1rem;
+  text-wrap: balance;
 }
 h2 {
   font-size: 1.22rem;

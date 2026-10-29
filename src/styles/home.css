@@ -13,7 +13,7 @@
 }
 
 .home-hero .lead {
-  max-width: 34rem;
+  max-width: 38rem;
 }
 
 .home-hero-photo {
@@ -106,7 +106,7 @@ section + .callout-home,
   font-family: var(--font-serif);
   font-size: 1rem;
   line-height: 1.7;
-  max-width: 34rem;
+  max-width: 38rem;
   color: var(--muted);
 }
 
@@ -130,4 +130,106 @@ section + .callout-home,
   line-height: 1.4;
   color: var(--muted);
   margin-top: 0.2rem;
+}
+
+/* ---------- Vertrauensstreifen ---------- */
+.trust-strip {
+  list-style: none;
+  margin: 1.8rem 0 0;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.8rem;
+  font-family: var(--font-ui);
+  font-size: 0.79rem;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+
+.trust-strip li {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+@media (min-width: 46rem) {
+  .trust-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.4rem 1.2rem;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem 1.4rem;
+  margin: 1.5rem 0 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.62rem 1.05rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--on-accent);
+  text-decoration: none;
+}
+.btn-primary:hover { filter: brightness(1.08); }
+
+.btn-quiet {
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.btn-quiet:hover { color: var(--accent); }
+
+.trust-strip li::before {
+  content: '✓';
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ---------- Fotoreihe ---------- */
+.photo-row {
+  margin-top: 3rem;
+}
+
+.photo-row > .photo {
+  margin: 0 0 1.4rem;
+}
+
+.photo-row .photo figcaption {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+@media (min-width: 50rem) {
+  .photo-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.1rem;
+    align-items: start;
+  }
+  .photo-row > .section-h {
+    grid-column: 1 / -1;
+  }
+  .photo-row > .photo {
+    margin: 0;
+  }
+  .photo-row .photo img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
 }

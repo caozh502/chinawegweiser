@@ -1,0 +1,77 @@
+---
+/**
+ * Inhaltsverzeichnis. Auf breiten Bildschirmen steht es als mitlaufende
+ * Seitenspalte rechts, darunter als Block über dem Text.
+ * Scrollspy hebt den gerade gelesenen Abschnitt hervor.
+ */
+interface Item {
+  title: string;
+  id: string;
+}
+interface Props {
+  items: Item[];
+  title?: string;
+}
+
+const { items, title = 'Inhalt' } = Astro.props;
+---
+
+{items.length > 2 && (
+  <nav class="toc guide-toc" aria-labelledby="toc-title" data-toc>
+    <p class="toc-title" id="toc-title">{title}</p>
+    <ol>
+      {items.map((t) => (
+        <li><a href={`#${t.id}`}>{t.title}</a></li>
+      ))}
+    </ol>
+  </nav>
+)}
+
+<script>
+  const nav = document.querySelector<HTMLElement>('[data-toc]');
+  const links = nav ? [...nav.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')] : [];
+
+  if (links.length) {
+    const targets = links
+      .map((a) => ({
+        link: a,
+        el: document.getElementById(decodeURIComponent(a.getAttribute('href')!.slice(1))),
+      }))
+      .filter((t): t is { link: HTMLAnchorElement; el: HTMLElement } => Boolean(t.el));
+
+    const setActive = (active?: HTMLElement) => {
+      for (const t of targets) {
+        if (t.el === active) t.link.setAttribute('aria-current', 'true');
+        else t.link.removeAttribute('aria-current');
+      }
+    };
+
+    // Der Abschnitt gilt als aktiv, sobald seine Überschrift die obere
+    // Bildschirmkante passiert hat; bei mehreren gleichzeitig gewinnt der letzte.
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      // Kein offsetTop: die Sticky-Spalte ist der offsetParent, offsetTop wäre
+      // dann relativ zu ihr statt zum Dokument.
+      const y = 140;
+      let current: HTMLElement | undefined;
+      for (const t of targets) {
+        if (t.el.getBoundingClientRect().top <= y) current = t.el;
+      }
+      setActive(current);
+    };
+    // Kein requestAnimationFrame: in Hintergrund-Tabs und beim Vorrendern
+    // (Screenshots, Prerender, Drucken) feuert es nicht zuverlässig, dann
+    // bleibt der Scrollspy für immer auf dem ersten Abschnitt stehen.
+    // Elf getBoundingClientRect-Aufrufe pro Scroll sind billig genug.
+    const onScroll = () => update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+
+    // Klick: Sprungziel ohne Animation anspringen (Animation scheitert in Tabs)
+    for (const t of targets) {
+      t.link.addEventListener('click', () => setActive(t.el));
+    }
+  }
+</script>

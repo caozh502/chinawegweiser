@@ -40,6 +40,37 @@ const hero = {
   sourceUrl: 'https://commons.wikimedia.org/wiki/File:Forbidden_City_Panorama_3.jpg',
 };
 
+/** Drei Motive für die Fotoreihe – gleiche Quelle wie die Stadtseite. */
+const bilder = [
+  {
+    file: 'peking/tiantan.jpg',
+    alt: 'Halle des Gebets für gute Ernten im Himmelstempel',
+    caption: 'Himmelstempel: der runde Bau ist das Motiv, für das die meisten anreisen.',
+    author: 'Tianjin Mansion',
+    license: 'CC BY-SA 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Temple_of_Heaven,_Beijing,_China_-_011.jpg',
+  },
+  {
+    file: 'peking/mutianyu.jpg',
+    alt: 'Mauerabschnitt Mutianyu mit Wachtürmen auf bewaldetem Bergrücken',
+    caption: 'Mutianyu: der Abschnitt, den die meisten zuerst sehen – und der am besten organisiert ist.',
+    author: 'Severin.stalder',
+    license: 'CC BY-SA 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Great_Wall_of_China_at_Mutianyu.jpg',
+  },
+  {
+    file: 'peking/tiananmen.jpg',
+    alt: 'Tor des Himmlischen Friedens am Tiananmen-Platz',
+    caption: 'Tiananmen: das Tor ist der Fixpunkt, von dem aus fast jede Route beginnt.',
+    author: 'konget',
+    license: 'CC BY-SA 3.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gate_of_Heavenly_Peace,_Tiananmen_-_panoramio.jpg',
+  },
+];
+
 /** Teaser-Bild je Stadt; fehlt es, nimmt CityTeaser das erste Sehenswürdigkeitsfoto. */
 const teaserBild: Record<string, any> = {
   peking: {
@@ -67,7 +98,29 @@ const teaserBild: Record<string, any> = {
       ohne Bargeld. Internet, das nicht wie zu Hause funktioniert. Diese Seite beantwortet genau
       diese Fragen: eine Seite, ein Problem, mit Datum der letzten Prüfung.
     </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="/stadt/peking/">Zum Peking-Führer →</a>
+      <a class="btn-quiet" href="/warum/">Wie diese Seite arbeitet</a>
+    </div>
+
     <Photo photo={hero} loading="eager" class="home-hero-photo" />
+  </section>
+
+  <ul class="trust-strip">
+    <li>Chinesische Quellen im Original</li>
+    <li>Zuletzt geprüft: 29.10.2026</li>
+    <li>Anzeigen gekennzeichnet</li>
+    <li>Kostenlos, ohne Konto</li>
+  </ul>
+
+  <section class="photo-row">
+    <div class="section-h">
+      <h2>Drei Ansichten aus Peking</h2>
+      <span>alle mit Lizenz und Urheber</span>
+    </div>
+    <Photo photo={bilder[0]} />
+    <Photo photo={bilder[1]} />
+    <Photo photo={bilder[2]} />
   </section>
 
   {fertigeStaedte.map((stadt) => (

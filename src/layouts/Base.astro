@@ -31,9 +31,9 @@ const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
         }
         try {
           document.documentElement.dataset.theme =
-            localStorage.getItem('theme') === 'light' ? 'light' : 'dark';
+            localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
         } catch (e) {
-          document.documentElement.dataset.theme = 'dark';
+          document.documentElement.dataset.theme = 'light';
         }
       })();
     </script>
@@ -123,7 +123,8 @@ const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
       document.addEventListener('click', function (e) {
         var btn = e.target.closest && e.target.closest('.theme-toggle');
         if (!btn) return;
-        var next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        var cur = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+        var next = cur === 'dark' ? 'light' : 'dark';
         document.documentElement.dataset.theme = next;
         try {
           localStorage.setItem('theme', next);
@@ -176,7 +177,7 @@ const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
     content: '☀';
     font-size: .95rem;
   }
-  :root[data-theme='light'] .theme-toggle .tt-icon::before {
+  :root[data-theme='dark'] .theme-toggle .tt-icon::before {
     content: '☾';
   }
 </style>

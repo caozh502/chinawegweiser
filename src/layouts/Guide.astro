@@ -2,6 +2,9 @@
 import Base from './Base.astro';
 import { site, contactEmail } from '../data/site';
 import AffiliateBox from '../components/AffiliateBox.astro';
+import Toc from '../components/Toc.astro';
+import Photo from '../components/Photo.astro';
+import { slugify } from '../lib/rehype-heading-ids.mjs';
 import { render, type CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -40,6 +43,25 @@ const cityName = cityNames[d.city] ?? d.city;
 const verifiedText = fmt(d.verified);
 const mailSubject = encodeURIComponent(`Korrektur: ${d.title}`);
 
+/* Inhaltsverzeichnis aus den Markdown-Überschriften (IDs setzt
+   src/lib/rehype-heading-ids.mjs) plus die datengetriebenen Blöcke. */
+const mdSections = [...(entry.body ?? '').matchAll(/^##\s+(.+)$/gm)].map((m) => {
+  const t = m[1].trim();
+  return { title: t, id: slugify(t) };
+});
+
+const toc = [
+  ...mdSections,
+  ...(d.chinese ? [{ title: 'Zum Vorzeigen', id: 'cn-card' }] : []),
+  ...(d.affiliate.length > 0 ? [{ title: 'Buchen', id: 'buchen' }] : []),
+  ...(d.sources.length > 0 ? [{ title: 'Quellen', id: 'quellen' }] : []),
+  ...(d.faq.length > 0 ? [{ title: 'Häufige Fragen', id: 'haeufige-fragen' }] : []),
+];
+
+/* Lesezeit: grob 200 Wörter pro Minute. */
+const words = (entry.body ?? '').split(/\s+/).filter(Boolean).length;
+const readingTime = Math.max(1, Math.round(words / 200));
+
 const faqLd = d.faq.length
   ? {
       '@context': 'https://schema.org',
@@ -66,6 +88,7 @@ const faqLd = d.faq.length
       {verifiedText && <span class="badge">Geprüft: {verifiedText}</span>}
       {d.price && <span class="badge">Preis: {d.price}</span>}
       {d.duration && <span class="badge">Dauer: {d.duration}</span>}
+      <span class="badge">{readingTime} Min. Lesezeit</span>
     </div>
 
     <div class="answer">
@@ -73,6 +96,11 @@ const faqLd = d.faq.length
       <p>{d.answer}</p>
     </div>
 
+    {d.hero && <Photo photo={d.hero} loading="eager" class="hero-photo" />}
+
+    <div class="guide-shell">
+      <Toc items={toc} />
+      <div class="guide-body">
     <Content />
 
     {d.chinese && (
@@ -91,11 +119,11 @@ const faqLd = d.faq.length
       </div>
     )}
 
-    {d.affiliate.map((slot) => <AffiliateBox name={slot} />)}
+    <div id="buchen">{d.affiliate.map((slot) => <AffiliateBox name={slot} />)}</div>
 
     {d.sources.length > 0 && (
       <div class="sources">
-        <h2 style="margin-top:2rem">Quellen</h2>
+        <h2 style="margin-top:2rem" id="quellen">Quellen</h2>
         <ul>
           {d.sources.map((s) => (
             <li>
@@ -108,7 +136,7 @@ const faqLd = d.faq.length
 
     {d.faq.length > 0 && (
       <>
-        <h2>Häufige Fragen</h2>
+        <h2 id="haeufige-fragen">Häufige Fragen</h2>
         {d.faq.map((f) => (
           <div>
             <h3>{f.q}</h3>
@@ -117,6 +145,9 @@ const faqLd = d.faq.length
         ))}
       </>
     )}
+
+      </div>
+    </div>
 
     <div class="report">
       <p>
