@@ -23,6 +23,7 @@ const ph = (v: string, label: string) => (v ? v : `[${label}]`);
     <h2>Angaben gemäß § 5 DDG</h2>
     <p>
       {ph(o.name, 'Vor- und Nachname')}<br />
+      {o.careOf && <>{o.careOf}<br /></>}
       {ph(o.street, 'Straße und Hausnummer')}<br />
       {ph(o.zipCity, 'PLZ Ort')}<br />
       {o.country}

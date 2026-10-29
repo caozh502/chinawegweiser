@@ -1,6 +1,6 @@
 ---
 import Base from './Base.astro';
-import { contactEmail } from '../data/site';
+import { site, contactEmail } from '../data/site';
 import AffiliateBox from '../components/AffiliateBox.astro';
 import { render, type CollectionEntry } from 'astro:content';
 
@@ -61,6 +61,7 @@ const faqLd = d.faq.length
     <h1>{d.title}</h1>
 
     <div class="metabar">
+      <span class="byline">Von <a href="/autoren/">{site.owner.name}</a></span>
       <span class={`badge ${d.status}`}>{statusText[d.status]}</span>
       {verifiedText && <span class="badge">Geprüft: {verifiedText}</span>}
       {d.price && <span class="badge">Preis: {d.price}</span>}

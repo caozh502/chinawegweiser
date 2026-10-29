@@ -1,6 +1,6 @@
 ---
 import Base from './Base.astro';
-import { contactEmail } from '../data/site';
+import { site, contactEmail } from '../data/site';
 import Photo from '../components/Photo.astro';
 import SightMap from '../components/SightMap.astro';
 import AffiliateBox from '../components/AffiliateBox.astro';
@@ -88,6 +88,7 @@ const faqLd = {
     <h1>{d.title}</h1>
 
     <div class="metabar">
+      <span class="byline">Von <a href="/autoren/">{site.owner.name}</a></span>
       <span class={`badge ${d.status}`}>{statusText[d.status]}</span>
       {verifiedText && (
         <span class="badge"

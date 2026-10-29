@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, contactEmail } from '../data/site';
+---
+
+<Base
+  title="Wer schreibt hier"
+  description="Jiale Cao, geboren und aufgewachsen in China, seit Jahren in Deutschland. Warum diese Seite existiert und wie ihre Inhalte geprüft werden."
+>
+  <article class="entry">
+    <div class="eyebrow"><a href="/">Start</a> · Autor</div>
+    <h1>Wer schreibt hier</h1>
+
+    <p class="lead">
+      <strong>{site.owner.name}</strong> – aufgewachsen in China, seit dem Master in Deutschland,
+      beruflich in der Softwareentwicklung und im Testen.
+    </p>
+
+    <h2>Warum ich das schreibe</h2>
+    <p>
+      Ich lese chinesische Quellen im Original: Behördenhinweise, App-Beschreibungen, Aushänge am
+      Eingang, die Hinweise in Mini-Programmen. Und ich weiß aus eigenem Leben, welche Frage ein
+      deutscher Leser an derselben Stelle stellt. Ein Chinese versteht das System, ohne es erklären
+      zu müssen; ein Deutscher braucht die Erklärung, findet sie aber selten in einer Sprache, die
+      er lesen kann. Genau dazwischen liegt diese Seite.
+    </p>
+
+    <h2>Beruflicher Hintergrund</h2>
+    <p>
+      Mehrere Jahre in der deutschen Industrie, davon zuletzt im Testen: Prüfschritte dokumentieren,
+      Abweichungen reproduzieren, „funktioniert bei mir" nicht als Ergebnis akzeptieren. Wenn eine
+      Anleitung auf dieser Seite steht, dann weil sie so durchgeführt wurde – mit Datum und, wo es
+      nötig ist, mit dem Hinweis, dass etwas ungeprüft ist.
+    </p>
+
+    <h2>Sprachen</h2>
+    <p>
+      Chinesisch (Muttersprache), Deutsch (Arbeitssprache), Englisch. Die Texte hier entstehen auf
+      Deutsch; wo eine Formulierung unklar ist, steht das Datum der letzten Kontrolle daneben, nicht
+      die Behauptung, es sei endgültig.
+    </p>
+
+    <h2>Wie die Inhalte entstehen</h2>
+    <p>
+      Recherche in chinesischen Primärquellen, Abgleich mit offiziellen Stellen, Prüfung gegen die
+      Realität vor Ort. Die Regeln dafür stehen unter
+      <a href="/warum/">Warum es diese Seite gibt</a>; wie dieses Projekt Geld verdient, unter
+      <a href="/transparenz/">Wie wir Geld verdienen</a>.
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+      Korrekturen, Fragen, Widersprüche:
+      <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+      Widersprüche sind ausdrücklich willkommen – jede Korrektur, die stimmt, landet auf der Seite.
+    </p>
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: site.owner.name,
+      url: `${site.url}/autoren/`,
+      jobTitle: 'Softwareentwicklung und Test',
+      knowsLanguage: ['zh', 'de', 'en'],
+      worksFor: { '@type': 'Organization', name: site.name, url: site.url },
+    })} />
+  </article>
+</Base>

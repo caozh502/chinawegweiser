@@ -103,6 +103,15 @@ li { margin: .3rem 0; }
   color: var(--muted);
   margin-bottom: .2rem;
 }
+.byline {
+  font-family: var(--font-ui);
+  font-size: .78rem;
+  color: var(--muted);
+  margin-right: .3rem;
+}
+.byline a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+.byline a:hover { color: var(--accent); }
+
 .metabar {
   display: flex;
   flex-wrap: wrap;
