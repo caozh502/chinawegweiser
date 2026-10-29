@@ -112,7 +112,7 @@ sights:
     hours: '08:30–17:00 (1.4.–31.10.), 08:30–16:30 (1.11.–31.3.); letzter Einlass eine Stunde vor Schluss'
     closed: 'Montags, außer an Feiertagen'
     transit: 'Einlass ist nur am Meridian-Tor (午门) im Süden. Der ruhigere Weg dorthin: über das Donghua-Tor (东华门) im Osten, dann zehn Minuten am Stadtgraben entlang – dort ist die Warteschlange kürzer als über den Tian''anmen-Platz. Nachmittags ist weniger los als morgens. U-Bahn-Linie 1, Tian''anmen Ost (天安门东) liegt näher, dort ist der Andrang größer.'
-    buyTickets: 'Bookingticket.dpm.org.cn – die englische Buchungsseite des Museums. Alternativ die WeChat-Mini-App „故宫博物院" (chinesisch).'
+    buyTickets: 'Bookingticket.dpm.org.cn – die englische Buchungsseite des Museums. Alternativ das WeChat-Mini-Programm „故宫博物院" (chinesisch).'
     buyTicketsAlt: 'Tickets gibt es nur online, eine Tageskasse existiert nicht. Wer kein Konto anlegen will, bucht über eine Führung (Kasten unten) – dort ist der Einlass enthalten. Das Kontingent wird sieben Tage vorher freigegeben, meist gegen 20:00 Uhr Ortszeit (14:00 Uhr in Deutschland), in der Hochsaison sind die Plätze in Minuten weg. Am Eingang: Pass und QR-Code vorzeigen. Für den Jingshan-Park nebenan ist kein Vorverkauf nötig – Ticket am Eingang per QR-Code oder am Automaten.'
     ticketUrl: 'https://bookingticket.dpm.org.cn/'
     ticketLabel: 'Ticketseite (englisch)'
@@ -160,8 +160,8 @@ sights:
     lng: 116.4066
     hours: 'Park 06:00–22:00; Hallen 08:00–17:30, im Winter bis 16:30'
     transit: 'Am Osttor (天坛东门) rein, am Westtor (天坛西门) raus – beide haben eine eigene U-Bahn-Station (Linie 5 bzw. Linie 8), so läuft man den Weg nicht zurück.'
-    buyTickets: 'Am Eingang – Schalter oder Automat'
-    buyTicketsAlt: 'Vorab auch über das {{qr}} 畅游公园 – chinesische Oberfläche, alle Stadtparks Pekings laufen darüber. Kombi-Ticket wählen – nur damit ist die Halle des Gebets offen.'
+    buyTickets: 'Kombi-Ticket im {{qr}} – chinesische Oberfläche, das Zeitfenster wird beim Kauf gewählt'
+    buyTicketsAlt: 'Am Eingang gibt es Schalter und Automaten. Nur mit dem Kombi-Ticket (联票) ist die Halle des Gebets offen.'
     ticketUrl: 'https://www.bjgyol.com.cn/'
     ticketLabel: 'Ticketseite (chinesisch)'
     tickets:
@@ -184,7 +184,7 @@ sights:
       licenseUrl: 'http://creativecommons.org/publicdomain/zero/1.0/deed.en'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:20200110_Temple_of_Heaven-1.jpg'
     qr: 'tiantan'
-    qrNote: 'WeChat-Mini-Programm 畅游公园 – alle Stadtparks Pekings. Nur mit WeChat scannen, die Kamera-App liest diesen Code nicht.'
+    qrNote: 'Mini-Programm für den Tempel des Himmels – Zeitfenster und Kombi-Ticket. Nur mit WeChat scannen, die Kamera-App liest diesen Code nicht.'
   - no: 3
     name: '慕田峪长城'
     pinyin: 'Mùtiányù'
@@ -198,8 +198,8 @@ sights:
     lng: 116.5619
     hours: '07:30–17:30 (Hochsaison), 08:00–17:00 (Nebensaison)'
     transit: 'Ticketbüro am Parkplatz, von dort Shuttle zur Talstation; die Seilbahn steht direkt daneben. Anfahrt: Schnellbus 916 ab Dongzhimen nach Huairou, dann Shuttle – Direktbusse ab Qianmen starten gegen 07:30.'
-    buyTickets: 'Ticketbüro am Parkplatz'
-    buyTicketsAlt: 'Oder vorab über die WeChat-Mini-App des Parks. Shuttle und Seilbahn sind eigene Tickets. Am Schalter zählt der Pass, Karte wird genommen.'
+    buyTickets: 'Tickets und Shuttle im {{qr}} (长城内外) – chinesische Oberfläche'
+    buyTicketsAlt: 'Seilbahn und Shuttle sind eigene Tickets. Am Parkplatz gibt es ein Ticketbüro; am Schalter zählt der Pass, Karte wird genommen.'
     tickets:
       - label: 'Eintritt'
         price: '45 ¥'
@@ -224,7 +224,7 @@ sights:
       licenseUrl: 'https://creativecommons.org/licenses/by/2.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:66954-The-Great-Wall,_Mutianyu.jpg'
     qr: 'mutianyu'
-    qrNote: 'App 长城内外 (Through the Great Wall) – Shuttle und Tickets am Mutianyu. Nur mit WeChat scannen, die Kamera-App liest diesen Code nicht.'
+    qrNote: 'WeChat-Mini-Programm 长城内外 (Through the Great Wall) – Shuttle und Tickets am Mutianyu. Nur mit WeChat scannen, die Kamera-App liest diesen Code nicht.'
   - no: 4
     name: '颐和园'
     pinyin: 'Yíhéyuán'
@@ -238,8 +238,8 @@ sights:
     lng: 116.2755
     hours: '06:30–18:00 (1.4.–31.10.), 07:00–17:00 (1.11.–31.3.); Gartenanlagen 08:30–17:00'
     transit: 'Am besten über das Nordtor (北宫门): U-Bahn-Linie 4, Beigongmen (北宫门) – von dort direkt in den Garten. Wer am Osttor (东宫门) starten will, fährt bis nach Xiyuan (西苑) und geht zehn Minuten.'
-    buyTickets: 'Am Eingang – Schalter oder Automat'
-    buyTicketsAlt: 'Vorab auch über die App 畅游公园. Das Einzelticket reicht für den See; erst das Kombiticket (联票) öffnet die großen Gartenanlagen und die Suzhou-Straße.'
+    buyTickets: 'Eintritt und Kombi-Ticket im {{qr}} – chinesische Oberfläche'
+    buyTicketsAlt: 'Am Eingang gibt es Schalter und Automaten. Das Einzelticket reicht für den See; erst das Kombiticket (联票) öffnet die großen Gartenanlagen und die Suzhou-Straße.'
     tickets:
       - label: 'Eintritt (Hoch-/Nebensaison)'
         price: '30 ¥ / 20 ¥'
@@ -271,6 +271,7 @@ sights:
         licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
         sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seventeen_Arch_Bridge_IMG_0439.jpg'
     qr: 'yiheyuan'
+    qrNote: 'Mini-Programm für den Sommerpalast – Eintritt und Kombi-Ticket. Nur mit WeChat scannen, die Kamera-App liest diesen Code nicht.'
   - no: 5
     name: '天安门广场'
     pinyin: "Tiān'ānmén"
