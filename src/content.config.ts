@@ -133,6 +133,8 @@ const cities = defineCollection({
     intro: z.string(),
     /** Ein bis zwei Sätze für den Teaser auf der Startseite. */
     teaser: z.string().optional(),
+    /** Überschrift der Teaser-Karte – sagt, was drin ist. */
+    teaserTitle: z.string().optional(),
     days: z.string(),
     season: z.string().optional(),
     budget: z.string().optional(),

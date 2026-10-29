@@ -40,7 +40,7 @@ const statusLabel = d.status === 'verified' ? 'Stadtführer · geprüft' : 'Stad
   </div>
   <div class="teaser-text">
     <div class="eyebrow">{statusLabel}</div>
-    <h2>{name}, komplett</h2>
+    <h2>{d.teaserTitle ?? `${name}: Routen, Preise und Fallen`}</h2>
     <p>{kurz}</p>
     <ul class="facts">
       {facts.map((f) => (
