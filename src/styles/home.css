@@ -24,6 +24,41 @@
   color: var(--muted);
 }
 
+/* Drei Aussagen als Liste statt als Absatz: der Absatz war 51 Wörter am
+   Stück und wurde beim Überfliegen nicht gelesen. */
+.hero-points {
+  list-style: none;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  max-width: 38rem;
+  display: grid;
+  gap: 0.4rem;
+  font-family: var(--font-ui);
+  font-size: 0.87rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.hero-points li {
+  position: relative;
+  padding-left: 1.05rem;
+}
+
+.hero-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.45rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero-points strong {
+  color: var(--fg);
+  font-weight: 650;
+}
+
 .home-hero-photo {
   margin: 1.8rem 0 0;
 }
@@ -50,7 +85,8 @@ section + .callout-home,
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.2rem 1rem;
   border-top: 1px solid var(--line);
   padding-top: 1.05rem;
   margin-bottom: 0.9rem;
@@ -308,5 +344,41 @@ section + .callout-home,
   .photo-row .photo img {
     aspect-ratio: 4 / 5;
     object-fit: cover;
+  }
+}
+
+/* Auf dem Telefon war die Startseite mit drei Punkten so hoch, dass die
+   Buttons unter die Falz rutschten (390×844: Ende bei 896px). */
+@media (max-width: 600px) {
+  /* Auf dem Telefon stehen die Knöpfe direkt unter dem Lead und vor den drei
+     Punkten – sonst lagen sie 250px unter der Falz. */
+  .home-hero {
+    display: flex;
+    flex-direction: column;
+  }
+  .home-hero > .eyebrow { order: 1; }
+  .home-hero > h1 { order: 2; }
+  .home-hero > .lead { order: 3; }
+  .home-hero > .hero-actions { order: 4; }
+  .home-hero > .lead-2 { order: 5; }
+  .home-hero > .hero-points { order: 6; }
+  .home-hero > .home-hero-photo { order: 7; }
+
+  .home-hero h1 {
+    font-size: 1.85rem;
+    margin: 0.28rem 0 0.6rem;
+  }
+  .home-hero .lead-2 {
+    margin-top: 0.55rem;
+  }
+  .hero-points {
+    margin-top: 0.45rem;
+    gap: 0.24rem;
+    font-size: 0.83rem;
+    line-height: 1.45;
+  }
+  .hero-actions {
+    margin-top: 1.1rem;
+    gap: 0.5rem 1rem;
   }
 }

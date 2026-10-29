@@ -113,7 +113,7 @@ sights:
     closed: 'Montags, außer an Feiertagen'
     transit: 'Einlass ist nur am Meridian-Tor (午门) im Süden. Der ruhigere Weg dorthin: über das Donghua-Tor (东华门) im Osten, dann zehn Minuten am Stadtgraben entlang – dort ist die Warteschlange kürzer als über den Tian''anmen-Platz. Nachmittags ist weniger los als morgens. U-Bahn-Linie 1, Tian''anmen Ost (天安门东) liegt näher, dort ist der Andrang größer.'
     buyTickets: 'Bookingticket.dpm.org.cn – die englische Buchungsseite des Museums. Alternativ die WeChat-Mini-App „故宫博物院" (chinesisch).'
-    buyTicketsAlt: 'Tickets gibt es nur online, eine Tageskasse existiert nicht. Wer kein Konto anlegen will, bucht über eine Führung (Kasten unten) – dort ist der Einlass enthalten. Das Kontingent wird sieben Tage vorher freigegeben, meist gegen 20:00 Uhr, in der Hochsaison sind die Plätze in Minuten weg. Am Eingang: Pass und QR-Code vorzeigen. Für den Jingshan-Park nebenan ist kein Vorverkauf nötig – Ticket am Eingang per QR-Code oder am Automaten.'
+    buyTicketsAlt: 'Tickets gibt es nur online, eine Tageskasse existiert nicht. Wer kein Konto anlegen will, bucht über eine Führung (Kasten unten) – dort ist der Einlass enthalten. Das Kontingent wird sieben Tage vorher freigegeben, meist gegen 20:00 Uhr Ortszeit (14:00 Uhr in Deutschland), in der Hochsaison sind die Plätze in Minuten weg. Am Eingang: Pass und QR-Code vorzeigen. Für den Jingshan-Park nebenan ist kein Vorverkauf nötig – Ticket am Eingang per QR-Code oder am Automaten.'
     ticketUrl: 'https://bookingticket.dpm.org.cn/'
     ticketLabel: 'Ticketseite (englisch)'
     tickets:
@@ -191,7 +191,7 @@ sights:
     price: '45 ¥ + Seilbahn'
     duration: 'halber Tag'
     booking: recommended
-    note: 'Der Abschnitt für alle, die die Mauer ohne Kletterei sehen wollen. Seilbahn hoch,rodeln oder laufen runter. Früh losfahren: ab 10 Uhr stehen die Busse.'
+    note: 'Der Abschnitt für alle, die die Mauer ohne Kletterei sehen wollen. Seilbahn hoch,rodeln oder laufen runter. Früh losfahren: ab 10 Uhr Ortszeit stehen die Busse.'
     lat: 40.43802
     lng: 116.5619
     hours: '07:30–17:30 (Hochsaison), 08:00–17:00 (Nebensaison)'
@@ -425,7 +425,7 @@ experiences:
     when: 'ganzjährig, abends reservieren'
     price: 'ca. 200 ¥ pro Ente · 120–150 ¥ pro Person'
     text: 'Zwei Schulen, ein Gericht: 全聚德 (Quanjude) hängt die Ente über offenes Feuer, 便宜坊 schiebt sie in einen vorgeheizten Lehmofen und lässt sie darin gar ziehen. Das Ergebnis ist saftiger und weniger rauchig, die Haut weniger kross. 便宜坊 ist die ältere Adresse – rund 600 Jahre alt und in der Ming-Zeit gegründet.'
-    tip: 'Die Filiale in der 鲜鱼口 (Xianyukou), einer Gasse östlich der Fußgängerzone von Qianmen, ist die historische. Ab 18 Uhr ohne Reservierung 30–60 Minuten Wartezeit; eine halbe Ente (半套) reicht für zwei Personen mit Beilagen.'
+    tip: 'Die Filiale in der 鲜鱼口 (Xianyukou), einer Gasse östlich der Fußgängerzone von Qianmen, ist die historische. Ab 18 Uhr Ortszeit ohne Reservierung 30–60 Minuten Wartezeit; eine halbe Ente (半套) reicht für zwei Personen mit Beilagen.'
     photo:
       file: 'peking/entenda.jpg'
       alt: 'Aufgeschnittene Peking-Ente mit Beilagen'

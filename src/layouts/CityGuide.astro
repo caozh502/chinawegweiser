@@ -185,7 +185,8 @@ const faqLd = {
       <>
         <h2 id="sehenswuerdigkeiten">Sehenswürdigkeiten</h2>
         <p class="sources" style="margin-top:-.4rem">
-          Nummern gelten für Karte und Routen weiter unten.
+          Nummern gelten für Karte und Routen weiter unten. Alle Uhrzeiten in Ortszeit{' '}
+          (UTC+8) – das sind sechs Stunden vor Deutschland im Sommer, sieben im Winter.
         </p>
 
         <SightMap sights={d.sights} areas={d.areas} city={d.city} />
@@ -428,6 +429,12 @@ const faqLd = {
         {d.bookAhead.length > 0 && (
           <div id="buchen">
             <h2>Vorher buchen</h2>
+            <p class="tz-note">
+              <strong>Alle Uhrzeiten auf dieser Seite sind Ortszeit (UTC+8)</strong> – die Zeit in
+              China, sieben Stunden vor Deutschland im Winter und sechs im Sommer. Ein Kontingent,
+              das dort um 20:00 Uhr freigegeben wird, ist hier 14:00 Uhr (Sommerzeit) oder 13:00 Uhr
+              (Winterzeit).
+            </p>
             <ul class="check">
               {d.bookAhead.map((b) => <li>{b}</li>)}
             </ul>

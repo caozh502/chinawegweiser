@@ -951,3 +951,31 @@
   display: block;
   margin-top: 0.3rem;
 }
+
+/* Zeitzonen-Hinweis: Öffnungszeiten und Freischaltungen sind chinesische Ortszeit. */
+.tz-note {
+  margin: 0.5rem 0 0.9rem;
+  padding: 0.6rem 0.75rem;
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent-soft) 45%, transparent);
+  font-family: var(--font-ui);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.tz-note strong {
+  color: var(--fg);
+  font-weight: 650;
+}
+
+/* Kleiner Zusatz an den Zeitangaben der Karten. */
+.tz-tag {
+  display: block;
+  font-size: 0.64rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  opacity: 0.85;
+  margin-top: 0.05rem;
+}
