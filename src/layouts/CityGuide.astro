@@ -231,7 +231,7 @@ const faqLd = {
                 </div>
               )}
 
-              {(s.hours || s.closed || s.transit || s.official || s.buyTickets) && (
+              {(s.hours || s.closed || s.transit || s.buyTickets) && (
                 <dl class="s-facts">
                   {s.hours && (<><dt>Öffnungszeiten</dt><dd>{s.hours}</dd></>)}
                   {s.closed && (<><dt>Geschlossen</dt><dd>{s.closed}</dd></>)}
@@ -244,23 +244,12 @@ const faqLd = {
                         <strong>{s.buyTickets}</strong>
                         {s.buyTicketsAlt && <> {s.buyTicketsAlt}</>}
                         {s.ticketUrl && (
-                          <>
-                            {' '}
+                          <span class="ticket-link">
                             <a class="s-ext" href={s.ticketUrl} target="_blank" rel="noopener noreferrer">
-                              Ticketseite ↗
+                              {s.ticketLabel ?? 'Ticketseite'} ↗
                             </a>
-                          </>
+                          </span>
                         )}
-                      </dd>
-                    </>
-                  )}
-                  {s.official && (
-                    <>
-                      <dt>Website</dt>
-                      <dd>
-                        <a class="s-ext" href={s.official.url} target="_blank" rel="noopener noreferrer">
-                          {s.official.label} ↗
-                        </a>
                       </dd>
                     </>
                   )}

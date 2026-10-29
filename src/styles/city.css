@@ -929,3 +929,9 @@
   font-size: 0.82rem;
   padding: 0.34rem 0.8rem;
 }
+
+/* Ticketseite steht in eigener Zeile – im Fließtext des Tickets-Feldes ging sie unter. */
+.ticket-link {
+  display: block;
+  margin-top: 0.3rem;
+}

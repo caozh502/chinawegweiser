@@ -112,10 +112,10 @@ sights:
     hours: '08:30–17:00 (1.4.–31.10.), 08:30–16:30 (1.11.–31.3.); letzter Einlass eine Stunde vor Schluss'
     closed: 'Montags, außer an Feiertagen'
     transit: 'Einlass ist nur am Meridian-Tor (午门) im Süden. Der ruhigere Weg dorthin: über das Donghua-Tor (东华门) im Osten, dann zehn Minuten am Stadtgraben entlang – dort ist die Warteschlange kürzer als über den Tian''anmen-Platz. Nachmittags ist weniger los als morgens. U-Bahn-Linie 1, Tian''anmen Ost (天安门东) liegt näher, dort ist der Andrang größer.'
-    buyTickets: 'WeChat-Mini-App „故宫博物院" – oder ticket.dpm.org.cn.'
-    buyTicketsAlt: 'Tickets gibt es nur online, eine Tageskasse existiert nicht. Das Kontingent wird sieben Tage vorher freigegeben, meist gegen 20:00 Uhr, in der Hochsaison sind die Plätze in Minuten weg. Am Eingang: Pass und QR-Code vorzeigen. Für den Jingshan-Park nebenan ist kein Vorverkauf nötig – Ticket am Eingang per QR-Code oder am Automaten.'
-    ticketUrl: 'https://ticket.dpm.org.cn/'
-    official: { label: 'dpm.org.cn', url: 'https://www.dpm.org.cn/' }
+    buyTickets: 'Bookingticket.dpm.org.cn – die englische Buchungsseite des Museums. Alternativ die WeChat-Mini-App „故宫博物院" (chinesisch).'
+    buyTicketsAlt: 'Tickets gibt es nur online, eine Tageskasse existiert nicht. Wer kein Konto anlegen will, bucht über eine Führung (Kasten unten) – dort ist der Einlass enthalten. Das Kontingent wird sieben Tage vorher freigegeben, meist gegen 20:00 Uhr, in der Hochsaison sind die Plätze in Minuten weg. Am Eingang: Pass und QR-Code vorzeigen. Für den Jingshan-Park nebenan ist kein Vorverkauf nötig – Ticket am Eingang per QR-Code oder am Automaten.'
+    ticketUrl: 'https://bookingticket.dpm.org.cn/'
+    ticketLabel: 'Ticketseite (englisch)'
     tickets:
       - label: 'Hochsaison (1.4.–31.10.)'
         price: '60 ¥'
@@ -161,8 +161,9 @@ sights:
     hours: 'Park 06:00–22:00; Hallen 08:00–17:30, im Winter bis 16:30'
     transit: 'Am Osttor (天坛东门) rein, am Westtor (天坛西门) raus – beide haben eine eigene U-Bahn-Station (Linie 5 bzw. Linie 8), so läuft man den Weg nicht zurück.'
     buyTickets: 'Am Eingang – Schalter oder Automat'
-    buyTicketsAlt: 'Vorab auch über die App 畅游公园, über die alle Stadtparks Pekings verkauft werden. Kombi-Ticket wählen – nur damit ist die Halle des Gebets offen.'
+    buyTicketsAlt: 'Vorab auch über die App 畅游公园 (Changyou Gongyuan) – chinesische Oberfläche, alle Stadtparks Pekings laufen darüber. Kombi-Ticket wählen – nur damit ist die Halle des Gebets offen.'
     ticketUrl: 'https://www.bjgyol.com.cn/'
+    ticketLabel: 'Ticketseite (chinesisch)'
     tickets:
       - label: 'Park (Hoch-/Nebensaison)'
         price: '15 ¥ / 10 ¥'
@@ -197,7 +198,6 @@ sights:
     transit: 'Ticketbüro am Parkplatz, von dort Shuttle zur Talstation; die Seilbahn steht direkt daneben. Anfahrt: Schnellbus 916 ab Dongzhimen nach Huairou, dann Shuttle – Direktbusse ab Qianmen starten gegen 07:30.'
     buyTickets: 'Ticketbüro am Parkplatz'
     buyTicketsAlt: 'Oder vorab über die WeChat-Mini-App des Parks. Shuttle und Seilbahn sind eigene Tickets. Am Schalter zählt der Pass, Karte wird genommen.'
-    official: { label: 'mutianyugreatwall.com', url: 'https://www.mutianyugreatwall.com/' }
     tickets:
       - label: 'Eintritt'
         price: '45 ¥'
@@ -378,7 +378,6 @@ sights:
     transit: 'Hauptzugang am Westtor (西门) an der Jiuxianqiao-Straße; U-Bahn 14, Jiangtai (将台), danach 15 Minuten zu Fuß oder kurzes Taxi.'
     buyTickets: 'Gelände frei zugänglich'
     buyTicketsAlt: 'Einzelne Ausstellungen kosten 30–100 ¥, Kasse vor Ort oder über die Galerie; viele Häuser haben montags zu.'
-    official: { label: '798artdistrict.com.cn', url: 'https://798artdistrict.com.cn/' }
     tickets:
       - label: 'Gelände'
         price: 'frei'

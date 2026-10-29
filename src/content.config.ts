@@ -64,13 +64,14 @@ const sight = z.object({
     .array(z.object({ label: z.string(), price: z.string(), note: z.string().optional() }))
     .default([]),
   /** Offizielle Seite des Orts – nur wenn sie sich lohnt (Buchung, Öffnungszeiten). */
-  official: z.object({ label: z.string(), url: z.string() }).optional(),
   /** Empfohlener Weg zum Ticket – wird fett gesetzt und steht vorn. */
   buyTickets: z.string().optional(),
   /** Alles andere: Alternativen, Vorverkaufsfristen, Hinweise am Tor. */
   buyTicketsAlt: z.string().optional(),
   /** Direktlink zur Buchung, falls vorhanden. */
   ticketUrl: z.string().optional(),
+  /** Sprachanzeige hinter dem Ticket-Link, z. B. 'Ticketseite (englisch)'. */
+  ticketLabel: z.string().optional(),
   photo: photo.optional(),
   /** Weitere Fotos: Eingang, Innenraum, Details. Erstes Bild bleibt `photo`. */
   photos: z.array(photo).default([]),
