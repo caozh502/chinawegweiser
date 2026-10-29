@@ -9,8 +9,8 @@ export const site = {
     name: 'Jiale Cao',
     /** Zustellzeile über der Straße, z. B. 'c/o Postflex'. Leer = keine Zustellzeile. */
     careOf: '',
-    street: '', // Straße und Hausnummer
-    zipCity: '', // PLZ und Ort
+    street: 'Scheinerstr. 29',
+    zipCity: '81679 München',
     country: 'Deutschland',
     email: '', // z. B. 'kontakt@chinawegweiser.de'
     phone: '', // optional
