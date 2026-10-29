@@ -104,7 +104,6 @@ sights:
     price: '40–60 ¥'
     duration: '3–4 Std'
     booking: required
-    nearby: 'In Gehweite: der Jingshan-Park (Nr. 6) für den Blick über die Dächer – und der Eckenturm (角楼) an der Nordost-Ecke des Stadtgrabens, das Foto, das abends alle machen.'
     note: 'Die Anlage ist kein Gebäude, sondern eine Abfolge von Höfen: Wer am Nordausgang steht, hat den wichtigsten Teil gesehen. Der Aufstieg zum Jingshan-Park dauert danach fünfzehn Minuten und liefert den Blick über die Dächer – der eigentliche Abschluss des Besuchs.'
     lat: 39.91583
     lng: 116.39083
@@ -323,6 +322,15 @@ sights:
       license: 'CC BY-SA 3.0'
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Forbidden_City_Panorama_3.jpg'
+    nearby: 'Fünf Minuten zu Fuß: der Eckenturm (角楼) an der Nordost-Ecke des Stadtgrabens – das klassische Abendfoto, wenn die Sonne hinter der Verbotenen Stadt steht.'
+    photos:
+      - file: 'peking/jiaolou.jpg'
+        alt: 'Eckenturm der Verbotenen Stadt am Stadtgraben'
+        caption: 'Der Eckenturm im Wasser: fünf Minuten vom Nordausgang des Parks am Graben entlang.'
+        author: 'Daniel Case'
+        license: 'CC BY-SA 3.0'
+        licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Forbidden_City_northwest_corner_tower_and_moat.jpg'
   - no: 7
     name: '妙应寺白塔'
     pinyin: 'Miàoyìngsì Báitǎ'

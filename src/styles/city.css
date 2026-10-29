@@ -802,3 +802,14 @@
   .exp { grid-template-columns: minmax(0, 1fr); }
   .e-photo { order: -1; }
 }
+
+.near-line {
+  margin: 0.55rem 0 0;
+  padding: 0.45rem 0.7rem 0.47rem 0.75rem;
+  border-left: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent-soft) 55%, transparent);
+  border-radius: 0 6px 6px 0;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}

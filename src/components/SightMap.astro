@@ -156,6 +156,13 @@ const areaPayload = JSON.stringify(
       setTimeout(function () {
         if (map) map.invalidateSize();
       }, 0);
+      // Die Karte wächst mit der Legendenhöhe (CSS-Grid) – Leaflet braucht den Hinweis.
+      if (typeof ResizeObserver !== 'undefined') {
+        var ro = new ResizeObserver(function () {
+          if (map) map.invalidateSize({ animate: false });
+        });
+        ro.observe(el);
+      }
       L.tileLayer(el.getAttribute('data-tile-url'), {
         maxZoom: parseInt(el.getAttribute('data-tile-maxzoom') || '18', 10),
         attribution: el.getAttribute('data-tile-attr') || '',
@@ -316,7 +323,16 @@ const areaPayload = JSON.stringify(
   @media (min-width: 46rem) {
     .sightmap {
       grid-template-columns: 1.35fr 1fr;
-      align-items: start;
+      /* Legende gibt die Zeilenhöhe vor, die Karte wächst mit –
+         sonst läuft der Legendentext unter dem Kartenrand weiter. */
+      align-items: stretch;
+    }
+    .map-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    .map {
+      flex: 1 1 auto;
     }
   }
   .map-wrap {

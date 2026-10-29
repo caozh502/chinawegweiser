@@ -344,6 +344,7 @@ const faqLd = {
                     </div>
                     {s.warn && <p class="warn-line">{s.warn}</p>}
                     {s.note && <p class="s-note">{s.note}</p>}
+                    {s.nearby && <p class="near-line">{s.nearby}</p>}
                     {(s.hours || s.closed || s.transit) && (
                       <dl class="m-facts">
                         {s.hours && (<><dt>Geöffnet</dt><dd>{s.hours}</dd></>)}
@@ -352,7 +353,12 @@ const faqLd = {
                       </dl>
                     )}
                   </div>
-                  {s.photo && <div class="m-photo"><Photo photo={s.photo} /></div>}
+                  {s.photo && (
+                    <div class="m-photo">
+                      <Photo photo={s.photo} />
+                      {s.photos.map((p) => <Photo photo={p} />)}
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
