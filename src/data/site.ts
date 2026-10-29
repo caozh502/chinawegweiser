@@ -7,8 +7,8 @@ export const site = {
   /** Pflichtangaben nach § 5 DDG (früher § 5 TMG). */
   owner: {
     name: 'Jiale Cao',
-    /** Zustellzeile über der Straße, z. B. 'c/o Kunz'. Leer lassen, wenn nicht nötig. */
-    careOf: 'c/o Kunz',
+    /** Zustellzeile über der Straße, z. B. 'c/o Postflex'. Leer = keine Zustellzeile. */
+    careOf: '',
     street: '', // Straße und Hausnummer
     zipCity: '', // PLZ und Ort
     country: 'Deutschland',
