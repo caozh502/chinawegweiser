@@ -381,7 +381,7 @@ const faqLd = {
                       )}
                     </div>
                     {(s.pinyin || s.german) && (
-                      <p class="s-de m-sub">{[s.pinyin, s.german].filter(Boolean).join(' · ')}</p>
+                      <div class="s-de m-sub">{[s.pinyin, s.german].filter(Boolean).join(' · ')}</div>
                     )}
                     <div class="s-meta">
                       {s.price && <span class="chip">{s.price}</span>}

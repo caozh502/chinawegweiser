@@ -44,51 +44,58 @@ body {
   counter-reset: sec;
 }
 
-.entry p,
-.entry li,
-.entry blockquote,
-.entry td {
+:where(.entry) p,
+:where(.entry) li,
+:where(.entry) blockquote,
+:where(.entry) td {
   font-family: var(--font-serif);
   font-size: 1.05rem;
   line-height: 1.72;
 }
 
-.entry p {
+:where(.entry) p {
   margin: 0 0 1.1em;
   max-width: var(--measure);
   text-wrap: pretty;
   hyphens: auto;
 }
 
-.entry > p,
-.entry > ul,
-.entry > ol,
-.entry > blockquote,
-.entry > h2,
-.entry > h3 {
+/* Der Einleitungssatz der Stadtseite bleibt in der bisherigen Größe: die
+   :where()-Regel oben lässt .lead (1.15rem) gewinnen, das war vorher durch
+   .entry p verdeckt. */
+.entry > .lead {
+  font-size: 1.05rem;
+}
+
+:where(.entry) > p,
+:where(.entry) > ul,
+:where(.entry) > ol,
+:where(.entry) > blockquote,
+:where(.entry) > h2,
+:where(.entry) > h3 {
   max-width: var(--measure);
 }
 
-.entry ul,
-.entry ol {
+:where(.entry) ul,
+:where(.entry) ol {
   margin: 0 0 1.3em;
   padding-left: 1.1em;
 }
 
-.entry li {
+:where(.entry) li {
   margin: 0 0 0.5em;
 }
 
-.entry li::marker {
+:where(.entry) li::marker {
   color: var(--accent);
   font-family: var(--font-ui);
 }
 
-.entry strong {
+:where(.entry) strong {
   font-weight: 650;
 }
 
-.entry blockquote {
+:where(.entry) blockquote {
   margin: 1.6em 0;
   padding: 0.1em 0 0.1em 1.1em;
   border-left: 2px solid var(--accent);
@@ -97,7 +104,7 @@ body {
 }
 
 /* ---------- Überschriften ---------- */
-.entry h2 {
+:where(.entry) h2 {
   counter-increment: sec;
   font-family: var(--font-ui);
   font-size: 1.5rem;
@@ -111,7 +118,7 @@ body {
   text-wrap: balance;
 }
 
-.entry h2::before {
+:where(.entry) h2::before {
   content: counter(sec, decimal-leading-zero);
   display: block;
   font: 600 0.7rem/1 var(--font-ui);
@@ -120,7 +127,7 @@ body {
   margin-bottom: 0.55rem;
 }
 
-.entry h3 {
+:where(.entry) h3 {
   font-family: var(--font-ui);
   font-size: 1.06rem;
   font-weight: 650;
@@ -129,14 +136,14 @@ body {
   color: var(--fg);
 }
 
-.entry h2 + p,
-.entry h3 + p {
+:where(.entry) h2 + p,
+:where(.entry) h3 + p {
   margin-top: 0;
 }
 
 /* Erster Abschnitt nach dem Steckbrief braucht keinen Riesenabstand */
 .steckbrief + .entry > h2,
-.entry > h2:first-child {
+:where(.entry) > h2:first-child {
   margin-top: 2.6rem;
 }
 
@@ -190,20 +197,20 @@ table,
 }
 
 /* ---------- Feinschliff ---------- */
-.entry table {
+:where(.entry) table {
   font-size: 0.94rem;
   margin: 1.4em 0 2em;
 }
 
-.entry th {
+:where(.entry) th {
   font-family: var(--font-ui);
   font-size: 0.7rem;
   letter-spacing: 0.09em;
 }
 
 /* Lange Wörter und chinesische Zeichenketten sprengen sonst die Spalte. */
-.entry th,
-.entry td {
+:where(.entry) th,
+:where(.entry) td {
   overflow-wrap: anywhere;
   hyphens: auto;
 }
@@ -227,7 +234,7 @@ table,
     font-size: 1.32rem;
   }
   .entry p,
-  .entry li {
+  :where(.entry) li {
     font-size: 1.02rem;
   }
 }
@@ -235,7 +242,7 @@ table,
 /* ---------- Zitat = Hinweiskasten (statt kursiver Textwand) ----------
    Vorbild: Guardian/NYT „key facts", GOV.UK-Inserts. Ein Kasten unterbricht
    den Fließtext und gibt dem Auge einen Halt. */
-.entry blockquote {
+:where(.entry) blockquote {
   font-style: normal;
   color: var(--fg);
   background: var(--card);
@@ -247,15 +254,15 @@ table,
   font-size: 0.98rem;
   line-height: 1.65;
 }
-.entry blockquote p {
+:where(.entry) blockquote p {
   margin-bottom: 0.6em;
 }
-.entry blockquote p:last-child {
+:where(.entry) blockquote p:last-child {
   margin-bottom: 0;
 }
 
 /* ---------- Tabellen: lesbar statt gequetscht ---------- */
-.entry table {
+:where(.entry) table {
   max-width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -265,24 +272,24 @@ table,
   width: 100%;
   margin: 1.4em 0 2.2em;
 }
-.entry thead th {
+:where(.entry) thead th {
   background: color-mix(in srgb, var(--line) 30%, transparent);
   border-bottom: 1px solid var(--line);
 }
-.entry tbody tr:nth-child(even) {
+:where(.entry) tbody tr:nth-child(even) {
   background: color-mix(in srgb, var(--line) 14%, transparent);
 }
-.entry th,
-.entry td {
+:where(.entry) th,
+:where(.entry) td {
   padding: 0.62rem 0.8rem;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
   line-height: 1.5;
 }
-.entry tbody tr:last-child td {
+:where(.entry) tbody tr:last-child td {
   border-bottom: 0;
 }
-.entry td:first-child {
+:where(.entry) td:first-child {
   font-family: var(--font-ui);
   font-weight: 600;
 }
@@ -312,7 +319,7 @@ nav.top a:hover {
 }
 
 /* ---------- Absätze mit Auszeichnung bekommen Luft ---------- */
-.entry p strong:only-child {
+:where(.entry) p strong:only-child {
   font-weight: 650;
 }
 
@@ -532,7 +539,7 @@ nav.top a:hover {
 }
 
 /* Anker sollen nicht unter dem Rand kleben */
-.entry h2[id],
+:where(.entry) h2[id],
 .entry [id] {
   scroll-margin-top: 4.5rem;
 }

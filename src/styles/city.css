@@ -719,10 +719,19 @@
   line-height: 1.35;
 }
 
+/* Bewusst div, nicht p: die Regel .entry p setzt 1.05rem Serifenschrift und
+   gewinnt gegen .s-de (Klasse+Element schlägt Klasse). Als <p> fiel die
+   Pinyin-Zeile deshalb wieder auf Georgia zurück – und Georgia fehlen ǎ ǐ ǒ ǔ. */
 .m-sub {
   margin: 0.15rem 0 0;
   padding-left: 2.25rem;
   text-wrap: pretty;
+}
+
+.s-de.m-sub {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
 .m-head .zoom-link {
@@ -877,7 +886,9 @@
   .e-photo { order: -1; }
 }
 
-.near-line {
+/* Spezifität: .entry p (Klasse+Element) schlägt eine reine Klasse, deshalb
+   hier eine Ebene mehr – sonst erbt die Zeile Serifenschrift in 1.05rem. */
+.guide-shell .near-line {
   margin: 0.55rem 0 0;
   padding: 0.45rem 0.7rem 0.47rem 0.75rem;
   border-left: 2px solid var(--accent);
@@ -953,7 +964,7 @@
 }
 
 /* Zeitzonen-Hinweis: Öffnungszeiten und Freischaltungen sind chinesische Ortszeit. */
-.tz-note {
+#buchen .tz-note {
   margin: 0.5rem 0 0.9rem;
   padding: 0.6rem 0.75rem;
   border-left: 3px solid var(--accent);
@@ -964,7 +975,7 @@
   color: var(--muted);
 }
 
-.tz-note strong {
+#buchen .tz-note strong {
   color: var(--fg);
   font-weight: 650;
 }
