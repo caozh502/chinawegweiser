@@ -50,6 +50,9 @@ const readingTime = Math.max(
 );
 
 const sightName = (no: number) => d.sights.find((s) => s.no === no)?.name ?? String(no);
+/** Pflicht und Kür getrennt: die Kür braucht keine Videokarte und keine Tariftabelle. */
+const mustSights = d.sights.filter((s) => s.tier === 'must');
+const optSights = d.sights.filter((s) => s.tier === 'optional');
 
 /* Inhaltsverzeichnis: Abschnitte aus dem Markdown plus die datengetriebenen
    Blöcke weiter unten. Die IDs der Markdown-Überschriften setzt
@@ -65,6 +68,7 @@ const toc = [
   ...(d.areas.length > 0 ? [{ title: 'Wo wohnen', id: 'wohnen' }] : []),
   ...(d.sights.length > 0 ? [{ title: 'Sehenswürdigkeiten', id: 'sehenswuerdigkeiten' }] : []),
   ...(d.plans.length > 0 ? [{ title: 'Routen', id: 'routen' }] : []),
+  ...(d.experiences.length > 0 ? [{ title: 'Erlebnisse', id: 'erlebnisse' }] : []),
   ...(d.bookAhead.length > 0 ? [{ title: 'Vorher buchen', id: 'buchen' }] : []),
   ...(d.traps.length > 0 ? [{ title: 'Typische Fehler', id: 'fehler' }] : []),
   ...(subpages.length > 0 ? [{ title: 'Detailseiten', id: 'detailseiten' }] : []),
@@ -184,7 +188,7 @@ const faqLd = {
         <SightMap sights={d.sights} areas={d.areas} city={d.city} />
 
         <div class="sights">
-          {d.sights.map((s) => (
+          {mustSights.map((s) => (
             <div class="sight" id={`s${s.no}`}>
               <div class="s-head">
                 <span class="num">{s.no}</span>
@@ -212,6 +216,7 @@ const faqLd = {
                   {s.hours && (<><dt>Öffnungszeiten</dt><dd>{s.hours}</dd></>)}
                   {s.closed && (<><dt>Geschlossen</dt><dd>{s.closed}</dd></>)}
                   {s.transit && (<><dt>Eingang</dt><dd>{s.transit}</dd></>)}
+                  {s.nearby && (<><dt>In der Nähe</dt><dd>{s.nearby}</dd></>)}
                   {s.buyTickets && (
                     <>
                       <dt>Tickets</dt>
@@ -307,6 +312,52 @@ const faqLd = {
             </div>
           ))}
         </div>
+
+        {optSights.length > 0 && (
+          <>
+            <h3 class="sights-sub" id="weitere">Wenn noch Zeit ist</h3>
+            <p class="sources sub">
+              Kurzfassung statt Datenblatt – diese Orte lohnen sich, wenn der Tag Luft hat.
+            </p>
+            <ul class="sight-list">
+              {optSights.map((s) => (
+                <li class="sight-mini" id={`s${s.no}`}>
+                  <div class="m-text">
+                    <div class="m-head">
+                      <span class="num">{s.no}</span>
+                      <span class="m-title">
+                        <span class="s-name">{s.name}</span>
+                        {(s.pinyin || s.german) && (
+                          <span class="s-de">{[s.pinyin, s.german].filter(Boolean).join(' · ')}</span>
+                        )}
+                      </span>
+                      {typeof s.lat === 'number' && (
+                        <button type="button" class="zoom-link" data-zoom-sight={s.no}>
+                          Auf Karte
+                        </button>
+                      )}
+                    </div>
+                    <div class="s-meta">
+                      {s.price && <span class="chip">{s.price}</span>}
+                      {s.duration && <span class="chip">{s.duration}</span>}
+                      <span class={`chip book-${s.booking}`}>{bookingLabel[s.booking]}</span>
+                    </div>
+                    {s.warn && <p class="warn-line">{s.warn}</p>}
+                    {s.note && <p class="s-note">{s.note}</p>}
+                    {(s.hours || s.closed || s.transit) && (
+                      <dl class="m-facts">
+                        {s.hours && (<><dt>Geöffnet</dt><dd>{s.hours}</dd></>)}
+                        {s.closed && (<><dt>Geschlossen</dt><dd>{s.closed}</dd></>)}
+                        {s.transit && (<><dt>Eingang</dt><dd>{s.transit}</dd></>)}
+                      </dl>
+                    )}
+                  </div>
+                  {s.photo && <div class="m-photo"><Photo photo={s.photo} /></div>}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </>
     )}
 
@@ -384,6 +435,45 @@ const faqLd = {
         <AffiliateBox name="esim" />
         <AffiliateBox name="insurance" />
       </div>
+    )}
+
+    {d.experiences.length > 0 && (
+      <>
+        <h2 id="erlebnisse">Erlebnisse</h2>
+        <p class="sources" style="margin-top:-.4rem">
+          Drei Dinge, die man in Peking tut und nicht nur ansieht – mit Preisen und dem, was
+          schiefgehen kann.
+        </p>
+        <div class="exp-list">
+          {d.experiences.map((e) => (
+            <article class="exp">
+              <div class="e-text">
+                <div class="e-head">
+                  <h3>{e.german}</h3>
+                  {e.name && (
+                    <span class="e-name">
+                      {e.name}
+                      {e.pinyin ? ` · ${e.pinyin}` : ''}
+                    </span>
+                  )}
+                </div>
+                <div class="e-meta">
+                  {e.when && <span class="chip">{e.when}</span>}
+                  {e.price && <span class="chip">{e.price}</span>}
+                </div>
+                <p class="e-body">{e.text}</p>
+                {e.steps.length > 0 && (
+                  <ol class="e-steps">
+                    {e.steps.map((st) => <li>{st}</li>)}
+                  </ol>
+                )}
+                {e.tip && <p class="e-tip">{e.tip}</p>}
+              </div>
+              {e.photo && <div class="e-photo"><Photo photo={e.photo} /></div>}
+            </article>
+          ))}
+        </div>
+      </>
     )}
 
     {subpages.length > 0 && (

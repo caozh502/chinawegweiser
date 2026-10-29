@@ -100,9 +100,11 @@ sights:
     name: '故宫'
     pinyin: 'Gùgōng'
     german: 'Verbotene Stadt'
+    tier: must
     price: '40–60 ¥'
     duration: '3–4 Std'
     booking: required
+    nearby: 'In Gehweite: der Jingshan-Park (Nr. 6) für den Blick über die Dächer – und der Eckenturm (角楼) an der Nordost-Ecke des Stadtgrabens, das Foto, das abends alle machen.'
     note: 'Die Anlage ist kein Gebäude, sondern eine Abfolge von Höfen: Wer am Nordausgang steht, hat den wichtigsten Teil gesehen. Der Aufstieg zum Jingshan-Park dauert danach fünfzehn Minuten und liefert den Blick über die Dächer – der eigentliche Abschluss des Besuchs.'
     lat: 39.91583
     lng: 116.39083
@@ -148,6 +150,7 @@ sights:
     name: '天坛'
     pinyin: 'Tiāntán'
     german: 'Himmelstempel'
+    tier: must
     price: '15–34 ¥'
     duration: '2 Std'
     booking: none
@@ -155,7 +158,6 @@ sights:
     lat: 39.8822
     lng: 116.4066
     hours: 'Park 06:00–22:00; Hallen 08:00–17:30, im Winter bis 16:30'
-    closed: 'täglich geöffnet'
     transit: 'Am Osttor (天坛东门) rein, am Westtor (天坛西门) raus – beide haben eine eigene U-Bahn-Station (Linie 5 bzw. Linie 8), so läuft man den Weg nicht zurück.'
     buyTickets: 'Am Eingang – Schalter oder Automat'
     buyTicketsAlt: 'Vorab auch über die App 畅游公园, über die alle Stadtparks Pekings verkauft werden. Kombi-Ticket wählen – nur damit ist die Halle des Gebets offen.'
@@ -183,6 +185,7 @@ sights:
     name: '慕田峪长城'
     pinyin: 'Mùtiányù'
     german: 'Große Mauer, Mutianyu'
+    tier: must
     price: '45 ¥ + Seilbahn'
     duration: 'halber Tag'
     booking: recommended
@@ -190,7 +193,6 @@ sights:
     lat: 40.43802
     lng: 116.5619
     hours: '07:30–17:30 (Hochsaison), 08:00–17:00 (Nebensaison)'
-    closed: 'täglich geöffnet'
     transit: 'Ticketbüro am Parkplatz, von dort Shuttle zur Talstation; die Seilbahn steht direkt daneben. Anfahrt: Schnellbus 916 ab Dongzhimen nach Huairou, dann Shuttle – Direktbusse ab Qianmen starten gegen 07:30.'
     buyTickets: 'Ticketbüro am Parkplatz'
     buyTicketsAlt: 'Oder vorab über die WeChat-Mini-App des Parks. Shuttle und Seilbahn sind eigene Tickets. Am Schalter zählt der Pass, Karte wird genommen.'
@@ -219,45 +221,59 @@ sights:
       licenseUrl: 'https://creativecommons.org/licenses/by/2.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:66954-The-Great-Wall,_Mutianyu.jpg'
   - no: 4
-    name: '箭扣'
-    pinyin: 'Jiànkǒu'
-    german: 'Große Mauer, Jiankou (Wildabschnitt)'
-    price: '–'
-    duration: '4–6 Std'
-    booking: none
-    note: 'Unrestauriert und offiziell gesperrt. Wer trotzdem geht, riskiert Bußgeld und echte Verletzungen – die Wegabschnitte sind teilweise eingestürzt.'
-    lat: 40.4386
-    lng: 116.533
-    hours: 'kein offizieller Zugang, keine Öffnungszeiten'
-    closed: 'ganzjährig gesperrt, Kontrollen an den Zustiegen'
-    transit: 'Kein offizieller Eingang und kein ÖPNV: Taxi oder Chauffeur ab Peking, rund zwei Stunden, Rückfahrt vorher fest vereinbaren.'
-    buyTickets: 'Keine Kasse, keine Buchung, kein Ticket'
-    buyTicketsAlt: 'Die Zustiege sind gesperrt; wer kontrolliert wird, zahlt Bußgeld.'
+    name: '颐和园'
+    pinyin: 'Yíhéyuán'
+    german: 'Sommerpalast'
+    tier: must
+    price: '20–60 ¥'
+    duration: 'halber Tag'
+    booking: recommended
+    note: 'Der kaiserliche Garten ist der Gegenpol zur Verbotenen Stadt: keine Achse, sondern ein See mit einem Hügel. Wer zwei Stunden hat, geht vom Nordtor zur Langen Galerie und zurück; wer einen halben Tag hat, nimmt das Boot über den Kunming-See.'
+    lat: 39.9999
+    lng: 116.2755
+    hours: '06:30–18:00 (1.4.–31.10.), 07:00–17:00 (1.11.–31.3.); Gartenanlagen 08:30–17:00'
+    transit: 'Am besten über das Nordtor (北宫门): U-Bahn-Linie 4, Beigongmen (北宫门) – von dort direkt in den Garten. Wer am Osttor (东宫门) starten will, fährt bis nach Xiyuan (西苑) und geht zehn Minuten.'
+    buyTickets: 'Am Eingang – Schalter oder Automat'
+    buyTicketsAlt: 'Vorab auch über die App 畅游公园. Das Einzelticket reicht für den See; erst das Kombiticket (联票) öffnet die großen Gartenanlagen und die Suzhou-Straße.'
     tickets:
-      - label: 'Eintritt'
-        price: '—'
-        note: 'Es gibt keine Kasse – aber ein Bußgeld, wenn man kontrolliert wird.'
+      - label: 'Eintritt (Hoch-/Nebensaison)'
+        price: '30 ¥ / 20 ¥'
+      - label: 'Kombiticket mit den Gartenanlagen'
+        price: '60 ¥ / 50 ¥'
+        note: 'Erst damit sind Turm des Buddhistischen Weihrauchs (佛香阁), der Garten der Tugend und Harmonie (德和园) und die Suzhou-Straße offen.'
+      - label: 'Bootsfahrt über den See'
+        price: '20–40 ¥'
+        note: 'Fährt nur in der Saison und nur bei gutem Wetter.'
     video:
-      id: 'wb8p1fs_ihQ'
-      title: 'Hiking the Jiankou Wall: Danger, Beauty, and Solitude'
-      channel: 'WildGreatWall Adventure'
-      lang: en
+      id: '687FVaPe5D8'
+      title: 'Ein Tag im Sommerpalast: Erlebe die kaiserliche Pracht Pekings'
+      channel: 'Veronika'
+      lang: de
     photo:
-      file: 'peking/jiankou.jpg'
-      alt: 'Unrestaurierter Abschnitt der Großen Mauer bei Jiankou'
-      caption: 'Jiankou: unrestauriert – und genau deshalb gesperrt.'
-      author: 'Sindarus'
+      file: 'peking/yiheyuan.jpg'
+      alt: 'Siebzehn-Bogen-Brücke über den Kunming-See im Abendlicht'
+      caption: 'Siebzehn-Bogen-Brücke im Abendlicht: der Übergang zum Südsee-Eiland und das Motiv, für das die meisten anreisen.'
+      author: 'N509FZ'
       license: 'CC BY-SA 4.0'
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bare_rock_on_the_Great_Wall_of_China_at_Jiankou.jpg'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seventeen_Arch_Bridge_(20201221160537).jpg'
+    photos:
+      - file: 'peking/yiheyuan-2.jpg'
+        alt: 'Blick über den Kunming-See auf den 万寿山 (Longevity Hill) mit dem Turm des Buddhistischen Weihrauchs'
+        caption: 'Von der Brücke nach Norden: 万寿山 (Longevity Hill) mit dem Turm des Buddhistischen Weihrauchs (佛香阁).'
+        author: 'Luu'
+        license: 'CC BY-SA 4.0'
+        licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Seventeen_Arch_Bridge_IMG_0439.jpg'
   - no: 5
     name: '天安门广场'
     pinyin: 'Tiānʾānmén'
     german: 'Platz des Himmlischen Friedens'
+    tier: must
     price: 'kostenlos'
     duration: '45 Min'
     booking: required
-    note: 'Kostenlos, aber nur mit vorab gebuchtem Zeitfenster und Pass. Taschen klein halten, Kontrollen sind gründlich.'
+    note: 'Kostenlos, aber nur mit vorab gebuchtem Zeitfenster und Pass. Taschen klein halten, Kontrollen sind gründlich. Mit dem Rad kommt man nicht auf den Platz: Er ist Fußgängerzone, Leihräder stellt man an der Qianmen-Seite ab.'
     lat: 39.9042
     lng: 116.39748
     hours: '05:00–22:00; das Zeitfenster wird bei der Buchung gewählt'
@@ -283,48 +299,64 @@ sights:
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Gate_of_Heavenly_Peace,_Tiananmen_-_panoramio.jpg'
   - no: 6
-    name: '南锣鼓巷'
-    pinyin: 'Nánluógǔxiàng'
-    german: 'Hutong-Viertel'
-    price: 'kostenlos'
-    duration: '2–3 Std'
+    name: '景山公园'
+    pinyin: 'Jǐngshān Gōngyuán'
+    german: 'Kohlenhügel-Park'
+    tier: optional
+    price: '2 ¥'
+    duration: '45 Min'
     booking: none
-    note: 'Die Hauptgasse ist touristisch, die Nebengassen sind es nicht. Am besten nachmittags, dann sieht man noch, wie dort gewohnt wird.'
-    lat: 39.93215
-    lng: 116.39683
-    hours: 'Gassen jederzeit; Läden meist 10:00–21:00'
-    closed: '—'
-    transit: 'U-Bahn 6 oder 8, Nanluoguxiang (南锣鼓巷), Ausgang E – man steht direkt am Südende der Gasse.'
-    buyTickets: 'Kein Ticket, keine Buchung'
-    buyTicketsAlt: 'Wer in einen Hof oder ein Teehaus will, zahlt dort separat.'
+    note: 'Der Hügel gegenüber dem Nordtor der Verbotenen Stadt: 45 Meter Aufstieg, dann liegt die ganze Achse da. Am besten eine Stunde vor Sonnenuntergang – dann steht die Sonne hinter dem Palast.'
+    lat: 39.9286
+    lng: 116.3964
+    hours: '06:00–21:00 (Hochsaison), 06:30–20:00 (Nebensaison)'
+    transit: 'Direkt gegenüber dem Nordausgang (神武门) der Verbotenen Stadt. U-Bahn 8, Nationales Kunstmuseum (中国美术馆), danach zehn Minuten zu Fuß.'
+    buyTickets: 'Am Eingang – QR-Code scannen oder Automat'
     tickets:
       - label: 'Eintritt'
-        price: 'frei'
-    video:
-      id: 'FywnE3VBe6c'
-      title: 'Beijing Hutongs – Exploring the Hidden Heart of Old Beijing'
-      channel: 'Diversity Travellers'
-      lang: en
+        price: '2 ¥'
     photo:
-      file: 'peking/nlgx.jpg'
-      alt: 'Nanluoguxiang: belebte Gasse mit Geschäften und Bäumen'
-      caption: 'Nanluoguxiang am Nachmittag: die Hauptgasse ist eine Fußgängerzone mit Läden – die Ruhe liegt eine Gasse weiter.'
-      author: 'Anagoria'
-      license: 'CC BY 3.0'
-      licenseUrl: 'https://creativecommons.org/licenses/by/3.0'
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:2016-09-04_Beijing_Nanluoguxiang_anagoria_01.jpg'
-    photos:
-      - file: 'peking/hutong.jpg'
-        alt: 'Ruhige Gasse in einem Hutong-Viertel mit grauen Ziegelhäusern'
-        caption: 'Eine Quergasse: keine Läden, keine Touristen, Wäscheleinen.'
-        author: 'Caitriana Nicholson'
-        license: 'CC BY-SA 2.0'
-        licenseUrl: 'https://creativecommons.org/licenses/by-sa/2.0'
-        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hutong,_BJ_(2917153763).jpg'
+      file: 'peking/hero-jingshan.jpg'
+      alt: 'Blick vom Jingshan-Park nach Süden über die Dächer der Verbotenen Stadt'
+      caption: 'Die Aussicht, für die man den Hügel hochgeht: die Achse vom Kohlenhügel bis zum Tiananmen-Tor.'
+      author: 'Tojan76'
+      license: 'CC BY-SA 3.0'
+      licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Forbidden_City_Panorama_3.jpg'
   - no: 7
+    name: '妙应寺白塔'
+    pinyin: 'Miàoyìngsì Báitǎ'
+    german: 'Weiße Pagode und Hutong-Viertel'
+    tier: optional
+    price: '20 ¥'
+    duration: '1–2 Std'
+    booking: none
+    note: 'Die weiße Pagode von 1279 steht mitten in einem Wohnviertel, nicht in einem Museum – das ist der Unterschied zu allen anderen Stationen dieser Liste. Der klassische Blick geht von der Gasse östlich des Tempels (白塔寺东夹道) über die rote Mauer auf die Kuppel.'
+    lat: 39.9253
+    lng: 116.3572
+    hours: '09:00–16:30'
+    closed: 'montags'
+    transit: 'U-Bahn 2, Fuchengmen (阜成门), Ausgang B, dann zehn Minuten nach Osten; oder Linie 4 bis Xisi (西四) und von Süden durch die Gassen.'
+    buyTickets: 'Am Eingang – Schalter'
+    buyTicketsAlt: 'Karten gibt es nur vor Ort. Der Tempel ist klein; die meisten kommen wegen der Gassen drumherum.'
+    tickets:
+      - label: 'Eintritt'
+        price: '20 ¥'
+      - label: 'Ermäßigt'
+        price: '10 ¥'
+    photo:
+      file: 'peking/baitasi.jpg'
+      alt: 'Weiße Pagode des Miaoying-Tempels über den grauen Ziegeldächern des Viertels'
+      caption: 'Die Pagode steht zwischen grauen Ziegeldächern – kein Museumsgelände, sondern ein Wohnviertel.'
+      author: 'EditQ'
+      license: 'CC0'
+      licenseUrl: 'http://creativecommons.org/publicdomain/zero/1.0/deed.en'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Miaoying_Temple_8.jpg'
+  - no: 8
     name: '798 艺术区'
     pinyin: 'Yìshùqū'
     german: 'Kunstviertel 798'
+    tier: optional
     price: 'kostenlos (Galerien teils Eintritt)'
     duration: '2–3 Std'
     booking: none
@@ -342,11 +374,6 @@ sights:
         price: 'frei'
       - label: 'Einzelne Ausstellungen'
         price: '30–100 ¥'
-    video:
-      id: '1t37-vRGmL4'
-      title: 'Inside 798 Art Zone in Beijing'
-      channel: 'omni naomi'
-      lang: en
     photo:
       file: 'peking/a798.jpg'
       alt: 'Halle im Kunstviertel 798 mit Sheddach und Ausstellung'
@@ -355,71 +382,119 @@ sights:
       license: 'CC BY-SA 3.0'
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Space-gallery_798-art-district.jpg'
-  - no: 8
-    name: '北京烤鸭'
-    pinyin: 'Běijīng kǎoyā'
-    german: 'Peking-Ente'
-    price: '150–250 ¥ p. P.'
-    duration: '1,5 Std'
-    booking: recommended
-    note: 'Nicht der teuerste Laden ist der beste. Wer ohne Reservierung kommt, wartet 45–90 Minuten – Uhrzeit entsprechend planen.'
-    lat: 39.9138
-    lng: 116.4106
-    hours: 'meist 11:00–21:30, Küche bis 21:00'
-    closed: '—'
-    transit: 'Je nach Haus; Siji Minfu (四季民福) an der Ostmauer ist der Klassiker mit Blick auf den Graben – U-Bahn 1, Tian''anmen Ost.'
-    buyTickets: 'Tisch reservieren – in der Filiale oder über 大众点评 (Dianping)'
-    buyTicketsAlt: 'Ohne Reservierung ein bis zwei Stunden Wartezeit, ab 18:00 Uhr am längsten.'
-    official: { label: 'quanjude.com.cn', url: 'https://www.quanjude.com.cn/' }
+  - no: 9
+    name: '南锣鼓巷'
+    pinyin: 'Nánluógǔxiàng'
+    german: 'Hutong-Viertel'
+    tier: optional
+    warn: 'Touristenmeile: die Hauptgasse besteht fast nur aus Souvenirläden und Snackständen.'
+    price: 'kostenlos'
+    duration: '2–3 Std'
+    booking: none
+    note: 'Eine Querstraße weiter ist es ein Wohnviertel mit Hofhäusern – nachmittags sieht man dort noch, wie der Alltag läuft. Für den Hutong-Eindruck reicht eine halbe Stunde; für die Hauptgasse muss man keine Zeit einplanen.'
+    lat: 39.93215
+    lng: 116.39683
+    hours: 'Gassen jederzeit; Läden meist 10:00–21:00'
+    transit: 'U-Bahn 6 oder 8, Nanluoguxiang (南锣鼓巷), Ausgang E – man steht direkt am Südende der Gasse.'
+    buyTickets: 'Kein Ticket, keine Buchung'
+    buyTicketsAlt: 'Wer in einen Hof oder ein Teehaus will, zahlt dort separat.'
     tickets:
-      - label: 'Ganze Ente'
-        price: '200–350 ¥'
-        note: 'Reicht für zwei bis drei Personen; Beilagen kommen extra.'
-    video:
-      id: 'sqb1e4Z2xec'
-      title: 'Verbotene Stadt & Pekingente – Senad Gashi in Beijing'
-      channel: 'RINGFLUENCER'
-      lang: de
+      - label: 'Eintritt'
+        price: 'frei'
+    photo:
+      file: 'peking/nlgx.jpg'
+      alt: 'Nanluoguxiang: belebte Gasse mit Geschäften und Bäumen'
+      caption: 'Nanluoguxiang am Nachmittag: die Hauptgasse ist eine Fußgängerzone mit Läden – die Ruhe liegt eine Gasse weiter.'
+      author: 'Anagoria'
+      license: 'CC BY 3.0'
+      licenseUrl: 'https://creativecommons.org/licenses/by/3.0'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:2016-09-04_Beijing_Nanluoguxiang_anagoria_01.jpg'
+experiences:
+  - name: '便宜坊'
+    pinyin: 'Piányifāng'
+    german: 'Peking-Ente aus dem geschlossenen Ofen'
+    when: 'ganzjährig, abends reservieren'
+    price: 'ca. 200 ¥ pro Ente · 120–150 ¥ pro Person'
+    text: 'Zwei Schulen, ein Gericht: 全聚德 (Quanjude) hängt die Ente über offenes Feuer, 便宜坊 schiebt sie in einen vorgeheizten Lehmofen und lässt sie darin gar ziehen. Das Ergebnis ist saftiger und weniger rauchig, die Haut weniger kross. 便宜坊 ist die ältere Adresse – rund 600 Jahre alt und in der Ming-Zeit gegründet.'
+    tip: 'Die Filiale in der 鲜鱼口 (Xianyukou), einer Gasse östlich der Fußgängerzone von Qianmen, ist die historische. Ab 18 Uhr ohne Reservierung 30–60 Minuten Wartezeit; eine halbe Ente (半套) reicht für zwei Personen mit Beilagen.'
     photo:
       file: 'peking/entenda.jpg'
       alt: 'Aufgeschnittene Peking-Ente mit Beilagen'
-      caption: 'Peking-Ente wird am Tisch tranchiert, dazu Pfannkuchen und Frühlingszwiebel.'
+      caption: 'Am Tisch tranchiert: Haut zuerst, dann das Fleisch, dazu Pfannkuchen und Frühlingszwiebel.'
       author: 'Peachyeung316'
       license: 'CC BY-SA 4.0'
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Beijing_Roast_Duck_slice_and_side_dishes.jpg'
+  - name: '什刹海冰场'
+    pinyin: 'Shíchàhǎi Bīngchǎng'
+    german: 'Schlittschuhlaufen auf dem See'
+    when: 'nur im Winter – Dezember bis Februar'
+    price: '100 ¥ · Schnelllauf 30–40 ¥ · Schlittschuhe 30 ¥ · Kaution 200 ¥'
+    text: 'Wenn die Seen im Norden der Altstadt tragen, wird aus 前海 und 后海 eine einzige Eisfläche – rund 160.000 Quadratmeter, mit Imbissbuden, Musik und ein paar tausend Menschen, die auf Schlittschuhen und Eisstühlen unterwegs sind. Das ist kein Sportverein, das ist ein Volksfest.'
+    tip: 'Die Karten sind personalisiert und werden am Eingang per QR-Code gezogen; bei Andrang wird der Zugang gedrosselt, also früh kommen. Handschuhe mitnehmen. Bei Tauwetter bleibt das Eis gesperrt – über die Öffnung wird kurzfristig entschieden.'
+    photo:
+      file: 'peking/shichahai-eis.jpg'
+      alt: 'Menschen auf der zugefrorenen Fläche des Houhai-Sees im Winter'
+      caption: '后海 im Winter: aus dem See wird eine Eisfläche mit Buden und Verleih.'
+      author: 'EditQ'
+      license: 'CC0'
+      licenseUrl: 'http://creativecommons.org/publicdomain/zero/1.0/deed.en'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Houhai_Lake_in_winter_5.jpg'
+  - name: 'Fahrradtour durch die Altstadt'
+    pinyin: 'qí chē'
+    german: 'Mit dem Leihrad durch die Hutongs'
+    when: 'ganzjährig, am besten werktags vor 16 Uhr'
+    price: 'ca. 1,5 ¥ pro 15 Min.'
+    text: 'Leihräder bekommt man als Ausländer: 哈啰 (Hellobike, blau), 美团 (Meituan, gelb) und 青桔 (Qingju, grün) laufen über die Mini-Programme in Alipay oder WeChat, mit Pass und internationaler Karte. Die Route führt einmal um die Altstadt nordwestlich der Verbotenen Stadt – Seen, Gassen, Glockenturm.'
+    tip: 'Achtung – nicht durch den Platz: durch den Tiananmen-Platz darf man nicht fahren: Er ist per Verordnung Fußgängerzone, in der außer Rollstühlen kein Fahrzeug zugelassen ist. Auch die 长安街 entlang des Platzes ist Sperrzone für Leihräder – dort lässt sich kein Rad abstellen. Wer zum Platz will, stellt das Rad an der Qianmen-Seite ab und geht die letzten 15 Minuten zu Fuß.'
+    steps:
+      - 'Start am 后海 (Houhai), Südseite – dort stehen die meisten Räder'
+      - '烟袋斜街 (Yandai Xiejie), 400 Meter Kopfsteinpflaster, runter zum Wasser'
+      - '钟鼓楼 (Glocken- und Trommelturm) – kurz absteigen, der Hügel ist zu steil'
+      - '南锣鼓巷 (Nanluoguxiang) nur durchqueren, die Parallelgassen sind ruhiger'
+      - '五道营 (Wudaoying Hutong) – Cafés, keine Reisebusse'
+      - '国子监街 (Guozijian) und 雍和宫 (Yonghe-Tempel) – der östlichste Punkt der Runde'
+      - 'zurück über 什刹海 (Shichahai): insgesamt rund 9 km, 2–3 Stunden'
+    photo:
+      file: 'peking/radtour.jpg'
+      alt: 'Hutong-Gasse in Peking mit Fahrradfahrern und Geschäften'
+      caption: 'Selbst in den Nebengassen: Gassen wie diese sind der Grund für das Rad – die nächste liegt 400 Meter weiter.'
+      author: 'Daniel Case'
+      license: 'CC BY-SA 3.0'
+      licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Yinzha_Hutong,_Beijing,_from_Wusi_Street.jpg'
 plans:
   - title: '1 Tag – das Minimum'
     forWhom: 'Zwischenstopp, Umsteigeflüge, Geschäftsreise'
     days:
       - day: 1
-        sights: [1, 5, 6]
-        morning: '08:30 Einlass Verbotene Stadt (Ticket vorab gebucht), danach Jingshan-Park'
-        afternoon: 'Tiananmen von außen, dann durch die Hutongs nach Norden'
-        evening: 'Peking-Ente – Tisch reservieren'
+        sights: [1, 6, 5]
+        morning: '08:30 Einlass Verbotene Stadt, Ticket vorab gebucht'
+        afternoon: 'Jingshan-Park für den Blick über die Dächer, dann Tiananmen mit gebuchtem Zeitfenster'
+        evening: 'Peking-Ente – Tisch reservieren, sonst eine Stunde Wartezeit'
   - title: '3 Tage – das Übliche'
     forWhom: 'Erste China-Reise, Standardroute'
     days:
       - day: 1
-        sights: [1, 5]
-        morning: 'Verbotene Stadt ab 08:30'
+        sights: [1, 6, 5]
+        morning: 'Verbotene Stadt ab 08:30, Einlass am Meridian-Tor'
         afternoon: 'Jingshan-Park, dann Tiananmen (Zeitfenster gebucht)'
         evening: 'Wangfujing oder ein Hutong-Restaurant in Laufweite'
       - day: 2
-        sights: [3, 8]
+        sights: [3]
         morning: '07:00 los zur Mauer (Mutianyu), Seilbahn hoch'
         afternoon: 'Rückkehr gegen 15:00, Pause im Hotel'
         evening: 'Ente – die Wartezeit ohne Reservierung einplanen'
       - day: 3
-        sights: [2, 6, 7]
+        sights: [2, 7, 8]
         morning: 'Himmelstempel ab 07:00 – dann sind die Einheimischen da'
-        afternoon: 'Hutongs, danach mit der Linie 14 nach 798'
+        afternoon: 'Weiße Pagode und die Gassen drumherum, danach mit der Linie 14 nach 798'
         evening: '798 schließt früh: letzte Galerie gegen 18:00'
   - title: '5 Tage – mit Luft'
     forWhom: 'Wer Museen und Essen ernst nimmt – auch mit Kindern'
     days:
       - day: 1
-        sights: [1, 5]
+        sights: [1, 6, 5]
         morning: 'Verbotene Stadt ab 08:30, ohne Eile durch die drei Haupthöfe'
         afternoon: 'Jingshan-Park, danach Tiananmen mit gebuchtem Zeitfenster'
         evening: 'Ankommen: Wangfujing, früh essen'
@@ -429,20 +504,21 @@ plans:
         afternoon: 'Rodelbahn hinunter, Rückfahrt gegen 16:00'
         evening: 'frei – der Tag war lang'
       - day: 3
-        sights: [2, 6]
+        sights: [2, 7]
         morning: 'Himmelstempel ab 07:00, danach Frühstück im Viertel'
-        afternoon: 'Hutongs: Hauptgasse meiden, eine Quergasse weiter laufen'
+        afternoon: 'Weiße Pagode, dann durch die Gassen nach Norden – hier wohnen noch Leute'
         evening: 'Teehaus oder Konzert'
       - day: 4
-        sights: [7, 8]
-        morning: '798 ab 10:00, Galerien vor der Mittagspause'
-        afternoon: 'Kochkurs oder Teehaus als Pause'
-        evening: 'Ente – diesmal mit Reservierung'
+        sights: [4]
+        morning: 'Sommerpalast ab 08:00 über das Nordtor, Lange Galerie nach Süden'
+        afternoon: 'Boot über den Kunming-See, dann langsam zurück'
+        evening: 'frei – der Westen der Stadt ist weit'
       - day: 5
-        sights: []
-        morning: 'Puffertag: Regen, Nachtrag oder Ausschlafen'
-        afternoon: 'letzte Einkäufe, Gepäck'
+        sights: [8]
+        morning: '798 ab 10:00, Galerien vor der Mittagspause'
+        afternoon: 'Puffer: Regen, Nachtrag oder Ausschlafen'
         evening: 'Ausreise oder Weiterreise nach Xi''an'
+
 ---
 
 > **Die Kurzfassung:** Peking ist ein Ring-System. Alles touristisch Relevante liegt innerhalb des dritten Rings – nur die Mauer (rund 60 km nördlich) und 798 (Nordosten) sind echte Ausflüge. Wer das einplant, spart pro Tag ein bis zwei Stunden Taxifahren.

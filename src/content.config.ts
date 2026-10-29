@@ -40,7 +40,13 @@ const sight = z.object({
   price: z.string().optional(),
   duration: z.string().optional(),
   booking: z.enum(['required', 'recommended', 'none']).default('none'),
+  /** Pflicht oder Kür: 'must' bekommt Video und alle Fakten, 'optional' bleibt kurz. */
+  tier: z.enum(['must', 'optional']).default('must'),
+  /** Nur bei 'optional': ehrliche Einordnung, wenn der Ort die Zeit nicht wert ist. */
+  warn: z.string().optional(),
   note: z.string().optional(),
+  /** Was in Gehweite liegt und den Weg lohnt – steht als eigene Zeile in der Karte. */
+  nearby: z.string().optional(),
   lat: z.number().optional(),
   lng: z.number().optional(),
   /** Öffnungszeiten im Klartext, inkl. Saisonunterschiede. */
@@ -143,7 +149,24 @@ const cities = defineCollection({
     base: z.string().optional(),
     hero: photo,
     sights: z.array(sight).default([]),
-    plans: z.array(plan).default([]),
+    /** Dinge, die man tut statt ansieht – Essen, Eis, Radtour. */
+  experiences: z
+    .array(
+      z.object({
+        name: z.string(),
+        pinyin: z.string().optional(),
+        german: z.string(),
+        when: z.string().optional(),
+        price: z.string().optional(),
+        text: z.string(),
+        tip: z.string().optional(),
+        /** Nur bei Routen: die Stationen in Reihenfolge. */
+        steps: z.array(z.string()).default([]),
+        photo: photo.optional(),
+      })
+    )
+    .default([]),
+  plans: z.array(plan).default([]),
     areas: z.array(area).default([]),
     connections: z.array(connection).default([]),
     bookAhead: z.array(z.string()).default([]),
