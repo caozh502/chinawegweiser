@@ -348,7 +348,8 @@
   font-family: var(--font-ui);
   font-size: 0.85rem;
 }
-.s-tickets li { margin: 0; padding: 0.32rem 0; border-bottom: 1px solid var(--line); }
+.s-tickets li { margin: 0; padding: 0.34rem 0; border-bottom: 1px solid var(--line); }
+.s-tickets li:has(.t-note) { padding-bottom: 0.62rem; }
 .s-tickets li:last-child { border-bottom: 0; }
 .t-row { display: flex; align-items: baseline; gap: 0.45rem; }
 .t-label { flex: 0 1 auto; color: var(--fg); }
@@ -356,22 +357,33 @@
 .t-fill {
   flex: 1 1 1rem;
   min-width: 1rem;
-  border-bottom: 1px dotted color-mix(in srgb, var(--muted) 55%, transparent);
+  border-bottom: 1px dotted color-mix(in srgb, var(--muted) 75%, transparent);
   transform: translateY(-0.2em);
 }
 .t-price {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   font-variant-numeric: tabular-nums;
   color: var(--accent);
   font-weight: 600;
+  overflow-wrap: anywhere;
 }
+/* Auf schmalen Geräten reicht eine Zeile nicht: Preis unter die Bezeichnung. */
+@media (max-width: 30rem) {
+  .t-row { display: block; }
+  .t-fill { display: none; }
+  .t-price { display: block; margin-top: 0.1rem; }
+}
+/* Zusatz zur Zeile: eingerückt und mit feiner Kante, damit klar ist,
+   wozu der Satz gehört. */
 .t-note {
   display: block;
-  margin-top: 0.15rem;
+  margin: 0.22rem 0 0 0.05rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--line);
   font-size: 0.78rem;
-  line-height: 1.45;
+  line-height: 1.5;
   color: var(--muted);
-  max-width: 34rem;
+  max-width: 32rem;
 }
 
 /* ---------- Videozeile ---------- */
