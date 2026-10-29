@@ -80,12 +80,14 @@
   gap: 1.4rem;
   margin: 1.4rem 0 2rem;
 }
-@media (min-width: 48rem) {
-  .sights {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
+/* Grid-Kinder haben min-width:auto – eine breite Tabelle im Inneren
+   drückt die Karte sonst über die Spalte hinaus. */
+.sights > *,
+.sight {
+  min-width: 0;
 }
+/* Eine Spalte: seit Tariftabelle, Faktenzeilen und Videozeile passen zwei
+   Karten nebeneinander nicht mehr (Tabellen würden bei ~330 px umbrechen). */
 .sight {
   background: var(--card);
   border: 1px solid var(--line);
@@ -329,6 +331,8 @@
 /* ---------- Tarife ---------- */
 .s-tickets {
   width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   margin: 0.9rem 0 0;
   font-family: var(--font-ui);
@@ -343,11 +347,17 @@
 }
 .s-tickets th { font-weight: 500; color: var(--fg); width: 45%; }
 .s-tickets td:nth-child(2) {
-  white-space: nowrap;
+  width: 7.5rem;
+  white-space: normal;
+  overflow-wrap: anywhere;
   font-variant-numeric: tabular-nums;
   color: var(--accent);
 }
-.s-tickets td:nth-child(3) { color: var(--muted); font-size: 0.78rem; }
+.s-tickets td:nth-child(3) {
+  color: var(--muted);
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
 
 /* ---------- Videozeile ---------- */
 .s-video {
@@ -399,7 +409,7 @@
   line-height: 1.5;
 }
 .d-slots span { display: block; }
-.d-slots b { display: inline-block; min-width: 3.6rem; color: var(--fg); font-weight: 600; }
+.d-slots b { display: inline-block; min-width: 3.2rem; color: var(--fg); font-weight: 600; }
 
 /* ---------- Änderungsprotokoll ---------- */
 .changelog {

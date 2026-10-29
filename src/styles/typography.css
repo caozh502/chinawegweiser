@@ -195,6 +195,13 @@ table,
   letter-spacing: 0.09em;
 }
 
+/* Lange Wörter und chinesische Zeichenketten sprengen sonst die Spalte. */
+.entry th,
+.entry td {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
 .badge {
   font-size: 0.76rem;
   letter-spacing: 0.01em;
@@ -243,6 +250,7 @@ table,
 
 /* ---------- Tabellen: lesbar statt gequetscht ---------- */
 .entry table {
+  max-width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   border-collapse: separate;
@@ -272,12 +280,8 @@ table,
   font-family: var(--font-ui);
   font-weight: 600;
 }
-@media (min-width: 48rem) {
-  .entry td:nth-child(2),
-  .entry td:nth-child(3) {
-    white-space: nowrap;
-  }
-}
+/* Kein white-space: nowrap auf Tabellenzellen: bei vier Spalten (Preise,
+   Hinweise) zwingt es die Tabelle über die Spaltenbreite hinaus. */
 
 /* ---------- Navigation und Steckbrief: mehr Kontrast ---------- */
 nav.top {
@@ -351,12 +355,12 @@ nav.top a:hover {
 /* Erst ab ~64rem gibt es Platz für eine Spalte daneben. */
 @media (min-width: 64rem) {
   main.wrap:has(.guide-shell) {
-    /* 38 + 3 + 15 = 56rem Inhalt plus das .wrap-Padding */
-    max-width: 58.2rem;
+    /* 38 + 4 + 15 = 57rem Inhalt plus das .wrap-Padding */
+    max-width: 59.2rem;
   }
   .guide-shell {
     grid-template-columns: minmax(0, 38rem) 15rem;
-    column-gap: 3rem;
+    column-gap: 4rem;
     align-items: start;
   }
   /* Kopfblock auf dieselbe Kante wie der Text: eine Lesekante, eine Randspalte. */
