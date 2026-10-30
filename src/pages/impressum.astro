@@ -31,8 +31,8 @@ const ph = (v: string, label: string) => (v ? v : `[${label}]`);
 
     <h2>Kontakt</h2>
     <p>
-      E-Mail: {o.email ? <a href={`mailto:${o.email}`}>{o.email}</a> : '[E-Mail-Adresse]'}<br />
-      Telefon: {o.phone ? o.phone : '[optional, aber empfohlen]'}
+      E-Mail: {o.email ? <a href={`mailto:${o.email}`}>{o.email}</a> : '[E-Mail-Adresse]'}
+      {o.phone && <><br />Telefon: {o.phone}</>}
     </p>
 
     <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
