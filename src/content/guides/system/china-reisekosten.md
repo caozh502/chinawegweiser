@@ -56,11 +56,11 @@ Wer die Kosten einer China-Reise überschlägt, landet fast immer bei derselben 
 | Eintritte | 60–120 € |
 | Internet (eSIM) | 15–35 € |
 
-Alle Beträge sind pro Person, gerechnet mit **1 € ≈ 7,4 ¥** (Stand 30. Oktober 2026).
+Alle Beträge sind pro Person, gerechnet mit **1 € ≈ 7,4 ¥**<span class="q">Quelle: <a href="https://www.frankfurter.dev/" target="_blank" rel="noopener">EZB-Referenzkurs</a>, Stand 30. Okt. 2026</span> (Stand 30. Oktober 2026).
 
 ## Flug: der Posten, an dem man am meisten spart
 
-Frankfurt–Peking lag 2026 im Durchschnitt bei **570 €** für Hin- und Rückflug; die günstigsten Angebote der letzten Monate lagen bei **350–400 €**, Direktflüge mit Lufthansa oder SWISS starten bei etwa **830 €**. München liegt meist 30–60 € darüber, Zürich und Wien ähnlich.
+Frankfurt–Peking lag 2026 im Durchschnitt bei **570 €** für Hin- und Rückflug; die günstigsten Angebote der letzten Monate lagen bei **350–400 €**, Direktflüge mit Lufthansa oder SWISS starten bei etwa **830 €**. München liegt meist 30–60 € darüber, Zürich und Wien ähnlich.<span class="q">Quelle: <a href="https://www.kayak.de/fl%C3%BCge/Frankfurt-Main-FRA/Peking-BJS" target="_blank" rel="noopener">KAYAK</a>, Stand Okt. 2026</span>
 
 Drei Regeln, die tatsächlich Geld sparen:
 
@@ -70,7 +70,7 @@ Drei Regeln, die tatsächlich Geld sparen:
 
 ## Unterkunft
 
-In Peking und Xi’an bekommt man für deutsches Geld deutlich mehr Zimmer als in München oder Hamburg. Die Preise unten sind reale Angebote von Trip.com für Ende Oktober 2026.
+In Peking und Xi’an bekommt man für deutsches Geld deutlich mehr Zimmer als in München oder Hamburg. Die Preise unten sind reale Angebote für Ende Oktober 2026.<span class="q">Quelle: <a href="https://www.trip.com/hotels/beijing-hotels-list-1/" target="_blank" rel="noopener">Trip.com</a>, Stand Okt. 2026</span>
 
 | Kategorie | Peking | Xi’an |
 | --- | --- | --- |
@@ -83,7 +83,7 @@ Zwei Dinge, die den Preis stärker beeinflussen als die Sterne: **Lage** (in Pek
 
 ## Essen
 
-China ist beim Essen der günstigste Posten der Reise – solange man dort isst, wo Chinesen essen.
+China ist beim Essen der günstigste Posten der Reise – solange man dort isst, wo Chinesen essen.<span class="q">Quelle: <a href="https://www.numbeo.com/cost-of-living/in/Beijing" target="_blank" rel="noopener">Numbeo</a>, Stand Okt. 2026</span>
 
 | Position | Preis |
 | --- | --- |
@@ -114,13 +114,13 @@ Die Eintrittspreise sind der Posten, den die meisten unterschätzen – nicht we
 
 | Sehenswürdigkeit | Preis |
 | --- | --- |
-| Verbotene Stadt (Hochsaison) | 60 ¥ (ca. 8 €) |
+| Verbotene Stadt (Hochsaison) | 60 ¥ (ca. 8 €) <span class="q">Quelle: <a href="https://www.dpm.org.cn/" target="_blank" rel="noopener">Palace Museum</a></span> |
 | Mutianyu, Große Mauer | 45 ¥ + Shuttle 15 ¥ |
 | Seilbahn Mutianyu (hin und zurück) | 140 ¥ (ca. 19 €) |
 | Sommerpalast | 30 ¥ (ca. 4 €) |
 | Himmelstempel, Kombi | 34 ¥ (ca. 4,60 €) |
-| Terrakotta-Armee | 120 ¥ (ca. 16 €) |
-| Stadtmauer Xi’an | 54 ¥ (ca. 7 €) + Leihrad 45 ¥ |
+| Terrakotta-Armee | 120 ¥ (ca. 16 €) <span class="q">Quelle: <a href="https://www.bmy.com.cn/jingtai/bmyweb/ticketing.html" target="_blank" rel="noopener">秦始皇帝陵博物院</a></span> |
+| Stadtmauer Xi’an | 54 ¥ (ca. 7 €) + Leihrad 45 ¥ <span class="q">Quelle: <a href="http://xa.bendibao.com/tour/2021525/84926.shtm" target="_blank" rel="noopener">西安本地宝</a></span> |
 | Glocken- und Trommelturm, Kombi | 50 ¥ (ca. 6,70 €) |
 | Huaqing-Palast | 120 ¥ (ca. 16 €) |
 | Geschichtsmuseum Shaanxi | frei (Reservierung nötig) |
@@ -135,7 +135,7 @@ Für beide Städte zusammen sind **70–90 €** ein guter Richtwert, wenn man d
 | Peking → Shanghai (Schnellzug) | 4,5 – 7,5 h | ab 576 ¥ (ca. 78 €) |
 | Peking → Xi’an (Nachtzug, Liegewagen) | 11–12 h | 350–435 ¥ (47–59 €) |
 
-Der Zug ist billiger als Fliegen, wenn man die Fahrt zum Flughafen, das Einchecken und die Wartezeit ehrlich mitrechnet – und er fährt vom Stadtzentrum ins Stadtzentrum.
+Der Zug ist billiger als Fliegen, wenn man die Fahrt zum Flughafen, das Einchecken und die Wartezeit ehrlich mitrechnet – und er fährt vom Stadtzentrum ins Stadtzentrum.<span class="q">Quelle: <a href="https://www.travelchinaguide.com/china-trains/beijing-xian-highspeed.htm" target="_blank" rel="noopener">TravelChinaGuide</a>, Stand 2026</span>
 
 ## Zwei Posten, die man vergisst
 

@@ -35,7 +35,7 @@ order: 10
 
 ## Was die Regel konkret erlaubt
 
-Die einseitige Visumbefreiung Chinas gilt für 50 Nationalitäten, darunter Deutschland, Österreich und die Schweiz. Sie ist inzwischen mehrfach verlängert worden und läuft in der aktuellen Fassung bis **31. Dezember 2026**.
+Die einseitige Visumbefreiung Chinas gilt für 50 Nationalitäten, darunter Deutschland, Österreich und die Schweiz. Sie ist inzwischen mehrfach verlängert worden und läuft in der aktuellen Fassung bis **31. Dezember 2026**<span class="q">Quelle: <a href="https://www.auswaertiges-amt.de/de/reiseundsicherheit/chinasicherheit-200466" target="_blank" rel="noopener">Auswärtiges Amt</a>, Stand Okt. 2026</span>.
 
 | Zweck | Erlaubt ohne Visum |
 | --- | --- |
@@ -47,7 +47,7 @@ Die einseitige Visumbefreiung Chinas gilt für 50 Nationalitäten, darunter Deut
 | Studium, Sprachkurs, längeres Praktikum | nein |
 | Aufenthalt über 30 Tage | nein |
 
-Wichtig: Die 30 Tage gelten **pro Aufenthalt**, nicht pro Kalenderjahr.
+Wichtig: Die 30 Tage gelten **pro Aufenthalt**, nicht pro Kalenderjahr.<span class="q">Quelle: <a href="http://de.china-embassy.gov.cn/" target="_blank" rel="noopener">Botschaft der VR China</a></span>
 
 ## Was du bei der Einreise dabeihaben solltest
 

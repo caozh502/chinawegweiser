@@ -87,6 +87,7 @@ sights:
     qrLabel: 'WeChat-Account (公众号)'
     qrNote: 'Nur mit WeChat scannen – die Kamera-App liest diesen Code nicht. Code von der offiziellen Ticketseite bmy.com.cn.'
     buyTicketsAlt: 'Realnamen-Pflicht für alle Besucher, auch Ausländer. Der Pass wird bei der Buchung eingetragen und am Einlass kontrolliert. Kontingente werden sieben Tage vorher freigegeben (an Feiertagen zehn), morgens sind die Plätze zuerst weg – nachmittags ist es ruhiger. Halber Preis nur für chinesische Vollzeitstudierende mit Studentenausweis.'
+    source: { label: '秦始皇帝陵博物院 (Preise, Zeiten)', url: 'https://bmy.com.cn/guide/notice/364.html' }
     ticketUrl: 'https://www.bmy.com.cn/jingtai/bmyweb/ticketing.html'
     ticketLabel: 'Ticketseite (chinesisch, Pass wird akzeptiert)'
     tickets:
@@ -124,6 +125,7 @@ sights:
     guideSlot: 'guide'
     lat: 34.2506
     lng: 108.9422
+    source: { label: '西安日报 – Einlassänderung Stadtmauer', url: 'https://www.sxdaily.com.cn/2026-07/01/content_20049276.html' }
     hours: 'Yongningmen 08:00–22:00; die übrigen Tore schließen früher, meist zwischen 18:00 und 20:00'
     closed: 'Kein Schließtag; einzelne Tore wegen Veranstaltungen gesperrt'
     transit: 'Metro-Linie 2 bis Yongningmen (永宁门), Ausgang D – direkt am Tor. Vom Glockenturm sind es 15 Minuten zu Fuß nach Süden.'
@@ -164,6 +166,7 @@ sights:
     note: 'Das Museum zeigt, warum Xi''an überhaupt Hauptstadt war: Bronzen der Westlichen Zhou, Terrakotten der Han, Gold und Glas der Tang aus den Gräbern rings um die Stadt. Der Rundgang führt chronologisch durch drei Säle; wer wenig Zeit hat, nimmt Saal 2 und 3 (Han bis Tang). Die Sonderausstellung mit den Schätzen kostet extra und ist der Grund, warum viele wiederkommen.'
     lat: 34.2225
     lng: 108.9547
+    source: { label: '陕西历史博物馆 (Zeiten, Reservierung)', url: 'https://www.sxhm.com/index.php' }
     hours: '08:30–19:00 (Hauptgebäude), 08:30–18:00 (Zweigstelle Qin-Han); Kassenschluss jeweils eine Stunde vorher'
     closed: 'Montags (außer an Feiertagen)'
     transit: 'Metro-Linie 3 oder 4 bis Dayanta (大雁塔), dann 10 Minuten zu Fuß nach Westen; oder Linie 2/3 bis Xiaozhai (小寨), 7–8 Minuten nach Osten. Adresse: Xiaozhai Donglu 91.'

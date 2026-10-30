@@ -51,7 +51,7 @@ Die eSIM ist der beste Kompromiss: günstiger als Tagesroaming, sofort einsatzbe
 
 Das ist keine Vorsicht aus Bequemlichkeit, sondern die Faktenlage:
 
-Die chinesische Verordnung über den internationalen Netzverbund schreibt in Artikel 6 vor, dass für die internationale Anbindung **ausschließlich die staatlichen Ausgangskanäle** genutzt werden dürfen; Artikel 14 sieht für Verstöße eine Verwarnung und **Geldbuße bis 15.000 Yuan** vor, bei Einnahmen zusätzlich Einziehung derselben. In der Praxis werden Nutzer sporadisch kontrolliert und bestraft – bekannte Fälle reichen von einigen Tausend bis über eine Million Yuan, wenn Einnahmen hinzukommen.
+Die chinesische Verordnung über den internationalen Netzverbund schreibt in Artikel 6 vor, dass für die internationale Anbindung **ausschließlich die staatlichen Ausgangskanäle** genutzt werden dürfen; Artikel 14 sieht für Verstöße eine Verwarnung und **Geldbuße bis 15.000 Yuan** vor, bei Einnahmen zusätzlich Einziehung derselben.<span class="q">Quelle: <a href="https://www.cac.gov.cn/1996-02/02/c_126468621.htm" target="_blank" rel="noopener">CAC – Netzverbund-Verordnung</a></span> In der Praxis werden Nutzer sporadisch kontrolliert und bestraft – bekannte Fälle reichen von einigen Tausend bis über eine Million Yuan, wenn Einnahmen hinzukommen.
 
 Für dich als Reisenden heißt das: Das Risiko trägt **du**, an einem Ort, an dem du dich nicht auskennst und dessen Sprache du nicht sprichst. Und du brauchst es nicht – eine Roaming-eSIM löst dasselbe Problem auf einem Weg, der niemanden in Konflikt mit dem lokalen Recht bringt.
 

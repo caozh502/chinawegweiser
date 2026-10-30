@@ -116,6 +116,7 @@ sights:
     qr: 'gugong'
     qrNote: 'WeChat-Mini-Programm „故宫博物院" – Zeitfenster, Eintritt und Führungen. Nur mit WeChat scannen, die Kamera-App liest diesen Code nicht.'
     buyTicketsAlt: 'Tickets gibt es nur online, eine Tageskasse existiert nicht. Wer kein Konto anlegen will, bucht über eine Führung (Kasten unten) – dort ist der Einlass enthalten. Das Kontingent wird sieben Tage vorher freigegeben, meist gegen 20:00 Uhr Ortszeit (14:00 Uhr in Deutschland), in der Hochsaison sind die Plätze in Minuten weg. Am Eingang: Pass und QR-Code vorzeigen. Für den Jingshan-Park nebenan ist kein Vorverkauf nötig – Ticket am Eingang per QR-Code oder am Automaten.'
+    source: { label: 'Palace Museum (Preise, Zeiten)', url: 'https://www.dpm.org.cn/' }
     ticketUrl: 'https://bookingticket.dpm.org.cn/'
     ticketLabel: 'Ticketseite (englisch)'
     tickets:

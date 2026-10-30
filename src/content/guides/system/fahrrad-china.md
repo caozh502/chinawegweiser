@@ -39,6 +39,10 @@ sources:
     url: 'https://www.trip.com/guide/transport/how-to-use-shared-bikes-in-china.html'
   - label: '北京市人民代表大会 – 北京市非机动车管理条例, Neufassung ab 1. Mai 2026'
     url: 'https://www.bjrd.gov.cn/rdzl/rdzc/fgjd/202603/t20260303_4547101.html'
+  - label: 'Unlock China – Bike Sharing in China 2026: HelloBike vs Meituan vs Qingju (Juni 2026)'
+    url: 'https://www.unlockchina.co/china-bike-sharing-foreigners/'
+  - label: '西安本地宝 – Tarife und Anmietung der Mauerfahrräder'
+    url: 'http://xa.bendibao.com/tour/2021525/84926.shtm'
   - label: '道路交通安全法实施条例 §72 – Mindestalter 12 bzw. 16 Jahre'
     url: 'https://www.bjfsh.gov.cn/zhxw/fsdt/202408/t20240819_40079981_fs.shtml'
 affiliate: ['esim']
@@ -66,7 +70,7 @@ China hat keinen einheitlichen Anbieter wie Uber, sondern drei Systeme, die nebe
 | **Blau** | 哈啰单车 (HelloBike) | Alipay-Mini-Programm oder eigene App | keine – Alipay-Identität genügt |
 | **Grün** | 青桔单车 (Qingju) | DiDi-App | dasselbe Konto wie beim Taxi |
 
-Für Reisende ist **Blau der bequemste Weg**: Alipay öffnen, „HelloBike" suchen, Rad scannen. Der Grund ist unspektakulär – Alipay hat deinen Pass schon bei der Einrichtung geprüft, das Rad-System erbt diese Prüfung. Bei Meituan musst du sie ein zweites Mal machen, und die Option dafür ist gut versteckt.
+Für Reisende ist **Blau der bequemste Weg**: Alipay öffnen, „HelloBike" suchen, Rad scannen. Der Grund ist unspektakulär – Alipay hat deinen Pass schon bei der Einrichtung geprüft, das Rad-System erbt diese Prüfung. Bei Meituan musst du sie ein zweites Mal machen, und die Option dafür ist gut versteckt<span class="q">Quelle: <a href="https://www.unlockchina.co/china-bike-sharing-foreigners/" target="_blank" rel="noopener">Unlock China</a>, Stand Juni 2026</span>.
 
 ## Einrichten, bevor du fliegst
 
@@ -80,7 +84,7 @@ Kaution gibt es nicht mehr. Die 99 bis 299 Yuan, über die in Reiseforen noch ge
 
 ## Was eine Fahrt kostet
 
-Zum 1. Juni 2026 haben alle drei Anbieter in Peking gleichzeitig die Preise umgestellt – von 1,50 Yuan für 30 Minuten auf rund 2 Yuan für 60 Minuten.
+Zum 1. Juni 2026 haben alle drei Anbieter in Peking gleichzeitig die Preise umgestellt – von 1,50 Yuan für 30 Minuten auf rund 2 Yuan für 60 Minuten.<span class="q">Quelle: <a href="https://www.huxiu.com/article/4901014.html" target="_blank" rel="noopener">虎嗅 (Huxiu)</a>, Stand Okt. 2026</span>
 
 | Anbieter | Startpreis | Enthalten | Danach |
 | --- | --- | --- | --- |
@@ -106,7 +110,7 @@ Eine Stunde Fahrt kostet in Peking also 1,99 ¥ und in Changsha 5 ¥ – zweiein
 
 ## Die Falle: P-Zonen
 
-Das Rad schließt nicht dort ab, wo du es hinstellst, sondern nur dort, wo es hingehört. Die App zeigt blaue **P-Zonen** (停车点) auf der Karte; stellst du außerhalb ab, kommt die Fahrt zwar zu Ende, aber es wird eine Ausgleichsgebühr von **5 bis 50 Yuan** fällig.
+Das Rad schließt nicht dort ab, wo du es hinstellst, sondern nur dort, wo es hingehört. Die App zeigt blaue **P-Zonen** (停车点) auf der Karte; stellst du außerhalb ab, kommt die Fahrt zwar zu Ende, aber es wird eine Ausgleichsgebühr von **5 bis 50 Yuan** fällig.<span class="q">Quelle: <a href="https://www.trip.com/guide/transport/how-to-use-shared-bikes-in-china.html" target="_blank" rel="noopener">Trip.com</a>, Stand Sep. 2026</span>
 
 Zwei praktische Folgen:
 
@@ -119,7 +123,7 @@ Die App piept beim Abstellen außerhalb der Zone – auf Chinesisch. Der Ton bed
 
 Das ist der Punkt, an dem Reisende am häufigsten Ärger bekommen, und die Regeln stehen nicht im Reiseführer, sondern in einer Verordnung der Pekinger Verkehrsbehörde.
 
-Die Kernaussage der **Verordnung über Sperrzonen für Leihräder von 2021**: Auf Pekinger Straßen – besonders auf den Haupt- und Nebenstraßen der Ringsstraßen einschließlich der Brückenbereiche – ist Parken außerhalb der ausgewiesenen Abstellflächen grundsätzlich verboten. Dazu kommen **16 Schwerpunktbereiche im Kernstadtgebiet**, in denen auf der gesamten Länge nicht geparkt werden darf, auch nicht auf dem Gehweg:
+Die Kernaussage der **Verordnung über Sperrzonen für Leihräder von 2021**<span class="q">Quelle: <a href="https://m.bjnews.com.cn/detail/162934390914014.html" target="_blank" rel="noopener">北京市交通委, zitiert nach 新京报</a>, Stand Aug. 2021</span>: Auf Pekinger Straßen – besonders auf den Haupt- und Nebenstraßen der Ringsstraßen einschließlich der Brückenbereiche – ist Parken außerhalb der ausgewiesenen Abstellflächen grundsätzlich verboten. Dazu kommen **16 Schwerpunktbereiche im Kernstadtgebiet**, in denen auf der gesamten Länge nicht geparkt werden darf, auch nicht auf dem Gehweg:
 
 - **Ost-Changan-Allee (东长安街)** und **West-Changan-Allee (西长安街)**
 - **Jingshan-Vorstraße (景山前街)** – der Weg zwischen Verbotener Stadt und Jingshan-Park
@@ -131,15 +135,15 @@ Die Sperrzonen sind vor Ort beschildert und in jeder Anbieter-App auf der Karte 
 
 ## Regeln, die für dich gelten
 
-- **Mindestalter 12 Jahre** fürs Fahrrad, **16 Jahre** für Elektro-Leihräder (Verordnung zur Durchführung des Straßenverkehrsgesetzes, §72). Das gilt auch für Touristen.
+- **Mindestalter 12 Jahre** fürs Fahrrad, **16 Jahre** für Elektro-Leihräder (Verordnung zur Durchführung des Straßenverkehrsgesetzes, §72)<span class="q">Quelle: <a href="https://www.bjfsh.gov.cn/zhxw/fsdt/202408/t20240819_40079981_fs.shtml" target="_blank" rel="noopener">§72 Straßenverkehrsgesetz</a></span>. Das gilt auch für Touristen.
 - **Radweg ist Pflicht.** Auf dem Gehweg wird geschoben, nicht gefahren.
-- **Seit 1. Mai 2026 in Peking: Helmpflicht auf Elektro-Leihrädern** – für Fahrer und Mitfahrer. Auf normalen Fahrrädern nicht.
+- **Seit 1. Mai 2026 in Peking: Helmpflicht auf Elektro-Leihrädern** – für Fahrer und Mitfahrer. Auf normalen Fahrrädern nicht.<span class="q">Quelle: <a href="https://www.bjrd.gov.cn/rdzl/rdzc/fgjd/202603/t20260303_4547101.html" target="_blank" rel="noopener">北京市人大 – Novelle 2026</a>, Stand März 2026</span>
 - **E-Scooter, Hoverboards und Balance-Boards sind auf Straßen verboten** – dieselbe Novelle von 2026 stellt das klar.
 - **Ringsstraßen-Hauptfahrbahnen sind tabu** für Fahrräder; die Nebenstraßen haben meist einen eigenen Radstreifen.
 
 ## Xi'an: die Mauer statt Leihrad
 
-In Xi'an ist das interessanteste Rad kein Leihrad, sondern ein Mietrad auf der Stadtmauer. Die Mauer ist 13,74 Kilometer lang und durchgehend befahrbar; Verleihstationen stehen an mehreren Toren, die Miete liegt bei **45 Yuan für drei Stunden** (Kaution 100 Yuan, Tandem 90 Yuan). Wer nach 20 Uhr abgibt, kann nur am Südtor (Yongningmen) zurückgeben.
+In Xi'an ist das interessanteste Rad kein Leihrad, sondern ein Mietrad auf der Stadtmauer. Die Mauer ist 13,74 Kilometer lang und durchgehend befahrbar; Verleihstationen stehen an mehreren Toren, die Miete liegt bei **45 Yuan für drei Stunden** (Kaution 100 Yuan, Tandem 90 Yuan)<span class="q">Quelle: <a href="http://xa.bendibao.com/tour/2021525/84926.shtm" target="_blank" rel="noopener">西安本地宝</a></span>. Wer nach 20 Uhr abgibt, kann nur am Südtor (Yongningmen) zurückgeben.
 
 Das ist kein Ersatz für ein Leihrad, sondern eine eigene Attraktion – und der Grund, warum man in Xi'an überhaupt ein Fahrrad braucht. Details stehen auf der Seite [Xi'an: der komplette Reiseführer](/stadt/xian/).
 

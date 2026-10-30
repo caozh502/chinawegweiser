@@ -396,6 +396,12 @@ const faqLd =
                 </ul>
               )}
 
+              {s.source && (
+                <p class="s-source">
+                  <span class="q">Quelle: <a href={s.source.url} target="_blank" rel="noopener">{s.source.label}</a></span>
+                </p>
+              )}
+
               {(() => {
                 const alle = s.photo ? [s.photo, ...s.photos] : s.photos;
                 if (alle.length === 0) return null;

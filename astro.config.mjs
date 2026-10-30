@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import headingIds from './src/lib/rehype-heading-ids.mjs';
+
 import fs from 'node:fs';
 import path from 'node:path';
 

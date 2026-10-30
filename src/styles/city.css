@@ -1129,3 +1129,5 @@
   line-height: 1.4;
   color: var(--muted);
 }
+/* Quellenzeile unter der Preistabelle eines Ortes */
+.s-source { margin: 0.3rem 0 0; }

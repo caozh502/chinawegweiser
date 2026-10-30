@@ -559,3 +559,29 @@ nav.top a:hover {
   gap: 0.9rem;
   margin: 2rem 0 1rem;
 }
+
+/* ---------- Inline-Quellenangabe ---------- */
+/* Kleines Label direkt hinter der Aussage: „Quelle: Numbeo, Stand Okt. 2026".
+   Bewusst ohne Rahmen und ohne Hintergrund – es soll nach Belegkette aussehen,
+   nicht nach Badge. */
+.q {
+  display: inline;
+  margin-left: 0.3rem;
+  font-family: var(--font-ui);
+  font-size: 0.76em;
+  line-height: 1.5;
+  color: var(--muted);
+  white-space: normal;
+  hyphens: manual; /* Quellenname nicht trennen – „Okto-ber" mitten im Beleg liest sich falsch */
+}
+/* Der Quellenname ist der Link – sichtbar unterstrichen, aber dünn:
+   lesbar auf einen Blick, ohne wie ein CTA zu wirken. */
+.q a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--muted) 85%, transparent);
+}
+.q a:hover,
+.q a:focus-visible { color: var(--accent); text-decoration-color: currentColor; }

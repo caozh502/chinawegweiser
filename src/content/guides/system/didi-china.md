@@ -61,7 +61,7 @@ Die Reihenfolge ist wichtig, weil zwei Schritte in China schlecht funktionieren:
 2. **Sprache auf Englisch** stellen – beim ersten Start oder später in den Einstellungen.
 3. **Mit deutscher Nummer registrieren** (+49 …), Bestätigungscode per SMS eingeben.
 4. **Zahlungsmittel hinterlegen**: Visa oder Mastercard direkt in der App, oder Alipay/WeChat Pay verknüpfen.
-5. **Kurzer Test**: Ziel eingeben und den angezeigten Preis prüfen, ohne zu bestellen. Dann weißt du, dass Karte und Konto stimmen.
+5. **Kurzer Test**: Ziel eingeben und den angezeigten Preis prüfen, ohne zu bestellen. Dann weißt du, dass Karte und Konto stimmen.<span class="q">Quelle: <a href="https://www.trip.com/guide/transport/how-to-use-didi-in-china.html" target="_blank" rel="noopener">Trip.com – DiDi für Ausländer</a>, Stand Mai 2026</span>
 
 Ohne Datennetz läuft nichts. Wer mit einer eSIM über ausländischen Netzausgang reist, hat ab der Landung Internet – siehe [Internet in China: eSIM statt VPN](/system/internet-esim/).
 
@@ -87,7 +87,7 @@ Danach: Standort auf der Karte prüfen (die App setzt den Pin manchmal auf die f
 
 ## Was eine Fahrt kostet
 
-In Peking beginnt die Taxifahrt bei **13 ¥** (etwa 1,70 €). Der Tarif liegt bei 3,70 ¥ pro Meile, also rund 2,30 ¥ je Kilometer. Eine Fahrt über 10 Kilometer landet damit bei etwa **40 ¥**, also knapp 5 €. DiDi Express liegt häufig etwas darunter, weil die App Strecken und Nachfrage einrechnet. Zum Vergleich: Die U-Bahn kostet 3 bis 5 ¥ pro Fahrt, ist in der Rushhour aber oft die schnellere Wahl.
+In Peking beginnt die Taxifahrt bei **13 ¥** (etwa 1,70 €). Der Tarif liegt bei 3,70 ¥ pro Meile, also rund 2,30 ¥ je Kilometer.<span class="q">Quelle: <a href="https://www.numbeo.com/cost-of-living/in/Beijing" target="_blank" rel="noopener">Numbeo</a>, Stand Okt. 2026</span> Eine Fahrt über 10 Kilometer landet damit bei etwa **40 ¥**, also knapp 5 €. DiDi Express liegt häufig etwas darunter, weil die App Strecken und Nachfrage einrechnet. Zum Vergleich: Die U-Bahn kostet 3 bis 5 ¥ pro Fahrt, ist in der Rushhour aber oft die schnellere Wahl.
 
 Richtwerte für bekannte Strecken (Peking, DiDi Express, ohne Stau):
 
