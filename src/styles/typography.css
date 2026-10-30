@@ -550,4 +550,12 @@ nav.top a:hover {
   }
 }
 
-
+/* ---------- Weitere Artikelbilder (Guide-Layout) ---------- */
+/* Guide-Seiten laden city.css nicht, deshalb steht die Galerie hier:
+   zwei Spalten ab 16 rem Platz, eine einzelne Aufnahme wird voll breit. */
+.guide-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0.9rem;
+  margin: 2rem 0 1rem;
+}

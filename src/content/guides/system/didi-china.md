@@ -100,7 +100,7 @@ Richtwerte für bekannte Strecken (Peking, DiDi Express, ohne Stau):
 
 ## Wann du besser die U-Bahn nimmst
 
-Zwischen 7 und 9 Uhr sowie 17 und 19 Uhr steht man in Peking auch mit DiDi. Die Ringstraßen sind dann so voll, dass die App selbst 40 Minuten für 8 Kilometer anzeigt. Für alles innerhalb des dritten Rings ist die U-Bahn schneller und kostet ein Zehntel. Für die Mauer, den Flughafen und abends nach 22 Uhr ist DiDi die bessere Wahl.
+Zwischen 7 und 9 Uhr sowie 17 und 19 Uhr steht man in Peking auch mit DiDi. Die Ringstraßen sind dann so voll, dass die App selbst 40 Minuten für 8 Kilometer anzeigt. Für alles innerhalb des dritten Rings ist die U-Bahn schneller und kostet ein Zehntel. Für die Mauer, den Flughafen und abends nach 22 Uhr ist DiDi die bessere Wahl. Und für die letzten zwei Kilometer, die kein Taxi mehr lohnt, steht an der Ecke ein Leihrad – siehe [Fahrrad mieten in China](/system/fahrrad-china/).
 
 ## Sicherheit
 

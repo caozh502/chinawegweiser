@@ -133,6 +133,8 @@ const guides = defineCollection({
     sources: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
     /** Aufmacherfoto. Pflicht wird es, sobald alle Seiten eins haben. */
     hero: photo.optional(),
+    /** Weitere Bilder im Artikel, unter dem Text als Galerie. */
+    photos: z.array(photo).default([]),
     chinese: z
       .object({ name: z.string(), address: z.string(), note: z.string().optional() })
       .optional(),

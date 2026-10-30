@@ -130,6 +130,12 @@ const faqLd = d.faq.length
       <div class="guide-body">
     <Content />
 
+    {d.photos.length > 0 && (
+      <div class="guide-photos">
+        {d.photos.map((p) => <Photo photo={p} loading="lazy" />)}
+      </div>
+    )}
+
     {d.chinese && (
       <div class="cn-card" id="cn-card">
         <div class="label">Zum Vorzeigen (中文)</div>

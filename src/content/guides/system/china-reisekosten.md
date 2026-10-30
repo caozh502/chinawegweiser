@@ -106,7 +106,7 @@ Realistisch: **15 € pro Tag**, wenn du morgens im Hotel und mittags/abends ein
 | Flughafen Peking → Innenstadt (DiDi) | 100–140 ¥ (14–19 €) |
 | Flughafen Peking → Innenstadt (Airport Express) | 25–30 ¥ (3,50–4 €) |
 
-Die U-Bahn ist in beiden Städten das Mittel der Wahl: dicht, sauber, englisch ausgeschildert, für 0,50 € pro Fahrt. Für Flughafen, Mauer und späte Abende lohnt sich DiDi – siehe [DiDi: Chinas Uber ohne chinesische Nummer](/system/didi-china/).
+Die U-Bahn ist in beiden Städten das Mittel der Wahl: dicht, sauber, englisch ausgeschildert, für 0,50 € pro Fahrt. Für Flughafen, Mauer und späte Abende lohnt sich DiDi – siehe [DiDi: Chinas Uber ohne chinesische Nummer](/system/didi-china/). Für die letzten zwei Kilometer vor dem Ziel ist ein Leihrad mit 2 Yuan die billigste Variante: [Fahrrad mieten in China](/system/fahrrad-china/).
 
 ## Eintritte
 
