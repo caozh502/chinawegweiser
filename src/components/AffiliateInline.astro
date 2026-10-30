@@ -9,16 +9,19 @@ interface Props {
   /** Nicht `slot` nennen – das ist in Astro reserviert. */
   name: string;
   prefix?: string;
+  /** Stadt-Slug, um ein stadtspezifisches Ziel zu wählen. */
+  city?: string;
 }
 
-const { name, prefix } = Astro.props;
+const { name, prefix, city } = Astro.props;
 const a = affiliates[name];
+const target = (city && a?.urls?.[city]) || a?.url;
 ---
 
 {a && (
   <p class="aff-inline">
     <span class="aff-badge">Anzeige</span>
     {prefix ?? a.title}:
-    <a href={a.url} target="_blank" rel="sponsored nofollow noopener">{a.cta} →</a>
+    <a href={target} target="_blank" rel="sponsored nofollow noopener">{a.cta} →</a>
   </p>
 )}

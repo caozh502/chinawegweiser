@@ -180,7 +180,7 @@ const faqLd = {
             ))}
           </tbody>
         </table>
-        <AffiliateBox name="train" />
+        <AffiliateBox name="train" city={d.city} />
       </>
     )}
 
@@ -209,7 +209,7 @@ const faqLd = {
             </div>
           ))}
         </div>
-        <AffiliateBox name="hotels" />
+        <AffiliateBox name="hotels" city={d.city} />
       </>
     )}
 
@@ -257,7 +257,7 @@ const faqLd = {
                   <div class="guide-lead">Warum eine Führung hier hilft</div>
                   <p>{s.guideNote}</p>
                   {s.guideSlot && affiliates[s.guideSlot] && (
-                    <a class="btn btn-small" href={affiliates[s.guideSlot].url} target="_blank" rel="sponsored nofollow noopener">
+                    <a class="btn btn-small" href={affiliates[s.guideSlot].urls?.[d.city] ?? affiliates[s.guideSlot].url} target="_blank" rel="sponsored nofollow noopener">
                       {affiliates[s.guideSlot].cta} →
                     </a>
                   )}
@@ -449,7 +449,7 @@ const faqLd = {
       </>
     )}
 
-    <AffiliateInline name="tickets" prefix="Keine Lust, zum Freigabezeitpunkt um ein Zeitfenster zu kämpfen" />
+    <AffiliateInline name="tickets" prefix="Keine Lust, zum Freigabezeitpunkt um ein Zeitfenster zu kämpfen" city={d.city} />
 
     {d.plans.length > 0 && (
       <>
@@ -512,7 +512,7 @@ const faqLd = {
             <ul class="check">
               {d.bookAhead.map((b) => <li>{b}</li>)}
             </ul>
-            <AffiliateInline name="tours" prefix="Wenn das Reservierungssystem klemmt" />
+            <AffiliateInline name="tours" prefix="Wenn das Reservierungssystem klemmt" city={d.city} />
           </div>
         )}
         {d.traps.length > 0 && (
@@ -528,8 +528,8 @@ const faqLd = {
 
     {d.bookAhead.length > 0 && (
       <div class="aff-pair">
-        <AffiliateBox name="esim" />
-        <AffiliateBox name="insurance" />
+        <AffiliateBox name="esim" city={d.city} />
+        <AffiliateBox name="insurance" city={d.city} />
       </div>
     )}
 

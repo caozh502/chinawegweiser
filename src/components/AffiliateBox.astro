@@ -4,10 +4,13 @@ import { affiliates } from '../data/affiliates';
 interface Props {
   /** Nicht `slot` nennen – das ist in Astro reserviert. */
   name: string;
+  /** Stadt-Slug, um ein stadtspezifisches Ziel zu wählen. */
+  city?: string;
 }
 
-const { name } = Astro.props;
+const { name, city } = Astro.props;
 const a = affiliates[name];
+const target = (city && a?.urls?.[city]) || a?.url;
 ---
 
 {a && (
@@ -15,7 +18,7 @@ const a = affiliates[name];
     <span class="aff-badge">Anzeige</span>
     <div class="aff-title">{a.title}</div>
     <p>{a.text}</p>
-    <a class="btn" href={a.url} target="_blank" rel="sponsored nofollow noopener">{a.cta} →</a>
+    <a class="btn" href={target} target="_blank" rel="sponsored nofollow noopener">{a.cta} →</a>
     {a.hint && <div class="hint">{a.hint} <a href="/transparenz">Wie wir Geld verdienen</a></div>}
   </aside>
 )}

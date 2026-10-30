@@ -18,6 +18,8 @@ export type AffiliateSlot = {
   text: string;
   cta: string;
   url: string;
+  /** Stadtspezifische Ziele; Fallback ist `url`. */
+  urls?: Record<string, string>;
   hint?: string;
 };
 
@@ -43,7 +45,11 @@ export const affiliates: Record<string, AffiliateSlot> = {
     title: 'Führung durch die Verbotene Stadt',
     text: 'Vierstündige Führung durch die Verbotene Stadt und über den Tiananmen-Platz, Eintritt inklusive, englischsprachiger Lizenzführer (4,8 von 5 bei über 11.000 Bewertungen).',
     cta: 'Führung ansehen',
-    url: 'https://www.getyourguide.com/beijing-l186/4-hour-private-tour-to-tian-anmen-square-and-forbidden-city-t459862/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=guide-verbotene-stadt',
+    url: 'https://www.getyourguide.com/beijing-l186/4-hour-private-tour-to-tian-an-men-square-and-forbidden-city-t459862/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=guide-verbotene-stadt',
+    urls: {
+      peking: 'https://www.getyourguide.com/beijing-l186/4-hour-private-tour-to-tian-an-men-square-and-forbidden-city-t459862/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=guide-verbotene-stadt',
+      xian: 'https://www.getyourguide.de/xi-an-l270/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=xian-guide',
+    },
     hint: 'Der Preis bleibt gleich.',
   },
   tours: {
@@ -52,6 +58,10 @@ export const affiliates: Record<string, AffiliateSlot> = {
     text: 'Für Sehenswürdigkeiten mit chinesischem Reservierungssystem ist eine geführte Variante oft der einfachste Weg hinein.',
     cta: 'Touren ansehen',
     url: 'https://www.getyourguide.com/beijing-l186/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=peking-city',
+    urls: {
+      peking: 'https://www.getyourguide.com/beijing-l186/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=peking-city',
+      xian: 'https://www.getyourguide.de/xi-an-l270/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=xian-city',
+    },
     hint: 'Der Preis bleibt gleich.',
   },
   tickets: {
@@ -60,6 +70,10 @@ export const affiliates: Record<string, AffiliateSlot> = {
     text: 'Karten für Kaiserpalast, Mauerabschnitte und Ausflüge, buchbar mit deutscher oder internationaler Karte. Der Anbieter übernimmt die Reservierung mit deinen Passdaten; Bestätigung per E-Mail, Einlass per QR-Code.',
     cta: 'Ticket mit Reservierung',
     url: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc57-beijing%2F1-things-to-do%2F',
+    urls: {
+      peking: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc57-beijing%2F1-things-to-do%2F',
+      xian: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc60-xi-an%2F1-things-to-do%2F',
+    },
     hint: 'Der Preis bleibt gleich.',
   },
   insurance: {
