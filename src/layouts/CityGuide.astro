@@ -54,6 +54,25 @@ const fmt = (iso?: string) =>
     : null;
 const verifiedText = fmt(d.verified);
 
+/** Strukturierte Daten: Article mit Autor, Änderungsdatum und Kanonik. */
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: d.title,
+  description: d.description,
+  inLanguage: 'de',
+  mainEntityOfPage: new URL(`/stadt/${d.city}/`, site.url).toString(),
+  image: [new URL('/og-default.jpg', site.url).toString()],
+  author: {
+    '@type': 'Person',
+    name: site.owner.name,
+    url: new URL('/autoren/', site.url).toString(),
+  },
+  publisher: { '@type': 'Organization', name: site.name, url: site.url },
+  isAccessibleForFree: true,
+  ...(d.verified ? { dateModified: `${d.verified}T12:00:00+01:00` } : {}),
+};
+
 /* Lesezeit: rund 200 Wörter pro Minute, Markdown-Text plus Datenblöcke. */
 const readingTime = Math.max(
   3,
@@ -108,6 +127,9 @@ const faqLd = {
 ---
 
 <Base title={d.title} description={d.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+  </Fragment>
   <article class="entry">
     <div class="eyebrow"><a href="/">Start</a> · Stadt</div>
     <h1>{d.title}</h1>

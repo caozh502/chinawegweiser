@@ -41,6 +41,25 @@ const cityNames: Record<string, string> = {
 
 const cityName = cityNames[d.city] ?? d.city;
 const verifiedText = fmt(d.verified);
+
+/** Strukturierte Daten für die Fragen-Seiten (Ratgeber-Format). */
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: d.title,
+  description: d.description,
+  inLanguage: 'de',
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).toString(),
+  image: [new URL('/og-default.jpg', Astro.site).toString()],
+  author: {
+    '@type': 'Person',
+    name: site.owner.name,
+    url: new URL('/autoren/', Astro.site).toString(),
+  },
+  publisher: { '@type': 'Organization', name: site.name, url: site.url },
+  isAccessibleForFree: true,
+  ...(d.verified ? { dateModified: `${d.verified}T12:00:00+01:00` } : {}),
+};
 const mailSubject = encodeURIComponent(`Korrektur: ${d.title}`);
 
 /* Inhaltsverzeichnis aus den Markdown-Überschriften (IDs setzt
@@ -76,6 +95,9 @@ const faqLd = d.faq.length
 ---
 
 <Base title={d.title} description={d.description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+  </Fragment>
   <article class="entry">
     <div class="eyebrow">
       <a href={d.city === 'system' ? '/praktisch/' : `/stadt/${d.city}/`}>{cityName}</a> ·
