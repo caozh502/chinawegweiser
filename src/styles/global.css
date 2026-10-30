@@ -143,6 +143,12 @@ li { margin: .3rem 0; }
   margin-right: .4rem;
   opacity: .5;
 }
+/* Schmal: Fakten untereinander, Trennpunkte entfallen ganz –
+   so kann kein Punkt am Zeilenanfang hängen bleiben. */
+@media (max-width: 40rem) {
+  .metafacts { flex-direction: column; align-items: flex-start; gap: .1rem; }
+  .metafacts > * + *::before { content: none; }
+}
 .statusword { display: inline-flex; align-items: center; }
 .dot {
   display: inline-block;
