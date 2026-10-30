@@ -120,22 +120,33 @@ def value_of(row, sum_field):
     return int(row.get("count") or 0)
 
 
+OWN_HOST = "chinawegweiser.de"
+
+
 def collect(start: date, end: date):
+    """Sitzungen (sum.visits, per IP+UA entdoppelt) für die Gesamtzahl,
+    Aufrufe (count) für Seiten/Länder/Herkunft – sum.visits ist pro Seite
+    nicht sinnvoll, weil eine Sitzung mehrere Seiten aufruft."""
     out = {}
-    rows, dim, sumf = rum_first(
-        ["requestPath", "path"], ["visits", None], start, end, limit=8
-    )
-    out["pages"] = [(str((r["dimensions"] or {}).get(dim) or "?"), value_of(r, sumf)) for r in rows]
 
-    rows, dim, sumf = rum_first(["date"], ["visits", None], start, end, limit=100)
-    out["daily"] = [(str((r["dimensions"] or {}).get(dim)), value_of(r, sumf)) for r in rows]
-    out["total"] = sum(v for _, v in out["daily"])
+    rows, _, _ = rum_first(["date"], ["visits"], start, end, limit=100)
+    out["daily"] = [(str((r["dimensions"] or {}).get("date")), int((r.get("sum") or {}).get("visits") or 0)) for r in rows]
+    out["visits"] = sum(v for _, v in out["daily"])
 
-    rows, dim, sumf = rum_first(["countryName"], ["visits", None], start, end, limit=5)
-    out["countries"] = [(str((r["dimensions"] or {}).get(dim) or "?"), value_of(r, sumf)) for r in rows]
+    rows, dim, _ = rum_first(["requestPath", "path"], [None], start, end, limit=8)
+    out["pages"] = [(str((r["dimensions"] or {}).get(dim) or "?"), int(r.get("count") or 0)) for r in rows]
+    out["views"] = sum(n for _, n in out["pages"])
 
-    rows, dim, sumf = rum_first(["refererHost"], ["visits", None], start, end, limit=5)
-    out["referers"] = [(str((r["dimensions"] or {}).get(dim) or "direkt"), value_of(r, sumf)) for r in rows]
+    rows, dim, _ = rum_first(["countryName"], [None], start, end, limit=5)
+    out["countries"] = [(str((r["dimensions"] or {}).get(dim) or "?"), int(r.get("count") or 0)) for r in rows]
+
+    rows, dim, _ = rum_first(["refererHost"], [None], start, end, limit=6)
+    refs = []
+    for r in rows:
+        host = str((r["dimensions"] or {}).get(dim) or "")
+        label = "direkt" if not host else ("intern" if host == OWN_HOST else host)
+        refs.append((label, int(r.get("count") or 0)))
+    out["referers"] = refs
     return out
 
 
@@ -169,10 +180,10 @@ def fmt(n: int) -> str:
 
 
 def build_message(cur, prev, start, end):
-    delta = cur["total"] - prev["total"]
+    delta = cur["visits"] - prev["visits"]
     trend = "±0"
-    if prev["total"]:
-        trend = f"{delta:+d} ({delta / prev['total'] * 100:+.0f} %)"
+    if prev["visits"]:
+        trend = f"{delta:+d} ({delta / prev['visits'] * 100:+.0f} %)"
     elif delta:
         trend = f"+{delta} (vorher 0)"
 
@@ -180,10 +191,11 @@ def build_message(cur, prev, start, end):
         "<b>China Wegweiser — 2-Wochen-Report</b>",
         f"{start:%d.%m.%Y} – {end:%d.%m.%Y}",
         "",
-        f"Sitzungen: <b>{fmt(cur['total'])}</b>  (davor {fmt(prev['total'])})  {trend}",
+        f"Sitzungen: <b>{fmt(cur['visits'])}</b>  (davor {fmt(prev['visits'])})  {trend}",
+        f"Aufrufe: {fmt(cur['views'])}",
     ]
     if cur["pages"]:
-        lines += ["", "<b>Seiten</b>"]
+        lines += ["", "<b>Seiten (Aufrufe)</b>"]
         for path, n in cur["pages"][:6]:
             lines.append(f"· {fmt(n):>4}  {path}")
     else:
@@ -241,7 +253,8 @@ def main():
         log(f"noch nicht fällig (zuletzt {last}) – nichts gesendet")
         return 0
 
-    end = date.today() - timedelta(days=1)
+    # Normalerweise bis gestern (der heutige Tag ist noch nicht vollständig).
+    end = date.today() if "--to-today" in args else date.today() - timedelta(days=1)
     start = end - timedelta(days=DAYS - 1)
     prev_end = start - timedelta(days=1)
     prev_start = prev_end - timedelta(days=DAYS - 1)
@@ -249,6 +262,9 @@ def main():
     try:
         cur = collect(start, end)
         prev = collect(prev_start, prev_end)
+        if "--dry" in args:
+            print(build_message(cur, prev, start, end))
+            return 0
     except Exception as e:  # noqa: BLE001
         log(f"Cloudflare-Abfrage fehlgeschlagen: {e}")
         telegram(f"⚠️ China Wegweiser: Cloudflare-Abfrage fehlgeschlagen.\n<code>{str(e)[:250]}</code>")
@@ -257,7 +273,7 @@ def main():
     msg = build_message(cur, prev, start, end)
     if telegram(msg):
         STATE_FILE.write_text(date.today().isoformat())
-        log(f"gesendet: {cur['total']} Besucher ({start} – {end})")
+        log(f"gesendet: {cur['visits']} Sitzungen / {cur['views']} Aufrufe ({start} – {end})")
         return 0
     return 1
 
