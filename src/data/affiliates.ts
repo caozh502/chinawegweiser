@@ -27,7 +27,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     title: 'eSIM mit Datenroaming',
     text: 'Datenvolumen, das über einen ausländischen Netzausgang läuft – damit funktionieren Google, WhatsApp und Instagram ab der Landung wie gewohnt.',
     cta: 'eSIM vergleichen',
-    url: 'https://www.airalo.com/de',
+    url: 'https://airalo.tpo.lv/Ad9F1LDB?u=https%3A%2F%2Fwww.airalo.com%2Fde%2Fchina-esim',
     hint: 'Der Preis bleibt gleich.',
   },
   hotels: {
