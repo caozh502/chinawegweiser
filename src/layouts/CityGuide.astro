@@ -81,6 +81,13 @@ const readingTime = Math.max(
 
 const sightName = (no: number) => d.sights.find((s) => s.no === no)?.name ?? String(no);
 /** Pflicht und Kür getrennt: die Kür braucht keine Videokarte und keine Tariftabelle. */
+/* Aufenthaltsdauer nicht behaupten („mindestens"), sondern zeigen, welche
+   Routen es gibt – das steht so auch im Abschnitt „Routen". */
+const routeDays = [...new Set(d.plans.map((p) => p.days.length).filter(Boolean))].sort((a, b) => a - b);
+const routeText = routeDays.length
+  ? `${routeDays.slice(0, -1).join(', ')}${routeDays.length > 1 ? ' oder ' : ''}${routeDays.at(-1)} ${routeDays.at(-1) === 1 ? 'Tag' : 'Tage'}`
+  : d.days;
+
 const mustSights = d.sights.filter((s) => s.tier === 'must');
 const optSights = d.sights.filter((s) => s.tier === 'optional');
 
@@ -141,7 +148,6 @@ const faqLd = {
           ><span class={`dot ${d.status}`} aria-hidden="true"></span>{statusText[d.status]}</span
         >
         {verifiedText && <span>Stand {verifiedText}</span>}
-        {d.days && <span>{d.days}</span>}
         <span>{readingTime} Min. Lesezeit</span>
       </span>
     </div>
@@ -151,7 +157,7 @@ const faqLd = {
     <Photo photo={d.hero} loading="eager" class="hero-photo" />
 
     <section class="steckbrief">
-      <div><span class="k">Zeit vor Ort</span><span class="v">{d.days}</span></div>
+      <div><span class="k">Routen</span><span class="v">{routeText}</span></div>
       {d.season && <div><span class="k">Beste Zeit</span><span class="v">{d.season}</span></div>}
       {d.budget && <div><span class="k">Budget / Tag</span><span class="v">{d.budget}</span></div>}
       {d.base && <div><span class="k">Basis</span><span class="v">{d.base}</span></div>}
