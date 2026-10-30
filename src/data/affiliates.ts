@@ -27,7 +27,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     title: 'eSIM mit Datenroaming',
     text: 'Datenvolumen, das über einen ausländischen Netzausgang läuft – damit funktionieren Google, WhatsApp und Instagram ab der Landung wie gewohnt.',
     cta: 'eSIM vergleichen',
-    url: 'https://www.airalo.com/',
+    url: 'https://www.airalo.com/de',
     hint: 'Der Preis bleibt gleich.',
   },
   hotels: {
@@ -59,7 +59,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     title: 'Auslandskrankenversicherung',
     text: 'Ein Arztbesuch in China ohne Versicherung kostet schnell vierstellig. Jahresverträge gibt es ab etwa 12 €.',
     cta: 'Tarife vergleichen',
-    url: 'https://www.allianz-direct.de/',
+    url: 'https://www.allianzdirect.de/',
     hint: 'Der Preis bleibt gleich.',
   },
   train: {
