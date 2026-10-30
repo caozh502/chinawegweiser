@@ -76,6 +76,8 @@ const sight = z.object({
   qr: z.string().optional(),
   /** Was der Code öffnet und wofür er gut ist. */
   qrNote: z.string().optional(),
+  /** Beschriftung des QR-Popups; Standard „WeChat-Mini-Programm". */
+  qrLabel: z.string().optional(),
   photo: photo.optional(),
   /** Weitere Fotos: Eingang, Innenraum, Details. Erstes Bild bleibt `photo`. */
   photos: z.array(photo).default([]),
