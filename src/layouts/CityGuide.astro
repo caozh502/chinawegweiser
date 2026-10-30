@@ -2,6 +2,7 @@
 import Base from './Base.astro';
 import { site, contactEmail } from '../data/site';
 import Photo from '../components/Photo.astro';
+import Faq from '../components/Faq.astro';
 import SightMap from '../components/SightMap.astro';
 import Toc from '../components/Toc.astro';
 import AffiliateBox from '../components/AffiliateBox.astro';
@@ -658,19 +659,7 @@ const faqLd =
       </>
     )}
 
-    {d.faq.length > 0 && (
-      <>
-        <h2 id="fragen">Häufige Fragen</h2>
-        <dl class="faq">
-          {d.faq.map((f) => (
-            <div class="faq-item">
-              <dt>{f.q}</dt>
-              <dd>{f.a}</dd>
-            </div>
-          ))}
-        </dl>
-      </>
-    )}
+    <Faq items={d.faq} id="fragen" />
 
     {d.changelog.length > 0 && (
       <>

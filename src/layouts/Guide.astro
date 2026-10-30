@@ -4,6 +4,7 @@ import { site, contactEmail } from '../data/site';
 import AffiliateBox from '../components/AffiliateBox.astro';
 import Toc from '../components/Toc.astro';
 import Photo from '../components/Photo.astro';
+import Faq from '../components/Faq.astro';
 import { slugify } from '../lib/rehype-heading-ids.mjs';
 import { render, type CollectionEntry } from 'astro:content';
 
@@ -160,17 +161,7 @@ const faqLd = d.faq.length
       </div>
     )}
 
-    {d.faq.length > 0 && (
-      <>
-        <h2 id="haeufige-fragen">Häufige Fragen</h2>
-        {d.faq.map((f) => (
-          <div>
-            <h3>{f.q}</h3>
-            <p>{f.a}</p>
-          </div>
-        ))}
-      </>
-    )}
+    <Faq items={d.faq} id="haeufige-fragen" />
 
       </div>
     </div>
