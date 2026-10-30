@@ -113,6 +113,22 @@ if (segmente.length > 0) {
         })),
       })} />
     )}
+    {/*
+      Travelpayouts Drive — bewusst NICHT aktiv.
+      Grund: Third-Party-Script auf jeder Seite + Cookie-basierte Attribution.
+      Das erlaubt § 25 TDDDG erst nach ausdrücklicher Einwilligung; die Seite
+      ist derzeit bewusst cookiefrei (siehe /datenschutz/). Zum Aktivieren:
+      Consent-Layer einbauen und den Block unten einkommentieren.
+
+      <script>
+        (function () {
+          var s = document.createElement("script");
+          s.async = 1;
+          s.src = "https://emrldtp.cc/NTkzMzU3.js?t=593357";
+          document.head.appendChild(s);
+        })();
+      </script>
+    */}
     <slot name="head" />
   </head>
   <body>
