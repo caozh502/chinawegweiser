@@ -33,8 +33,8 @@ sources:
     url: 'https://wwj.shaanxi.gov.cn/bsfw/cjwt/202108/t20210827_2188507.html'
   - label: '陕西历史博物馆 – offizielle Seite (Öffnungszeiten, kostenlose Realnamen-Reservierung)'
     url: 'https://www.sxhm.com/index.php'
-  - label: '陕西日报 – Änderung des Einlasses an der Stadtmauer zum 1. Juli 2026'
-    url: 'https://www.sxdaily.com.cn/2026-07/01/content_20049276.html'
+  - label: '西安城墙 – offizielle Seite (Öffnungszeiten der Tore)'
+    url: 'http://www.xiancitywall.com/'
   - label: '西安本地宝 – Tarife und Anmietung der Mauerfahrräder, Einlasszeiten der Tore'
     url: 'http://xa.bendibao.com/tour/2021525/84926.shtm'
 areas:
@@ -125,7 +125,7 @@ sights:
     guideSlot: 'guide'
     lat: 34.2506
     lng: 108.9422
-    source: { label: '西安日报 – Einlassänderung Stadtmauer', url: 'https://www.sxdaily.com.cn/2026-07/01/content_20049276.html' }
+    source: { label: '西安本地宝 – Einlass und Tarife der Stadtmauer', url: 'https://xa.bendibao.com/tour/2021525/84926.shtm' }
     hours: 'Yongningmen 08:00–22:00; die übrigen Tore schließen früher, meist zwischen 18:00 und 20:00'
     closed: 'Kein Schließtag; einzelne Tore wegen Veranstaltungen gesperrt'
     transit: 'Metro-Linie 2 bis Yongningmen (永宁门), Ausgang D – direkt am Tor. Vom Glockenturm sind es 15 Minuten zu Fuß nach Süden.'

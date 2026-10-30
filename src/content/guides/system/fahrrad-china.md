@@ -34,7 +34,7 @@ sources:
   - label: '虎嗅 – 美团、青桔、哈啰共享单车起步价升至约2元（Oktober 2026)'
     url: 'https://www.huxiu.com/article/4901014.html'
   - label: '北京市交通委 – 公告 über Sperrzonen für Leihräder (zitiert nach 新京报, August 2021)'
-    url: 'https://m.bjnews.com.cn/detail/162934390914014.html'
+    url: 'http://m.bjnews.com.cn/detail/162934390914014.html'
   - label: 'Trip.com – How to Use Shared Bikes in China as a Foreigner (September 2026)'
     url: 'https://www.trip.com/guide/transport/how-to-use-shared-bikes-in-china.html'
   - label: '北京市人民代表大会 – 北京市非机动车管理条例, Neufassung ab 1. Mai 2026'
@@ -123,7 +123,7 @@ Die App piept beim Abstellen außerhalb der Zone – auf Chinesisch. Der Ton bed
 
 Das ist der Punkt, an dem Reisende am häufigsten Ärger bekommen, und die Regeln stehen nicht im Reiseführer, sondern in einer Verordnung der Pekinger Verkehrsbehörde.
 
-Die Kernaussage der **Verordnung über Sperrzonen für Leihräder von 2021**<span class="q">Quelle: <a href="https://m.bjnews.com.cn/detail/162934390914014.html" target="_blank" rel="noopener">北京市交通委, zitiert nach 新京报</a>, Stand Aug. 2021</span>: Auf Pekinger Straßen – besonders auf den Haupt- und Nebenstraßen der Ringsstraßen einschließlich der Brückenbereiche – ist Parken außerhalb der ausgewiesenen Abstellflächen grundsätzlich verboten. Dazu kommen **16 Schwerpunktbereiche im Kernstadtgebiet**, in denen auf der gesamten Länge nicht geparkt werden darf, auch nicht auf dem Gehweg:
+Die Kernaussage der **Verordnung über Sperrzonen für Leihräder von 2021**<span class="q">Quelle: <a href="http://m.bjnews.com.cn/detail/162934390914014.html" target="_blank" rel="noopener">北京市交通委, zitiert nach 新京报</a>, Stand Aug. 2021</span>: Auf Pekinger Straßen – besonders auf den Haupt- und Nebenstraßen der Ringsstraßen einschließlich der Brückenbereiche – ist Parken außerhalb der ausgewiesenen Abstellflächen grundsätzlich verboten. Dazu kommen **16 Schwerpunktbereiche im Kernstadtgebiet**, in denen auf der gesamten Länge nicht geparkt werden darf, auch nicht auf dem Gehweg:
 
 - **Ost-Changan-Allee (东长安街)** und **West-Changan-Allee (西长安街)**
 - **Jingshan-Vorstraße (景山前街)** – der Weg zwischen Verbotener Stadt und Jingshan-Park
