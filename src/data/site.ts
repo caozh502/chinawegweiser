@@ -12,7 +12,7 @@ export const site = {
     street: 'Scheinerstr. 29',
     zipCity: '81679 München',
     country: 'Deutschland',
-    email: '', // z. B. 'kontakt@chinawegweiser.de'
+    email: 'kontakt@chinawegweiser.de',
     phone: '', // optional
   },
 
