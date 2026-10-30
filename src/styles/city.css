@@ -1,3 +1,16 @@
+/* Anreise-Tabelle: vier Spalten brauchen feste Breiten, sonst bricht
+   „Hauptbahnhof" mitten im Wort (overflow-wrap: anywhere aus typography.css). */
+.tbl-conn { table-layout: fixed; }
+.tbl-conn th:nth-child(1) { width: 33%; }
+.tbl-conn th:nth-child(2) { width: 15%; }
+.tbl-conn th:nth-child(3) { width: 15%; }
+.tbl-conn th:nth-child(4) { width: 37%; }
+.tbl-conn th,
+.tbl-conn td { overflow-wrap: break-word; hyphens: auto; }
+@media (max-width: 46rem) {
+  .tbl-conn { table-layout: auto; }
+}
+
 /* ---------- Hero & Steckbrief ---------- */
 .hero-photo {
   margin: 0 0 1.6rem;
@@ -21,7 +34,9 @@
   overflow: hidden;
   margin: 0 0 1.8rem;
 }
-@media (min-width: 40rem) {
+/* Vier Spalten erst, wenn die Spalte auch Platz hat – im 38rem-Satz wird
+   „Innerhalb der Stadtmauer …" sonst Wort für Wort umbrochen. */
+@media (min-width: 60rem) {
   .steckbrief {
     grid-template-columns: repeat(4, 1fr);
   }
