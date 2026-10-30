@@ -41,9 +41,9 @@ export const affiliates: Record<string, AffiliateSlot> = {
   guide: {
     id: 'guide',
     title: 'Führung durch die Verbotene Stadt',
-    text: 'Dreistündige Führung mit Einlass, deutsch- oder englischsprachig, Treffpunkt vor dem Meridian-Tor.',
-    cta: 'Führungen ansehen',
-    url: 'https://www.getyourguide.de/peking-l186/',
+    text: 'Vierstündige private Führung über den Tiananmen-Platz in die Verbotene Stadt, Treffpunkt vor dem Meridian-Tor.',
+    cta: 'Führung ansehen',
+    url: 'https://www.getyourguide.com/beijing-l186/4-hour-private-tour-to-tian-anmen-square-and-forbidden-city-t459862/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=guide-verbotene-stadt',
     hint: 'Der Preis bleibt gleich.',
   },
   tours: {
@@ -51,7 +51,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     title: 'Führungen und Tickets mit Abholung',
     text: 'Für Sehenswürdigkeiten mit chinesischem Reservierungssystem ist eine geführte Variante oft der einfachste Weg hinein.',
     cta: 'Touren ansehen',
-    url: 'https://www.getyourguide.de/peking-l186/',
+    url: 'https://www.getyourguide.com/beijing-l186/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=peking-city',
     hint: 'Der Preis bleibt gleich.',
   },
   insurance: {
