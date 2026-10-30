@@ -2,6 +2,14 @@
 title: 'Internet in China: eSIM statt VPN'
 description: 'Google, WhatsApp und Instagram funktionieren in China nicht. Die Lösung ist eine eSIM mit Datenroaming – keine VPN-Tools. Was das kostet und wie es geht.'
 answer: 'In China sind Google, WhatsApp, Instagram, YouTube und viele westliche Dienste nicht erreichbar. Die einfache und legale Lösung ist eine eSIM mit Datenroaming: Der Traffic läuft über einen ausländischen Netzausgang, dadurch funktionieren alle Dienste wie zu Hause. Wir empfehlen bewusst keine VPN-Tools – die Nutzung nicht genehmigter Kanäle kann in China mit bis zu 15.000 Yuan Geldbuße geahndet werden.'
+hero:
+  file: 'system/smartphone-metro.jpg'
+  alt: 'Frau mit Smartphone wartet am Bahnsteig der Linie 19 in Peking'
+  caption: 'Am Bahnsteig der Linie 19 in Peking: Ohne Datennetz gibt es keine Karte, keine Übersetzung und keine Bezahlung – die eSIM ist die Grundlage der Reise, kein Luxus.'
+  author: 'N509FZ'
+  license: 'CC BY-SA 4.0'
+  licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
+  sourceUrl: "https://commons.wikimedia.org/wiki/File:Passenger_waiting_at_L19_Ping'anli_Station_with_smartphone_(20220730114354).jpg"
 city: system
 category: internet
 price: 'ca. 15–35 € für 10–20 GB'

@@ -2,6 +2,14 @@
 title: 'DiDi: Chinas Uber ohne chinesische Nummer'
 description: 'DiDi ist Chinas Uber: Auto bestellen in Peking und Xi’an mit deutscher Handynummer und Kreditkarte. Einrichtung, Preise und typische Fehler.'
 answer: 'DiDi (滴滴出行) ist der größte Fahrdienst Chinas – das Gegenstück zu Uber. 2025 hat DiDi die englische Version offiziell für ausländische Besucher geöffnet: Registrierung mit ausländischer Handynummer, Zahlung mit Visa oder Mastercard. Eine chinesische Nummer ist nicht nötig. Wer keine App installieren will, bestellt DiDi als Mini-Programm in Alipay.'
+hero:
+  file: 'system/didi-auto.jpg'
+  alt: 'Weißes Fahrzeug mit DiDi-Aufkleber auf der Fahrertür, geparkt am Straßenrand in China'
+  caption: 'Der Aufkleber auf der Tür ist das einzige äußere Merkmal eines DiDi-Fahrzeugs: Kennzeichen in der App vergleichen, einsteigen, bezahlt wird bargeldlos. Bildausschnitt.'
+  author: 'User3204'
+  license: 'CC BY-SA 4.0'
+  licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:BYD_Qin_Plus_EV_in_DiDi_Chuxing_Service.jpg'
 city: system
 category: transport
 price: 'Startpreis 13 ¥, 10 km etwa 40 ¥'

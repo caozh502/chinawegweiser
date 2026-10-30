@@ -1,8 +1,13 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { Image } from 'astro:assets';
 import AffiliateBox from '../../components/AffiliateBox.astro';
 import AffiliateInline from '../../components/AffiliateInline.astro';
 import { getCollection } from 'astro:content';
+
+/* Vorschaubilder der Artikel: das Hero-Bild jedes Guides als Kartenbild. */
+const bilder = import.meta.glob('/src/assets/**/*.jpg', { eager: true, import: 'default' });
+const bild = (pfad) => (pfad ? bilder['/src/assets/' + pfad] : undefined);
 
 const items = (await getCollection('guides'))
   .filter((g) => g.data.city === 'system')
@@ -28,12 +33,25 @@ const geplant = [
   </p>
 
   <div class="grid">
-    {items.map((g) => (
-      <a class="card" href={`/${g.id}/`}>
-        <div class="t">{g.data.title}</div>
-        <div class="c">{g.data.status === 'verified' ? 'geprüft' : 'Entwurf'}</div>
-      </a>
-    ))}
+    {items.map((g) => {
+      const img = bild(g.data.hero?.file);
+      return (
+        <a class="card karte-mit-bild" href={`/${g.id}/`}>
+          {img && (
+            <Image
+              src={img}
+              alt=""
+              widths={[320, 520]}
+              sizes="(max-width: 760px) 45vw, 260px"
+              format="webp"
+              loading="lazy"
+            />
+          )}
+          <div class="t">{g.data.title}</div>
+          <div class="c">{g.data.status === 'verified' ? 'geprüft' : 'Entwurf'}</div>
+        </a>
+      );
+    })}
   </div>
 
   <h2 id="einreise">Einreise</h2>
@@ -97,11 +115,13 @@ const geplant = [
 
   <h2 id="staedte">Städte</h2>
   <div class="grid">
-    <a class="card" href="/stadt/peking/">
+    <a class="card karte-mit-bild" href="/stadt/peking/">
+      <Image src={bild('peking/hero-jingshan.jpg')!} alt="" widths={[320, 520]} sizes="(max-width: 760px) 45vw, 260px" format="webp" loading="lazy" />
       <div class="t">Peking: der komplette Reiseführer</div>
       <div class="c">neun Orte, Routen für 1, 3 und 5 Tage</div>
     </a>
-    <a class="card" href="/stadt/xian/">
+    <a class="card karte-mit-bild" href="/stadt/xian/">
+      <Image src={bild('xian/hero-wall.jpg')!} alt="" widths={[320, 520]} sizes="(max-width: 760px) 45vw, 260px" format="webp" loading="lazy" />
       <div class="t">Xi’an: der komplette Reiseführer</div>
       <div class="c">Terrakotta-Armee, Stadtmauer, muslimisches Viertel</div>
     </a>
@@ -128,6 +148,27 @@ const geplant = [
 </Base>
 
 <style>
+  /* Karten mit Vorschaubild: Bild läuft oben bündig in den Kartenrand,
+     Text behält die Innenabstände. */
+  .karte-mit-bild {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .karte-mit-bild img {
+    width: 100%;
+    height: 118px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--line);
+  }
+  .karte-mit-bild .t {
+    padding: 0.7rem 0.95rem 0;
+  }
+  .karte-mit-bild .c {
+    padding: 0 0.95rem 0.85rem;
+  }
   .planned {
     margin: 0;
     padding-left: 1.1rem;

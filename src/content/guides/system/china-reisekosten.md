@@ -2,6 +2,14 @@
 title: 'Reisekosten China 2026: die echten Zahlen'
 description: 'Flug, Hotels, Essen, Eintritte, Züge – was eine China-Reise 2026 tatsächlich kostet, mit drei durchgerechneten Budgets für Peking und Xi’an.'
 answer: 'Für zwei Wochen in Peking und Xi’an rechnet man 2026 mit 1.250 € (sparsam), 2.300 € (mittlere Kategorie) oder 3.950 € (komfortabel) pro Person – inklusive Flug. Der größte Posten ist der Flug (550–850 €), danach die Unterkunft. China selbst ist billig: U-Bahn 3–5 ¥, ein Essen im einfachen Restaurant 30 ¥, ein guter Hotelstandard deutlich unter deutschen Preisen.'
+hero:
+  file: 'system/nudeln.jpg'
+  alt: 'Schale mit Rindfleischnudelsuppe und Löffel auf einem weißen Tisch in Shenzhen'
+  caption: 'Rindfleischnudeln in Shenzhen: für 20 bis 30 Yuan wird man satt – das sind zwei bis vier Euro.'
+  author: 'Peachyeung316'
+  license: 'CC BY-SA 4.0'
+  licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Beef_Noodles_soup_from_Jinyi_Beef_Noodle_Soup_Inn_in_Shenzhen.jpg'
 city: system
 category: geld
 price: '1.250–3.950 € für 14 Tage'
