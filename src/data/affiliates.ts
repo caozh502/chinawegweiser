@@ -57,8 +57,8 @@ export const affiliates: Record<string, AffiliateSlot> = {
   tickets: {
     id: 'tickets',
     title: 'Eintrittskarten ohne chinesische Bankkarte',
-    text: 'Karten für den Kaiserpalast, die Mauerabschnitte und Tagesausflüge – buchbar mit deutscher oder internationaler Karte. Bestätigung per E-Mail, Einlass über den QR-Code.',
-    cta: 'Tickets ansehen',
+    text: 'Karten für Kaiserpalast, Mauerabschnitte und Ausflüge, buchbar mit deutscher oder internationaler Karte. Der Anbieter übernimmt die Reservierung mit deinen Passdaten; Bestätigung per E-Mail, Einlass per QR-Code.',
+    cta: 'Ticket mit Reservierung',
     url: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fcity%2F57-beijing-things-to-do%2F',
     hint: 'Der Preis bleibt gleich.',
   },
