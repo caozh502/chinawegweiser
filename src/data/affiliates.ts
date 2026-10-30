@@ -41,7 +41,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
   guide: {
     id: 'guide',
     title: 'Führung durch die Verbotene Stadt',
-    text: 'Vierstündige private Führung über den Tiananmen-Platz in die Verbotene Stadt, Treffpunkt vor dem Meridian-Tor.',
+    text: 'Vierstündige Führung durch die Verbotene Stadt und über den Tiananmen-Platz, Eintritt inklusive, englischsprachiger Lizenzführer (4,8 von 5 bei über 11.000 Bewertungen).',
     cta: 'Führung ansehen',
     url: 'https://www.getyourguide.com/beijing-l186/4-hour-private-tour-to-tian-anmen-square-and-forbidden-city-t459862/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=guide-verbotene-stadt',
     hint: 'Der Preis bleibt gleich.',
