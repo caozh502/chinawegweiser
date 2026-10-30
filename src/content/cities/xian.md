@@ -98,6 +98,11 @@ sights:
       - label: 'Ab 65 Jahren, Kinder bis 16 in Begleitung'
         price: 'frei'
         note: 'Trotzdem realnamen-pflichtig reservieren.'
+    video:
+      id: 'o2v9mIdhjW4'
+      title: 'Besuch der Terrakotta-Armee in Xi’an'
+      channel: 'Marco Travels'
+      lang: de
     photo:
       file: 'xian/terrakotta.jpg'
       alt: 'Blick über Grube 1 der Terrakotta-Armee mit Reihen von Kriegerfiguren'
@@ -135,6 +140,11 @@ sights:
       - label: 'Elektro-Shuttle auf der Mauer'
         price: '80 ¥'
         note: 'Nur sinnvoll bei Hitze oder mit Kindern.'
+    video:
+      id: 'g2o0liOY-UM'
+      title: 'Discover Xi’an City Wall by bicycle'
+      channel: 'China Plus'
+      lang: en
     photo:
       file: 'xian/stadtmauer.jpg'
       alt: 'Mauerabschnitt in Xi''an mit Zinnen und Wachturm, Blick entlang der Brüstung'
@@ -166,6 +176,11 @@ sights:
       - label: 'Schätze-Ausstellung (大唐遗宝)'
         price: '30 ¥'
         note: 'Eigener Saal, eigenes Ticket, lohnt sich.'
+    video:
+      id: 'QaZ24ich7so'
+      title: 'Visiting the Shaanxi History Museum'
+      channel: 'Destinations of History'
+      lang: en
     photo:
       file: 'xian/museum.jpg'
       alt: 'Fassade des Geschichtsmuseums der Provinz Shaanxi mit Treppe und Säulen'
@@ -194,6 +209,11 @@ sights:
         price: '25 ¥'
       - label: 'Kinder, Senioren'
         price: 'ermäßigt'
+    video:
+      id: 'REoWxmsl3xw'
+      title: 'A visit to the Great Mosque of Xi’an'
+      channel: 'Nick in China'
+      lang: en
     photo:
       file: 'xian/moschee.jpg'
       alt: 'Innenhof der Großen Moschee in Xi''an mit Steinbogen und Holztor'
@@ -225,6 +245,11 @@ sights:
         price: '30 ¥'
       - label: 'Kombi'
         price: '50 ¥'
+    video:
+      id: 'w5PnaASGu3E'
+      title: 'Bell Tower and Drum Tower – Xi’an'
+      channel: 'DavidisDawei'
+      lang: en
     photo:
       file: 'xian/glockenturm.jpg'
       alt: 'Glockenturm von Xi''an bei Nacht, beleuchtet, mit umgebendem Verkehr'

@@ -202,7 +202,37 @@ if (segmente.length > 0) {
       </div>
     </footer>
 
+    <button type="button" class="to-top" data-visible="false" aria-label="Zum Seitenanfang">
+      <span aria-hidden="true">↑</span>
+    </button>
+
     <script is:inline>
+      /* Zurück-nach-oben: erscheint erst nach 600 px, scrollt weich –
+         außer bei prefers-reduced-motion, dann springt er. */
+      (function () {
+        var btn = document.querySelector('.to-top');
+        if (!btn) return;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        function upd() {
+          btn.dataset.visible = window.scrollY > 600 ? 'true' : 'false';
+        }
+        upd();
+        window.addEventListener('scroll', upd, { passive: true });
+        btn.addEventListener('click', function () {
+          // scrollingElement statt window: funktioniert auch, wenn <body>
+          // der Scroller ist (Safari) und in eingebetteten Ansichten.
+          btn.dataset.visible = 'false';
+          var root = document.scrollingElement || document.documentElement;
+          /* 'instant', nicht 'auto': das Stylesheet setzt scroll-behavior: smooth,
+             'auto' würde also trotzdem weich scrollen. */
+          root.scrollTo({ top: 0, behavior: reduce ? 'instant' : 'smooth' });
+          var m = document.getElementById('main');
+          if (m) {
+            m.setAttribute('tabindex', '-1');
+            m.focus({ preventScroll: true });
+          }
+        });
+      })();
       document.addEventListener('click', function (e) {
         var btn = e.target.closest && e.target.closest('.theme-toggle');
         if (!btn) return;
@@ -249,6 +279,44 @@ if (segmente.length > 0) {
     color: var(--fg);
     cursor: pointer;
     line-height: 1;
+  }
+  .to-top {
+    position: fixed;
+    right: max(0.9rem, env(safe-area-inset-right));
+    bottom: max(0.9rem, env(safe-area-inset-bottom));
+    z-index: 45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--card);
+    color: var(--fg);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    /* Kein Übergang: Chrome führt Transitions bei Elementen, die von
+       visibility:hidden kommen, nicht zu Ende – der Knopf bliebe unsichtbar.
+       Deshalb harter Umschaltpunkt, dafür zuverlässig sichtbar. */
+  }
+  .to-top[data-visible='true'] {
+    opacity: 1;
+    visibility: visible;
+  }
+  .to-top:hover,
+  .to-top:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+    outline: none;
+  }
+  @media print {
+    .to-top { display: none; }
   }
   .theme-toggle:hover,
   .theme-toggle:focus-visible {
