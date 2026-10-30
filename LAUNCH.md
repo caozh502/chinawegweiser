@@ -1,6 +1,31 @@
 # Launch-Checkliste chinawegweiser.de
 
-Stand: 2026-10-30 · Registrar: INWX (ns.inwx.de) · Ziel: Cloudflare Pages
+**Status: live seit 2026-10-30.** Die Schritte unten sind als Nachschlagewerk erhalten;
+der aktuelle Stand steht hier:
+
+| Schritt | Ergebnis |
+|---|---|
+| Domain | INWX, NS `simone.ns.cloudflare.com` / `arch.ns.cloudflare.com`, Zone aktiv |
+| DNS | apex + www → CNAME `chinawegweiser.pages.dev`, proxied |
+| Zertifikat | Google CA, `validation_data.status: active` |
+| Pages | Projekt `chinawegweiser`, Branch `main`, 106 Dateien, Legal-Check ok |
+| E-Mail | `kontakt@chinawegweiser.de` → `calebtsao@gmail.com`, MX `route1-3.mx.cloudflare.net`, DKIM + SPF |
+| Search Console | DNS-TXT gesetzt, Eigentümerschaft bestätigt |
+| SEO-Basis | og:image 1200×630, Twitter Large Card, BreadcrumbList, Article-Schema mit `dateModified` |
+| Analytics | Beacon in `Base.astro` eingebaut, aktiv sobald `site.analyticsToken` gesetzt ist |
+
+Verifiziert (`curl --resolve` gegen die Cloudflare-IP, plus Mobilfunk-Test):
+
+```
+200  /  ·  /www  ·  /stadt/peking/  ·  /sitemap-index.xml (xml, 14 URLs)  ·  /robots.txt  ·  /og-default.jpg
+TTFB ≈ 60–85 ms
+```
+
+**Noch offen (< 2 Min pro Punkt):** Sitemap in GSC mit vollständiger URL einreichen ·
+Web-Analytics-Token in `site.ts` · Always Use HTTPS aktivieren · HSTS · lokaler DNS-Cache
+(Rechner löst noch `185.181.104.242` auf, öffentlich ist alles korrekt).
+
+Registrar: INWX · Ziel: Cloudflare Pages
 
 ---
 
