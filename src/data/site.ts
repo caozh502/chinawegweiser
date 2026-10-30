@@ -20,7 +20,7 @@ export const site = {
   vatId: '',
 
   /** Cloudflare Web Analytics: Token aus dem Dashboard eintragen (optional). */
-  analyticsToken: '',
+  analyticsToken: '6106c3a1a51c4b23b53ba8a9f14c82f6',
 } as const;
 
 export const legalReady = Boolean(
