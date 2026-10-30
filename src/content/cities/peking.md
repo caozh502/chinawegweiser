@@ -1,6 +1,6 @@
 ---
 title: 'Peking: der komplette Reiseführer'
-description: 'Peking in 1, 3 oder 5 Tagen: Sehenswürdigkeiten mit Nummern und Karte, drei fertige Routen, wo man wohnt, was vorher gebucht werden muss – und die Fehler, die den halben Tag kosten.'
+description: 'Peking in 1, 3 oder 5 Tagen: neun Sehenswürdigkeiten mit Nummern und Karte, drei fertige Routen, wo man wohnt – und was vorher gebucht sein muss.'
 city: peking
 intro: 'Peking ist keine Stadt, die man „abarbeitet". Die Wege sind weit, die Tickets sind personengebunden und die Hälfte der Klassiker liegt auf einer Nord-Süd-Achse, die man nur in der richtigen Reihenfolge läuft. Diese Seite ordnet das: acht Orte, nummeriert, mit drei fertigen Routen.'
 teaserTitle: 'Peking in 1, 3 oder 5 Tagen'

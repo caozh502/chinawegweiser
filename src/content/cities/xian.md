@@ -1,6 +1,6 @@
 ---
 title: "Xi'an: der komplette Reiseführer"
-description: "Xi'an in 1, 2 oder 3 Tagen: Terrakotta-Armee, Stadtmauer, muslimisches Viertel – mit Öffnungszeiten, Preisen, Buchungswegen und den Fehlern, die hier besonders teuer sind."
+description: "Xi'an in 1, 2 oder 3 Tagen: Terrakotta-Armee, Stadtmauer, muslimisches Viertel – mit Preisen, Öffnungszeiten, Buchungswegen und typischen Fallen."
 city: xian
 intro: "Xi'an war dreizehn Dynastien lang Hauptstadt und ist heute die einzige chinesische Großstadt, in der man eine vollständig erhaltene Stadtmauer zu Fuß umrunden kann. Der Kern ist klein: Mauer, Glockenturm, Moschee und Viertel liegen innerhalb von zwei Kilometern. Der eine Ausflug, der alles andere sprengt, liegt 35 Kilometer östlich – und genau dort passieren die meisten Fehler."
 teaserTitle: "Xi'an in 1, 2 oder 3 Tagen"

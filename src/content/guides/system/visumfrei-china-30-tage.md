@@ -1,6 +1,6 @@
 ---
-title: 'Visumfrei nach China: 30 Tage ohne Visum (2026)'
-description: 'Deutsche, Österreicher und Schweizer reisen ohne Visum nach China – bis zu 30 Tage, Regelung gültig bis 31.12.2026. Was erlaubt ist, was nicht, und was an der Grenze verlangt wird.'
+title: 'Visumfrei nach China: 30 Tage ohne Visum'
+description: 'Deutsche, Österreicher und Schweizer reisen bis zu 30 Tage ohne Visum nach China (bis 31.12.2026). Was erlaubt ist und was an der Grenze verlangt wird.'
 answer: 'Seit dem 30. November 2024 dürfen Deutsche, Österreicher und Schweizer visumfrei nach China einreisen – bis zu 30 Tage pro Aufenthalt, aktuell gültig bis 31. Dezember 2026. Das deckt Tourismus, Geschäftsreisen, Familienbesuch und Transit ab. Ein Visum brauchst du nur bei längerem Aufenthalt oder wenn du in China arbeiten oder studieren willst.'
 hero:
   file: 'peking/airport.jpg'

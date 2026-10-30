@@ -4,13 +4,14 @@
  * Bewusst ohne Abhängigkeiten – nur die Top-Level-Knoten werden durchlaufen.
  */
 
-const UMLAUT = { ä: 'ae', ö: 'oe', ü: 'ue', ß: 'ss', é: 'e', è: 'e', á: 'a', ó: 'o' };
-
+/* Muss exakt das erzeugen, was Astros eingebauter Slugger macht (github-slugger):
+   Umlaute BLEIBEN stehen, Apostrophe fallen weg. Sonst zeigt das Inhaltsverzeichnis
+   auf IDs, die es auf der Seite nicht gibt. */
 export function slugify(text) {
   return String(text)
     .toLowerCase()
-    .replace(/[äöüßéèáó]/g, (c) => UMLAUT[c] ?? c)
-    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/['\u2019`]/g, '')
+    .replace(/[^\p{L}\p{N}]+/gu, '-')
     .replace(/^-+|-+$/g, '');
 }
 
