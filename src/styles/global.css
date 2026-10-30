@@ -118,15 +118,40 @@ li { margin: .3rem 0; }
 .byline a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
 .byline a:hover { color: var(--accent); }
 
+/* Byline in einer Zeile, Fakten darunter – ohne Pillen, damit nichts
+   einzeln in eine zweite Zeile rutscht. */
 .metabar {
+  display: grid;
+  gap: .3rem;
+  justify-items: start;
+  font-size: .82rem;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+.metafacts {
   display: flex;
   flex-wrap: wrap;
-  gap: .45rem;
   align-items: center;
-  font-size: .8rem;
-  color: var(--muted);
-  margin: 0 0 1.4rem;
+  gap: 0 .45rem;
+  font-size: .78rem;
+  line-height: 1.5;
 }
+.metafacts .sep { opacity: .5; }
+.statusword { display: inline-flex; align-items: center; }
+.dot {
+  display: inline-block;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  margin-right: .38rem;
+  background: var(--muted);
+}
+.dot.verified { background: var(--ok); }
+.dot.draft { background: var(--warn); }
+.dot.stale { background: var(--accent); }
+.statusword.verified { color: var(--ok); }
+.statusword.draft { color: var(--warn); }
+.statusword.stale { color: var(--accent); }
 .badge {
   display: inline-flex;
   align-items: center;

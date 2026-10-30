@@ -16,9 +16,9 @@ const d = entry.data;
 const { Content } = await render(entry);
 
 const statusText: Record<string, string> = {
-  verified: 'Verifiziert',
-  draft: 'Entwurf – vor Ort noch nicht geprüft',
-  stale: 'Ältere Angaben – Prüfung steht aus',
+  verified: 'Vor Ort geprüft',
+  draft: 'Recherchiert, nicht vor Ort geprüft',
+  stale: 'Prüfung überfällig',
 };
 
 const fmt = (iso?: string) =>
@@ -107,11 +107,13 @@ const faqLd = d.faq.length
 
     <div class="metabar">
       <span class="byline">Von <a href="/autoren/">{site.owner.name}</a></span>
-      <span class={`badge ${d.status}`}>{statusText[d.status]}</span>
-      {verifiedText && <span class="badge">Geprüft: {verifiedText}</span>}
-      {d.price && <span class="badge">Preis: {d.price}</span>}
-      {d.duration && <span class="badge">Dauer: {d.duration}</span>}
-      <span class="badge">{readingTime} Min. Lesezeit</span>
+      <span class="metafacts">
+        <span class={`statusword ${d.status}`}
+          ><span class={`dot ${d.status}`} aria-hidden="true"></span>{statusText[d.status]}</span
+        >
+        {verifiedText && <><span class="sep" aria-hidden="true">·</span><span>Stand {verifiedText}</span></>}
+        {d.duration && <><span class="sep" aria-hidden="true">·</span><span>{d.duration}</span></>}
+      </span>
     </div>
 
     <div class="answer">

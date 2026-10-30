@@ -34,8 +34,8 @@ const subpages = (await getCollection('guides'))
   .sort((a, b) => a.data.order - b.data.order);
 
 const statusText: Record<string, string> = {
-  verified: 'Verifiziert',
-  draft: 'Entwurf – nicht vor Ort geprüft',
+  verified: 'Vor Ort geprüft',
+  draft: 'Recherchiert, nicht vor Ort geprüft',
   stale: 'Prüfung überfällig',
 };
 const bookingLabel: Record<string, string> = {
@@ -136,14 +136,13 @@ const faqLd = {
 
     <div class="metabar">
       <span class="byline">Von <a href="/autoren/">{site.owner.name}</a></span>
-      <span class={`badge ${d.status}`}>{statusText[d.status]}</span>
-      {verifiedText && (
-        <span class="badge"
-          >{d.status === 'verified' ? 'Geprüft' : 'Recherchiert'}: {verifiedText}</span
+      <span class="metafacts">
+        <span class={`statusword ${d.status}`}
+          ><span class={`dot ${d.status}`} aria-hidden="true"></span>{statusText[d.status]}</span
         >
-      )}
-      {d.days && <span class="badge">{d.days}</span>}
-      <span class="badge">{readingTime} Min. Lesezeit</span>
+        {verifiedText && <><span class="sep" aria-hidden="true">·</span><span>Stand {verifiedText}</span></>}
+        {d.days && <><span class="sep" aria-hidden="true">·</span><span>{d.days}</span></>}
+      </span>
     </div>
 
     <p class="lead">{d.intro}</p>

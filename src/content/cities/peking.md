@@ -2,15 +2,15 @@
 title: 'Peking: der komplette Reiseführer'
 description: 'Peking in 1, 3 oder 5 Tagen: neun Sehenswürdigkeiten mit Nummern und Karte, drei fertige Routen, wo man wohnt – und was vorher gebucht sein muss.'
 city: peking
-intro: 'Peking ist keine Stadt, die man „abarbeitet". Die Wege sind weit, die Tickets sind personengebunden und die Hälfte der Klassiker liegt auf einer Nord-Süd-Achse, die man nur in der richtigen Reihenfolge läuft. Diese Seite ordnet das: acht Orte, nummeriert, mit drei fertigen Routen.'
+intro: 'Peking ist keine Stadt, die man „abarbeitet". Die Wege sind weit, die Tickets sind personengebunden und die Hälfte der Klassiker liegt auf einer Nord-Süd-Achse, die man nur in der richtigen Reihenfolge läuft. Diese Seite ordnet das: neun Orte, nummeriert, mit drei fertigen Routen.'
 teaserTitle: 'Peking in 1, 3 oder 5 Tagen'
-teaser: 'Acht Sehenswürdigkeiten mit Nummern und Karte, drei fertige Routen für 1, 3 und 5 Tage, zwei Wohnviertel mit konkreten Hotels – und die vier Dinge, die man vorher buchen muss.'
+teaser: 'Neun Sehenswürdigkeiten mit Nummern und Karte, drei fertige Routen für 1, 3 und 5 Tage, zwei Wohnviertel mit konkreten Hotels – und die vier Dinge, die man vorher buchen muss.'
 days: 'Mindestens 3 Tage'
 season: 'April–Mai, September–Oktober'
 budget: '80–140 € / Tag'
 base: 'Dongcheng (rund um Wangfujing)'
-status: draft
-verified: '2026-10-29'
+status: verified
+verified: '2026-10-30'
 order: 10
 hero:
   file: 'peking/hero-jingshan.jpg'
