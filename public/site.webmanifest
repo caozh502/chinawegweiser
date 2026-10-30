@@ -1,0 +1,15 @@
+{
+  "name": "China Wegweiser",
+  "short_name": "Wegweiser",
+  "description": "Der praktische Reiseführer für deutsche China-Reisende: Städte, Einreise, Bezahlen, Internet – vor Ort geprüft.",
+  "lang": "de",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#f9f7f2",
+  "theme_color": "#f9f7f2",
+  "icons": [
+    { "src": "/android-chrome-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
