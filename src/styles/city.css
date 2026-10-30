@@ -1100,6 +1100,27 @@
   border-radius: 6px;
 }
 
+/* Schmal: als Blatt von unten. Über dem Auslöser wäre der Code bei
+   Positionen nahe dem oberen Rand oben abgeschnitten (311 px Höhe). */
+@media (max-width: 40rem) {
+  .qr-pop {
+    position: fixed;
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: 1rem;
+    transform: translate(-50%, 0.5rem);
+    width: min(78vw, 300px);
+    z-index: 90;
+    max-height: 70vh;
+    overflow: auto;
+  }
+  .qr-hint.is-open .qr-pop,
+  .qr-hint:hover .qr-pop {
+    transform: translate(-50%, 0);
+  }
+}
+
 .qr-cap {
   display: block;
   margin-top: 0.35rem;
