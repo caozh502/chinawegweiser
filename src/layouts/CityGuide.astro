@@ -140,8 +140,8 @@ const faqLd = {
         <span class={`statusword ${d.status}`}
           ><span class={`dot ${d.status}`} aria-hidden="true"></span>{statusText[d.status]}</span
         >
-        {verifiedText && <><span class="sep" aria-hidden="true">·</span><span>Stand {verifiedText}</span></>}
-        {d.days && <><span class="sep" aria-hidden="true">·</span><span>{d.days}</span></>}
+        {verifiedText && <span>Stand {verifiedText}</span>}
+        {d.days && <span>{d.days}</span>}
       </span>
     </div>
 

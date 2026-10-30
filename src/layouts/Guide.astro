@@ -111,8 +111,8 @@ const faqLd = d.faq.length
         <span class={`statusword ${d.status}`}
           ><span class={`dot ${d.status}`} aria-hidden="true"></span>{statusText[d.status]}</span
         >
-        {verifiedText && <><span class="sep" aria-hidden="true">·</span><span>Stand {verifiedText}</span></>}
-        {d.duration && <><span class="sep" aria-hidden="true">·</span><span>{d.duration}</span></>}
+        {verifiedText && <span>Stand {verifiedText}</span>}
+        {d.duration && <span>{d.duration}</span>}
       </span>
     </div>
 

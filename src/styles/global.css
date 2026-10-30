@@ -136,7 +136,13 @@ li { margin: .3rem 0; }
   font-size: .78rem;
   line-height: 1.5;
 }
-.metafacts .sep { opacity: .5; }
+/* Trenner sitzt am Folgeelement, nicht davor als eigenes Element:
+   so bleibt beim Umbruch kein Punkt am Zeilenende stehen. */
+.metafacts > * + *::before {
+  content: '·';
+  margin-right: .4rem;
+  opacity: .5;
+}
 .statusword { display: inline-flex; align-items: center; }
 .dot {
   display: inline-block;
