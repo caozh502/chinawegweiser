@@ -16,12 +16,13 @@ interface Props {
 const { name, prefix, city } = Astro.props;
 const a = affiliates[name];
 const target = (city && a?.urls?.[city]) || a?.url;
+const paid = a?.tracked !== false;
 ---
 
 {a && (
   <p class="aff-inline">
-    <span class="aff-badge">Anzeige</span>
+    {paid && <span class="aff-badge">Anzeige</span>}
     {prefix ?? a.title}:
-    <a href={target} target="_blank" rel="sponsored nofollow noopener">{a.cta} →</a>
+    <a href={target} target="_blank" rel={paid ? 'sponsored nofollow noopener' : 'noopener nofollow'}>{a.cta} →</a>
   </p>
 )}

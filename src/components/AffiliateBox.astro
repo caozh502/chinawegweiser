@@ -11,14 +11,21 @@ interface Props {
 const { name, city } = Astro.props;
 const a = affiliates[name];
 const target = (city && a?.urls?.[city]) || a?.url;
+/* Ohne eigenen Tracking-Link ist es ein normaler Tipp, keine Anzeige. */
+const paid = a?.tracked !== false;
 ---
 
 {a && (
-  <aside class="aff" aria-label="Anzeige: Partnertipp">
-    <span class="aff-badge">Anzeige</span>
+  <aside class:list={['aff', !paid && 'aff-plain']} aria-label={paid ? 'Anzeige: Partnertipp' : 'Partnertipp'}>
+    {paid && <span class="aff-badge">Anzeige</span>}
     <div class="aff-title">{a.title}</div>
     <p>{a.text}</p>
-    <a class="btn" href={target} target="_blank" rel="sponsored nofollow noopener">{a.cta} →</a>
-    {a.hint && <div class="hint">{a.hint} <a href="/transparenz">Wie wir Geld verdienen</a></div>}
+    <a
+      class="btn"
+      href={target}
+      target="_blank"
+      rel={paid ? 'sponsored nofollow noopener' : 'noopener nofollow'}
+    >{a.cta} →</a>
+    {paid && a.hint && <div class="hint">{a.hint} <a href="/transparenz">Wie wir Geld verdienen</a></div>}
   </aside>
 )}

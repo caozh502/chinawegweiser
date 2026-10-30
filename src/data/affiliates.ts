@@ -20,6 +20,12 @@ export type AffiliateSlot = {
   url: string;
   /** Stadtspezifische Ziele; Fallback ist `url`. */
   urls?: Record<string, string>;
+  /**
+   * false = noch kein eigener Tracking-Link. Dann KEINE Kennzeichnung als
+   * Anzeige und kein „Der Preis bleibt gleich" – sonst behauptet die Seite
+   * eine Provision, die sie nicht bekommt.
+   */
+  tracked?: boolean;
   hint?: string;
 };
 
@@ -37,6 +43,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     title: 'Hotels, die Ausländer aufnehmen',
     text: 'Bei der Buchung auf „akzeptiert ausländische Gäste" achten – seit Mai 2024 ist die Ablehnung verboten, kontrolliert wird es aber nicht überall.',
     cta: 'Hotels suchen',
+    tracked: false,
     url: 'https://www.trip.com/hotels/beijing-hotels-list-1/',
     urls: {
       peking: 'https://www.trip.com/hotels/beijing-hotels-list-1/',
@@ -85,6 +92,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     title: 'Auslandskrankenversicherung',
     text: 'Ein Arztbesuch in China ohne Versicherung kostet schnell vierstellig. Jahresverträge gibt es ab etwa 12 €.',
     cta: 'Tarife vergleichen',
+    tracked: false,
     url: 'https://www.allianzdirect.de/',
     hint: 'Der Preis bleibt gleich.',
   },
@@ -93,6 +101,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     title: 'Zugtickets für Ausländer',
     text: 'Buchung über die englische 12306-Seite ist offiziell und günstiger, über Trip.com bequemer.',
     cta: 'Verbindungen prüfen',
+    tracked: false,
     url: 'https://www.trip.com/trains/',
     hint: 'Der Preis bleibt gleich.',
   },
