@@ -23,6 +23,18 @@ sources:
   - label: 'Numbeo – Lebenshaltungskosten Peking (Oktober 2026)'
     url: 'https://www.numbeo.com/cost-of-living/in/Beijing'
 affiliate: ['esim']
+keyPoints:
+  - 'DiDi ist das chinesische Gegenstück zu Uber – die App gibt es auf Englisch.'
+  - 'Vor der Reise installieren und mit der deutschen Nummer (+49) registrieren.'
+  - 'Visa oder Mastercard in der App hinterlegen; Bargeld braucht man nicht.'
+  - 'Vor dem Einsteigen das Kennzeichen in der App mit dem Auto vergleichen.'
+facts:
+  - { label: 'Startpreis Taxi', value: '13 ¥ (ca. 1,70 €)' }
+  - { label: '10 km', value: 'ca. 40 ¥ (ca. 5 €)' }
+  - { label: 'Flughafen PEK → Dongcheng', value: '100–140 ¥' }
+  - { label: 'Zahlung', value: 'Visa/Mastercard oder Alipay' }
+  - { label: 'Sprache', value: 'Englisch, Fahrernachrichten werden übersetzt' }
+  - { label: 'Chinesische Nummer', value: 'nicht nötig' }
 faq:
   - q: 'Brauche ich für DiDi eine chinesische Handynummer?'
     a: 'Nein. Die Registrierung funktioniert mit einer deutschen Nummer; der Bestätigungscode kommt per SMS. Wichtig ist, das vor der Abreise zu erledigen – im chinesischen Netz kann der Empfang einer ausländischen SMS unzuverlässig sein.'

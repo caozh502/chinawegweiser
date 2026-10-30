@@ -21,6 +21,18 @@ sources:
   - label: 'Botschaft der Volksrepublik China in Deutschland'
     url: 'http://de.china-embassy.gov.cn/'
 affiliate: ['insurance', 'esim']
+keyPoints:
+  - 'Gilt für Deutsche, Österreicher und Schweizer – 30 Tage pro Einreise, nicht pro Jahr.'
+  - 'Einreise mehrfach erlaubt, solange jeder Aufenthalt unter 30 Tagen bleibt.'
+  - 'Bei der Kontrolle griffbereit: Reisepass mit sechs Monaten Restgültigkeit, Rückflugticket, erste Unterkunft.'
+  - 'Arbeiten, Studieren und Aufenthalte über 30 Tage brauchen weiterhin ein Visum.'
+facts:
+  - { label: 'Aufenthalt', value: '30 Tage pro Einreise' }
+  - { label: 'Gültig bis', value: '31. Dezember 2026' }
+  - { label: 'Nationalitäten', value: 'Deutschland, Österreich, Schweiz (50 insgesamt)' }
+  - { label: 'Erlaubte Zwecke', value: 'Tourismus, Geschäft, Familie, Transit' }
+  - { label: 'Kosten', value: '0 €' }
+  - { label: 'Verlängerung in China', value: 'nicht möglich – Ausreise nötig' }
 faq:
   - q: 'Gilt die Visumfreiheit auch für Geschäftsreisen?'
     a: 'Ja. Kurzfristige Geschäftsreisen, Messen, Verhandlungen und Kundentermine sind ausdrücklich eingeschlossen – solange du keine Arbeit gegen Bezahlung aufnimmst und keine Entlohnung aus China beziehst.'

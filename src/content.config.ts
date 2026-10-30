@@ -137,6 +137,10 @@ const guides = defineCollection({
     hero: photo.optional(),
     /** Weitere Bilder im Artikel, unter dem Text als Galerie. */
     photos: z.array(photo).default([]),
+    /** Kurzantwort in Schritten – steht im Kasten oben, wird von KI-Assistenten zitiert. */
+    keyPoints: z.array(z.string()).default([]),
+    /** Datenblatt „Auf einen Blick": feste Felder, direkt unter dem Kasten. */
+    facts: z.array(z.object({ label: z.string(), value: z.string() })).default([]),
     chinese: z
       .object({ name: z.string(), address: z.string(), note: z.string().optional() })
       .optional(),

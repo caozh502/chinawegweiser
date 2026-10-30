@@ -19,6 +19,18 @@ sources:
   - label: 'Verordnung über die Verwaltung des internationalen Netzverbunds (Art. 6 und 14)'
     url: 'https://www.cac.gov.cn/1996-02/02/c_126468621.htm'
 affiliate: ['esim', 'insurance']
+keyPoints:
+  - 'eSIM mit Datenroaming vor dem Abflug kaufen und installieren – der Traffic läuft über einen ausländischen Netzausgang.'
+  - 'Damit funktionieren Google, WhatsApp und Instagram, ohne dass du etwas umgehst.'
+  - 'Auf VPN-Tools verzichten: Die Nutzung nicht genehmigter Kanäle ist in China bußgeldbewehrt.'
+  - 'Für Navigation trotzdem Amap (高德) installieren – die China-Karten von Google Maps sind unbrauchbar.'
+facts:
+  - { label: 'Preis', value: '15–35 € für 10–20 GB' }
+  - { label: 'Aktivierung', value: '10 Minuten, vor dem Abflug oder bei Landung' }
+  - { label: 'Registrierung in China', value: 'keine' }
+  - { label: 'Was funktioniert', value: 'Google, WhatsApp, Instagram, YouTube, deutsche Nachrichten' }
+  - { label: 'Rechtslage', value: 'staatliche Ausgangskanäle vorgeschrieben, Bußgeld bis 15.000 ¥' }
+  - { label: 'Navigation', value: 'Amap mit englischer Oberfläche (seit 2025)' }
 faq:
   - q: 'Funktioniert mein deutsches Handy mit eSIM in China?'
     a: 'Wenn dein Gerät eSIM unterstützt (iPhone XS und neuer, die meisten aktuellen Androiden) und es nicht auf einen Netzbetreiber gelockt ist: ja. Vorher prüfen, ob das Gerät „eSIM-fähig" ist – bei manchen China-Varianten von Android-Geräten fehlt die Funktion.'

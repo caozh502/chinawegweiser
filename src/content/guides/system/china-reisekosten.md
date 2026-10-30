@@ -28,6 +28,18 @@ sources:
   - label: 'Trip.com – Hotelpreise Peking (Oktober 2026)'
     url: 'https://www.trip.com/hotels/beijing-hotels-list-1/'
 affiliate: ['esim', 'insurance', 'train']
+keyPoints:
+  - '14 Tage Peking und Xi’an kosten 1.250 € (sparsam), 2.330 € (mittel) oder 3.945 € (komfortabel) – inklusive Flug.'
+  - 'Der Flug ist der größte Posten: im Schnitt 570 € Frankfurt–Peking, mit Umsteigen 200–300 € weniger.'
+  - 'Vor Ort ist China billig: U-Bahn 3–5 ¥, ein Gericht 30 ¥, Nudeln 15–25 ¥.'
+  - 'Teuer wird es an drei Stellen: Flughafentaxi, Hotels nahe den Toren, Tourschränke an Flughäfen.'
+facts:
+  - { label: 'Budget 14 Tage', value: '1.250 / 2.330 / 3.945 €' }
+  - { label: 'Flug (Hin & Rück)', value: '550–850 €' }
+  - { label: 'Hotel 3 Sterne', value: '45–75 € (Peking), 35–60 € (Xi’an)' }
+  - { label: 'Essen pro Tag', value: '15–40 €' }
+  - { label: 'U-Bahn', value: '3–5 ¥ (0,40–0,70 €)' }
+  - { label: 'Wechselkurs', value: '1 € ≈ 7,4 ¥ (Stand 30.10.2026)' }
 faq:
   - q: 'Wie viel Geld braucht man pro Tag in China?'
     a: 'Sparsam etwa 45–60 € pro Tag: Hostel, Straßenessen, U-Bahn. In der mittleren Kategorie sind es 80–110 €, komfortabel ab 150 €. Der Flug ist jeweils nicht eingerechnet.'

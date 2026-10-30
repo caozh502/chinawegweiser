@@ -46,6 +46,18 @@ sources:
   - label: '道路交通安全法实施条例 §72 – Mindestalter 12 bzw. 16 Jahre'
     url: 'https://www.bjfsh.gov.cn/zhxw/fsdt/202408/t20240819_40079981_fs.shtml'
 affiliate: ['esim']
+keyPoints:
+  - 'Drei Anbieter, drei Farben: gelb Meituan, blau HelloBike, grün Qingju.'
+  - 'Der einfachste Weg führt über Alipay → HelloBike: keine chinesische Nummer, keine Kaution.'
+  - 'Abstellen nur in den blauen P-Zonen – außerhalb kostet es 5 bis 50 ¥.'
+  - 'Rund um Tiananmen und die Verbotene Stadt ist Parken auf der gesamten Länge verboten.'
+facts:
+  - { label: 'Preis Peking', value: '1,88–1,99 ¥ für 60 Minuten' }
+  - { label: 'Danach', value: '0,10 ¥ pro Minute' }
+  - { label: 'Kaution', value: 'keine' }
+  - { label: 'Strafe außerhalb der P-Zone', value: '5–50 ¥' }
+  - { label: 'Mindestalter', value: '12 Jahre (Fahrrad), 16 Jahre (E-Leihrad)' }
+  - { label: 'Helm', value: 'Pflicht nur auf E-Leihrädern (Peking, seit 1.5.2026)' }
 faq:
   - q: 'Brauche ich für ein Leihrad in China eine chinesische Nummer?'
     a: 'Nein. Der einfachste Weg läuft über Alipay: Dort ist deine Identität schon geprüft, du öffnest das Mini-Programm von HelloBike und scannst das Rad. Keine Kaution, keine chinesische Bankkarte, keine zusätzliche Registrierung.'

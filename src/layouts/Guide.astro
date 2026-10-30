@@ -121,7 +121,28 @@ const faqLd = d.faq.length
     <div class="answer">
       <strong>Kurz gesagt</strong>
       <p>{d.answer}</p>
+      {d.keyPoints.length > 0 && (
+        <ol class="answer-steps">
+          {d.keyPoints.map((k) => <li>{k}</li>)}
+        </ol>
+      )}
     </div>
+
+    {d.facts.length > 0 && (
+      <div class="facts">
+        <p class="facts-title">Auf einen Blick</p>
+        <table>
+          <tbody>
+            {d.facts.map((f) => (
+              <tr>
+                <th scope="row">{f.label}</th>
+                <td>{f.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )}
 
     {d.hero && <Photo photo={d.hero} loading="eager" class="hero-photo" />}
 
