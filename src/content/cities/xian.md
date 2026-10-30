@@ -113,6 +113,7 @@ sights:
     booking: recommended
     note: 'Die Mauer ist ein geschlossener Ring von 13,74 Kilometern. Zu Fuß dauert das fünf bis sechs Stunden, mit dem Leihrad zwei bis zweieinhalb. Die südliche Yongningmen (永宁门) ist der Hauptzugang und abends beleuchtet; die Ost- und Westtore sind ruhiger und haben ebenfalls Fahrradstationen.'
     guideNote: 'Wer die Mauer nur als Aussichtsplattform nutzt, verpasst den Maßstab: Von oben sieht man, dass die Altstadt ein Rechteck ist und alles außerhalb später gebaut wurde. Ein Führer erklärt an den Zinnen, wie die Verteidigung funktionierte – und wo die Mauer 1926 und 1949 beschädigt und später rekonstruiert wurde.'
+    guideSlot: 'guide'
     lat: 34.2506
     lng: 108.9422
     hours: 'Yongningmen 08:00–22:00; die übrigen Tore schließen früher, meist zwischen 18:00 und 20:00'

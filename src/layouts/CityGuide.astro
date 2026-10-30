@@ -253,7 +253,9 @@ const faqLd = {
               {s.note && <p class="s-note">{s.note}</p>}
               {s.guideNote && (
                 <div class="guide-box">
-                  <span class="aff-badge">Anzeige</span>
+                  {/* Badge nur, wenn darunter auch ein Anzeigen-Link steht – sonst
+                      wirkt der Kasten als Werbung ohne Ziel. */}
+                  {s.guideSlot && affiliates[s.guideSlot] && <span class="aff-badge">Anzeige</span>}
                   <div class="guide-lead">Warum eine Führung hier hilft</div>
                   <p>{s.guideNote}</p>
                   {s.guideSlot && affiliates[s.guideSlot] && (
