@@ -37,7 +37,11 @@ export const affiliates: Record<string, AffiliateSlot> = {
     title: 'Hotels, die Ausländer aufnehmen',
     text: 'Bei der Buchung auf „akzeptiert ausländische Gäste" achten – seit Mai 2024 ist die Ablehnung verboten, kontrolliert wird es aber nicht überall.',
     cta: 'Hotels suchen',
-    url: 'https://www.trip.com/',
+    url: 'https://www.trip.com/hotels/beijing-hotels-list-1/',
+    urls: {
+      peking: 'https://www.trip.com/hotels/beijing-hotels-list-1/',
+      xian: 'https://www.trip.com/hotels/xi-an-hotels-list-10/',
+    },
     hint: 'Der Preis bleibt gleich.',
   },
   guide: {
