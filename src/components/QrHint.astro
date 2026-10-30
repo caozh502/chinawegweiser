@@ -23,7 +23,14 @@ const { src, name, note, label = 'WeChat-Code anzeigen', variant = 'row' } = Ast
 >
   {label}
   <span class="qr-pop" role="tooltip">
-    <img src={src} alt={`Mini-Programm-Code für ${name}`} width="210" height="210" decoding="async" />
+    <img
+      src={src}
+      alt={`Mini-Programm-Code für ${name}`}
+      width="210"
+      height="210"
+      loading="lazy"
+      decoding="async"
+    />
     <span class="qr-cap">{note}</span>
   </span>
 </button>

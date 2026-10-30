@@ -482,6 +482,18 @@ experiences:
       license: 'CC BY-SA 3.0'
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Yinzha_Hutong,_Beijing,_from_Wusi_Street.jpg'
+faq:
+  - q: 'Wie viele Tage braucht man für Peking?'
+    a: 'Ein Tag reicht für die Achse Tiananmen – Verbotene Stadt – Jingshan. Drei Tage decken die neun Orte oben ab, mit fünf Tagen bleibt ein voller Tag für die Mauer in Mutianyu und der Sommerpalast ohne Zeitdruck.'
+  - q: 'Was kostet der Eintritt in die Verbotene Stadt?'
+    a: '60 ¥ von April bis Oktober, 40 ¥ von November bis März. Die Schätze-Galerie kostet 10 ¥ zusätzlich. Tickets gibt es nur online mit Passnummer, eine Tageskasse existiert nicht.'
+  - q: 'Brauchen deutsche Staatsangehörige ein Visum für Peking?'
+    a: 'Nein. Die visumfreie Einreise erlaubt bis zu 30 Tage Aufenthalt, die Regelung gilt bis 31. Dezember 2026. Einzelheiten stehen auf der Seite zur visumfreien Einreise.'
+  - q: 'Wie kommt man vom Flughafen in die Stadtmitte?'
+    a: 'Mit dem Airport Express bis Dongzhimen und von dort mit der U-Bahn: 45 bis 70 Minuten, 25 bis 30 ¥. Taxi oder DiDi kosten 120 bis 200 ¥ und brauchen in der Rushhour deutlich länger.'
+  - q: 'Wann ist die beste Reisezeit für Peking?'
+    a: 'April bis Mai und September bis Oktober. Der Sommer ist heiß und schwül, der Winter trocken und kalt; die erste Oktoberwoche ist wegen des Nationalfeiertags die vollste Woche des Jahres.'
+
 plans:
   - title: '1 Tag – das Minimum'
     forWhom: 'Zwischenstopp, Umsteigeflüge, Geschäftsreise'

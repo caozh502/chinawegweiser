@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 
 interface Props {
   photo: {
@@ -29,13 +29,14 @@ const img = mod.default;
 ---
 
 <figure class:list={['photo', cls, img.width < img.height && 'is-portrait']}>
-  <Image
+  <Picture
     src={img}
     alt={photo.alt}
     widths={[400, 680, 960]}
     sizes="(max-width: 760px) 100vw, 640px"
-    format="webp"
-    quality={62}
+    formats={['avif', 'webp']}
+    fallbackFormat="webp"
+    quality={58}
     loading={loading}
     decoding={loading === 'eager' ? 'sync' : 'async'}
   />

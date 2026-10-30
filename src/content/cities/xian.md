@@ -334,6 +334,20 @@ experiences:
     price: 'kostenlos'
     text: 'Eine zwei Kilometer lange Fußgängerachse zwischen der Pagode und dem Qujiang-See, abends vollständig beleuchtet, mit Straßenmusik, Bühnen und Essensständen. Kommerziell, aber der Maßstab ist sehenswert – und es kostet nichts, hineinzulaufen.'
     tip: 'Am Wochenende ist es so voll, dass man kaum vorwärts kommt. Unter der Woche ab 20:00 Uhr ist es angenehm.'
+faq:
+  - q: 'Wie viele Tage braucht man für Xi’an?'
+    a: 'Ein Tag reicht für Terrakotta-Armee und Stadtmauer, zwei Tage nehmen das Geschichtsmuseum Shaanxi und das muslimische Viertel mit, drei Tage lassen Zeit für Beilin und den Huaqing-Palast.'
+  - q: 'Was kostet die Terrakotta-Armee?'
+    a: '120 ¥ für Erwachsene, inklusive Shuttle zum Lishan-Park. Chinesische Vollzeitstudierende zahlen 60 ¥, ab 65 Jahren ist der Eintritt frei. Eine Tageskasse gibt es nicht.'
+  - q: 'Muss man die Terrakotta-Armee vorab buchen?'
+    a: 'Ja. Der Verkauf ist an den Namen gebunden und öffnet sieben Tage vorher (an Feiertagen zehn Tage); morgens sind die Plätze zuerst weg, nachmittags ist es ruhiger.'
+  - q: 'Wie kommt man von Peking nach Xi’an?'
+    a: 'Mit dem Schnellzug in 4,5 bis 6 Stunden. Alle Fernzüge halten am Bahnhof Nord (西安北站), nicht am Hauptbahnhof; von dort führt die Metro-Linie 2 bis Zhonglou.'
+  - q: 'Lohnt sich die Stadtmauer mit dem Rad?'
+    a: 'Ja: 13,74 km, Leihrad 45 ¥ für drei Stunden, reine Fahrzeit rund zwei Stunden. Wer nach 20 Uhr abgibt, kann nur am Südtor (Yongningmen) zurückgeben.'
+  - q: 'Wann ist die beste Reisezeit für Xi’an?'
+    a: 'März bis Mai und September bis Oktober. Im Hochsommer liegen die Temperaturen oft über 35 Grad, im Winter ist die Luft trocken und die Hallen der Terrakotta-Armee sind unbeheizt.'
+
 plans:
   - title: 'Xi''an an einem Tag'
     forWhom: 'Wer auf der Durchreise ist und die Terrakotta-Armee zwingend sehen will'

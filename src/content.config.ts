@@ -182,6 +182,8 @@ const cities = defineCollection({
     connections: z.array(connection).default([]),
     bookAhead: z.array(z.string()).default([]),
     traps: z.array(z.string()).default([]),
+    /** Häufige Fragen. Erscheinen sichtbar UND als FAQPage-Markup. */
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
     status: z.enum(['verified', 'draft', 'stale']).default('draft'),
     verified: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
     /** Was sich geändert hat – macht das Prüfdatum überprüfbar. */

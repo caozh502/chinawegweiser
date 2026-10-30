@@ -7,14 +7,23 @@ import { getCollection } from 'astro:content';
 const items = (await getCollection('guides'))
   .filter((g) => g.data.city === 'system')
   .sort((a, b) => a.data.order - b.data.order);
+
+/* Noch nicht geschrieben – bewusst ohne Link, damit keine toten Pfade entstehen. */
+const geplant = [
+  'Alipay und WeChat Pay mit deutscher Karte einrichten',
+  'Zugtickets über 12306 mit Passnummer kaufen',
+  'DiDi nutzen, ohne eine chinesische Nummer zu haben',
+  'Was eine China-Reise 2026 tatsächlich kostet',
+  'Verbotene Stadt: Tickets ohne chinesisches Konto',
+];
 ---
 
 <Base
-  title="Praktisches: Einreise, Geld, Internet"
-  description="Die Grundlagen einer China-Reise: visumfreie Einreise, Bezahlen ohne Bargeld, Internet, Züge, Tickets und Reservierungen."
+  title="Praktisches für China: Einreise, Geld, Internet"
+  description="Was vor jeder China-Reise zu klären ist: visumfreie Einreise, Bezahlen mit Alipay, Internet ohne Google, Zugtickets, Reservierungen – mit Stand und Quellen."
 >
   <div class="eyebrow"><a href="/">Start</a> · Praktisches</div>
-  <h1>Praktisches</h1>
+  <h1>Praktisches für China</h1>
   <p class="lead">
     Diese Seiten gelten unabhängig von der Stadt. Wenn du nur zwei davon liest, nimm Einreise und
     Internet – der Rest lässt sich vor Ort lösen.
@@ -29,6 +38,74 @@ const items = (await getCollection('guides'))
     ))}
   </div>
 
+  <h2 id="einreise">Einreise</h2>
+  <p class="prose-sm">
+    Deutsche, Österreicher und Schweizer reisen bis zu 30 Tage visumfrei nach China; die Regelung
+    läuft bis 31. Dezember 2026. Der Pass muss bei der Einreise gültig sein, und wer weiterreist,
+    sollte das Ticket dafür dabeihaben. Für Hongkong, Macau und Taiwan gelten eigene Regeln.
+  </p>
+  <p class="prose-sm">
+    <a href="/system/visumfrei-china-30-tage/">Zur visumfreien Einreise: Was erlaubt ist und was nicht →</a>
+  </p>
+
+  <h2 id="geld">Bezahlen</h2>
+  <p class="prose-sm">
+    China zahlt mit dem Telefon. Alipay und WeChat Pay akzeptieren seit 2023 ausländische
+    Kreditkarten und lassen sich auf Englisch bedienen. Bargeld nimmt kaum noch jemand, Karten werden
+    meist nur in Hotels akzeptiert; für kleinere Beträge fällt in beiden Apps eine Gebühr an.
+  </p>
+  <p class="prose-sm">
+    Wichtig ist die Reihenfolge: App einrichten und Karte hinterlegen, solange man noch in Deutschland
+    ist. Vor Ort braucht die Verifizierung oft eine SMS, und die kommt auf eine deutsche Nummer nicht
+    zuverlässig an.
+  </p>
+
+  <h2 id="internet">Internet</h2>
+  <p class="prose-sm">
+    Google, WhatsApp und Instagram funktionieren in China nicht. Die saubere Lösung ist eine eSIM mit
+    Datenroaming über einen ausländischen Netzausgang: keine Installation, kein Eingriff ins Telefon,
+    und sie lässt sich vor der Abreise testen. Wir empfehlen keine VPN-Tools – nicht aus Prinzip,
+    sondern weil sie auf Mobilfunknetzen unzuverlässig sind und die Rechtslage unklar ist.
+  </p>
+  <p class="prose-sm">
+    <a href="/system/internet-esim/">Zur eSIM: welche funktioniert, was sie kostet →</a>
+  </p>
+
+  <h2 id="zuege">Züge und Fernbusse</h2>
+  <p class="prose-sm">
+    China hat das dichteste Schnellzugnetz der Welt, und es ist der bequemste Weg zwischen den
+    Städten. Tickets sind personengebunden: Passnummer bei der Buchung, Pass am Bahnsteig. Der
+    Vorverkauf öffnet 15 Tage vorher, in den Ferien ist der Andrang groß. Wer weiterfährt, bucht die
+    Anschlussverbindung am besten gleich mit – nicht erst am Ankunftstag am Schalter.
+  </p>
+
+  <h2 id="tickets">Tickets für Sehenswürdigkeiten</h2>
+  <p class="prose-sm">
+    Die großen Museen und Kaiserpaläste verkaufen nur noch online, an den meisten gibt es keine
+    Tageskasse mehr. Der Verkauf ist an den Namen gebunden und öffnet oft nur sieben Tage vorher.
+    In der Praxis läuft fast alles über WeChat-Mini-Programme – auf den Stadtseiten steht bei jeder
+    Sehenswürdigkeit, welcher Kanal der richtige ist und wo es eine englische Alternative gibt.
+  </p>
+
+  <h2 id="apps">Apps, die man wirklich braucht</h2>
+  <p class="prose-sm">
+    Vier reichen: eine Übersetzungs-App mit Kamera für Speisekarten, DiDi statt Uber, Amap statt
+    Google Maps und Alipay als Bezahl- und Ticket-App. Chinesische Adressen besser als Screenshot
+    speichern – Taxifahrer lesen selten lateinische Schrift.
+  </p>
+
+  <h2 id="staedte">Städte</h2>
+  <div class="grid">
+    <a class="card" href="/stadt/peking/">
+      <div class="t">Peking: der komplette Reiseführer</div>
+      <div class="c">neun Orte, Routen für 1, 3 und 5 Tage</div>
+    </a>
+    <a class="card" href="/stadt/xian/">
+      <div class="t">Xi’an: der komplette Reiseführer</div>
+      <div class="c">Terrakotta-Armee, Stadtmauer, muslimisches Viertel</div>
+    </a>
+  </div>
+
   <h2>Vor dem Abflug buchen</h2>
   <p class="prose-sm">
     Zwei Dinge, die man vor der Reise klärt und nicht am Flughafen: funktionierendes Internet ab der
@@ -39,4 +116,22 @@ const items = (await getCollection('guides'))
     <AffiliateBox name="insurance" />
   </div>
   <AffiliateInline name="train" prefix="Züge innerhalb Chinas" />
+
+  <h2 id="geplant">In Arbeit</h2>
+  <p class="prose-sm">
+    Diese Anleitungen schreiben wir gerade – sie erscheinen erst, wenn jede Zahl geprüft ist:
+  </p>
+  <ul class="planned">
+    {geplant.map((g) => <li>{g}</li>)}
+  </ul>
 </Base>
+
+<style>
+  .planned {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .planned li { margin-bottom: 0.3rem; }
+</style>
