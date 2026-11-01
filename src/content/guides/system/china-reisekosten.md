@@ -50,7 +50,7 @@ faq:
   - q: 'Muss man in China Trinkgeld geben?'
     a: 'Nein. Trinkgeld ist nicht üblich, weder im Restaurant noch im Taxi. In gehobenen Hotels wird ein Betrag für den Gepäckträger erwartet, 10–20 ¥ reichen.'
   - q: 'Kann man in China mit Karte zahlen?'
-    a: 'Nur eingeschränkt. Karten nehmen Hotels und große Kaufhäuser, alles andere läuft über Alipay oder WeChat Pay mit hinterlegter ausländischer Karte. Bargeld ist Reserve, nicht Alltag.'
+    a: 'Nur eingeschränkt. Karten nehmen Hotels und große Kaufhäuser, alles andere läuft über <a href="/system/bezahlen-china/">Alipay oder WeChat Pay</a> mit hinterlegter ausländischer Karte. Bargeld ist Reserve, nicht Alltag.'
 order: 40
 ---
 

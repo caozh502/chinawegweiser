@@ -39,7 +39,7 @@ faq:
   - q: 'Brauche ich für DiDi eine chinesische Handynummer?'
     a: 'Nein. Die Registrierung funktioniert mit einer deutschen Nummer; der Bestätigungscode kommt per SMS. Wichtig ist, das vor der Abreise zu erledigen – im chinesischen Netz kann der Empfang einer ausländischen SMS unzuverlässig sein.'
   - q: 'Kann ich DiDi mit meiner deutschen Kreditkarte bezahlen?'
-    a: 'Ja, Visa und Mastercard lassen sich in der App hinterlegen. Alternativ zahlst du über Alipay oder WeChat Pay, wenn dort schon eine Karte hinterlegt ist. Bargeld brauchst du nicht.'
+    a: 'Ja, Visa und Mastercard lassen sich in der App hinterlegen. Alternativ zahlst du über <a href="/system/bezahlen-china/">Alipay oder WeChat Pay</a>, wenn dort schon eine Karte hinterlegt ist. Bargeld brauchst du nicht.'
   - q: 'Was ist der Unterschied zwischen DiDi und einem normalen Taxi?'
     a: 'DiDi vermittelt private Fahrzeuge und zeigt den Preis vor der Bestellung. Ein Straßentaxi fährt nach Taxameter. In der App gibt es beide Varianten: „Express" (günstig, private Fahrzeuge) und „Taxi" (offizielle Taxis zum Tarif).'
   - q: 'Funktioniert DiDi ohne Internetverbindung?'
