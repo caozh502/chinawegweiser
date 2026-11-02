@@ -56,6 +56,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     urls: {
       peking: 'https://www.trip.com/hotels/beijing-hotels-list-1/',
       shanghai: 'https://www.trip.com/hotels/shanghai-hotels-list-2/',
+      chengdu: 'https://www.trip.com/hotels/chengdu-hotels-list-28/',
       xian: 'https://www.trip.com/hotels/xi-an-hotels-list-10/',
     },
     hint: 'Der Preis bleibt gleich.',
@@ -70,6 +71,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
       peking: 'https://www.getyourguide.com/beijing-l186/4-hour-private-tour-to-tian-an-men-square-and-forbidden-city-t459862/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=guide-verbotene-stadt',
       xian: 'https://www.getyourguide.de/xi-an-l270/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=xian-guide',
       shanghai: 'https://www.getyourguide.com/shanghai-l178/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=shanghai-guide',
+      chengdu: 'https://www.getyourguide.com/chengdu-l1697/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=chengdu-guide',
     },
     perCity: {
       shanghai: {
@@ -77,6 +79,12 @@ export const affiliates: Record<string, AffiliateSlot> = {
         text: 'Die Kolonialbauten am Bund und der Yu-Garten erklären sich nicht von selbst. Geführte Rundgänge mit englischsprachigem Guide, meist mit Eintritt und Teepause.',
         cta: 'Führungen ansehen',
         url: 'https://www.getyourguide.com/shanghai-l178/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=shanghai-guide',
+      },
+      chengdu: {
+        title: 'Führung durch die Pandabasis und die Altstadt',
+        text: 'Die Anlage ist groß und die Wege führen an leeren Gehegen vorbei. Geführte Touren starten vor der Öffnung, damit man vor den Bussen an den Jungtieren ist – englischsprachig, Eintritt meist inklusive.',
+        cta: 'Touren ansehen',
+        url: 'https://www.getyourguide.com/chengdu-l1697/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=chengdu-guide',
       },
       xian: {
         title: 'Führung durch die Terrakotta-Armee',
@@ -97,6 +105,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
       peking: 'https://www.getyourguide.com/beijing-l186/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=peking-city',
       xian: 'https://www.getyourguide.de/xi-an-l270/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=xian-city',
       shanghai: 'https://www.getyourguide.com/shanghai-l178/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=shanghai-city',
+      chengdu: 'https://www.getyourguide.com/chengdu-l1697/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=chengdu-city',
     },
     hint: 'Der Preis bleibt gleich.',
   },
@@ -110,6 +119,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
       peking: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc57-beijing%2F1-things-to-do%2F',
       xian: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc60-xi-an%2F1-things-to-do%2F',
       shanghai: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc59-shanghai%2F1-things-to-do%2F',
+      chengdu: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc61-chengdu%2F1-things-to-do%2F',
     },
     hint: 'Der Preis bleibt gleich.',
   },
