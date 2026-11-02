@@ -24,6 +24,14 @@ sources:
     url: 'https://chinafortravelers.com/guides/alipay-for-foreigners/'
   - label: 'Alipay – offizielle Seite für internationale Nutzer (Alipay International)'
     url: 'https://global.alipay.com/platform/site/ihome'
+  - label: 'DKB – Preis- und Leistungsverzeichnis Karten, Fremdwährung außerhalb EWR (Stand 15. September 2026)'
+    url: 'https://dok.dkb.de/pdf/plv_pk_karten.pdf'
+  - label: 'ING – Konditionen Girokonto, Auslandseinsatzentgelt bei Fremdwährung'
+    url: 'https://www.ing.de/girokonto/konditionen/'
+  - label: 'comdirect – FAQ bargeldlose Zahlungen, Entgelt 1,75 % bei Fremdwährung'
+    url: 'https://www.comdirect.de/faq/bargeldlose-zahlung?CIF_Check=true'
+  - label: 'N26 – Gebühren für Fremdwährungstransaktionen'
+    url: 'https://n26.com/de-de/auslandsgebuhren'
 affiliate: ['esim']
 keyPoints:
   - 'Beide Apps vor dem Abflug einrichten – die Registrierung braucht eine SMS an deine deutsche Nummer.'
@@ -151,15 +159,23 @@ Für dich heißt das: **Bargeld als Rückfallebene, nicht als Hauptweg.** 300 bi
 
 ## Was es dich wirklich kostet
 
-Die 3 Prozent der App sind nur die halbe Rechnung. Dazu kommt, was deine Bank für Zahlungen außerhalb der EU verlangt.
+Die 3 Prozent der App sind nur die halbe Rechnung. Dazu kommt, was deine Bank für Zahlungen in Fremdwährung verlangt – und da unterscheiden sich deutsche Konten stärker, als die Werbung vermuten lässt.
 
-| Karte | Auslandsentgelt | Gesamtkosten bei 1.000 ¥ |
+| Karte | Entgelt der Bank | 1.000 ¥ kosten dich |
 |---|---|---|
-| DKB Visa, N26, Revolut | 0 % | 3 % |
-| ING, Comdirect, Sparkasse | ca. 1,75 % | ca. 4,75 % |
-| Klassische Kreditkarte mit Auslandseinsatzentgelt | 1,75–2 % | ca. 4,75–5 % |
+| N26 Debit Mastercard (alle Konten) | 0 % | 1.030 ¥ |
+| DKB Visa Debit, **mit** Aktivstatus | 0 % | 1.030 ¥ |
+| comdirect Visa Debit | 1,75 % | 1.048 ¥ |
+| DKB Visa Debit, **ohne** Aktivstatus | 2,20 % | 1.053 ¥ |
+| ING Visa Debit | 2,20 % | 1.053 ¥ |
 
-Bei 2.000 Euro Reiseausgaben sind das 60 bis 100 Euro, die nur an Gebühren hängen bleiben. Eine Karte ohne Auslandsentgelt einzupacken ist die günstigste Einzelmaßnahme dieser Reise.
+<span class="q">Quellen: <a href="https://dok.dkb.de/pdf/plv_pk_karten.pdf" target="_blank" rel="noopener">DKB Preis- und Leistungsverzeichnis</a> (Stand 15.9.2026) · <a href="https://www.ing.de/girokonto/konditionen/" target="_blank" rel="noopener">ING Konditionen Girokonto</a> · <a href="https://www.comdirect.de/faq/bargeldlose-zahlung?CIF_Check=true" target="_blank" rel="noopener">comdirect FAQ</a> · <a href="https://n26.com/de-de/auslandsgebuhren" target="_blank" rel="noopener">N26 Auslandsgebühren</a></span>
+
+Gerechnet ist die Bankgebühr auf den Betrag **nach** Abzug der 3 Prozent – sie fällt auf das, was tatsächlich belastet wird. Aus 1.000 Yuan werden bei 2,20 Prozent also 1.053 Yuan statt 1.030: Der Unterschied zwischen einer günstigen und einer teuren Karte beträgt bei dieser einen Zahlung 23 Yuan, also gut 3 Euro.
+
+**Der DKB-Fall zeigt, worauf man achten muss.** Die Visa Debit ist nur mit Aktivstatus gebührenfrei – also bei regelmäßigem Geldeingang. Ohne Aktivstatus stehen 2,20 Prozent im Preisverzeichnis, und das steht selten in Reiseblog-Beiträgen, die „DKB = kostenlos" schreiben.
+
+Umgerechnet auf eine Reise mit 2.000 Euro Kartenumsatz: 60 Euro Gebühren bei einer Karte ohne Aufschlag, bis zu 105 Euro bei 2,20 Prozent. Wer nur eine Karte hat, nimmt die günstige – und für große Beträge, also Hotels und Flüge, ohnehin die Buchung direkt beim Anbieter mit Karte in Euro.
 
 ## Sechs Fehler, die regelmäßig passieren
 
