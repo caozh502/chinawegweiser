@@ -17,6 +17,9 @@ const staedte = (await getCollection('cities'))
   .filter((c) => c.data.city !== 'system')
   .sort((a, b) => REIHE.indexOf(a.data.city) - REIHE.indexOf(b.data.city));
 
+/** Städte ohne Seite – automatisch abgeleitet, damit die Liste nicht veraltet. */
+const offen = REIHE.filter((k) => !staedte.some((c) => c.data.city === k));
+
 interface Props {
   title: string;
   description: string;
@@ -172,7 +175,9 @@ if (segmente.length > 0) {
               {staedte.map((c) => (
                 <li><a href={`/stadt/${c.data.city}/`}>{NAMEN[c.data.city] ?? c.data.city}</a></li>
               ))}
-              <li><span class="soon">Shanghai, Xi'an, Chengdu, Guilin in Arbeit</span></li>
+              {offen.length > 0 && (
+                <li><span class="soon">{offen.map((k) => NAMEN[k] ?? k).join(', ')} in Arbeit</span></li>
+              )}
             </ul>
           </div>
           <div>

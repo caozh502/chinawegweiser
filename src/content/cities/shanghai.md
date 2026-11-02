@@ -120,7 +120,10 @@ sights:
     transit: 'U-Bahn 10 bis 豫园 (Yuyuan Garden), Ausgang 1, dann 5 Minuten zu Fuß. Eingänge: Nordtor 福佑路168号 für alle, Südtor 豫园老街279号 nur für Einzelbesucher (am Ende der Zickzackbrücke)'
     note: 'Ein Ming-Garten von 1559, auf 20.000 Quadratmetern: Felsen, Teiche, Zickzackbrücken, Pavillons. Der Garten ist der ruhige Teil, der ihn umgebende Markt (豫园商城) der laute – letzterer ist kostenlos und die Postkartenansicht mit den verzierten Dächern, aber voll mit Läden. Wer nur den Markt sieht, war nicht im Garten.'
     nearby: '九曲桥 (Zickzackbrücke) und 城隍庙 (Stadtgotttempel) direkt am Südausgang; 上海老街 fünf Minuten westlich'
-    buyTickets: 'Zuerst das offizielle Mini-Programm „上海豫园" (chinesische Oberfläche). Alternativ gibt es Kassen am Nord- und Südtor – dort aber nur, solange das Tageskontingent reicht.'
+    buyTickets: 'Zuerst das offizielle Mini-Programm {{qr}} „上海豫园" (chinesische Oberfläche): Zeitfenster und Tageskontingent werden dort freigegeben, der Pass wird eingetragen. Alternativ gibt es Kassen am Nord- und Südtor – dort aber nur, solange das Tageskontingent reicht.'
+    qr: 'yuyuan'
+    qrLabel: 'WeChat-Mini-Programm'
+    qrNote: 'Nur mit WeChat scannen – die Kamera-App und andere QR-Reader erkennen Mini-Programm-Codes nicht. Code von der offiziellen Mini-Programm-Seite „Yu Garden".'
     buyTicketsAlt: 'Hochsaison ist 1. April–30. Juni und 1. September–30. November (40 ¥), Nebensaison 1. Juli–31. August und 1. Dezember–31. März (30 ¥). Halber Preis für Studierende und ab 60 Jahren mit Ausweis; frei für Kinder bis 1,30 m oder 6 Jahre. Pro Person und Tag ist nur eine Vergünstigung möglich.'
     source: { label: '上海豫园 (Zeiten, Tarife, Eingänge)', url: 'https://www.yugarden.com.cn/page/articleview/message.html' }
     tickets:
@@ -164,7 +167,10 @@ sights:
     transit: 'U-Bahn 2 bis 上海科技馆 (Shanghai Science and Technology Museum), Ausgang 5, dann 10 Minuten zu Fuß'
     note: 'Der 2024 eröffnete Neubau in Pudong zeigt die Sammlung auf 46.000 Quadratmetern – Bronze, Keramik, Kalligrafie, Malerei, Möbel, ethnologische Stücke. Der große Vorteil gegenüber dem Stammhaus: Man braucht keine Reservierung, sondern geht mit dem Pass durch die Sicherheitskontrolle am Osteingang im Untergeschoss. Für einen halben Tag ist das das beste Museum der Stadt.'
     nearby: '上海科技馆 (Wissenschaftsmuseum) und der Century-Park liegen direkt daneben'
-    buyTickets: 'Kein Ticket nötig: seit September 2024 ist der Ostflügel für Einzelbesucher ohne Reservierung zugänglich, der Pass wird am Einlass gelesen. Zwei Bereiche (古代文明探索宫, 数字馆) brauchen weiterhin eine Reservierung über das Mini-Programm „上海博物馆参观预约".'
+    buyTickets: 'Kein Ticket nötig: seit September 2024 ist der Ostflügel für Einzelbesucher ohne Reservierung zugänglich, der Pass wird am Einlass gelesen. Zwei Bereiche (古代文明探索宫, 数字馆) brauchen weiterhin eine Reservierung über das Mini-Programm {{qr}} „上海博物馆参观预约".'
+    qr: 'museum'
+    qrLabel: 'WeChat-Mini-Programm'
+    qrNote: 'Nur mit WeChat scannen – die Kamera-App erkennt diesen Code nicht. Code von der offiziellen Mini-Programm-Seite „Shanghai Museum Visit Reservation".'
     buyTicketsAlt: 'Achtung: Das Stammhaus am People’s Square ist derzeit kein kostenloses Museum. Während der Sonderausstellung „世界树之巅: 美洲古代文明大展" (9. Juli 2026–14. November 2027) zeigt es keine anderen Ausstellungen, und alle Besucher brauchen ein Ticket – auch für den Rest des Hauses. Wer die klassische Sammlung sehen will, fährt nach Pudong.'
     source: { label: '上海博物馆 – Besuchsankündigung', url: 'https://reservation.shanghaimuseum.net/' }
     video:

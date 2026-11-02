@@ -28,8 +28,8 @@ const { src, name, note, label = 'WeChat-Code anzeigen', variant = 'row' } = Ast
       alt={`Mini-Programm-Code für ${name}`}
       width="210"
       height="210"
-      loading="lazy"
-      decoding="async"
+      loading="eager"
+      decoding="sync"
     />
     <span class="qr-cap">{note}</span>
   </span>
