@@ -9,7 +9,7 @@ days: 'Mindestens 3 Tage'
 season: 'April–Mai, September–Oktober'
 budget: '80–140 € / Tag'
 base: 'Dongcheng (rund um Wangfujing)'
-status: verified
+status: vor-ort
 verified: '2026-10-30'
 order: 10
 hero:

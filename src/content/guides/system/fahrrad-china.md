@@ -5,7 +5,7 @@ answer: 'In China stehen drei Leihrad-Systeme an jeder Ecke: die gelben Meituan-
 city: system
 category: transport
 price: '1,88–1,99 ¥ pro Fahrt (Peking, 60 Min.)'
-status: verified
+status: quellen
 verified: '2026-10-30'
 hero:
   file: 'system/bike-row.jpg'

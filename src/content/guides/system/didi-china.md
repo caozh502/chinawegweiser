@@ -13,7 +13,7 @@ hero:
 city: system
 category: transport
 price: 'Startpreis 13 ¥, 10 km etwa 40 ¥'
-status: verified
+status: quellen
 verified: '2026-10-30'
 sources:
   - label: 'Trip.com – How to Use DiDi in China for Foreigners (Stand Mai 2026)'

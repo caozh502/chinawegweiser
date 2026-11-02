@@ -9,7 +9,7 @@ days: "Mindestens 2 Tage"
 season: "März–Mai, September–Oktober"
 budget: "60–110 € / Tag"
 base: "Innerhalb der Stadtmauer (rund um den Glockenturm)"
-status: draft
+status: in-arbeit
 verified: "2026-10-30"
 order: 20
 hero:

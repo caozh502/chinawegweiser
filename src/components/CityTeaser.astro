@@ -31,7 +31,12 @@ const facts = [
 ].filter((f) => f.n > 0);
 
 const kurz = text ?? d.teaser ?? d.intro;
-const statusLabel = d.status === 'verified' ? 'Stadtführer · geprüft' : 'Stadtführer · Entwurf';
+const statusLabel =
+  d.status === 'vor-ort'
+    ? 'Stadtführer · vor Ort geprüft'
+    : d.status === 'quellen'
+      ? 'Stadtführer · an der Quelle geprüft'
+      : 'Stadtführer · in Arbeit';
 ---
 
 <section class="teaser">

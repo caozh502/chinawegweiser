@@ -13,7 +13,7 @@ hero:
 city: system
 category: einreise
 price: '0 € – kein Visum nötig'
-status: verified
+status: quellen
 verified: '2026-10-29'
 sources:
   - label: 'Auswärtiges Amt – China: Reise- und Sicherheitshinweise'

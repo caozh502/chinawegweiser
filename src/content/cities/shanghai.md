@@ -9,7 +9,7 @@ days: "2 Tage für den Kern"
 season: "März–Mai, Oktober–November"
 budget: "90–160 € / Tag"
 base: "Bund / People's Square oder ehemalige Französische Konzession"
-status: draft
+status: quellen
 verified: "2026-11-02"
 order: 15
 hero:

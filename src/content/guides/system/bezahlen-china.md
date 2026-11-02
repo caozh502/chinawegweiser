@@ -5,7 +5,7 @@ answer: 'In China zahlt man per QR-Code, nicht mit Karte. Alipay und WeChat Pay 
 city: system
 category: payment
 price: '0 % bis 200 ¥, darüber 3 %'
-status: draft
+status: quellen
 verified: '2026-11-01'
 hero:
   file: 'system/zahlen-hero.jpg'

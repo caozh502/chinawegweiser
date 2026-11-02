@@ -118,7 +118,10 @@ const connection = z.object({
 
 /**
  * Einzelne Fragen-Seiten (eine Seite = ein Suchintent).
- * status verified | draft | stale · verified = Datum der letzten Prüfung
+ * status vor-ort | quellen | in-arbeit
+ *   vor-ort   = jemand war dort und hat es kontrolliert
+ *   quellen   = an Betreiber-/Behördenquelle online geprüft (Link + Datum)
+ *   in-arbeit = noch nicht geprüft; das Datum ist dann nur das der Recherche
  */
 const guides = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/guides' }),
@@ -130,7 +133,7 @@ const guides = defineCollection({
     category: z.string(),
     price: z.string().optional(),
     duration: z.string().optional(),
-    status: z.enum(['verified', 'draft', 'stale']).default('draft'),
+    status: z.enum(['vor-ort', 'quellen', 'in-arbeit']).default('in-arbeit'),
     verified: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
     sources: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
     /** Aufmacherfoto. Pflicht wird es, sobald alle Seiten eins haben. */
@@ -192,7 +195,7 @@ const cities = defineCollection({
     traps: z.array(z.string()).default([]),
     /** Häufige Fragen. Erscheinen sichtbar UND als FAQPage-Markup. */
     faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
-    status: z.enum(['verified', 'draft', 'stale']).default('draft'),
+    status: z.enum(['vor-ort', 'quellen', 'in-arbeit']).default('in-arbeit'),
     verified: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
     /** Was sich geändert hat – macht das Prüfdatum überprüfbar. */
     changelog: z.array(z.object({ date: z.string(), text: z.string() })).default([]),

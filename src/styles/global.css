@@ -158,12 +158,12 @@ li { margin: .3rem 0; }
   margin-right: .38rem;
   background: var(--muted);
 }
-.dot.verified { background: var(--ok); }
-.dot.draft { background: var(--warn); }
-.dot.stale { background: var(--accent); }
-.statusword.verified { color: var(--ok); }
-.statusword.draft { color: var(--warn); }
-.statusword.stale { color: var(--accent); }
+.dot.vor-ort { background: var(--ok); }
+.dot.quellen { background: var(--accent); }
+.dot.in-arbeit { background: var(--muted); }
+.statusword.vor-ort { color: var(--ok); }
+.statusword.quellen { color: var(--accent); }
+.statusword.in-arbeit { color: var(--muted); }
 .badge {
   display: inline-flex;
   align-items: center;

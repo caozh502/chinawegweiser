@@ -160,7 +160,13 @@ const teaserBild: Record<string, any> = {
         {items.map((g) => (
           <a class="card" href={`/${g.id}/`}>
             <div class="t">{g.data.title}</div>
-            <div class="c">{g.data.status === 'verified' ? 'geprüft' : 'Entwurf'}</div>
+            <div class="c">
+              {g.data.status === 'vor-ort'
+                ? 'vor Ort geprüft'
+                : g.data.status === 'quellen'
+                  ? 'Quelle geprüft'
+                  : 'in Arbeit'}
+            </div>
           </a>
         ))}
       </div>

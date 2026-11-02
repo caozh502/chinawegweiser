@@ -13,7 +13,7 @@ hero:
 city: system
 category: internet
 price: 'ca. 15–35 € für 10–20 GB'
-status: verified
+status: quellen
 verified: '2026-10-29'
 sources:
   - label: 'Verordnung über die Verwaltung des internationalen Netzverbunds (Art. 6 und 14)'

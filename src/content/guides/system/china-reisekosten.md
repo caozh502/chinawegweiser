@@ -14,7 +14,7 @@ city: system
 category: geld
 price: '1.250–3.950 € für 14 Tage'
 duration: '14 Tage'
-status: verified
+status: quellen
 verified: '2026-10-30'
 sources:
   - label: 'KAYAK – Flugpreise Frankfurt–Peking (Durchschnitt 570 €, Stand Oktober 2026)'

@@ -17,9 +17,9 @@ const d = entry.data;
 const { Content } = await render(entry);
 
 const statusText: Record<string, string> = {
-  verified: 'Vor Ort geprüft',
-  draft: 'Nicht vor Ort geprüft',
-  stale: 'Prüfung überfällig',
+  'vor-ort': 'Vor Ort geprüft',
+  quellen: 'An der Quelle geprüft',
+  'in-arbeit': 'Noch nicht geprüft',
 };
 
 const fmt = (iso?: string) =>

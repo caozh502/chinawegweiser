@@ -35,9 +35,9 @@ const subpages = (await getCollection('guides'))
   .sort((a, b) => a.data.order - b.data.order);
 
 const statusText: Record<string, string> = {
-  verified: 'Vor Ort geprüft',
-  draft: 'Nicht vor Ort geprüft',
-  stale: 'Prüfung überfällig',
+  'vor-ort': 'Vor Ort geprüft',
+  quellen: 'An der Quelle geprüft',
+  'in-arbeit': 'Noch nicht geprüft',
 };
 const bookingLabel: Record<string, string> = {
   required: 'Reservierung nötig',

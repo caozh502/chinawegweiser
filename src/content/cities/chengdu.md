@@ -10,7 +10,7 @@ season: "März–Juni, September–November"
 budget: "70–130 € / Tag"
 base: "Chunxi Road / Taikoo Li oder Kuanzhai-Gassen"
 order: 20
-status: draft
+status: quellen
 verified: '2026-11-02'
 hero:
   file: 'chengdu/hero-anshun.jpg'
