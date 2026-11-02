@@ -42,9 +42,9 @@ const statusLabel = d.status === 'verified' ? 'Stadtführer · geprüft' : 'Stad
     <div class="eyebrow">{statusLabel}</div>
     <h2>{d.teaserTitle ?? `${name}: Routen, Preise und Fallen`}</h2>
     <p>{kurz}</p>
-    <ul class="facts">
+    <ul class="teaser-facts">
       {facts.map((f) => (
-        <li><b>{f.n}</b> {f.l}</li>
+        <li><b>{f.n}</b><span>{f.l}</span></li>
       ))}
     </ul>
     <a class="btn-teaser" href={`/stadt/${d.city}/`}>Zum {name}-Führer →</a>
@@ -95,22 +95,57 @@ const statusLabel = d.status === 'verified' ? 'Stadtführer · geprüft' : 'Stad
     max-width: 34rem;
   }
 
-  .facts {
+  /* Eigener Klassenname: global gibt es bereits .facts (Datenblatt-Tabelle
+     mit Rahmen) – der Teaser erbte davon einen Kasten ohne Innenabstand. */
+  .teaser-facts {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem 1.2rem;
+    align-items: baseline;
     list-style: none;
     padding: 0;
-    margin: 0 0 1.2rem;
+    margin: 0 0 1.25rem;
     font-family: var(--font-ui);
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     color: var(--muted);
   }
 
-  .facts b {
+  .teaser-facts li {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    white-space: nowrap;
+  }
+
+  .teaser-facts li + li {
+    margin-left: 0.95rem;
+    padding-left: 0.95rem;
+    border-left: 1px solid var(--line);
+  }
+
+  /* Schmal: zweispaltig statt umbrechender Trennstriche. */
+  @media (max-width: 30rem) {
+    .teaser-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem 0.7rem;
+    }
+    .teaser-facts li + li {
+      margin-left: 0;
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+
+  .teaser-facts b {
     color: var(--accent);
-    font-size: 1.05rem;
-    margin-right: 0.15rem;
+    font-size: 1.02rem;
+    font-weight: 660;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .teaser-facts span {
+    letter-spacing: 0.01em;
   }
 
   .btn-teaser {
