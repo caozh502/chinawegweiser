@@ -29,6 +29,12 @@ const fertigeStaedte = städte.sort(
   (a, b) => cityOrder.indexOf(a.data.city) - cityOrder.indexOf(b.data.city)
 );
 
+/** Geplante Städte: verschwinden automatisch, sobald die Seite in der Sammlung liegt. */
+const geplant = [
+  { city: 'chengdu', text: 'Pandabasis, Teehäuser, Leshan' },
+  { city: 'guilin', text: 'Li-Fluss, Yangshuo, Longji-Reisterrassen' },
+].filter((p) => !städte.some((s) => s.data.city === p.city));
+
 /** Startseiten-Hero. */
 const hero = {
   file: 'peking/hero-jingshan.jpg',
@@ -162,18 +168,19 @@ const teaserBild: Record<string, any> = {
     </section>
   ))}
 
-  <section class="soon">
-    <div class="section-h">
-      <h2>In Arbeit</h2>
-      <span>Reihenfolge nach Nachfrage</span>
-    </div>
-    <ul class="soon-list">
-      <li><b>Shanghai</b> – Bund, Yu-Garten, Disney, Suzhou als Tagesausflug</li>
-      <li><b>Xi'an</b> – Terrakotta-Armee, Stadtmauer, Muslim Quarter</li>
-      <li><b>Chengdu</b> – Pandabasis, Teehäuser, Leshan</li>
-      <li><b>Guilin</b> – Li-Fluss, Yangshuo, Longji-Reisterrassen</li>
-    </ul>
-  </section>
+  {geplant.length > 0 && (
+    <section class="soon">
+      <div class="section-h">
+        <h2>In Arbeit</h2>
+        <span>Reihenfolge nach Nachfrage</span>
+      </div>
+      <ul class="soon-list">
+        {geplant.map((p) => (
+          <li><b>{cityNames[p.city]}</b> – {p.text}</li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   <section>
     <div class="section-h">
