@@ -19,7 +19,8 @@ const { src, name, note, label = 'WeChat-Code anzeigen', variant = 'row' } = Ast
   type="button"
   class:list={['qr-hint', variant === 'inline' && 'qr-hint-inline']}
   aria-expanded="false"
-  onclick="const o=this.classList.toggle('is-open');this.setAttribute('aria-expanded',o);"
+  onclick={`const o=this.classList.toggle('is-open');this.setAttribute('aria-expanded',o);
+    this.classList.toggle('flip', this.getBoundingClientRect().top < 400);`}
 >
   {label}
   <span class="qr-pop" role="tooltip">

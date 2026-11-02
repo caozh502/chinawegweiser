@@ -8,7 +8,16 @@
 .tbl-conn th,
 .tbl-conn td { overflow-wrap: break-word; hyphens: auto; }
 @media (max-width: 46rem) {
-  .tbl-conn { table-layout: auto; }
+  /* Festes Layout auch auf schmalen Screens: mit table-layout:auto bestimmt
+     die längste Zelle (z. B. „Flughafen Tianfu (TFU), Schnellzug") die Breite
+     und schiebt die Tabelle 14 px über den Rand. */
+  .tbl-conn { table-layout: fixed; width: 100%; }
+  .tbl-conn th:nth-child(1) { width: 36%; }
+  .tbl-conn th:nth-child(2) { width: 20%; }
+  .tbl-conn th:nth-child(3) { width: 16%; }
+  .tbl-conn th:nth-child(4) { width: 28%; }
+  .tbl-conn th,
+  .tbl-conn td { overflow-wrap: anywhere; }
 }
 
 /* ---------- Hero & Steckbrief ---------- */
@@ -1083,6 +1092,13 @@
   transform: translateY(4px);
   transition: opacity 0.14s ease, transform 0.14s ease;
   pointer-events: none;
+}
+
+/* Steht der Auslöser im oberen Drittel, klappt der Code nach unten auf –
+   sonst schiebt er sich über den oberen Bildrand hinaus (365 px Höhe). */
+.qr-hint.flip .qr-pop {
+  top: calc(100% + 0.5rem);
+  bottom: auto;
 }
 
 .qr-hint:hover .qr-pop,

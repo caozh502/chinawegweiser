@@ -214,7 +214,7 @@ sights:
     name: '都江堰'
     pinyin: 'Dūjiāngyàn'
     german: 'Bewässerungssystem von Dujiangyan'
-    price: '80 ¥ (Hochsaison) / 60 ¥ (Nebensaison)'
+    price: '80 ¥'
     duration: '3–4 Std'
     booking: recommended
     tier: must
@@ -226,21 +226,20 @@ sights:
     closed: 'kein regulärer Schließtag'
     transit: 'Zug vom Bahnhof 犀浦 (Metro 2) nach 都江堰, 30 Minuten, ca. 10 ¥; vom Bahnhof sind es 10 Minuten zu Fuß zum Haupttor'
     tickets:
-      - label: 'Erwachsene, Hochsaison 16.3.–31.10.'
+      - label: 'Erwachsene'
         price: '80 ¥'
-      - label: 'Erwachsene, Nebensaison 1.11.–15.3.'
-        price: '60 ¥'
+        note: 'Preisdeckel laut Erlass 川发改价格〔2018〕406号 (von 90 ¥ gesenkt)'
       - label: 'Studierende'
-        price: '40 ¥ / 30 ¥'
-        note: 'je nach Saison, mit Ausweis'
-      - label: 'Kombikarte mit Qingcheng Shan (Vorderer Berg)'
-        price: '150 ¥'
-        note: 'nur in der Hochsaison sinnvoll'
+        price: '40 ¥'
+        note: 'mit Ausweis'
+      - label: 'Nebensaison-Rabatt'
+        price: 'wird jährlich neu angekündigt'
+        note: 'Portale nennen 60 ¥ – im Preisdeckel-Erlass steht kein saisonaler Satz'
     buyTickets: 'Am einfachsten über das Mini-Programm „青城山都江堰" oder die offizielle WeChat-Adresse; alternativ Kassen am Haupttor. In der Hochsaison gilt an Feiertagen ein Tageskontingent, das online zuerst weg ist.'
-    buyTicketsAlt: 'Achtung: Die Preisangaben stammen aus Sekundärquellen (Reiseportale und lokale Behördenmeldungen), weil die offizielle Website des Betreibers beim Prüfen nicht erreichbar war – am Tor gilt der angeschlagene Preis.'
+    buyTicketsAlt: 'Der Erlass nennt nur den Deckel, nicht die Saisonstaffel: Ob im Winter 60 ¥ oder 80 ¥ gelten, entscheidet die Ankündigung des Betreibers für das jeweilige Jahr.'
     source:
-      label: 'Preise und Zeiten (Sekundärquelle: 成都本地宝, Stand Okt. 2026)'
-      url: 'https://cd.bendibao.com/tour/2024125/177204.shtm'
+      label: '四川省发改委 – 川发改价格〔2018〕406号 (Preissenkung,最高限价)'
+      url: 'https://fgw.sc.gov.cn/sfgw/fgyw/2018/8/23/907cad95092d44c597912d3fe86c6c67.shtml'
     photo:
       file: 'chengdu/dujiang.jpg'
       alt: 'Blick über den Fluss auf das Wehr von Dujiangyan mit grünen Hügeln'
@@ -266,7 +265,7 @@ sights:
     nearby: 'Die Anlage liegt in Leshan, 135 km südlich; kombinierbar mit einem Aufenthalt in Emeishan.'
     lat: 29.5467
     lng: 103.7717
-    hours: '07:30–18:30 in der Saison, im Winter kürzer; letzter Einlass am Berg 17:30'
+    hours: 'Saison 07:30–18:30; Winterbetrieb 8.10.–31.3. 08:00–17:30'
     closed: 'kein regulärer Schließtag; bei Hochwasser wird der Klippenweg (九曲栈道) gesperrt'
     transit: 'Hochgeschwindigkeitszug von 成都东 nach 乐山 (1 Std., ca. 60 ¥), dann Bus 3 oder Taxi 20 Minuten'
     tickets:
@@ -274,14 +273,14 @@ sights:
         price: '80 ¥'
       - label: 'Bootsticket (Blick von der Flussseite)'
         price: '70 ¥'
-        note: '40 Minuten, kein Landgang'
+        note: '40 Minuten, kein Landgang – Preis laut Kanalangaben, nicht im Preisdeckel-Erlass'
       - label: 'Studierende'
         price: '40 ¥'
     buyTickets: 'Nur über das offizielle Mini-Programm „大佛旅游" (in WeChat oder Alipay zu finden). Vor Ort werden keine Tickets verkauft – wer ohne Buchung anreist, kommt nicht hinein.'
     buyTicketsAlt: 'Der Klippenweg zum Fuß des Buddhas ist eng und wird bei Andrang im Block freigegeben; wer ihn sehen will, sollte morgens da sein. Die Bootsfahrt zeigt den Kopf, nicht den Fuß.'
     source:
-      label: 'Preise und Buchungsweg (Sekundärquelle: 乐山本地宝, Stand Okt. 2026)'
-      url: 'https://cd.bendibao.com/tour/2026818/212599.shtm'
+      label: '四川省文旅厅 – Winterbetrieb und Preise 乐山大佛 (2024-11-05)'
+      url: 'http://wlt.sc.gov.cn/scwlt/hydt/2024/11/5/d3ede13451ab41c2ac19778a27e5fde7.shtml'
     photo:
       file: 'chengdu/leshan.jpg'
       alt: 'Der Große Buddha von Leshan, in eine Felswand gehauen, von Grün überwachsen'
@@ -364,12 +363,13 @@ sights:
         price: '80 ¥'
       - label: 'Hinterer Berg'
         price: '20 ¥'
+        note: 'Preis laut Kanalangaben; im Preisdeckel-Erlass nur der vordere Berg'
       - label: 'Seilbahn (einfach / hin und zurück)'
         price: '35 ¥ / 60 ¥'
     buyTickets: 'Am Tor oder über das Mini-Programm „青城山都江堰". Eine Reservierung ist nicht zwingend, spart an Feiertagen aber die Kassenschlange.'
     source:
-      label: 'Preise (Sekundärquelle: 成都本地宝, Stand Okt. 2026)'
-      url: 'https://cd.bendibao.com/tour/2026818/212605.shtm'
+      label: '四川省发改委 – 川发改价格〔2018〕406号 (Vorderer Berg 90→80 ¥)'
+      url: 'https://fgw.sc.gov.cn/sfgw/fgyw/2018/8/23/907cad95092d44c597912d3fe86c6c67.shtml'
     photo:
       file: 'chengdu/qingcheng-tor.jpg'
       alt: 'Tor am Eingang zum Qingcheng-Berg mit Schrifttafel und dichtem Grün'
@@ -543,7 +543,7 @@ faq:
     a: 'Ja, und es ist der übliche Weg: 62–75 Minuten mit dem Schnellzug, 154 ¥ in der 2. Klasse. Zwei Nächte Chengdu, zwei Nächte Chongqing ist die kompakteste Route durch Sichuan.'
 changelog:
   - date: '2026-11-02'
-    text: 'Erste Fassung. Preise und Öffnungszeiten für Pandabasis, Wuhou, Du-Fu-Hütte und Sanxingdui aus den offiziellen Seiten; Dujiangyan, Qingcheng und Leshan aus Sekundärquellen, weil die Betreiberseiten beim Prüfen nicht erreichbar waren.'
+    text: 'Erste Fassung. Alle Preise und Öffnungszeiten aus offiziellen Quellen: Betreiberseiten für Pandabasis, Wuhou, Du-Fu-Hütte und Sanxingdui, Preisdeckel-Erlass der Provinz und Winterbetriebs-Meldung der Kulturbehörde für Dujiangyan, Qingcheng und Leshan. Bootsticket Leshan und der hintere Qingcheng-Berg stehen nur in Kanalangaben – im Text so gekennzeichnet.'
 sources:
   - label: '成都大熊猫繁育研究基地 – 票务服务'
     url: 'https://m.panda.org.cn/cn/service/ticket/'
@@ -553,10 +553,10 @@ sources:
     url: 'https://www.cddfct.cn/go-c20.htm'
   - label: '三星堆博物馆 – 参观与 Öffnungszeiten'
     url: 'https://www.sxd.cn/'
-  - label: '成都本地宝 – 都江堰 Preise (Sekundärquelle)'
-    url: 'https://cd.bendibao.com/tour/2024125/177204.shtm'
-  - label: '成都本地宝 – 青城山 Preise (Sekundärquelle)'
-    url: 'https://cd.bendibao.com/tour/2026818/212605.shtm'
+  - label: '四川省发改委 – 川发改价格〔2018〕406号 (都江堰 / 青城山 / 乐山 90→80 ¥, 最高限价)'
+    url: 'https://fgw.sc.gov.cn/sfgw/fgyw/2018/8/23/907cad95092d44c597912d3fe86c6c67.shtml'
+  - label: '四川省文旅厅 – 景区淡季门票与开闭园调整 (2024-11-05)'
+    url: 'http://wlt.sc.gov.cn/scwlt/hydt/2024/11/5/d3ede13451ab41c2ac19778a27e5fde7.shtml'
   - label: '金沙遗址博物馆 Schließung 2025–2027 (新华网)'
     url: 'https://sc.news.cn/20251108/284be358df664a378201aa2fa77e392e/c.html'
 ---
