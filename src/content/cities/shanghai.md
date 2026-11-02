@@ -14,12 +14,12 @@ verified: "2026-11-02"
 order: 15
 hero:
   file: 'shanghai/hero-bund.jpg'
-  alt: 'Blick vom Bund über den Huangpu auf die Skyline von Pudong mit Oriental Pearl Tower und Shanghai Tower'
-  caption: 'Der Blick, für den alle kommen: vom Bund über den Fluss nach Pudong. Links die Kolonialbauten, rechts die Skyline, dazwischen 400 Meter Wasser.'
+  alt: 'Pudong bei Nacht, vom Huangpu aus gesehen: Oriental Pearl Tower links, Shanghai Tower rechts, Spiegelungen im Wasser'
+  caption: 'Pudong bei Nacht, vom Fluss aus: links der Oriental Pearl Tower, in der Mitte Jin-Mao- und SWFC-Turm, rechts der spiralförmige Shanghai Tower. Zwischen den Ufern liegen 400 Meter Wasser.'
   author: 'DvTor8303'
   license: 'CC0'
   licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/deed.en'
-  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Pudong_Skyline_from_The_Bund_20260417.jpg'
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Pudong_skyline_at_night_from_Huangpu_River_20260417_(2).jpg'
 affiliate: ['esim']
 changelog:
   - date: '2026-11-02'
@@ -99,12 +99,12 @@ sights:
       lang: en
     photo:
       file: 'shanghai/hero-bund.jpg'
-      alt: 'Skyline von Pudong, vom Bund aus über den Huangpu gesehen'
-      caption: 'Vom Bund aus: Oriental Pearl Tower, Shanghai Tower und der Jin-Mao-Turm stehen auf der anderen Flussseite in Pudong.'
+      alt: 'Skyline von Pudong bei Nacht mit Spiegelung im Huangpu'
+      caption: 'Die andere Flussseite bei Nacht: Die Beleuchtung ist täglich etwa bis 22:00 an, danach werden die Türme dunkel.'
       author: 'DvTor8303'
       license: 'CC0'
       licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/deed.en'
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Pudong_Skyline_from_The_Bund_20260417.jpg'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Pudong_skyline_at_night_from_Huangpu_River_20260417_(2).jpg'
   - no: 2
     name: '豫园'
     pinyin: 'Yùyuán'

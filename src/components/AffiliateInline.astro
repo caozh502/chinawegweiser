@@ -3,7 +3,7 @@
  * Einzeiliger Partner-Hinweis für Stellen, an denen ein ganzer Kasten zu viel wäre
  * (Startseite, Tabellen, Zwischenüberschriften). Kennzeichnung „Anzeige" ist Pflicht.
  */
-import { affiliates } from '../data/affiliates';
+import { slotFor } from '../data/affiliates';
 
 interface Props {
   /** Nicht `slot` nennen – das ist in Astro reserviert. */
@@ -14,8 +14,8 @@ interface Props {
 }
 
 const { name, prefix, city } = Astro.props;
-const a = affiliates[name];
-const target = (city && a?.urls?.[city]) || a?.url;
+const a = slotFor(name, city);
+const target = a?.url;
 const paid = a?.tracked !== false;
 ---
 

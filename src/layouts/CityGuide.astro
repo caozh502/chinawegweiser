@@ -6,7 +6,7 @@ import Faq from '../components/Faq.astro';
 import SightMap from '../components/SightMap.astro';
 import Toc from '../components/Toc.astro';
 import AffiliateBox from '../components/AffiliateBox.astro';
-import { affiliates } from '../data/affiliates';
+import { affiliates, slotFor } from '../data/affiliates';
 
 import AffiliateInline from '../components/AffiliateInline.astro';
 import QrHint from '../components/QrHint.astro';
@@ -309,8 +309,8 @@ const faqLd =
                   <div class="guide-lead">Warum eine Führung hier hilft</div>
                   <p>{s.guideNote}</p>
                   {s.guideSlot && affiliates[s.guideSlot] && (
-                    <a class="btn btn-small" href={affiliates[s.guideSlot].urls?.[d.city] ?? affiliates[s.guideSlot].url} target="_blank" rel="sponsored nofollow noopener">
-                      {affiliates[s.guideSlot].cta} →
+                    <a class="btn btn-small" href={slotFor(s.guideSlot, d.city)?.url} target="_blank" rel="sponsored nofollow noopener">
+                      {slotFor(s.guideSlot, d.city)?.cta} →
                     </a>
                   )}
                 </div>

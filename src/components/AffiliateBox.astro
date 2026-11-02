@@ -1,5 +1,5 @@
 ---
-import { affiliates } from '../data/affiliates';
+import { slotFor } from '../data/affiliates';
 
 interface Props {
   /** Nicht `slot` nennen – das ist in Astro reserviert. */
@@ -9,8 +9,8 @@ interface Props {
 }
 
 const { name, city } = Astro.props;
-const a = affiliates[name];
-const target = (city && a?.urls?.[city]) || a?.url;
+const a = slotFor(name, city);
+const target = a?.url;
 /* Ohne eigenen Tracking-Link ist es ein normaler Tipp, keine Anzeige. */
 const paid = a?.tracked !== false;
 ---

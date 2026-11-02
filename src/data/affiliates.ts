@@ -12,6 +12,8 @@
  * Konditionen bewusst nicht im Code: Das Repo ist öffentlich, und die
  * Provisionshöhe gehört nicht auf die Website.
  */
+export type SlotVariant = { title?: string; text?: string; cta?: string; url: string };
+
 export type AffiliateSlot = {
   id: string;
   title: string;
@@ -20,6 +22,12 @@ export type AffiliateSlot = {
   url: string;
   /** Stadtspezifische Ziele; Fallback ist `url`. */
   urls?: Record<string, string>;
+  /**
+   * Wenn nicht nur das Ziel, sondern auch der Text stadtabhängig ist
+   * (eine „Führung durch die Verbotene Stadt" darf auf der Shanghai-Seite
+   * nicht auftauchen). Hat Vorrang vor `urls`.
+   */
+  perCity?: Record<string, SlotVariant>;
   /**
    * false = noch kein eigener Tracking-Link. Dann KEINE Kennzeichnung als
    * Anzeige und kein „Der Preis bleibt gleich" – sonst behauptet die Seite
@@ -47,6 +55,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     url: 'https://www.trip.com/hotels/beijing-hotels-list-1/',
     urls: {
       peking: 'https://www.trip.com/hotels/beijing-hotels-list-1/',
+      shanghai: 'https://www.trip.com/hotels/shanghai-hotels-list-2/',
       xian: 'https://www.trip.com/hotels/xi-an-hotels-list-10/',
     },
     hint: 'Der Preis bleibt gleich.',
@@ -60,6 +69,21 @@ export const affiliates: Record<string, AffiliateSlot> = {
     urls: {
       peking: 'https://www.getyourguide.com/beijing-l186/4-hour-private-tour-to-tian-an-men-square-and-forbidden-city-t459862/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=guide-verbotene-stadt',
       xian: 'https://www.getyourguide.de/xi-an-l270/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=xian-guide',
+      shanghai: 'https://www.getyourguide.com/shanghai-l178/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=shanghai-guide',
+    },
+    perCity: {
+      shanghai: {
+        title: 'Führung am Bund und durch die Altstadt',
+        text: 'Die Kolonialbauten am Bund und der Yu-Garten erklären sich nicht von selbst. Geführte Rundgänge mit englischsprachigem Guide, meist mit Eintritt und Teepause.',
+        cta: 'Führungen ansehen',
+        url: 'https://www.getyourguide.com/shanghai-l178/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=shanghai-guide',
+      },
+      xian: {
+        title: 'Führung durch die Terrakotta-Armee',
+        text: 'Vor 8.000 Figuren entscheidet die Erklärung darüber, ob man eine Halle sieht oder ein Grab. Führungen mit Eintritt und Abholung, englischsprachig.',
+        cta: 'Führung ansehen',
+        url: 'https://www.getyourguide.de/xi-an-l270/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=xian-guide',
+      },
     },
     hint: 'Der Preis bleibt gleich.',
   },
@@ -72,6 +96,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     urls: {
       peking: 'https://www.getyourguide.com/beijing-l186/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=peking-city',
       xian: 'https://www.getyourguide.de/xi-an-l270/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=xian-city',
+      shanghai: 'https://www.getyourguide.com/shanghai-l178/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=shanghai-city',
     },
     hint: 'Der Preis bleibt gleich.',
   },
@@ -84,6 +109,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
     urls: {
       peking: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc57-beijing%2F1-things-to-do%2F',
       xian: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc60-xi-an%2F1-things-to-do%2F',
+      shanghai: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc59-shanghai%2F1-things-to-do%2F',
     },
     hint: 'Der Preis bleibt gleich.',
   },
@@ -106,3 +132,17 @@ export const affiliates: Record<string, AffiliateSlot> = {
     hint: 'Der Preis bleibt gleich.',
   },
 };
+
+/** Liefert den Slot mit stadtabhängigem Text und Ziel (Fallback: Standardwerte). */
+export function slotFor(name: string, city?: string) {
+  const a = affiliates[name];
+  if (!a) return undefined;
+  const v = city ? a.perCity?.[city] : undefined;
+  return {
+    ...a,
+    title: v?.title ?? a.title,
+    text: v?.text ?? a.text,
+    cta: v?.cta ?? a.cta,
+    url: v?.url ?? (city ? a.urls?.[city] : undefined) ?? a.url,
+  };
+}
