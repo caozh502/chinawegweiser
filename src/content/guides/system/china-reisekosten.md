@@ -184,7 +184,7 @@ Für Peking und Xi’an zusammen sind **70–90 €** ein guter Richtwert, wenn 
 | Peking → Shanghai (Schnellzug) | 4,5 – 7,5 h | ab 576 ¥ (ca. 77 €) |
 | Peking → Xi’an (Nachtzug, Liegewagen) | 11–12 h | 350–435 ¥ (47–58 €) |
 
-Der Zug ist billiger als Fliegen, wenn man die Fahrt zum Flughafen, das Einchecken und die Wartezeit ehrlich mitrechnet – und er fährt vom Stadtzentrum ins Stadtzentrum.<span class="q">Quelle: <a href="https://www.travelchinaguide.com/china-trains/beijing-xian-highspeed.htm" target="_blank" rel="noopener">TravelChinaGuide</a>, Stand 2026</span>
+Der Zug ist billiger als Fliegen, wenn man die Fahrt zum Flughafen, das Einchecken und die Wartezeit ehrlich mitrechnet – und er fährt vom Stadtzentrum ins Stadtzentrum.<span class="q">Quelle: <a href="https://www.travelchinaguide.com/china-trains/beijing-xian-highspeed.htm" target="_blank" rel="noopener">TravelChinaGuide</a>, Stand 2026</span> Wie man die Tickets ohne chinesisches Konto kauft, steht in [Zug fahren in China](/system/china-zug-buchen/).
 
 ## Eine Woche, zwei Wochen, drei Wochen
 
