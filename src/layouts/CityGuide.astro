@@ -614,6 +614,14 @@ const faqLd =
       </div>
     )}
 
+    <script is:inline>
+      // Nur zum Vergleich: ?bild=oben stellt das Bild über die Überschrift.
+      // Wird entfernt, sobald die Variante entschieden ist.
+      if (new URLSearchParams(location.search).get('bild') === 'oben') {
+        document.documentElement.classList.add('bild-oben');
+      }
+    </script>
+
     {d.experiences.length > 0 && (
       <>
         <h2 id="erlebnisse">Erlebnisse</h2>
