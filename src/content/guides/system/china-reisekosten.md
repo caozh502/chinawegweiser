@@ -196,6 +196,8 @@ Hochgerechnet mit dem Tagesbudget der mittleren Kategorie (90 €/Tag vor Ort), 
 | 14 Tage | 1.260 € | 600 € | **1.860 €** |
 | 21 Tage | 1.890 € | 600 € | **2.490 €** |
 
+Wie man die Tage auf Städte verteilt, ohne den halben Urlaub im Zug zu sitzen, steht in [China-Rundreise: drei Routen](/reise/china-rundreise-2-wochen/).
+
 Der Punkt: **Der Flug fällt nur einmal an, also wird jeder zusätzliche Tag billiger.** Eine Woche China kostet 176 € pro Tag, drei Wochen kosten 119 € pro Tag. Wer ohnehin 550 € für den Flug zahlt, sollte nicht nach sieben Tagen zurückfliegen.
 
 ## Backpacking: 30–45 € pro Tag
