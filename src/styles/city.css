@@ -1148,81 +1148,23 @@
 /* Quellenzeile unter der Preistabelle eines Ortes */
 .s-source { margin: 0.3rem 0 0; }
 
-/* ---------- Erlebnisse & „Wenn noch Zeit ist": Bild-Text-Gewichtung ----------
-   Zwei Fälle, die vorher unschön aussahen:
-   (a) Eintrag ohne Bild – die feste Bildspalte blieb als leere Fläche stehen,
-       der Text wurde in 15rem Breite gequetscht.
-   (b) Eintrag mit genau einem Bild – das Bild klebte oben, darunter blieb
-       der Rest der Spalte leer, während der Text weiterlief. */
+/* ---------- Erlebnisse & „Wenn noch Zeit ist": Bild-Text-Gewichtung ---------- */
 
-/* Ein einzelnes Bild bleibt beim Scrollen neben dem Text stehen,
-   statt oben zu kleben und eine leere Fläche zu hinterlassen. */
-.exp > .e-photo,
-.sight-mini > .m-photo:has(> figure:only-child) {
-  position: sticky;
-  top: 5.5rem;
-  align-self: start;
-}
+/* Kein sticky mehr: seit das Bild ein Band unter den Chips ist, bleibt beim
+   Scrollen nichts stehen. Vorher hing das Bild mit position:sticky am
+   Viewport-Rand, und der folgende Text scrollte darüber – das sah aus wie
+   Text, der auf dem Foto liegt. */
 
-
-
-/* Ohne Bild rücken die Chips in eine schmale Randspalte, der Text läuft
-   daneben – statt einer leeren 15rem-Spalte rechts. */
-.exp:not(:has(.e-photo)) {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-/* Ohne Bild nutzt der Text die volle Breite; die Chips bleiben als Zeile
-   unter dem Titel stehen – wie bei den Kurzkarten in „Wenn noch Zeit ist". */
+/* Ohne Bild nutzt der Text die volle Breite (Chips bleiben als Zeile oben). */
 .exp:not(:has(.e-photo)) .e-text { display: block; }
 
 /* Minikarte ohne Bild: kein leerer Bildstreifen am Rand. */
-.sight-mini:not(:has(.m-photo)) {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-@media (max-width: 44rem) {
-  .exp > .e-photo,
-  .sight-mini > .m-photo {
-    position: static;
-    order: -1;
-  }
-
-  .exp > .e-photo img,
-  .sight-mini > .m-photo img {
-    aspect-ratio: 16 / 9;
-  }
-
-  .sight-mini {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .exp:not(:has(.e-photo)) .e-text {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .exp:not(:has(.e-photo)) .e-meta {
-    grid-column: 1;
-    grid-row: auto;
-    flex-direction: row;
-    margin-top: 0.55rem;
-  }
-
-  .exp:not(:has(.e-photo)) .e-body,
-  .exp:not(:has(.e-photo)) .e-steps,
-  .exp:not(:has(.e-photo)) .e-tip {
-    grid-column: 1;
-  }
-}
+.sight-mini:not(:has(.m-photo)) { grid-template-columns: minmax(0, 1fr); }
 
 /* ---------- Feinschliff Bildspalte in „Wenn noch Zeit ist" und „Erlebnisse" ---------- */
 
 /* Etwas breitere Bildspalte: die Bildunterschrift brach in 12rem auf vier bis
    fünf Zeilen um und zog den Eintrag optisch nach oben auseinander. */
-.sight-mini {
-  grid-template-columns: minmax(0, 1fr) 13.5rem;
-}
-
 .sight-mini .m-photo .photo figcaption,
 .exp .e-photo .photo figcaption {
   font-size: 0.72rem;
