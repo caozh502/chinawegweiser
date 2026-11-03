@@ -24,6 +24,8 @@ affiliate: ['esim']
 changelog:
   - date: '2026-10-30'
     text: 'Seite erstellt. Alle Preise, Öffnungszeiten und Buchungswege gegen offizielle Quellen geprüft (Museum, Provinzdenkmalamt, Museumswebsite); wo Quellen sich widersprechen, steht das im Text.'
+  - date: '2026-11-03'
+    text: 'Ein Bild im Erlebnisse-Abschnitt ergänzt: Leihräder auf der Stadtmauer (Immanuel Giel, CC BY-SA 4.0).'
 sources:
   - label: '秦始皇帝陵博物院 – offizielle Öffnungs- und Buchungsinformation'
     url: 'https://bmy.com.cn/guide/notice/364.html'
@@ -355,6 +357,14 @@ experiences:
     price: '45 ¥ für 3 Std'
     text: '13,74 Kilometer auf einem breiten Steinbelag, an Zinnen vorbei, mit Blicken in die Altstadt und in die Neustadt. Die Räder gibt es an vier Toren, Rückgabe an jedem davon; die Zeit reicht für eine Runde mit Fotostopps.'
     tip: 'Kurz vor Sonnenuntergang starten: Die Rückfahrt ist dann beleuchtet, und man umgeht die Mittagshitze. Nach 20:00 Uhr werden alle Räder am Südtor zurückgegeben, ab 21:30 wird es eng.'
+    photo:
+      file: 'xian/mauer-rad.jpg'
+      alt: 'Reihen gelber Leihfahrräder auf der Stadtmauer von Xi’an vor einem Torturm'
+      caption: 'Leihräder auf der Stadtmauer von Xi’an: 13,74 Kilometer, ein Rad, eine Stunde. (Bildausschnitt)'
+      author: 'Immanuel Giel'
+      license: 'CC BY-SA 4.0'
+      licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Bicycles_Xian_city_wall_Dagny.JPG'
   - name: '大唐不夜城'
     pinyin: 'Dàtáng bùyèchéng'
     german: 'Nachtachse beim Wildgansviertel'

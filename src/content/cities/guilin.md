@@ -405,6 +405,14 @@ experiences:
     price: 'Preis nur im Buchungssystem'
     text: 'Eine Inszenierung von Zhang Yimou auf dem Wasser: 600 Darsteller, Berge als Kulisse, Licht auf dem Fluss. Die Plätze sind in Zonen geteilt (C bis A1), nur die A-Zonen sind überdacht – bei Regen sitzen die anderen im Nassen.'
     tip: 'Der Betreiber veröffentlicht keinen Preis, nur die Zonen. Wer im Regen nicht sitzen will, braucht A; wer nur die Bilder will, kommt mit C zurecht, sieht aber weniger.'
+    photo:
+      file: 'guilin/liusanjie-show.jpg'
+      alt: 'Nächtliche Wasserbühne der Show „Impression Liu Sanjie“ mit beleuchtetem Pavillon und Mondsichel'
+      caption: '„Impression Liu Sanjie“ in Yangshuo: Die Bühne ist der Li-Fluss, die Kulisse sind die Karstberge. (Bildausschnitt)'
+      author: 'Gerd Eichmann'
+      license: 'CC BY-SA 4.0'
+      licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Yangshuo-Impression_Sanjie_Liu-56-2012-gje.jpg'
   - name: '阳朔啤酒鱼'
     pinyin: 'Píjiǔ Yú'
     german: 'Bierfisch nach Yangshuo-Art'
@@ -412,6 +420,14 @@ experiences:
     price: '80–150 ¥ pro Gericht'
     text: 'Ein ganzer Fisch, in Bier geschmort, mit Tomaten, Chili und Knoblauch. Er ist das Regionalgericht der Stadt – und der Grund, warum die Straßen abends nach Bier und gebratenem Knoblauch riechen.'
     tip: 'Der Fisch wird nach Gewicht abgerechnet; vorher fragen, was er wiegt, sonst steht eine Zahl auf der Rechnung, die man nicht erwartet hat.'
+    photo:
+      file: 'guilin/bierfisch.jpg'
+      alt: 'Yangshuo-Bierfisch in einer Metallschale, garniert mit Chili und Frühlingszwiebeln'
+      caption: 'Yangshuo-Bierfisch: Karpfen aus dem Li-Fluss, in Bier geschmort, mit Chili und Frühlingszwiebeln. (Bildausschnitt)'
+      author: 'Filipe Fortes from United States'
+      license: 'CC BY-SA 2.0'
+      licenseUrl: 'https://creativecommons.org/licenses/by-sa/2.0'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Pijiu_Yu_(Beer_fish)_(253141965).jpg'
   - name: 'Zehn-Meilen-Galerie mit dem Rad'
     pinyin: 'Shílǐ Huàláng'
     german: 'Radtour durch die Karstlandschaft'
@@ -533,6 +549,8 @@ faq:
 changelog:
   - date: '2026-11-03'
     text: 'Erste Fassung. Preise aus den Betreiberseiten: Li-Fluss (liriver.com.cn), Elefantenrüsselberg (glljsh.com), Longji (longjitour.com), Yulong (ysylh.cn), Prinzenstadt (glsh-inc.com), Schilfflötenhöhle (wptour.cn). Für Silberhöhle und die Liúsānjiě-Aufführung veröffentlichen die Betreiber keine Preise – dort steht keiner.'
+  - date: '2026-11-03'
+    text: 'Zwei Bilder im Erlebnisse-Abschnitt ergänzt: Yangshuo-Bierfisch (Filipe Fortes, CC BY-SA 2.0) und die Wasserbühne von „Impression Liu Sanjie“ (Gerd Eichmann, CC BY-SA 4.0).'
 sources:
   - label: '桂林漓江风景名胜区 – 水上游览线路价格一览表'
     url: 'https://www.liriver.com.cn/mobile/article/zxlj.tzgg/163'

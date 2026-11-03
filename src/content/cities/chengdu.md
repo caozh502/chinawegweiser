@@ -405,6 +405,14 @@ experiences:
     price: '60–120 ¥ pro Person'
     text: 'Ein Topf mit geteilter Brühe – rot (mala, scharf) und weiß (klar) –, in den man rohes Fleisch, Gemüse und Tofu taucht. Die Schärfe ist nicht die von Chili, sondern die von Sichuanpfeffer: ein betäubendes Kribbeln (麻), das den Mund taub macht.'
     tip: 'Wer nicht geübt ist, bestellt 微辣 (leicht scharf) und nimmt die weiße Seite. Zum Schlucken gibt es Milch oder Sojamilch, kein Wasser – Wasser verteilt das Capsaicin.'
+    photo:
+      file: 'chengdu/hotpot.jpg'
+      alt: 'Geteilter Hotpot-Topf mit zwei Brühen, Fleisch, Pilzen und Gemüse'
+      caption: 'Geteilte Brühe: links mild, rechts scharf – so bestellt man Hotpot, wenn nicht alle scharf essen. (Bildausschnitt)'
+      author: '3steph14'
+      license: 'CC BY-SA 4.0'
+      licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Hot_pot_2.jpg'
   - name: 'Sichuan-Oper mit Gesichtswechsel'
     pinyin: 'Chuānjù Biànliǎn'
     german: 'Maskenwechsel der Sichuan-Oper'
@@ -412,6 +420,14 @@ experiences:
     price: '150–280 ¥'
     text: 'Ein Varieté aus Akrobatik, Gesang und dem berühmten 变脸: Schauspieler wechseln in Sekundenbruchteilen die Masken, ohne dass man die Bewegung sieht. Die Technik ist ein Betriebsgeheimnis und wird nicht außerhalb der Truppe weitergegeben.'
     tip: 'Die Vorstellung im 蜀风雅韵 ist die touristischste, aber auch die mit der besten Technik. Karten am Eingang oder über die Hotelrezeption; Nummern vorn kosten mehr.'
+    photo:
+      file: 'chengdu/bianlian.jpg'
+      alt: 'Darsteller der Sichuan-Oper beim Maskenwechsel, grün bemalte Maske und blauer Kopfschmuck'
+      caption: 'Bianlian, der Maskenwechsel der Sichuan-Oper: Die Masken wechseln in Sekunden, die Technik gilt als Betriebsgeheimnis. (Bildausschnitt)'
+      author: 'RykJ'
+      license: 'CC BY-SA 2.0'
+      licenseUrl: 'https://creativecommons.org/licenses/by-sa/2.0'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sichuan_Opera_Face_Changer_(50427868601).jpg'
 plans:
   - title: 'Chengdu an einem Tag'
     forWhom: 'Transit oder kurzer Zwischenstopp'
@@ -544,6 +560,8 @@ faq:
 changelog:
   - date: '2026-11-02'
     text: 'Erste Fassung. Alle Preise und Öffnungszeiten aus offiziellen Quellen: Betreiberseiten für Pandabasis, Wuhou, Du-Fu-Hütte und Sanxingdui, Preisdeckel-Erlass der Provinz und Winterbetriebs-Meldung der Kulturbehörde für Dujiangyan, Qingcheng und Leshan. Bootsticket Leshan und der hintere Qingcheng-Berg stehen nur in Kanalangaben – im Text so gekennzeichnet.'
+  - date: '2026-11-03'
+    text: 'Zwei Bilder im Erlebnisse-Abschnitt ergänzt: geteilter Hotpot (3steph14, CC BY-SA 4.0) und Bianlian-Maskenwechsel (RykJ, CC BY-SA 2.0).'
 sources:
   - label: '成都大熊猫繁育研究基地 – 票务服务'
     url: 'https://m.panda.org.cn/cn/service/ticket/'

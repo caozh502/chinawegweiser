@@ -24,6 +24,8 @@ affiliate: ['esim']
 changelog:
   - date: '2026-11-02'
     text: 'Seite erstellt. Preise und Öffnungszeiten gegen die offiziellen Seiten von Yu-Garten, Shanghai Museum und der Wasserstadt Zhujiajiao geprüft; die Sonderausstellung im Stammhaus des Museums ist berücksichtigt. Nicht vor Ort geprüft.'
+  - date: '2026-11-03'
+    text: 'Zwei Bilder im Erlebnisse-Abschnitt ergänzt: Ausflugsboot auf dem Huangpu (David Stanley, CC BY 2.0) und Shengjian-Bao (MetaphoX, CC BY 2.0).'
 sources:
   - label: '上海豫园 (Yu-Garten) – offizielle Besuchsinformation: Zeiten, Tarife, Eingänge'
     url: 'https://www.yugarden.com.cn/page/articleview/message.html'
@@ -351,6 +353,14 @@ experiences:
     price: '120–180 ¥'
     text: 'Eine Stunde auf dem Fluss zwischen Bund und Pudong, mit Blick auf beide Ufer. Die Boote legen am 十六铺 (Shiliupu)-Anleger südlich des Bundes ab; die günstigeren fahren 45 Minuten, die teureren mit Abendessen zwei Stunden.'
     tip: 'Die Fahrt lohnt vor allem, wenn man den Bund schon bei Tag gesehen hat: Vom Wasser aus wirken die beleuchteten Fassaden anders als von der Promenade. Tickets am Anleger, Preisunterschiede sind groß – vorher vergleichen.'
+    photo:
+      file: 'shanghai/huangpu-boot.jpg'
+      alt: 'Beleuchtetes Ausflugsboot auf dem Huangpu bei Nacht vor der Skyline von Pudong'
+      caption: 'Ausflugsboot auf dem Huangpu: die günstigste Art, die Skyline von beiden Ufern zu sehen. (Bildausschnitt)'
+      author: 'David Stanley from Nanaimo, Canada'
+      license: 'CC BY 2.0'
+      licenseUrl: 'https://creativecommons.org/licenses/by/2.0'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Huangpu_River_Boat_(38852714630).jpg'
   - name: '生煎包'
     pinyin: 'Shēngjiānbāo'
     german: 'Gebratene Teigtaschen'
@@ -358,6 +368,14 @@ experiences:
     price: '15–30 ¥ für sechs Stück'
     text: 'Die Shanghaier Version der Teigtasche: unten knusprig gebraten, oben weich, mit Fleisch und Brühe gefüllt. Die bekannteste Kette ist 小杨生煎 (Yang’s Dumplings), die dichteste Filiale am 吴江路 (Wujiang Road) nahe Jing’an.'
     tip: 'Erst in die Tasche beißen, Dampf entweichen lassen, dann essen – sonst verbrennt man sich den Mund. Dazu ein Becher Sojamilch, das ist das Standardfrühstück.'
+    photo:
+      file: 'shanghai/shengjian.jpg'
+      alt: 'Teller mit gebratenen Shengjian-Bao, bestreut mit Sesam und Frühlingszwiebeln'
+      caption: 'Shengjian bao direkt aus der Pfanne: unten kross, oben weich, innen heiße Brühe. (Bildausschnitt)'
+      author: 'Metaphox'
+      license: 'CC BY 2.0'
+      licenseUrl: 'https://creativecommons.org/licenses/by/2.0'
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Sheng_Jian_Bao_at_Xiao_Yang_Sheng_Jian_in_Shanghai_China.jpg'
 plans:
   - title: 'Shanghai an einem Tag'
     forWhom: 'Umstieg oder Zwischenstopp'
