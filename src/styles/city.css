@@ -1292,22 +1292,3 @@
   }
 }
 
-/* ---------- Variante B: Bild zuerst (Vergleich, ?bild=oben) ----------
-   Magazin-Aufmacher: das Foto steht über Nummer und Namen, Text darunter.
-   Wird nur bei ?bild=oben aktiviert. */
-html.bild-oben .sight-mini,
-html.bild-oben .exp {
-  display: flex;
-  flex-direction: column;
-}
-
-html.bild-oben .sight-mini > .m-photo,
-html.bild-oben .exp > .e-photo {
-  order: -1;
-  margin: 0 0 1.05rem;
-}
-
-html.bild-oben .sight-mini > .m-photo .photo img,
-html.bild-oben .exp > .e-photo .photo img {
-  aspect-ratio: 16 / 9;
-}
