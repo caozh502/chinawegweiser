@@ -482,6 +482,14 @@ const faqLd =
                       {s.duration && <span class="chip">{s.duration}</span>}
                       <span class={`chip book-${s.booking}`}>{bookingLabel[s.booking]}</span>
                     </div>
+                  </div>
+                  {s.photo && (
+                    <div class="m-photo">
+                      <Photo photo={s.photo} />
+                      {s.photos.map((p) => <Photo photo={p} />)}
+                    </div>
+                  )}
+                  <div class="m-text m-body">
                     {s.warn && <p class="warn-line">{s.warn}</p>}
                     {s.note && <p class="s-note">{s.note}</p>}
                     {s.nearby && <p class="near-line">{s.nearby}</p>}
@@ -514,12 +522,6 @@ const faqLd =
                       </dl>
                     )}
                   </div>
-                  {s.photo && (
-                    <div class="m-photo">
-                      <Photo photo={s.photo} />
-                      {s.photos.map((p) => <Photo photo={p} />)}
-                    </div>
-                  )}
                 </li>
               ))}
             </ul>
@@ -616,35 +618,32 @@ const faqLd =
       <>
         <h2 id="erlebnisse">Erlebnisse</h2>
         <p class="sources" style="margin-top:-.4rem">
-          Drei Dinge, die man in Peking tut und nicht nur ansieht – mit Preisen und dem, was
-          schiefgehen kann.
+          Dinge, die man tut statt ansieht – mit Preisen und dem, was schiefgehen kann.
         </p>
         <div class="exp-list">
           {d.experiences.map((e) => (
             <article class="exp">
-              <div class="e-text">
-                <div class="e-head">
-                  <h3>{e.german}</h3>
-                  {e.name && (
-                    <span class="e-name">
-                      {e.name}
-                      {e.pinyin ? ` · ${e.pinyin}` : ''}
-                    </span>
-                  )}
-                </div>
-                <div class="e-meta">
-                  {e.when && <span class="chip">{e.when}</span>}
-                  {e.price && <span class="chip">{e.price}</span>}
-                </div>
-                <p class="e-body">{e.text}</p>
-                {e.steps.length > 0 && (
-                  <ol class="e-steps">
-                    {e.steps.map((st) => <li>{st}</li>)}
-                  </ol>
+              <div class="e-head">
+                <h3>{e.german}</h3>
+                {e.name && (
+                  <span class="e-name">
+                    {e.name}
+                    {e.pinyin ? ` · ${e.pinyin}` : ''}
+                  </span>
                 )}
-                {e.tip && <p class="e-tip">{e.tip}</p>}
+              </div>
+              <div class="e-meta">
+                {e.when && <span class="chip">{e.when}</span>}
+                {e.price && <span class="chip">{e.price}</span>}
               </div>
               {e.photo && <div class="e-photo"><Photo photo={e.photo} /></div>}
+              <p class="e-body">{e.text}</p>
+              {e.steps.length > 0 && (
+                <ol class="e-steps">
+                  {e.steps.map((st) => <li>{st}</li>)}
+                </ol>
+              )}
+              {e.tip && <p class="e-tip">{e.tip}</p>}
             </article>
           ))}
         </div>

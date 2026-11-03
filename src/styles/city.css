@@ -709,7 +709,7 @@
 
 .sight-mini {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 10.5rem;
+  grid-template-columns: minmax(0, 1fr) 12rem;
   gap: 1.2rem;
   align-items: start;
   padding: 1.15rem 0 1.25rem;
@@ -846,8 +846,8 @@
 
 .exp {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 15rem;
-  gap: 1.6rem;
+  grid-template-columns: minmax(0, 1fr) 16.5rem;
+  gap: 1.8rem;
   padding-top: 1.4rem;
   border-top: 1px solid var(--line);
   align-items: start;
@@ -1147,3 +1147,147 @@
 }
 /* Quellenzeile unter der Preistabelle eines Ortes */
 .s-source { margin: 0.3rem 0 0; }
+
+/* ---------- Erlebnisse & „Wenn noch Zeit ist": Bild-Text-Gewichtung ----------
+   Zwei Fälle, die vorher unschön aussahen:
+   (a) Eintrag ohne Bild – die feste Bildspalte blieb als leere Fläche stehen,
+       der Text wurde in 15rem Breite gequetscht.
+   (b) Eintrag mit genau einem Bild – das Bild klebte oben, darunter blieb
+       der Rest der Spalte leer, während der Text weiterlief. */
+
+/* Ein einzelnes Bild bleibt beim Scrollen neben dem Text stehen,
+   statt oben zu kleben und eine leere Fläche zu hinterlassen. */
+.exp > .e-photo,
+.sight-mini > .m-photo:has(> figure:only-child) {
+  position: sticky;
+  top: 5.5rem;
+  align-self: start;
+}
+
+
+
+/* Ohne Bild rücken die Chips in eine schmale Randspalte, der Text läuft
+   daneben – statt einer leeren 15rem-Spalte rechts. */
+.exp:not(:has(.e-photo)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Ohne Bild nutzt der Text die volle Breite; die Chips bleiben als Zeile
+   unter dem Titel stehen – wie bei den Kurzkarten in „Wenn noch Zeit ist". */
+.exp:not(:has(.e-photo)) .e-text { display: block; }
+
+/* Minikarte ohne Bild: kein leerer Bildstreifen am Rand. */
+.sight-mini:not(:has(.m-photo)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (max-width: 44rem) {
+  .exp > .e-photo,
+  .sight-mini > .m-photo {
+    position: static;
+    order: -1;
+  }
+
+  .exp > .e-photo img,
+  .sight-mini > .m-photo img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .sight-mini {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .exp:not(:has(.e-photo)) .e-text {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .exp:not(:has(.e-photo)) .e-meta {
+    grid-column: 1;
+    grid-row: auto;
+    flex-direction: row;
+    margin-top: 0.55rem;
+  }
+
+  .exp:not(:has(.e-photo)) .e-body,
+  .exp:not(:has(.e-photo)) .e-steps,
+  .exp:not(:has(.e-photo)) .e-tip {
+    grid-column: 1;
+  }
+}
+
+/* ---------- Feinschliff Bildspalte in „Wenn noch Zeit ist" und „Erlebnisse" ---------- */
+
+/* Etwas breitere Bildspalte: die Bildunterschrift brach in 12rem auf vier bis
+   fünf Zeilen um und zog den Eintrag optisch nach oben auseinander. */
+.sight-mini {
+  grid-template-columns: minmax(0, 1fr) 13.5rem;
+}
+
+.sight-mini .m-photo .photo figcaption,
+.exp .e-photo .photo figcaption {
+  font-size: 0.72rem;
+  line-height: 1.38;
+  gap: 0.1rem 0.35rem;
+}
+
+@media (max-width: 44rem) {
+  .sight-mini {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+}
+
+
+
+/* ---------- Kurzkarten und Erlebnisse: durchgehend eine Spalte ----------
+   In denselben Listen stehen Einträge mit und ohne Bild (Shanghai: Tianzifang
+   ohne, Zhujiajiao mit). Eine feste Bildspalte hinterlässt bei den Einträgen
+   ohne Bild eine leere Fläche; umgekehrt springt die Lesekante, wenn manche
+   Einträge zweispaltig sind und andere nicht. Deshalb: Text immer volle
+   Breite, das Bild als Band darunter – unabhängig davon, ob es eines gibt. */
+.sight-mini,
+.exp {
+  display: block;
+}
+
+.sight-mini > .m-photo,
+.exp > .e-photo {
+  position: static;
+  margin: 1.1rem 0 0;
+}
+
+.sight-mini > .m-photo .photo img,
+.exp > .e-photo .photo img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Bei mehreren Bildern in einer Kurzkarte bleibt das erste das Band,
+   die übrigen stehen als schmale Streifen darunter. */
+.sight-mini > .m-photo .photo + .photo img {
+  aspect-ratio: 21 / 7;
+}
+
+/* Bild sitzt jetzt zwischen Fakten-Chips und Detailtext: Abstand nach oben
+   knapp (es gehört zum Kopf), nach unten großzügiger (es trennt vom Text). */
+.sight-mini > .m-photo,
+.exp > .e-photo {
+  margin: 0.95rem 0 1.15rem;
+}
+
+.sight-mini > .m-body {
+  margin-top: 0;
+}
+
+/* Kurzkarten und Erlebnisse werden nicht mehr über .e-text verschachtelt. */
+.exp > .e-body { margin-top: 0; }
+
+/* Auf dem Telefon lieber 16:9 als ein schmaler 21:9-Streifen. */
+@media (max-width: 44rem) {
+  .sight-mini > .m-photo .photo img,
+  .exp > .e-photo .photo img {
+    aspect-ratio: 16 / 9;
+  }
+}
