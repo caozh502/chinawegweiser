@@ -13,13 +13,13 @@ status: in-arbeit
 verified: "2026-10-30"
 order: 20
 hero:
-  file: 'xian/hero-wall.jpg'
-  alt: 'Stadtmauer von Xi''an an der Südostecke, Blick entlang der Zinnen'
-  caption: 'Die Mauer ist 13,74 Kilometer lang und durchgehend begehbar – der einzige Ort in China, an dem das in dieser Geschlossenheit möglich ist.'
-  author: 'Fredlyfish4'
-  license: 'CC BY-SA 4.0'
-  licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0'
-  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Xian_city_wall_southeast_corner.jpg'
+  file: 'xian/hero-terrakotta.jpg'
+  alt: 'Terrakotta-Krieger in Grube 1: Reihe lebensgroßer Figuren mit Rüstungen und Zopfknoten'
+  caption: 'Grube 1: Tausende Krieger in Reihung, keiner dem anderen gleich – gebrannt als Grabwache des ersten Kaisers.'
+  author: 'Gary Lee Todd'
+  license: 'CC0 1.0'
+  licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/'
+  sourceUrl: 'https://commons.wikimedia.org/wiki/File:Qin_Terracotta_Warriors,_Pit_1_08.jpg'
 affiliate: ['esim']
 changelog:
   - date: '2026-10-30'
