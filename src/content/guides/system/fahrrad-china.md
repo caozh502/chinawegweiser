@@ -6,7 +6,7 @@ city: system
 category: transport
 price: '1,88–1,99 ¥ pro Fahrt (Peking, 60 Min.)'
 status: quellen
-verified: '2026-10-30'
+verified: '2026-11-03'
 hero:
   file: 'system/bike-row.jpg'
   alt: 'Reihe bunter Leihräder am Straßenrand in Peking, dahinter ein Laden mit chinesischem Schild'
@@ -69,6 +69,10 @@ faq:
     a: 'Mini-Programm schließen und neu öffnen. Bleibt die Fahrt aktiv, mach ein Foto vom abgeschlossenen Rad und schreib dem Support in der App – das Foto ist der Nachweis, dass du nicht weitergefahren bist.'
   - q: 'Gilt Helmpflicht?'
     a: 'Auf dem Fahrrad nicht. Auf Elektro-Leihrädern in Peking seit dem 1. Mai 2026 schon: Fahrer und Mitfahrer müssen Helm tragen. E-Scooter und Hoverboards sind auf Straßen generell verboten.'
+  - q: 'Was mache ich bei einem Unfall mit dem Leihrad?'
+    a: 'Notarzt 120, Polizei 122, danach Fotos von Rad, Schaden und Unfallstelle. Die Meldung im Mini-Programm unter „Hilfe“ ist die Grundlage für die Versicherung des Anbieters – ohne Polizeiprotokoll und Fotos zahlte in vergleichbaren Fällen niemand. Bei reinem Sachschaden ohne Person reicht die Meldung im Programm.'
+  - q: 'Kann ich ein Leihrad den ganzen Tag behalten?'
+    a: 'Technisch ja, praktisch nein: Die Fahrt läuft weiter und wird nach Zeit abgerechnet, bis du sie in der App beendest. Für einen Tagesausflug ist ein Mietrad aus einem Laden (30–60 ¥ pro Tag) günstiger als ein Leihrad, das acht Stunden weiterläuft.'
 order: 35
 ---
 
@@ -167,5 +171,27 @@ Das ist kein Ersatz für ein Leihrad, sondern eine eigene Attraktion – und der
 | 3–8 km | **U-Bahn** | 3–5 ¥, schneller als jedes Rad im Verkehr |
 | über 8 km oder Regen | **DiDi** | 40 ¥ für 10 km, trocken und mit Gepäck |
 | Tiananmen, Verbotene Stadt | **zu Fuß** | keine Abstellzone, kein Zutritt für Fahrzeuge |
+
+## Hellobike: der Anbieter, den man in kleineren Städten braucht
+
+Drei Anbieter teilen den Markt: **Meituan** (gelbe Räder), **Qingju** (grün, gehört zu DiDi) und **HelloBike** (blau-weiß). In Peking, Shanghai und Xi'an stehen alle drei an fast jeder Ecke; in Guilin oder in kleineren Städten bleibt oft nur Meituan und HelloBike. Alle drei laufen als Mini-Programm in Alipay – du brauchst also keine zusätzliche App, nur dein Alipay-Konto.
+
+Was das praktisch bedeutet: Wenn an deiner Unterkunft keine Meituan-Räder stehen, heißt das nicht, dass es dort keine Leihräder gibt. Öffne in Alipay das HelloBike-Mini-Programm und schau auf die Karte – oft sind die blauen Räder zwei Straßen weiter verfügbar, während die gelben gerade alle in einer anderen Zone stehen.
+
+## Altersgrenzen und E-Bikes
+
+In China darf man ab **12 Jahren** Fahrrad fahren, ein E-Bike erst ab **16**. Für Familien heißt das: Ein Kind unter 12 kann nicht selbst fahren, auch nicht auf einem Leihrad. Anbieter prüfen das nicht aktiv, aber bei einem Unfall ist das der Punkt, an dem die Versicherung nicht zahlt.
+
+Bei E-Leihrädern (die mit Akku und Gasgriff) gilt in den meisten Städten **Helmpflicht**, und sie sind häufig auf bestimmte Bezirke begrenzt – wer über die Grenze fährt, wird automatisch langsamer oder der Motor schaltet ab. Als Reisender ohne Helm ist das keine gute Idee: Bußgeld, und bei Kontrollen wird der Helm tatsächlich geprüft.
+
+**Wovon wir abraten:** privat gemietete E-Scooter oder Roller. Dafür braucht man in China einen Führerschein der Klasse F bzw. E, und ein deutscher Motorradführerschein wird nicht automatisch anerkannt. Die Leihräder mit Pedalantrieb sind die einzige Variante, die ohne Papiere funktioniert.
+
+## Wenn etwas passiert
+
+Drei Fälle, drei Wege:
+
+- **Unfall mit Personenschaden:** Notarzt 120, Polizei 122. Fotos von der Stelle, vom Rad und vom Schaden machen; im Mini-Programm unter „Hilfe / Unfall“ melden. Die Anbieter haben eine Versicherung, die aber ohne Polizeiprotokoll nicht greift.
+- **Panne oder platter Reifen:** Rad in eine erlaubte Zone schieben, Fahrt beenden, im Mini-Programm „Reparatur melden“ (报修) antippen. Das kostet nichts – der nächste Nutzer meldet es sonst, und du haftest nicht.
+- **Rad weg oder gestohlen:** Während der Fahrt ist das Rad deinem Konto zugeordnet. Wird es gestohlen, kann der Anbieter den Restwert verlangen – je nach Modell mehrere hundert Yuan. Deshalb: Fahrt immer beenden, wenn du das Rad abstellst, und das Schloss tatsächlich schließen. Ein „nur kurz reinspringen“ mit laufender Fahrt ist der teuerste Fehler, den man mit einem Leihrad machen kann.
 
 **Unsere Linie:** Wir beschreiben den Weg über Alipay, weil er ohne chinesische Nummer, ohne Kaution und ohne zweite App funktioniert. Wir empfehlen keine gekauften Konten oder „Registrierungsservices" – die kosten mehr als die erste Jahreskarte und laufen mit deinem Pass.

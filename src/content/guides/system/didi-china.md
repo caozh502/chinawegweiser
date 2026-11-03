@@ -14,7 +14,7 @@ city: system
 category: transport
 price: 'Startpreis 13 ¥, 10 km etwa 40 ¥'
 status: quellen
-verified: '2026-10-30'
+verified: '2026-11-03'
 sources:
   - label: 'Trip.com – How to Use DiDi in China for Foreigners (Stand Mai 2026)'
     url: 'https://www.trip.com/guide/transport/how-to-use-didi-in-china.html'
@@ -46,6 +46,10 @@ faq:
     a: 'Nein. Bestellung, Karte und Bezahlung laufen über Daten. Ohne eSIM oder chinesische SIM funktioniert die App nicht – das ist der Punkt, an dem die meisten am Flughafen scheitern.'
   - q: 'Ist DiDi sicher?'
     a: 'Die App zeigt vor der Abfahrt Kennzeichen, Fahrzeug und Fahrername und zeichnet die Strecke auf. Im „Safety Center" gibt es einen Notruf, der direkt mit der Polizei (110) verbunden wird, und die Möglichkeit, die Fahrt mit Kontakten zu teilen.'
+  - q: 'Kann ich eine Fahrt zum Flughafen vorher buchen?'
+    a: 'Ja, DiDi erlaubt Reservierungen mehrere Tage im Voraus. Der Preis ist dabei eine Schätzung, die endgültige Abrechnung erfolgt nach der Fahrt. Am Flughafen die Abholzone im Parkhaus nutzen, nicht die Taxi-Ebene – die App zeigt den Weg mit Foto.'
+  - q: 'Bekomme ich eine Quittung für die Fahrt?'
+    a: 'Jede Fahrt steht in der App mit Datum, Strecke und Preis, das genügt als Beleg. Eine chinesische Steuerrechnung (发票) lässt sich in der App anfordern, ist für deutsche Buchhaltung aber meist nicht verwertbar.'
 order: 30
 ---
 
@@ -117,5 +121,34 @@ Zwischen 7 und 9 Uhr sowie 17 und 19 Uhr steht man in Peking auch mit DiDi. Die 
 ## Sicherheit
 
 DiDi zeigt vor der Abfahrt Kennzeichen, Fahrzeugmodell und Namen des Fahrers; die Fahrt wird aufgezeichnet. Im Safety Center gibt es einen Notruf, der direkt bei der Polizei (110) landet, und eine Funktion, mit der du die Fahrt live mit Kontakten teilst. Das ist mehr, als ein deutsches Taxi bietet – die Grundregeln bleiben trotzdem: nur in Fahrzeuge einsteigen, deren Kennzeichen in der App steht, und nachts nicht allein in einen Wagen ohne verifiziertes Profil.
+
+## Fahrt zum Flughafen vorher buchen
+
+DiDi kann Fahrten bis zu mehrere Tage im Voraus reservieren (预约). Das ist die Antwort auf den 5-Uhr-Flug, bei dem man um drei Uhr morgens kein Auto per App finden will.
+
+Drei Dinge dazu:
+
+- **Der Preis wird bei der Reservierung geschätzt, nicht festgeschrieben.** Weicht der Verkehr ab, zahlt man den tatsächlichen Fahrpreis. Bei einer Nachtfahrt ist das selten ein Problem.
+- **Flughäfen haben feste Abholzonen.** In Peking Capital, Peking Daxing und Shanghai Pudong ist das ein eigener Bereich im Parkhaus, nicht die Ankunftsebene. Die App zeigt nach der Bestellung eine Wegbeschreibung mit Foto – die folgen, nicht den Schildern „Taxi“.
+- **Der Fahrer ruft an.** Mit deutscher Nummer kann das teuer werden. Nutze im Zweifel den Chat in der App, der übersetzt automatisch. Schreib „I am at gate 3, black jacket“ – das reicht.
+
+## Wenn der Fahrer abbricht
+
+Kommt vor, meist weil er die Abholposition nicht findet. Du wirst automatisch neu vermittelt oder bestellst erneut – Kosten entstehen nicht, solange die Fahrt nicht begonnen hat.
+
+Zwei Situationen, in denen du aufpassen musst:
+
+- **Der Fahrer bittet dich, die Fahrt in der App zu stornieren und bar zu zahlen.** Nicht machen. Ohne Fahrt in der App gibt es keinen Preis, keinen Versicherungsschutz und keinen Nachweis. Höflich ablehnen, neu bestellen.
+- **Der Fahrer steht 200 Meter weiter und ruft „I'm here“.** Das ist normal, chinesische Adressen sind für Fahrer oft eindeutiger als für dich. Auf die Kartenposition in der App schauen, nicht auf die Straßenadresse.
+
+## Gepäck, Quittung, Trinkgeld
+
+- **Gepäck:** Express-Wagen haben einen normalen Kofferraum, zwei große Koffer passen. Bei drei oder mehr Taschen besser „六座“ (Sechssitzer) wählen – kostet etwa das 1,5-Fache.
+- **Quittung:** Jede Fahrt steht in der App mit Datum, Strecke und Preis. Eine chinesische Steuerrechnung (发票) lässt sich in der App anfordern, sie ist für deutsche Buchhaltung aber meist wertlos – ein Screenshot der Fahrtübersicht genügt als Beleg.
+- **Trinkgeld:** Nicht üblich und nicht erwartet. Die App bietet optional ein Trinkgeld an; es ist freiwillig und ändert nichts an der Fahrt.
+
+## Warum Amap für dich nicht funktioniert
+
+Einheimische bestellen Taxis oft über **Amap** (高德), die Karten-App, die alles integriert: Karte, ÖPNV, Taxi, Leihrad. Für Reisende ist sie der falsche Weg: Die Oberfläche ist überwiegend chinesisch, die Taxivermittlung setzt eine chinesische Zahlungsfreigabe voraus, und ohne chinesische Nummer fehlt die Bestätigung. DiDi ist die einzige Variante, die mit deutschem Pass und deutscher Karte zuverlässig läuft.
 
 **Unsere Linie:** Wir beschreiben den Weg, der für Reisende funktioniert und legal ist. Wir empfehlen keine Apps, die eine chinesische Nummer vortäuschen oder einen Zugang außerhalb der offiziellen Kanäle bauen – das braucht für DiDi niemand.
