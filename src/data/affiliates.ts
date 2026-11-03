@@ -57,6 +57,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
       peking: 'https://www.trip.com/hotels/beijing-hotels-list-1/',
       shanghai: 'https://www.trip.com/hotels/shanghai-hotels-list-2/',
       chengdu: 'https://www.trip.com/hotels/chengdu-hotels-list-28/',
+      guilin: 'https://www.trip.com/hotels/guilin-hotels-list-33/',
       xian: 'https://www.trip.com/hotels/xi-an-hotels-list-10/',
     },
     hint: 'Der Preis bleibt gleich.',
@@ -72,6 +73,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
       xian: 'https://www.getyourguide.de/xi-an-l270/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=xian-guide',
       shanghai: 'https://www.getyourguide.com/shanghai-l178/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=shanghai-guide',
       chengdu: 'https://www.getyourguide.com/chengdu-l1697/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=chengdu-guide',
+      guilin: 'https://www.getyourguide.com/guilin-l269/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=guilin-guide',
     },
     perCity: {
       shanghai: {
@@ -79,6 +81,12 @@ export const affiliates: Record<string, AffiliateSlot> = {
         text: 'Die Kolonialbauten am Bund und der Yu-Garten erklären sich nicht von selbst. Geführte Rundgänge mit englischsprachigem Guide, meist mit Eintritt und Teepause.',
         cta: 'Führungen ansehen',
         url: 'https://www.getyourguide.com/shanghai-l178/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=shanghai-guide',
+      },
+      guilin: {
+        title: 'Li-Fluss-Kreuzfahrt und Karstlandschaft',
+        text: 'Die Boote fahren morgens in Blöcken ab; Tickets am Schalter sind selten, geführte Touren bringen Abholung vom Hotel und die Fahrt zum Ableger mit. Wer die 4-Sterne-Boote will, zahlt deutlich mehr als für die 3-Sterne-Variante.',
+        cta: 'Touren ansehen',
+        url: 'https://www.getyourguide.com/guilin-l269/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=guilin-liriver',
       },
       chengdu: {
         title: 'Führung durch die Pandabasis und die Altstadt',
@@ -106,6 +114,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
       xian: 'https://www.getyourguide.de/xi-an-l270/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=xian-city',
       shanghai: 'https://www.getyourguide.com/shanghai-l178/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=shanghai-city',
       chengdu: 'https://www.getyourguide.com/chengdu-l1697/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=chengdu-city',
+      guilin: 'https://www.getyourguide.com/guilin-l269/?partner_id=W7WGR77&utm_medium=online_publisher&cmp=guilin-city',
     },
     hint: 'Der Preis bleibt gleich.',
   },
@@ -120,6 +129,7 @@ export const affiliates: Record<string, AffiliateSlot> = {
       xian: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc60-xi-an%2F1-things-to-do%2F',
       shanghai: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc59-shanghai%2F1-things-to-do%2F',
       chengdu: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc61-chengdu%2F1-things-to-do%2F',
+      guilin: 'https://klook.tpo.lv/m98qHwa2?u=https%3A%2F%2Fwww.klook.com%2Fde%2Fdestination%2Fc62-guilin%2F1-things-to-do%2F',
     },
     hint: 'Der Preis bleibt gleich.',
   },
