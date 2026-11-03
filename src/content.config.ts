@@ -49,6 +49,8 @@ const sight = z.object({
   nearby: z.string().optional(),
   /** Begründung, warum hier eine Führung hilft (erscheint als eigener Kasten). */
   guideNote: z.string().optional(),
+  /** Eigene Ueberschrift des Erklaer-Kastens; ohne Angabe entscheidet der Slot. */
+  guideHeading: z.string().optional(),
   /** Welcher Affiliate-Slot den Führungs-Link liefert (z. B. 'tours'). */
   guideSlot: z.string().optional(),
   lat: z.number().optional(),

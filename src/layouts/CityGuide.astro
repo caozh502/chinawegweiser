@@ -28,6 +28,18 @@ interface Props {
 
 const { entry } = Astro.props;
 const d = entry.data;
+
+/**
+ * Buchen-Link eines Ortes - nur wenn Ort UND Stadt einen passenden Slot haben.
+ * Der Kasten darunter ist sonst reine Information und darf keinen Anzeigen-
+ * Charakter haben (Anzeige-Badge nur bei echtem Link, § 5a UWG).
+ */
+const guideLink = (s: (typeof d.sights)[number]) =>
+  s.guideSlot ? slotFor(s.guideSlot, d.city)?.url : undefined;
+
+/** Ohne Link verspricht die Ueberschrift keine Fuehrung, die es nicht gibt. */
+const guideHeading = (s: (typeof d.sights)[number]) =>
+  s.guideHeading ?? (guideLink(s) ? 'Warum eine Führung hier hilft' : 'Was hier anders läuft');
 const { Content } = await render(entry);
 
 const subpages = (await getCollection('guides'))
@@ -303,13 +315,13 @@ const faqLd =
               {s.note && <p class="s-note">{s.note}</p>}
               {s.guideNote && (
                 <div class="guide-box">
-                  {/* Badge nur, wenn darunter auch ein Anzeigen-Link steht – sonst
-                      wirkt der Kasten als Werbung ohne Ziel. */}
-                  {s.guideSlot && affiliates[s.guideSlot] && <span class="aff-badge">Anzeige</span>}
-                  <div class="guide-lead">Warum eine Führung hier hilft</div>
+                  {/* Badge und Button haengen am selben Link: gibt es keinen
+                      buchbaren Slot, bleibt der Kasten reine Information. */}
+                  {guideLink(s) && <span class="aff-badge">Anzeige</span>}
+                  <div class="guide-lead">{guideHeading(s)}</div>
                   <p>{s.guideNote}</p>
-                  {s.guideSlot && affiliates[s.guideSlot] && (
-                    <a class="btn btn-small" href={slotFor(s.guideSlot, d.city)?.url} target="_blank" rel="sponsored nofollow noopener">
+                  {guideLink(s) && (
+                    <a class="btn btn-small" href={guideLink(s)} target="_blank" rel="sponsored nofollow noopener">
                       {slotFor(s.guideSlot, d.city)?.cta} →
                     </a>
                   )}
