@@ -22,6 +22,8 @@ hero:
   sourceUrl: 'https://commons.wikimedia.org/wiki/File:Forbidden_City_Panorama_3.jpg'
 affiliate: ['esim']
 changelog:
+  - date: '2026-11-03'
+    text: '798 von „optional“ auf ausdrücklich nicht empfohlen umgestellt: Künstlerszene abgewandert, Gelände heute Erlebnisquartier. Belegt mit Beijing Daily/新华网 (14.05.2025: 500+ Kultur- und Kreativbetriebe, 12,5 Mio. Besucher). Aus beiden Routen entfernt.'
   - date: '2026-10-29'
     text: 'Je Sehenswürdigkeit Öffnungszeiten, Schließtage, nächste Station und Einzeltarife ergänzt; Videoempfehlungen hinzugefügt.'
   - date: '2026-10-29'
@@ -376,12 +378,14 @@ sights:
   - no: 8
     name: '798 艺术区'
     pinyin: 'Yìshùqū'
-    german: 'Kunstviertel 798'
+    german: 'Kunstviertel 798 (heute Erlebnisquartier)'
     tier: optional
-    price: 'kostenlos (Galerien teils Eintritt)'
-    duration: '2–3 Std'
+    price: 'kostenlos (Ausstellungen 30–150 ¥)'
+    duration: '1,5–2 Std'
     booking: none
-    note: 'Ehemalige Fabrikhallen, heute Galerien. Am Wochenende voll, unter der Woche besser. Weit im Nordosten – mit der U-Bahn Linie 14.'
+    note: 'Fabrikhallen der 1950er, heute Erlebnisquartier: über 500 Kultur- und Kreativbetriebe, rund 1.000 Ausstellungen im Jahr und 12,5 Millionen Besucher (798 und 751 zusammen) – mehr als in den meisten 5A-Scenic-Areas. Als Spaziergang durch die Bauhaus-Hallen interessant, als Künstlerviertel nicht mehr.'
+    warn: 'Nicht empfohlen, wenn du Ateliers und die Kunstszene sehen willst. Die Mieten haben die Künstler verdrängt, weitergezogen sind sie nach Caochangdi, Heiqiao und Songzhuang; von den 500 Betrieben sind die meisten Läden, Cafés und Ausstellungsflächen. Wer Kunst sehen will, geht gezielt in UCCA oder M Woods – wer Ateliers erwartet, wird enttäuscht.'
+    source: { label: 'Beijing Daily/新华网 über 798·751, 14.05.2025', url: 'https://app.xinhuanet.com/news/article.html?articleId=51fc6da98d758f711c687cf5c03b82e0' }
     lat: 39.98294
     lng: 116.48978
     hours: 'Gelände jederzeit; Galerien meist 10:00–18:00'
@@ -484,6 +488,8 @@ experiences:
       licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0'
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:Yinzha_Hutong,_Beijing,_from_Wusi_Street.jpg'
 faq:
+  - q: 'Lohnt sich das Kunstviertel 798 noch?'
+    a: 'Nur bedingt. Das Gelände ist ein Erlebnisquartier mit Cafés, Läden und Ausstellungen – über 500 Kultur- und Kreativbetriebe in 798 und 751, rund 12,5 Millionen Besucher im Jahr. Die Künstlerszene ist wegen der Mieten nach Caochangdi, Heiqiao und Songzhuang abgewandert. Wer zeitgenössische Kunst sehen will, geht gezielt in UCCA oder M Woods (Eintritt 30–150 ¥) und plant dafür einen halben Tag. Wer Ateliers und Galerien mit Künstlern erwartet, fährt besser nach Caochangdi.'
   - q: 'Wie viele Tage braucht man für Peking?'
     a: 'Ein Tag reicht für die Achse Tiananmen – Verbotene Stadt – Jingshan. Drei Tage decken die neun Orte oben ab, mit fünf Tagen bleibt ein voller Tag für die Mauer in Mutianyu und der Sommerpalast ohne Zeitdruck.'
   - q: 'Was kostet der Eintritt in die Verbotene Stadt?'
@@ -518,10 +524,10 @@ plans:
         afternoon: 'Rückkehr gegen 15:00, Pause im Hotel'
         evening: 'Ente – die Wartezeit ohne Reservierung einplanen'
       - day: 3
-        sights: [2, 7, 8]
+        sights: [2, 7]
         morning: 'Himmelstempel ab 07:00 – dann sind die Einheimischen da'
-        afternoon: 'Weiße Pagode und die Gassen drumherum, danach mit der Linie 14 nach 798'
-        evening: '798 schließt früh: letzte Galerie gegen 18:00'
+        afternoon: 'Weiße Pagode, danach zu Fuß durch die Gassen Richtung 什刹海'
+        evening: 'Abendessen in den Hutongs – hier ist nichts inszeniert'
   - title: '5 Tage – mit Luft'
     forWhom: 'Wer Museen und Essen ernst nimmt – auch mit Kindern'
     days:
@@ -546,14 +552,14 @@ plans:
         afternoon: 'Boot über den Kunming-See, dann langsam zurück'
         evening: 'frei – der Westen der Stadt ist weit'
       - day: 5
-        sights: [8]
-        morning: '798 ab 10:00, Galerien vor der Mittagspause'
+        sights: [9]
+        morning: 'Hutong-Viertel ab 09:30 – vor den Reisebussen ist es noch leer'
         afternoon: 'Puffer: Regen, Nachtrag oder Ausschlafen'
         evening: 'Ausreise oder Weiterreise nach Xi''an'
 
 ---
 
-> **Die Kurzfassung:** Peking ist ein Ring-System. Alles touristisch Relevante liegt innerhalb des dritten Rings – nur die Mauer (rund 60 km nördlich) und 798 (Nordosten) sind echte Ausflüge. Wer das einplant, spart pro Tag ein bis zwei Stunden Taxifahren.
+> **Die Kurzfassung:** Peking ist ein Ring-System. Alles touristisch Relevante liegt innerhalb des dritten Rings – nur die Mauer (rund 60 km nördlich) und 798 im Nordosten sind echte Ausflüge. Wer das einplant, spart pro Tag ein bis zwei Stunden Taxifahren.
 
 ## Wie diese Stadt funktioniert
 
@@ -561,7 +567,7 @@ In der Mitte die Verbotene Stadt, darum der erste Ring auf dem Verlauf der alten
 
 - **Alles im dritten Ring** ist zu Fuß, per U-Bahn oder in 15 Minuten Taxi erreichbar
 - **Die Mauer** ist ein halber bis ganzer Tagesausflug – kein Programmpunkt für zwischendurch
-- **798** liegt im Nordosten und braucht eine eigene Anfahrt, keinen Zwischenstopp
+- **798** liegt im Nordosten, braucht eine eigene Anfahrt – und ist heute Erlebnisquartier statt Künstlerviertel (siehe Eintrag 8)
 
 ## Vom Flughafen in die Stadt
 

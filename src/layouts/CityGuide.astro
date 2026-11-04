@@ -504,6 +504,11 @@ const faqLd =
                   <div class="m-text m-body">
                     {s.warn && <p class="warn-line">{s.warn}</p>}
                     {s.note && <p class="s-note">{s.note}</p>}
+                    {s.source && (
+                      <p class="s-source">
+                        <span class="q">Quelle: <a href={s.source.url} target="_blank" rel="noopener">{s.source.label}</a></span>
+                      </p>
+                    )}
                     {s.nearby && <p class="near-line">{s.nearby}</p>}
                     {(s.hours || s.closed || s.transit || s.buyTickets) && (
                       <dl class="m-facts">
